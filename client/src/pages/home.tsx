@@ -1,0 +1,69 @@
+import { useEffect } from "react";
+import Navigation from "@/components/navigation";
+import Hero from "@/components/sections/hero";
+import About from "@/components/sections/about";
+import OptimalSolution from "@/components/sections/optimal-solution";
+import Projects from "@/components/sections/projects";
+import ActivePipeline from "@/components/sections/active-pipeline";
+import Value from "@/components/sections/value";
+import Efficiency from "@/components/sections/efficiency";
+import SpeakingEvents from "@/components/sections/speaking-events";
+import Contact from "@/components/sections/contact";
+import Footer from "@/components/footer";
+
+export default function Home() {
+  useEffect(() => {
+    // Scroll reveal animation
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+        }
+      });
+    }, observerOptions);
+
+    // Observe all scroll-reveal elements
+    document.querySelectorAll('.scroll-reveal').forEach(el => {
+      observer.observe(el);
+    });
+
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href')!);
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
+  return (
+    <div className="bg-ey-white">
+      <Navigation />
+      <Hero />
+      <About />
+      <OptimalSolution />
+      <Projects />
+      <ActivePipeline />
+      <Value />
+      <Efficiency />
+      <SpeakingEvents />
+      <Contact />
+      <Footer />
+    </div>
+  );
+}
