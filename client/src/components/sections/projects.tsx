@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Award, Users, TrendingUp, Zap } from "lucide-react";
+import { Award, Users, TrendingUp, Zap, Target, Trophy, Rocket, Gem } from "lucide-react";
 
 export default function Projects() {
   const projects = [
@@ -11,7 +11,7 @@ export default function Projects() {
       result: "40% eficiencia",
       description: "Transformación digital completa de procesos de gestión de activos",
       gradient: "from-blue-600 to-blue-800",
-      icon: "⚡"
+      iconComponent: Zap
     },
     {
       company: "CODELCO",
@@ -21,7 +21,7 @@ export default function Projects() {
       result: "Reducción mayor",
       description: "Optimización estratégica de contratos entregando ahorros significativos",
       gradient: "from-red-600 to-red-800",
-      icon: "🎯"
+      iconComponent: Target
     },
     {
       company: "PwC",
@@ -31,7 +31,7 @@ export default function Projects() {
       result: "Benchmark",
       description: "Implementación tecnológica estableciendo estándares industriales",
       gradient: "from-orange-500 to-orange-700",
-      icon: "🏆"
+      iconComponent: Trophy
     },
     {
       company: "Deloitte",
@@ -41,7 +41,7 @@ export default function Projects() {
       result: "35% mejora",
       description: "Estrategia digital y ejecución para excelencia operacional",
       gradient: "from-green-600 to-green-800",
-      icon: "🚀"
+      iconComponent: Rocket
     },
     {
       company: "Accenture",
@@ -51,7 +51,7 @@ export default function Projects() {
       result: "Insights en tiempo real",
       description: "Plataforma de analítica avanzada para toma de decisiones en tiempo real",
       gradient: "from-purple-600 to-purple-800",
-      icon: "📊"
+      iconComponent: Gem
     }
   ];
 
@@ -77,7 +77,7 @@ export default function Projects() {
   };
 
   return (
-    <section id="projects" className="py-32 bg-gradient-to-br from-white to-gray-50 relative overflow-hidden">
+    <section id="projects" className="py-32 bg-ey-dark relative overflow-hidden">
       {/* Background elements */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-20 left-20 w-40 h-40 bg-ey-yellow rounded-full blur-3xl"></div>
@@ -94,7 +94,7 @@ export default function Projects() {
           viewport={{ once: true }}
         >
           <motion.h2 
-            className="text-5xl md:text-6xl font-black text-ey-dark mb-8"
+            className="text-5xl md:text-6xl font-black text-ey-white mb-8"
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -103,7 +103,7 @@ export default function Projects() {
             Logros de Proyectos <span className="text-ey-yellow">Mayores</span>
           </motion.h2>
           <motion.p 
-            className="text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed"
+            className="text-xl text-ey-white/80 max-w-4xl mx-auto leading-relaxed"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
@@ -129,47 +129,46 @@ export default function Projects() {
               whileHover={{ y: -10, scale: 1.02 }}
               transition={{ type: "spring", stiffness: 300 }}
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-gray-100 to-gray-200 rounded-3xl blur-lg group-hover:blur-xl transition-all duration-300"></div>
-              <div className="relative bg-white rounded-3xl shadow-xl p-8 border border-gray-100 hover:border-ey-yellow/30 transition-all duration-300 h-full">
+              <div className="relative bg-ey-medium border border-ey-light rounded-lg p-8 hover:border-ey-yellow transition-all duration-300 h-full">
                 {/* Header */}
                 <div className="flex items-center mb-6">
-                  <div className={`w-16 h-16 bg-gradient-to-br ${project.gradient} rounded-2xl mr-4 flex items-center justify-center text-2xl shadow-lg group-hover:scale-110 transition-transform duration-300`}>
-                    {project.icon}
+                  <div className="w-16 h-16 bg-ey-yellow rounded-lg mr-4 flex items-center justify-center shadow-lg">
+                    <project.iconComponent className="w-8 h-8 text-ey-black" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-black text-ey-dark group-hover:text-ey-yellow transition-colors">{project.company}</h3>
-                    <p className="text-gray-600 font-medium">{project.title}</p>
+                    <h3 className="text-xl font-black text-ey-white">{project.company}</h3>
+                    <p className="text-ey-white/70 font-medium">{project.title}</p>
                   </div>
                 </div>
 
                 {/* Metrics */}
                 <div className="space-y-4 mb-6">
                   <div className="flex justify-between items-center">
-                    <span className="text-gray-600 font-medium flex items-center">
+                    <span className="text-ey-white/70 font-medium flex items-center">
                       <Award className="w-4 h-4 mr-2" />
                       Valor:
                     </span>
                     <span className="font-black text-ey-yellow text-lg">{project.value}</span>
                   </div>
                   <div className="flex justify-between items-center">
-                    <span className="text-gray-600 font-medium flex items-center">
+                    <span className="text-ey-white/70 font-medium flex items-center">
                       <Users className="w-4 h-4 mr-2" />
                       Equipo:
                     </span>
-                    <span className="font-semibold text-ey-dark">{project.team}</span>
+                    <span className="font-semibold text-ey-white">{project.team}</span>
                   </div>
                   <div className="flex justify-between items-center">
-                    <span className="text-gray-600 font-medium flex items-center">
+                    <span className="text-ey-white/70 font-medium flex items-center">
                       <TrendingUp className="w-4 h-4 mr-2" />
                       Resultado:
                     </span>
-                    <span className="font-semibold text-emerald-600">{project.result}</span>
+                    <span className="font-semibold text-ey-yellow">{project.result}</span>
                   </div>
                 </div>
 
                 {/* Description */}
-                <div className="border-t border-gray-100 pt-4">
-                  <p className="text-gray-700 leading-relaxed">{project.description}</p>
+                <div className="border-t border-ey-light pt-4">
+                  <p className="text-ey-white/80 leading-relaxed">{project.description}</p>
                 </div>
               </div>
             </motion.div>

@@ -17,13 +17,13 @@ export default function OptimalSolution() {
   ];
 
   const comparisonMetrics = [
-    { metric: "Tiempo de Despliegue", traditional: "8-12 meses", solution: "Inmediato", improvement: "⚡" },
-    { metric: "Nivel de Riesgo", traditional: "Alto", solution: "Comprobado", improvement: "🛡️" },
-    { metric: "Pipeline Activo", traditional: "$0", solution: "$11.4M", improvement: "💰" }
+    { metric: "Tiempo de Despliegue", traditional: "8-12 meses", solution: "Inmediato", iconComponent: Clock },
+    { metric: "Nivel de Riesgo", traditional: "Alto", solution: "Comprobado", iconComponent: Check },
+    { metric: "Pipeline Activo", traditional: "$0", solution: "$11.4M", iconComponent: DollarSign }
   ];
 
   return (
-    <section id="optimal" className="py-32 relative overflow-hidden bg-gradient-to-br from-slate-900 via-ey-dark to-black">
+    <section id="optimal" className="py-32 relative overflow-hidden bg-ey-dark">
       {/* Animated background */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 opacity-20"></div>
@@ -199,9 +199,10 @@ export default function OptimalSolution() {
               viewport={{ once: true }}
               whileHover={{ y: -5 }}
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-ey-yellow/10 to-ey-yellow/20 rounded-2xl blur-lg group-hover:blur-xl transition-all duration-300"></div>
-              <div className="relative bg-ey-dark/80 backdrop-blur-xl rounded-2xl p-8 border border-ey-yellow/20 hover:border-ey-yellow/40 transition-all duration-300 text-center">
-                <div className="text-4xl mb-4">{metric.improvement}</div>
+              <div className="relative bg-ey-medium backdrop-blur-xl rounded-lg p-8 border border-ey-light hover:border-ey-yellow transition-all duration-300 text-center">
+                <div className="flex items-center justify-center w-12 h-12 bg-ey-yellow rounded-full mb-4 mx-auto">
+                  <metric.iconComponent className="w-6 h-6 text-ey-black" />
+                </div>
                 <h4 className="text-ey-white font-bold text-lg mb-4">{metric.metric}</h4>
                 <div className="space-y-3">
                   <div className="text-red-400 font-semibold">{metric.traditional}</div>

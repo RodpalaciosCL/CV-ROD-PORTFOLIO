@@ -53,7 +53,7 @@ export default function ActivePipeline() {
   const totalValue = 11.4;
 
   return (
-    <section id="pipeline" className="py-32 bg-gradient-to-br from-ey-dark via-gray-900 to-black relative overflow-hidden">
+    <section id="pipeline" className="py-32 bg-ey-dark relative overflow-hidden">
       {/* Animated background */}
       <div className="absolute inset-0">
         <motion.div 
@@ -175,15 +175,10 @@ export default function ActivePipeline() {
           transition={{ duration: 0.8, delay: 0.6 }}
           viewport={{ once: true }}
         >
-          <div className="absolute inset-0 bg-gradient-to-br from-ey-yellow/20 to-ey-yellow/40 rounded-3xl blur-2xl group-hover:blur-3xl transition-all duration-500"></div>
-          <div className="relative bg-ey-yellow/20 backdrop-blur-xl rounded-3xl p-12 text-center border border-ey-yellow/40">
-            <motion.div 
-              className="text-7xl mb-6"
-              animate={{ rotate: [0, 5, -5, 0] }}
-              transition={{ duration: 3, repeat: Infinity }}
-            >
-              💰
-            </motion.div>
+          <div className="relative bg-ey-medium border border-ey-yellow rounded-lg p-12 text-center">
+            <div className="mb-6">
+              <DollarSign className="w-16 h-16 text-ey-yellow mx-auto" />
+            </div>
             <h3 className="text-3xl font-black text-ey-white mb-6">Pipeline Activo Total</h3>
             <motion.div 
               className="text-7xl md:text-8xl font-black text-ey-yellow mb-4"

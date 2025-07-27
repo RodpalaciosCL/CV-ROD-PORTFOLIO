@@ -55,15 +55,15 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="bg-ey-white">
+    <div className="bg-ey-dark">
       <Navigation />
       <Hero />
       <About />
-      <OptimalSolution />
       <Projects />
       <ActivePipeline />
       <Value />
       <Efficiency />
+      <OptimalSolution />
       <SpeakingEvents />
       <Contact />
       <Footer />
