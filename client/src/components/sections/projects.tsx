@@ -181,14 +181,13 @@ export default function Projects() {
             whileHover={{ y: -10, scale: 1.02 }}
             transition={{ type: "spring", stiffness: 300 }}
           >
-            <div className="absolute inset-0 bg-gradient-to-br from-ey-yellow/20 to-ey-yellow/40 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
-            <div className="relative bg-ey-dark rounded-3xl p-8 h-full flex flex-col items-center justify-center text-center border border-ey-yellow/30">
+            <div className="relative bg-ey-medium rounded-lg p-8 h-full flex flex-col items-center justify-center text-center border border-ey-light hover:border-ey-yellow transition-all duration-300">
               <motion.div 
-                className="text-6xl mb-4"
+                className="w-16 h-16 bg-ey-yellow rounded-lg flex items-center justify-center mb-6"
                 animate={{ rotate: [0, 10, -10, 0] }}
                 transition={{ duration: 2, repeat: Infinity }}
               >
-                💎
+                <Award className="w-8 h-8 text-ey-black" />
               </motion.div>
               <div className="text-5xl font-black text-ey-yellow mb-4">$71M+</div>
               <div className="text-ey-white text-xl font-semibold mb-2">Valor Total de Proyectos</div>

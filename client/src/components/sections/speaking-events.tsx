@@ -60,7 +60,7 @@ export default function SpeakingEvents() {
   ];
 
   return (
-    <section id="speaking" className="py-32 bg-gradient-to-br from-white to-gray-50 relative overflow-hidden">
+    <section id="speaking" className="py-32 bg-ey-dark relative overflow-hidden">
       {/* Background decorative elements */}
       <div className="absolute inset-0">
         <motion.div 
@@ -85,7 +85,7 @@ export default function SpeakingEvents() {
           viewport={{ once: true }}
         >
           <motion.h2 
-            className="text-5xl md:text-6xl font-black text-ey-dark mb-8"
+            className="text-5xl md:text-6xl font-black text-ey-white mb-8"
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -94,7 +94,7 @@ export default function SpeakingEvents() {
             Liderazgo Industrial & <span className="text-ey-yellow">Reconocimiento</span>
           </motion.h2>
           <motion.p 
-            className="text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed"
+            className="text-xl text-ey-white/80 max-w-4xl mx-auto leading-relaxed"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}

@@ -31,7 +31,7 @@ export default function About() {
   ];
 
   return (
-    <section id="about" className="py-32 bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
+    <section id="about" className="py-32 bg-ey-dark relative overflow-hidden">
       {/* Background decorative elements */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-0 left-0 w-full h-full"></div>
@@ -56,9 +56,9 @@ export default function About() {
               <div className="relative w-full h-[600px] bg-gradient-to-br from-gray-200 to-gray-400 rounded-3xl shadow-2xl overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-t from-ey-dark/20 to-transparent"></div>
                 <div className="absolute bottom-6 left-6 right-6">
-                  <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-4">
-                    <div className="text-ey-dark font-bold text-lg">Ingeniero Industrial</div>
-                    <div className="text-gray-600">Especialista en Transformación Digital</div>
+                  <div className="bg-ey-medium/90 backdrop-blur-sm rounded-lg p-4">
+                    <div className="text-ey-white font-bold text-lg">Ingeniero Industrial</div>
+                    <div className="text-ey-white/80">Especialista en Transformación Digital</div>
                   </div>
                 </div>
               </div>
@@ -90,14 +90,14 @@ export default function About() {
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-5xl font-black text-ey-dark mb-8">
+              <h2 className="text-5xl font-black text-ey-white mb-8">
                 Liderazgo Tecnológico 
                 <span className="block text-ey-yellow">Estratégico</span>
               </h2>
             </motion.div>
             
             <motion.p 
-              className="text-xl text-gray-700 mb-12 leading-relaxed"
+              className="text-xl text-ey-white/80 mb-12 leading-relaxed"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
@@ -119,15 +119,15 @@ export default function About() {
                   viewport={{ once: true }}
                   whileHover={{ x: 10 }}
                 >
-                  <div className="flex items-start space-x-6 bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-ey-yellow/30">
-                    <div className={`w-16 h-16 bg-gradient-to-br ${skill.color} rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
-                      <skill.icon className="w-8 h-8 text-white" />
+                  <div className="flex items-start space-x-6 bg-ey-medium rounded-lg p-6 border border-ey-light hover:border-ey-yellow transition-all duration-300">
+                    <div className="w-16 h-16 bg-ey-yellow rounded-lg flex items-center justify-center">
+                      <skill.icon className="w-8 h-8 text-ey-black" />
                     </div>
                     <div className="flex-1">
-                      <h3 className="text-xl font-bold text-ey-dark mb-2 group-hover:text-ey-yellow transition-colors">
+                      <h3 className="text-xl font-bold text-ey-white mb-2">
                         {skill.title}
                       </h3>
-                      <p className="text-gray-600 leading-relaxed">{skill.description}</p>
+                      <p className="text-ey-white/80 leading-relaxed">{skill.description}</p>
                     </div>
                   </div>
                 </motion.div>

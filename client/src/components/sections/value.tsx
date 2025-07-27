@@ -41,7 +41,7 @@ export default function Value() {
   ];
 
   return (
-    <section id="value" className="py-32 bg-gradient-to-br from-white to-gray-50 relative overflow-hidden">
+    <section id="value" className="py-32 bg-ey-dark relative overflow-hidden">
       {/* Animated background elements */}
       <div className="absolute inset-0">
         <motion.div 
@@ -66,7 +66,7 @@ export default function Value() {
           viewport={{ once: true }}
         >
           <motion.h2 
-            className="text-5xl md:text-6xl font-black text-ey-dark mb-8"
+            className="text-5xl md:text-6xl font-black text-ey-white mb-8"
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -75,7 +75,7 @@ export default function Value() {
             Propuesta de Valor <span className="text-ey-yellow">Única</span>
           </motion.h2>
           <motion.p 
-            className="text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed"
+            className="text-xl text-ey-white/80 max-w-4xl mx-auto leading-relaxed"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
@@ -97,19 +97,18 @@ export default function Value() {
               viewport={{ once: true }}
               whileHover={{ y: -10 }}
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-gray-100 to-gray-200 rounded-3xl blur-lg group-hover:blur-xl transition-all duration-300"></div>
-              <div className="relative bg-white rounded-3xl shadow-xl p-8 text-center border border-gray-100 hover:border-ey-yellow/30 transition-all duration-300 h-full">
+              <div className="relative bg-ey-medium rounded-lg p-8 text-center border border-ey-light hover:border-ey-yellow transition-all duration-300 h-full">
                 {/* Icon */}
                 <motion.div 
-                  className={`w-20 h-20 bg-gradient-to-br ${prop.gradient} rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg`}
+                  className="w-20 h-20 bg-ey-yellow rounded-lg flex items-center justify-center mx-auto mb-6"
                   whileHover={{ scale: 1.1, rotate: 5 }}
                   transition={{ type: "spring", stiffness: 300 }}
                 >
-                  <prop.icon className="w-10 h-10 text-white" />
+                  <prop.icon className="w-10 h-10 text-ey-black" />
                 </motion.div>
                 
                 {/* Title */}
-                <h3 className="text-xl font-black text-ey-dark mb-4 group-hover:text-ey-yellow transition-colors">
+                <h3 className="text-xl font-black text-ey-white mb-4">
                   {prop.title}
                 </h3>
                 
@@ -125,7 +124,7 @@ export default function Value() {
                 </motion.div>
                 
                 {/* Description */}
-                <p className="text-gray-600 leading-relaxed">{prop.description}</p>
+                <p className="text-ey-white/80 leading-relaxed">{prop.description}</p>
               </div>
             </motion.div>
           ))}
