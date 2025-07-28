@@ -152,8 +152,12 @@ export default function Hero() {
             <div className="relative">
               {/* Professional portrait placeholder */}
               <div className="relative bg-ey-medium border border-ey-light rounded-lg p-8">
-                <div className="aspect-square bg-ey-light rounded-lg flex items-center justify-center">
-                  <User className="w-32 h-32 text-ey-yellow/70" />
+                <div className="aspect-square bg-ey-light rounded-lg overflow-hidden">
+                  <img 
+                    src="https://res.cloudinary.com/dhobnlg73/image/upload/v1753563329/7357fed7-e020-4627-806a-fbb75bf31a8b_gu8p59.jpg" 
+                    alt="Rodrigo Palacios - Professional Profile" 
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 
                 {/* Professional credentials */}
