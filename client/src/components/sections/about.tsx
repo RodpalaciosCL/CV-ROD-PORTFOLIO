@@ -5,20 +5,20 @@ export default function About() {
   const skills = [
     { 
       icon: Lightbulb, 
-      title: "Estrategia Digital", 
-      description: "Roadmaps tecnológicos integrales para operaciones mineras",
+      title: "Relacionamiento", 
+      description: "Amplia red de contactos en la Industria Minera, donde he dedicado tiempo a estar con quienes toman decisiones y en donde estas ocurren.",
       color: "from-blue-500 to-cyan-500"
     },
     { 
       icon: Settings, 
-      title: "Implementación Tecnológica", 
-      description: "Despliegues de sistemas a gran escala y optimización",
+      title: "Entendimiento", 
+      description: "Estos últimos años me he dedicado profundamente a estar en faena, comprender los reales problemas y vivir los dolores con los equipos que ejecutan, adentrándome como nunca en el real día a día de la operación minera compleja.",
       color: "from-purple-500 to-pink-500"
     },
     { 
       icon: Zap, 
-      title: "Desarrollo de Negocios", 
-      description: "Alianzas estratégicas y generación de ingresos",
+      title: "Crecimiento", 
+      description: "La capacidad de tomar la oportunidad o transformar el problema y entregar TANGIBILIDAD, para generar la necesidade en el cliente desde el minuto cero.",
       color: "from-orange-500 to-red-500"
     }
   ];
