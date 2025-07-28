@@ -76,8 +76,8 @@ export default function About() {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          {/* Photo section */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+          {/* Photo section - Left side */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -91,17 +91,19 @@ export default function About() {
               transition={{ type: "spring", stiffness: 300 }}
             >
               <div className="absolute inset-0 bg-gradient-to-br from-ey-yellow/20 to-ey-yellow/40 rounded-3xl blur-2xl group-hover:blur-3xl transition-all duration-500"></div>
-              <div className="relative w-full h-[600px] rounded-3xl shadow-2xl overflow-hidden">
+              <div className="relative bg-ey-medium rounded-3xl p-1 border border-ey-light">
                 <img 
                   src="https://res.cloudinary.com/dq01rvzrp/image/upload/v1732825331/esat_2022_profile_lw6tvz.jpg" 
                   alt="Rodrigo Palacios - Professional Speaker" 
-                  className="w-full h-full object-cover"
+                  className="w-full h-[550px] object-cover rounded-3xl"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-ey-dark/40 to-transparent"></div>
-                <div className="absolute bottom-6 left-6 right-6">
-                  <div className="bg-ey-medium/90 backdrop-blur-sm rounded-lg p-4">
-                    <div className="text-ey-white font-bold text-lg">Ingeniero Industrial</div>
-                    <div className="text-ey-white/80">Especialista en Transformación Digital</div>
+                <div className="absolute bottom-6 left-6 bg-ey-dark/90 backdrop-blur-md rounded-xl p-4 border border-ey-yellow/30">
+                  <div className="flex items-center space-x-4">
+                    <div className="w-3 h-3 bg-ey-yellow rounded-full animate-pulse"></div>
+                    <div>
+                      <div className="text-ey-white font-bold">Ingeniero Industrial</div>
+                      <div className="text-ey-white/80">Especialista en Transformación Digital</div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -120,7 +122,7 @@ export default function About() {
             </motion.div>
           </motion.div>
           
-          {/* Content section */}
+          {/* Content section - Right side */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
