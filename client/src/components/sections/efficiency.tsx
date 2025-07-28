@@ -1,27 +1,29 @@
 import { motion } from "framer-motion";
-import { TrendingUp, TrendingDown, Clock, DollarSign, Calendar, Users, Shield, Target, Zap, CheckCircle, XCircle } from "lucide-react";
+import { TrendingUp, TrendingDown, Clock, DollarSign, Calendar, Users, Shield, Target, Zap, CheckCircle, XCircle, X } from "lucide-react";
+import { useState } from "react";
 
 export default function Efficiency() {
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const traditionalMetrics = [
-    { label: "Tiempo de Contratación", value: "6-12 meses", icon: Clock, negative: true },
-    { label: "Costo de Setup", value: "$2-5M", icon: DollarSign, negative: true },
-    { label: "Integración de Equipos", value: "12-18 meses", icon: Users, negative: true },
+    { label: "Tiempo de Contratación", value: "4-6 meses", icon: Clock, negative: true },
+    { label: "Costo de Setup", value: "$2M", icon: DollarSign, negative: true },
+    { label: "Integración de Equipos", value: "6-8 meses", icon: Users, negative: true },
     { label: "Nivel de Riesgo", value: "Alto", icon: XCircle, negative: true },
     { label: "Acceso a Pipeline", value: "$0", icon: Target, negative: true }
   ];
 
   const partnershipMetrics = [
     { label: "Tiempo de Inicio", value: "Inmediato", icon: Clock, negative: false },
-    { label: "Costo de Setup", value: "$0", icon: DollarSign, negative: false },
-    { label: "Integración", value: "2-4 semanas", icon: Users, negative: false },
+    { label: "Costo de Setup", value: "$1", icon: DollarSign, negative: false },
+    { label: "Integración", value: "4-6 semanas", icon: Users, negative: false },
     { label: "Nivel de Riesgo", value: "Mínimo", icon: Shield, negative: false },
-    { label: "Acceso a Pipeline", value: "$11.4M", icon: Target, negative: false }
+    { label: "Acceso a Pipeline", value: "Inmediato", icon: Target, negative: false }
   ];
 
   const roiMetrics = [
-    { value: "3x", label: "Despliegue Más Rápido", sublabel: "vs contratación tradicional" },
-    { value: "60%", label: "Reducción de Costos", sublabel: "vs contrataciones separadas" },
-    { value: "Inmediato", label: "Acceso a Pipeline", sublabel: "$11.4M oportunidades" }
+    { value: "10x", label: "Despliegue Más Rápido", sublabel: "vs contratación tradicional" },
+    { value: "90%", label: "Reducción de Costos", sublabel: "vs contrataciones separadas" },
+    { value: "Inmediato", label: "Acceso a Pipeline", sublabel: "+$150M oportunidades" }
   ];
 
   return (
@@ -54,6 +56,79 @@ export default function Efficiency() {
           >
             Comparación clara de ROI: Asociación vs. Contratación Tradicional
           </motion.p>
+        </motion.div>
+        
+        {/* EY Profiles Section */}
+        <motion.div 
+          className="relative mb-20"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
+          viewport={{ once: true }}
+        >
+          <div className="relative bg-gradient-to-br from-ey-dark via-ey-medium/30 to-ey-dark rounded-3xl p-12 border-2 border-ey-yellow/40 shadow-2xl backdrop-blur-sm overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-br from-ey-yellow/10 via-ey-yellow/5 to-transparent rounded-3xl"></div>
+            
+            <div className="relative text-center mb-12">
+              <motion.h3 
+                className="text-4xl font-black text-ey-yellow mb-6"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+                viewport={{ once: true }}
+              >
+                Perfiles que EY está Buscando
+              </motion.h3>
+              <motion.p 
+                className="text-xl text-ey-white/80 max-w-3xl mx-auto leading-relaxed"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                viewport={{ once: true }}
+              >
+                Un solo socio estratégico que integra múltiples capacidades especializadas
+              </motion.p>
+            </div>
+            
+            <motion.div 
+              className="relative group"
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              viewport={{ once: true }}
+            >
+              <div className="absolute inset-0 bg-gradient-to-br from-ey-yellow/20 to-ey-yellow/10 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
+              <div 
+                className="relative overflow-hidden rounded-2xl border-2 border-ey-yellow/50 shadow-2xl max-w-2xl mx-auto cursor-pointer"
+                onClick={() => setSelectedImage("https://res.cloudinary.com/dhobnlg73/image/upload/v1753743473/Captura_de_pantalla_2025-07-28_a_la_s_18.57.26_ot5sli.png")}
+              >
+                <img 
+                  src="https://res.cloudinary.com/dhobnlg73/image/upload/v1753743473/Captura_de_pantalla_2025-07-28_a_la_s_18.57.26_ot5sli.png" 
+                  alt="Perfiles profesionales que EY busca integrar" 
+                  className="w-full h-auto object-contain bg-white max-h-80"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-ey-dark/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                  <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-white text-sm font-semibold bg-black/50 px-3 py-1 rounded-full">
+                    Ver imagen completa
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+            
+            <motion.div 
+              className="text-center mt-8"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+              viewport={{ once: true }}
+            >
+              <div className="inline-block bg-ey-yellow/20 backdrop-blur-sm rounded-2xl px-8 py-4 border border-ey-yellow/30">
+                <p className="text-ey-white font-medium text-lg">
+                  <span className="text-ey-yellow font-black">Ventaja:</span> Capacidad integral vs. múltiples contrataciones especializadas
+                </p>
+              </div>
+            </motion.div>
+          </div>
         </motion.div>
         
         {/* Main Comparison */}
@@ -226,6 +301,38 @@ export default function Efficiency() {
           </div>
         </motion.div>
       </div>
+      
+      {/* Modal for full image view */}
+      {selectedImage && (
+        <motion.div 
+          className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          onClick={() => setSelectedImage(null)}
+        >
+          <motion.div 
+            className="relative max-w-full max-h-full"
+            initial={{ scale: 0.8, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            exit={{ scale: 0.8, opacity: 0 }}
+            transition={{ type: "spring", damping: 25, stiffness: 300 }}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <img 
+              src={selectedImage} 
+              alt="Perfiles profesionales que EY busca integrar" 
+              className="max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl"
+            />
+            <button
+              onClick={() => setSelectedImage(null)}
+              className="absolute top-4 right-4 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-colors duration-200"
+            >
+              <X className="w-6 h-6" />
+            </button>
+          </motion.div>
+        </motion.div>
+      )}
     </section>
   );
 }

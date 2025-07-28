@@ -6,8 +6,8 @@ export default function Value() {
     { 
       icon: Zap, 
       title: "Pipeline Inmediato", 
-      value: "$11.4M+", 
-      description: "Oportunidades activas listas para despliegue",
+      value: "$150M+", 
+      description: "Oportunidades activas con alto grado de cierre",
       gradient: "from-yellow-500 to-orange-500"
     },
     { 
@@ -19,25 +19,25 @@ export default function Value() {
     },
     { 
       icon: Award, 
-      title: "Expertise Comprobado", 
-      value: "20+", 
-      description: "Años con resultados demostrables",
+      title: "Ecosistema Plug & Play", 
+      value: "1500+", 
+      description: "Partners con soluciones específicas",
       gradient: "from-green-500 to-emerald-500"
     },
     { 
       icon: Globe, 
       title: "Gateway LATAM", 
-      value: "4", 
-      description: "Países con acceso al mercado minero",
+      value: "4+", 
+      description: "Para expansión regional",
       gradient: "from-purple-500 to-pink-500"
     }
   ];
 
   const advantages = [
-    "Capacidad bilingüe (Inglés/Español)",
-    "Experiencia minera en terreno",
-    "Relaciones C-level en la industria",
-    "Track record con Big 4 consulting"
+    "Capacidad de desarrollar y escalar negocios y relacionamiento activo",
+    "Experiencia minera en terreno y para assets críticos de la operación",
+    "Alta capacidad de gestionar equipos ágiles, sostenibles y equitativos",
+    "Track record con Big 4 consulting y grandes empresas de tecnología mundiales"
   ];
 
   return (
@@ -138,66 +138,137 @@ export default function Value() {
           transition={{ duration: 0.8, delay: 0.6 }}
           viewport={{ once: true }}
         >
-          <div className="absolute inset-0 bg-gradient-to-br from-ey-yellow/10 to-ey-yellow/20 rounded-3xl blur-2xl group-hover:blur-3xl transition-all duration-500"></div>
-          <div className="relative bg-ey-dark rounded-3xl p-12 overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-br from-ey-yellow/5 to-transparent"></div>
-            <div className="relative">
-              {/* Header */}
+          {/* Epic Background Effects */}
+          <div className="absolute inset-0 bg-gradient-to-br from-ey-yellow/20 via-ey-yellow/10 to-transparent rounded-3xl blur-3xl"></div>
+          <div className="absolute -inset-4 bg-gradient-to-r from-ey-yellow/5 via-transparent to-ey-yellow/5 rounded-3xl blur-2xl animate-pulse"></div>
+          
+          <div className="relative bg-gradient-to-br from-ey-dark via-ey-medium/30 to-ey-dark rounded-3xl p-16 border-2 border-ey-yellow/40 shadow-2xl backdrop-blur-sm overflow-hidden">
+            
+            {/* Header */}
+            <motion.div 
+              className="text-center mb-16"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+            >
+              <div className="flex items-center justify-center mb-8">
+                <div className="h-1 flex-1 bg-gradient-to-r from-transparent via-ey-yellow to-transparent rounded-full"></div>
+                <div className="mx-8 flex items-center space-x-4">
+                  <Star className="w-10 h-10 text-ey-yellow" />
+                  <h3 className="text-5xl font-black text-ey-yellow">Ventajas Competitivas</h3>
+                  <Star className="w-10 h-10 text-ey-yellow" />
+                </div>
+                <div className="h-1 flex-1 bg-gradient-to-r from-transparent via-ey-yellow to-transparent rounded-full"></div>
+              </div>
+              <p className="text-xl text-ey-white/80 max-w-4xl mx-auto leading-relaxed">
+                Capacidad de desarrollar y escalar negocios y relacionamiento activo
+              </p>
+            </motion.div>
+            
+            {/* Main Content - Two Columns */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+              
+              {/* Left Column - Photo */}
               <motion.div 
-                className="text-center mb-12"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
+                className="relative group"
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, delay: 0.3 }}
                 viewport={{ once: true }}
               >
-                <div className="flex items-center justify-center mb-6">
-                  <Star className="w-8 h-8 text-ey-yellow mr-3" />
-                  <h3 className="text-3xl font-black text-ey-yellow">Ventajas Competitivas</h3>
-                  <Star className="w-8 h-8 text-ey-yellow ml-3" />
+                <div className="absolute inset-0 bg-gradient-to-br from-ey-yellow/30 to-ey-yellow/10 rounded-3xl blur-2xl group-hover:blur-3xl transition-all duration-500"></div>
+                <div className="relative">
+                  <motion.div 
+                    className="relative overflow-hidden rounded-3xl border-4 border-ey-yellow/50 shadow-2xl"
+                    whileHover={{ scale: 1.02, rotate: 1 }}
+                    transition={{ type: "spring", stiffness: 300 }}
+                  >
+                    <img 
+                      src="https://res.cloudinary.com/dhobnlg73/image/upload/v1753742038/IMG_0183_iddtfw.jpg" 
+                      alt="Rodrigo en faena minera" 
+                      className="w-full h-96 object-cover"
+                    />
+                  </motion.div>
                 </div>
               </motion.div>
               
-              {/* Advantages Grid */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {/* Right Column - Advantages */}
+              <motion.div 
+                className="space-y-6"
+                initial={{ opacity: 0, x: 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, delay: 0.5 }}
+                viewport={{ once: true }}
+              >
                 {advantages.map((advantage, index) => (
                   <motion.div 
                     key={index}
-                    className="group flex items-center space-x-4 bg-ey-white/5 backdrop-blur-sm rounded-2xl p-6 hover:bg-ey-white/10 transition-all duration-300"
-                    initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
-                    whileInView={{ opacity: 1, x: 0 }}
+                    className="group relative"
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.1 * index }}
                     viewport={{ once: true }}
-                    whileHover={{ scale: 1.05, x: 10 }}
+                    whileHover={{ scale: 1.02, x: 10 }}
                   >
-                    <motion.div 
-                      className="w-12 h-12 bg-ey-yellow rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300"
-                      animate={{ rotate: [0, 5, -5, 0] }}
-                      transition={{ duration: 2, repeat: Infinity, delay: index * 0.5 }}
-                    >
-                      <Check className="w-6 h-6 text-ey-black" />
-                    </motion.div>
-                    <span className="text-ey-white font-semibold text-lg group-hover:text-ey-yellow transition-colors">
-                      {advantage}
-                    </span>
+                    <div className="absolute inset-0 bg-gradient-to-r from-ey-yellow/10 to-transparent rounded-2xl blur-lg group-hover:blur-xl transition-all duration-300"></div>
+                    <div className="relative bg-ey-white/5 backdrop-blur-sm rounded-2xl p-6 border border-ey-yellow/20 group-hover:border-ey-yellow/50 transition-all duration-300">
+                      <div className="flex items-start space-x-4">
+                        <motion.div 
+                          className="w-14 h-14 bg-gradient-to-br from-ey-yellow to-yellow-400 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300"
+                          animate={{ rotate: [0, 10, -10, 0] }}
+                          transition={{ duration: 3, repeat: Infinity, delay: index * 0.7 }}
+                        >
+                          <Check className="w-7 h-7 text-white" />
+                        </motion.div>
+                        <div className="flex-1">
+                          <p className="text-ey-white font-bold text-lg leading-relaxed group-hover:text-ey-yellow transition-colors">
+                            {advantage}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
                   </motion.div>
                 ))}
-              </div>
-              
-              {/* Bottom CTA */}
-              <motion.div 
-                className="text-center mt-12"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.8 }}
-                viewport={{ once: true }}
-              >
-                <div className="inline-block bg-ey-yellow/20 backdrop-blur-sm rounded-2xl px-8 py-4 border border-ey-yellow/30">
-                  <p className="text-ey-white font-medium text-lg">
-                    <span className="text-ey-yellow font-black">Resultado:</span> Socio estratégico integral con acceso inmediato al mercado LATAM
-                  </p>
-                </div>
               </motion.div>
             </div>
+            
+            {/* Enhanced Bottom CTA */}
+            <motion.div 
+              className="text-center mt-20"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 1 }}
+              viewport={{ once: true }}
+            >
+              <div className="relative inline-block">
+                <div className="absolute inset-0 bg-gradient-to-r from-ey-yellow/30 via-ey-yellow/50 to-ey-yellow/30 rounded-3xl blur-2xl animate-pulse"></div>
+                <div className="relative bg-gradient-to-r from-ey-dark via-ey-medium to-ey-dark rounded-3xl px-12 py-8 border-2 border-ey-yellow/60 shadow-2xl">
+                  <div className="flex items-center justify-center space-x-4">
+                    <motion.div
+                      animate={{ rotate: 360 }}
+                      transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
+                    >
+                      <Star className="w-8 h-8 text-ey-yellow" />
+                    </motion.div>
+                    <div className="text-center">
+                      <p className="text-3xl text-ey-yellow font-black mb-2">Resultado</p>
+                      <p className="text-xl text-ey-white font-semibold">
+                        Socio estratégico integral con acceso inmediato
+                        <br />
+                        <span className="text-ey-yellow font-black">al mercado LATAM y Global</span>
+                      </p>
+                    </div>
+                    <motion.div
+                      animate={{ rotate: -360 }}
+                      transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
+                    >
+                      <Globe className="w-8 h-8 text-ey-yellow" />
+                    </motion.div>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
           </div>
         </motion.div>
       </div>

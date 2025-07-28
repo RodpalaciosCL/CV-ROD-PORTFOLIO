@@ -5,52 +5,72 @@ export default function ActivePipeline() {
   const opportunities = [
     {
       company: "Anglo American",
-      project: "Implementación Digital Twin",
-      value: "$2.8M",
-      probability: 75,
+      project: "Implementación Robots de Inspección",
+      value: "$6.2M",
+      probability: 93,
       stage: "Propuesta Final",
-      timeline: "Q1 2025",
+      timeline: "Q3 2025",
       color: "from-blue-500 to-blue-700"
     },
     {
-      company: "BHP Spence",
-      project: "Mantenimiento Predictivo",
-      value: "$1.5M",
-      probability: 60,
-      stage: "Evaluación Técnica",
-      timeline: "Q2 2025",
-      color: "from-green-500 to-green-700"
-    },
-    {
       company: "Antofagasta Minerals",
-      project: "Plataforma de Analítica",
-      value: "$3.2M",
-      probability: 80,
-      stage: "Negociación Contrato",
-      timeline: "Q1 2025",
+      project: "Digital Twins & AI Warehouse",
+      value: "$3.3M",
+      probability: 85,
+      stage: "Definición Prueba de Concepto",
+      timeline: "Q3 2025",
       color: "from-purple-500 to-purple-700"
     },
     {
       company: "Sierra Gorda",
-      project: "Optimización de Procesos",
+      project: "Optimización de Procesos IoT",
       value: "$1.8M",
-      probability: 65,
+      probability: 80,
       stage: "Fase Piloto",
-      timeline: "Q2 2025",
+      timeline: "Q3 2025",
       color: "from-orange-500 to-orange-700"
     },
     {
-      company: "Escondida",
-      project: "Sistemas de Automatización",
-      value: "$2.1M",
-      probability: 70,
-      stage: "Revisión Propuesta",
-      timeline: "Q1 2025",
-      color: "from-red-500 to-red-700"
+      company: "BHP Spence",
+      project: "Warehouse Inteligente",
+      value: "$4.3M",
+      probability: 95,
+      stage: "Aprobación Piloto",
+      timeline: "Q3 2025",
+      color: "from-green-500 to-green-700"
+    },
+    {
+      company: "Codelco",
+      project: "Sistema de Gestión Obsoletos",
+      value: "$130M",
+      probability: 95,
+      stage: "Cerrando acuerdo primera etapa",
+      timeline: "Q3 2025",
+      color: "from-red-600 to-red-800"
+    },
+    {
+      company: "Minera San Gerónimo",
+      project: "Plataforma Centralización Procesos",
+      value: "$2M",
+      probability: 96,
+      stage: "Acordando Alcance final",
+      timeline: "Q3 2025",
+      color: "from-indigo-500 to-indigo-700"
+    },
+    {
+      company: "Minera Carola-Coemin",
+      project: "Gestión Inteligente Bodegas Externas",
+      value: "$4M",
+      probability: 80,
+      stage: "Acordando fecha piloto",
+      timeline: "Q3 2025",
+      color: "from-teal-500 to-teal-700"
     }
   ];
 
-  const totalValue = 11.4;
+  const totalValue = 151.6;
+  const totalOpportunities = opportunities.length;
+  const averageProbability = Math.round(opportunities.reduce((sum, opp) => sum + opp.probability, 0) / opportunities.length);
 
   return (
     <section id="pipeline" className="py-32 bg-ey-dark relative overflow-hidden">
@@ -93,7 +113,7 @@ export default function ActivePipeline() {
             transition={{ duration: 0.8, delay: 0.4 }}
             viewport={{ once: true }}
           >
-            $11.4M en oportunidades inmediatas listas para asociación con EY
+$151.6M en oportunidades inmediatas listas para asociación con EY
           </motion.p>
         </motion.div>
         
@@ -201,7 +221,7 @@ export default function ActivePipeline() {
                 transition={{ type: "spring", stiffness: 300 }}
               >
                 <TrendingUp className="w-8 h-8 text-ey-yellow mx-auto mb-3" />
-                <div className="text-2xl font-black text-ey-yellow mb-2">5</div>
+                <div className="text-2xl font-black text-ey-yellow mb-2">{totalOpportunities}</div>
                 <div className="text-ey-white/80 font-medium">Oportunidades Activas</div>
               </motion.div>
               
@@ -211,7 +231,7 @@ export default function ActivePipeline() {
                 transition={{ type: "spring", stiffness: 300 }}
               >
                 <Target className="w-8 h-8 text-ey-yellow mx-auto mb-3" />
-                <div className="text-2xl font-black text-ey-yellow mb-2">70%</div>
+                <div className="text-2xl font-black text-ey-yellow mb-2">{averageProbability}%</div>
                 <div className="text-ey-white/80 font-medium">Probabilidad Promedio</div>
               </motion.div>
               
@@ -221,8 +241,8 @@ export default function ActivePipeline() {
                 transition={{ type: "spring", stiffness: 300 }}
               >
                 <Clock className="w-8 h-8 text-ey-yellow mx-auto mb-3" />
-                <div className="text-2xl font-black text-ey-yellow mb-2">Q1-Q2</div>
-                <div className="text-ey-white/80 font-medium">2025 Timeline</div>
+                <div className="text-2xl font-black text-ey-yellow mb-2">Q4 2025 - Q1 2026</div>
+                <div className="text-ey-white/80 font-medium">Timeline</div>
               </motion.div>
             </div>
           </div>

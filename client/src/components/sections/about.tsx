@@ -97,15 +97,6 @@ export default function About() {
                   alt="Rodrigo Palacios - Professional Profile" 
                   className="w-full h-[550px] object-cover rounded-3xl"
                 />
-                <div className="absolute bottom-6 left-6 bg-ey-dark/90 backdrop-blur-md rounded-xl p-4 border border-ey-yellow/30">
-                  <div className="flex items-center space-x-4">
-                    <div className="w-3 h-3 bg-ey-yellow rounded-full animate-pulse"></div>
-                    <div>
-                      <div className="text-ey-white font-bold">Ingeniero Industrial</div>
-                      <div className="text-ey-white/80">Especialista en Transformación Digital</div>
-                    </div>
-                  </div>
-                </div>
               </div>
             </motion.div>
 

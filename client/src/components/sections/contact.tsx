@@ -8,21 +8,21 @@ export default function Contact() {
       icon: Mail,
       title: "Email",
       value: "rodrigo.palacios@strategic.com",
-      description: "Respuesta en 24 horas",
+      description: "",
       gradient: "from-blue-500 to-blue-700"
     },
     {
       icon: Phone,
       title: "Teléfono",
       value: "+56 9 1234 5678",
-      description: "Disponible horario comercial",
+      description: "",
       gradient: "from-green-500 to-green-700"
     },
     {
       icon: User,
       title: "LinkedIn",
       value: "linkedin.com/in/rodrigopalacios",
-      description: "Conexión profesional",
+      description: "",
       gradient: "from-purple-500 to-purple-700"
     }
   ];
@@ -97,7 +97,7 @@ export default function Contact() {
             transition={{ duration: 0.8, delay: 0.4 }}
             viewport={{ once: true }}
           >
-            Conversemos sobre cómo esta asociación estratégica puede desbloquear $11.4M en oportunidades inmediatas 
+            Conversemos sobre cómo esta asociación estratégica puede desbloquear +150 oportunidades inmediatas 
             y establecer a EY como el consultor tecnológico minero líder en Latinoamérica.
           </motion.p>
           
@@ -112,9 +112,12 @@ export default function Contact() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <Button className="relative bg-ey-yellow text-ey-black px-12 py-6 text-xl font-black rounded-2xl shadow-2xl hover:shadow-ey-yellow/25 transition-all duration-300 group">
+              <Button 
+                onClick={() => window.open('https://wa.me/56971415496?text=Hola%20Rodrigo,%20me%20interesa%20conversar%20sobre%20la%20propuesta%20estratégica%20para%20EY', '_blank')}
+                className="relative bg-ey-yellow text-ey-black px-12 py-6 text-xl font-black rounded-2xl shadow-2xl hover:shadow-ey-yellow/25 transition-all duration-300 group"
+              >
                 <span className="relative z-10 flex items-center">
-                  Agendar Reunión de Asociación Estratégica
+                  Contactar
                   <ArrowRight className="w-6 h-6 ml-3 group-hover:translate-x-1 transition-transform" />
                 </span>
                 <div className="absolute inset-0 bg-gradient-to-r from-yellow-400 to-ey-yellow rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -127,7 +130,6 @@ export default function Contact() {
               transition={{ duration: 0.6, delay: 0.8 }}
               viewport={{ once: true }}
             >
-              Disponible para discusión inmediata
             </motion.p>
           </motion.div>
         </motion.div>
@@ -203,7 +205,7 @@ export default function Contact() {
                   viewport={{ once: true }}
                   whileHover={{ y: -5 }}
                 >
-                  <div className="bg-ey-dark/60 backdrop-blur-sm rounded-2xl p-8 border border-ey-yellow/20 hover:border-ey-yellow/40 transition-all duration-300">
+                  <div className="bg-ey-dark/60 backdrop-blur-sm rounded-2xl p-8 border border-ey-yellow/20 hover:border-ey-yellow/40 transition-all duration-300 h-full flex flex-col">
                     {/* Step number */}
                     <div className="flex items-center mb-6">
                       <motion.div 

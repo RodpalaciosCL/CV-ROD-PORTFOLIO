@@ -3,23 +3,23 @@ import { motion } from "framer-motion";
 
 export default function OptimalSolution() {
   const traditionalRoles = [
-    { title: "Experto en Industria Minera", cost: "$180K+", risk: "Alto" },
-    { title: "Líder de Transformación Digital", cost: "$160K+", risk: "Alto" },
-    { title: "Gerente de Desarrollo de Negocios", cost: "$140K+", risk: "Alto" },
-    { title: "Especialista en Latinoamérica", cost: "$120K+", risk: "Alto" }
+    { title: "Experto en Industria Minera", cost: "$80K+", risk: "Alto" },
+    { title: "Líder de Transformación Digital", cost: "$120K+", risk: "Alto" },
+    { title: "Gerente de Desarrollo de Negocios", cost: "$100K+", risk: "Alto" },
+    { title: "Especialista en Latinoamérica", cost: "$80K+", risk: "Alto" }
   ];
 
   const solutionBenefits = [
     { icon: TrendingUp, title: "20+ Años Experiencia Minera", verified: true },
-    { icon: Users, title: "Liderazgo Digital Comprobado", verified: true },
-    { icon: DollarSign, title: "Pipeline Activo $11.4M+", verified: true },
+    { icon: Users, title: "Liderazgo Trasnformacional Comprobado", verified: true },
+    { icon: DollarSign, title: "Pipeline Activo $150M+", verified: true },
     { icon: Clock, title: "Acceso Inmediato LATAM", verified: true }
   ];
 
   const comparisonMetrics = [
-    { metric: "Tiempo de Despliegue", traditional: "8-12 meses", solution: "Inmediato", iconComponent: Clock },
+    { metric: "Tiempo de Despliegue", traditional: "8- 12 meses", solution: "Inmediato", iconComponent: Clock },
     { metric: "Nivel de Riesgo", traditional: "Alto", solution: "Comprobado", iconComponent: Check },
-    { metric: "Pipeline Activo", traditional: "$0", solution: "$11.4M", iconComponent: DollarSign }
+    { metric: "Pipeline Activo", traditional: "Difícil de mapear", solution: "Negociación Activa", iconComponent: DollarSign }
   ];
 
   return (
@@ -58,13 +58,13 @@ export default function OptimalSolution() {
             La Solución <span className="text-ey-yellow">Óptima</span>
           </motion.h2>
           <motion.p 
-            className="text-2xl text-ey-yellow/80 max-w-4xl mx-auto font-light"
+            className="text-2xl text-ey-yellow/80 max-w-5xl mx-auto font-light whitespace-nowrap"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
             viewport={{ once: true }}
           >
-            ¿Por qué contratar 4 perfiles separados cuando puedes tener un socio estratégico 4-en-1 comprobado?
+            ¿Por qué contratar 4 perfiles separados cuando puedes tener un socio estratégico 4 en 1?
           </motion.p>
         </motion.div>
         
@@ -79,7 +79,7 @@ export default function OptimalSolution() {
             viewport={{ once: true }}
           >
             <div className="absolute inset-0 bg-gradient-to-br from-red-500/20 to-red-700/30 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
-            <div className="relative bg-red-950/80 backdrop-blur-xl rounded-3xl p-8 border border-red-500/30 hover:border-red-400/50 transition-all duration-300">
+            <div className="relative bg-red-950/80 backdrop-blur-xl rounded-3xl p-8 border border-red-500/30 hover:border-red-400/50 transition-all duration-300 h-full flex flex-col">
               <div className="flex items-center mb-8">
                 <div className="w-16 h-16 bg-red-500 rounded-2xl flex items-center justify-center mr-4">
                   <X className="w-8 h-8 text-white" />
@@ -90,7 +90,7 @@ export default function OptimalSolution() {
                 </div>
               </div>
               
-              <div className="space-y-4 mb-8">
+              <div className="space-y-4 mb-8 flex-grow">
                 {traditionalRoles.map((role, index) => (
                   <motion.div 
                     key={index}
@@ -115,11 +115,11 @@ export default function OptimalSolution() {
               <div className="border-t border-red-500/30 pt-6">
                 <div className="flex justify-between items-center text-lg">
                   <span className="text-red-100 font-bold">Costo Anual Total:</span>
-                  <span className="text-red-400 font-black text-3xl">$600K+</span>
+                  <span className="text-red-400 font-black text-3xl">$1,260,000M+</span>
                 </div>
                 <div className="text-red-300 text-sm mt-2 flex items-center">
                   <Clock className="w-4 h-4 mr-2" />
-                  + 8-12 meses tiempo de contratación
+                  + 6-8 meses tiempo de contratación
                 </div>
               </div>
             </div>
@@ -134,18 +134,18 @@ export default function OptimalSolution() {
             viewport={{ once: true }}
           >
             <div className="absolute inset-0 bg-gradient-to-br from-ey-yellow/20 to-ey-yellow/40 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
-            <div className="relative bg-ey-dark/90 backdrop-blur-xl rounded-3xl p-8 border border-ey-yellow/40 hover:border-ey-yellow/60 transition-all duration-300">
+            <div className="relative bg-ey-dark/90 backdrop-blur-xl rounded-3xl p-8 border border-ey-yellow/40 hover:border-ey-yellow/60 transition-all duration-300 h-full flex flex-col">
               <div className="flex items-center mb-8">
                 <div className="w-16 h-16 bg-ey-yellow rounded-2xl flex items-center justify-center mr-4">
                   <Check className="w-8 h-8 text-ey-black" />
                 </div>
                 <div>
                   <h3 className="text-2xl font-black text-ey-yellow">La Solución</h3>
-                  <p className="text-ey-white/80">Socio Estratégico 4-en-1</p>
+                  <p className="text-ey-white/80">Socio Estratégico 2x</p>
                 </div>
               </div>
               
-              <div className="space-y-4 mb-8">
+              <div className="space-y-4 mb-8 flex-grow">
                 {solutionBenefits.map((benefit, index) => (
                   <motion.div 
                     key={index}

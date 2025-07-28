@@ -57,11 +57,11 @@ export default function Footer() {
             viewport={{ once: true }}
           >
             <div className="text-center">
-              <div className="text-3xl font-black text-ey-yellow mb-2">$71M+</div>
+              <div className="text-3xl font-black text-ey-yellow mb-2">$120M+</div>
               <div className="text-ey-white/70 font-medium">Proyectos Entregados</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-black text-ey-yellow mb-2">$11.4M</div>
+              <div className="text-3xl font-black text-ey-yellow mb-2">$150M+</div>
               <div className="text-ey-white/70 font-medium">Pipeline Activo</div>
             </div>
             <div className="text-center">
@@ -81,7 +81,7 @@ export default function Footer() {
 
           {/* Copyright and Made with */}
           <motion.div 
-            className="flex flex-col md:flex-row items-center justify-between text-ey-white/60 text-sm"
+            className="flex flex-col md:flex-row items-center justify-between text-ey-white/60 text-sm mt-8"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.8 }}

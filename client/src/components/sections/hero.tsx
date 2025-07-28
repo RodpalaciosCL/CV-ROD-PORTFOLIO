@@ -10,13 +10,13 @@ export default function Hero() {
 
   useEffect(() => {
     const timer1 = setTimeout(() => {
-      if (count1 < 71) setCount1(count1 + 1);
+      if (count1 < 120) setCount1(count1 + 2);
     }, 50);
     const timer2 = setTimeout(() => {
-      if (count2 < 20) setCount2(count2 + 1);
+      if (count2 < 12) setCount2(count2 + 1);
     }, 100);
     const timer3 = setTimeout(() => {
-      if (count3 < 11.4) setCount3(count3 + 0.1);
+      if (count3 < 150) setCount3(count3 + 2.5);
     }, 80);
 
     return () => {
@@ -36,21 +36,6 @@ export default function Hero() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
           >
-            {/* Professional Badge */}
-            <motion.div 
-              className="inline-block mb-8"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-            >
-              <div className="bg-ey-medium border border-ey-light rounded-lg px-6 py-3">
-                <div className="flex items-center space-x-3">
-                  <Award className="w-5 h-5 text-ey-yellow" />
-                  <span className="text-ey-yellow font-bold">Ingeniero Industrial</span>
-                  <span className="text-ey-white/80">Especialista en Transformación de Negocios</span>
-                </div>
-              </div>
-            </motion.div>
 
             {/* Main Heading */}
             <motion.h1 
@@ -74,24 +59,25 @@ export default function Hero() {
               Con un track récord de más de $100M+ en proyectos para la Industria Minera, mi background se compone de experiencia en Minería, Oil&Gas, Retail, Financial Services, Cementeras y Agro, contando con una experiencia horizontal y ampliamente enriquecida para tomar decisiones certeras de negocio.
             </motion.p>
 
-            {/* CTA Buttons */}
+            {/* CTA Button */}
             <motion.div 
-              className="flex flex-col sm:flex-row gap-4 mb-16"
+              className="mb-16"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.8 }}
             >
-              <Button className="bg-ey-yellow text-ey-black px-8 py-6 text-lg font-bold rounded-lg shadow-lg hover:bg-yellow-400 transition-all duration-300">
-                <span className="flex items-center">
-                  Ver Pipeline de $11.4M
+              <Button 
+                onClick={() => {
+                  const element = document.getElementById('pipeline');
+                  if (element) {
+                    element.scrollIntoView({ behavior: 'auto', block: 'start' });
+                  }
+                }}
+                className="bg-ey-yellow text-ey-black px-12 py-6 text-lg font-bold rounded-lg shadow-lg hover:bg-yellow-400 transition-all duration-300 w-full sm:w-auto"
+              >
+                <span className="flex items-center justify-center">
+                  Ver Pipeline de $150M+
                   <ArrowRight className="w-5 h-5 ml-2" />
-                </span>
-              </Button>
-              
-              <Button variant="outline" className="border-ey-yellow text-ey-yellow px-8 py-6 text-lg font-semibold rounded-lg hover:bg-ey-medium transition-all duration-300">
-                <span className="flex items-center">
-                  <Download className="w-5 h-5 mr-2" />
-                  Descargar Propuesta
                 </span>
               </Button>
             </motion.div>
@@ -112,7 +98,7 @@ export default function Hero() {
                 >
                   ${count1}M+
                 </motion.div>
-                <div className="text-ey-white text-sm font-medium">Proyectos Entregados</div>
+                <div className="text-ey-white text-sm font-medium">Proyectos de la industria entregados</div>
               </div>
               
               <div className="text-center p-4 bg-ey-medium border border-ey-light rounded-lg">
@@ -124,7 +110,7 @@ export default function Hero() {
                 >
                   {count2}+
                 </motion.div>
-                <div className="text-ey-white text-sm font-medium">Años Experiencia</div>
+                <div className="text-ey-white text-sm font-medium">Clientes Mineros</div>
               </div>
               
               <div className="text-center p-4 bg-ey-medium border border-ey-light rounded-lg">
@@ -134,7 +120,7 @@ export default function Hero() {
                   animate={{ scale: 1 }}
                   transition={{ type: "spring", stiffness: 200, delay: 1.6 }}
                 >
-                  ${count3.toFixed(1)}M
+                  ${Math.round(count3)}M+
                 </motion.div>
                 <div className="text-ey-white text-sm font-medium">Pipeline Activo</div>
               </div>

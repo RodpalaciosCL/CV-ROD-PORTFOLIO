@@ -1,55 +1,60 @@
 import { motion } from "framer-motion";
-import { Award, Users, TrendingUp, Zap, Target, Trophy, Rocket, Gem } from "lucide-react";
+import { Award, Users, TrendingUp, Zap, Target, Trophy, Rocket, Gem, Clock } from "lucide-react";
 
 export default function Projects() {
   const projects = [
     {
       company: "Glencore",
       title: "Sistema de Gestión de Activos",
-      value: "$4M USD",
-      team: "15+ profesionales",
-      result: "40% eficiencia",
-      description: "Transformación digital completa de procesos de gestión de activos",
+      value: "$8M USD",
+      team: "9 personas",
+      time: "12 meses",
+      result: "90% eficiencia",
+      description: "Desarrollo plataforma de control de activos por 20 billones de dólares",
       gradient: "from-blue-600 to-blue-800",
       iconComponent: Zap
     },
     {
       company: "CODELCO",
-      title: "Renegociación de Contratos",
+      title: "Mesa de ayuda AI",
       value: "$50M USD",
-      team: "18 meses",
-      result: "Reducción mayor",
-      description: "Optimización estratégica de contratos entregando ahorros significativos",
+      team: "15 personas",
+      time: "24 meses",
+      result: "97% de eficiencia versus 75% actual",
+      description: "Re diseño completo de la plataforma de gestión de incidentes",
       gradient: "from-red-600 to-red-800",
       iconComponent: Target
     },
     {
       company: "PwC",
-      title: "Soluciones Mineras Digitales",
-      value: "$8M USD",
-      team: "25+ especialistas",
-      result: "Benchmark",
-      description: "Implementación tecnológica estableciendo estándares industriales",
+      title: "Centro de Robótica y CoE Minero Avanzado",
+      value: "$20M USD",
+      team: "25 personas",
+      time: "12 meses",
+      result: "Nuevo revenue stream, participación de mercado y amplificación de scope en cuentas actuales",
+      description: "Centro especializado de robótica y excelencia operacional minera",
       gradient: "from-orange-500 to-orange-700",
       iconComponent: Trophy
     },
     {
-      company: "Deloitte",
-      title: "Transformación Energética",
-      value: "$6M USD",
-      team: "Estrategia y ejecución",
-      result: "35% mejora",
-      description: "Estrategia digital y ejecución para excelencia operacional",
+      company: "R/GA",
+      title: "Landing Chile y primeros deals regionales",
+      value: "$25M USD",
+      team: "35 personas",
+      time: "13 meses",
+      result: "Pipeline robusto en Energía, Minería y Autopistas a nivel regional",
+      description: "Establecimiento de operaciones regionales y desarrollo de cartera de clientes",
       gradient: "from-green-600 to-green-800",
       iconComponent: Rocket
     },
     {
       company: "Accenture",
-      title: "Analítica Minera",
-      value: "$3M USD",
-      team: "Analítica de datos",
-      result: "Insights en tiempo real",
-      description: "Plataforma de analítica avanzada para toma de decisiones en tiempo real",
+      title: "Desarrollo de la práctica y Digitalización Vertical Minería",
+      value: "$12M USD",
+      team: "23 personas",
+      time: "15 meses",
+      result: "Incremento en revenue global del negocio de Chile y la región",
+      description: "Creación y desarrollo de práctica vertical especializada en minería",
       gradient: "from-purple-600 to-purple-800",
       iconComponent: Gem
     }
@@ -109,7 +114,7 @@ export default function Projects() {
             transition={{ duration: 0.8, delay: 0.4 }}
             viewport={{ once: true }}
           >
-            Track record comprobado entregando soluciones tecnológicas complejas para empresas mineras Tier 1
+            Track record comprobado entregando soluciones tecnológicas complejas para empresas mineras Tier&nbsp;1
           </motion.p>
         </motion.div>
         
@@ -129,7 +134,7 @@ export default function Projects() {
               whileHover={{ y: -10, scale: 1.02 }}
               transition={{ type: "spring", stiffness: 300 }}
             >
-              <div className="relative bg-ey-medium border border-ey-light rounded-lg p-8 hover:border-ey-yellow transition-all duration-300 h-full">
+              <div className="relative bg-ey-medium border border-ey-light rounded-lg p-8 hover:border-ey-yellow transition-all duration-300 h-full flex flex-col">
                 {/* Header */}
                 <div className="flex items-center mb-6">
                   <div className="w-16 h-16 bg-ey-yellow rounded-lg mr-4 flex items-center justify-center shadow-lg">
@@ -142,7 +147,7 @@ export default function Projects() {
                 </div>
 
                 {/* Metrics */}
-                <div className="space-y-4 mb-6">
+                <div className="space-y-4 mb-6 flex-grow">
                   <div className="flex justify-between items-center">
                     <span className="text-ey-white/70 font-medium flex items-center">
                       <Award className="w-4 h-4 mr-2" />
@@ -152,22 +157,29 @@ export default function Projects() {
                   </div>
                   <div className="flex justify-between items-center">
                     <span className="text-ey-white/70 font-medium flex items-center">
+                      <Clock className="w-4 h-4 mr-2" />
+                      Tiempo:
+                    </span>
+                    <span className="font-semibold text-ey-white">{project.time}</span>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span className="text-ey-white/70 font-medium flex items-center">
                       <Users className="w-4 h-4 mr-2" />
                       Equipo:
                     </span>
                     <span className="font-semibold text-ey-white">{project.team}</span>
                   </div>
-                  <div className="flex justify-between items-center">
+                  <div className="flex justify-between items-start min-h-[3rem]">
                     <span className="text-ey-white/70 font-medium flex items-center">
                       <TrendingUp className="w-4 h-4 mr-2" />
                       Resultado:
                     </span>
-                    <span className="font-semibold text-ey-yellow">{project.result}</span>
+                    <span className="font-semibold text-ey-yellow text-right flex-1 ml-2">{project.result}</span>
                   </div>
                 </div>
 
                 {/* Description */}
-                <div className="border-t border-ey-light pt-4">
+                <div className="border-t border-ey-light pt-4 mt-auto">
                   <p className="text-ey-white/80 leading-relaxed">{project.description}</p>
                 </div>
               </div>
@@ -189,9 +201,8 @@ export default function Projects() {
               >
                 <Award className="w-8 h-8 text-ey-black" />
               </motion.div>
-              <div className="text-5xl font-black text-ey-yellow mb-4">$71M+</div>
-              <div className="text-ey-white text-xl font-semibold mb-2">Valor Total de Proyectos</div>
-              <div className="text-ey-yellow/80 font-medium">Entregado Exitosamente</div>
+              <div className="text-4xl font-black text-ey-yellow mb-4">$120M+</div>
+              <div className="text-ey-white text-lg font-semibold mb-2 leading-tight">En negocios en la industria minería, de energía y Oil&Gas, en los últimos 8 años...</div>
               
               {/* Floating particles */}
               <div className="absolute inset-0 overflow-hidden rounded-3xl">
