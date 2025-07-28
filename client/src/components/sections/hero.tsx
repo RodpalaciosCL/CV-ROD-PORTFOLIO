@@ -59,9 +59,9 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              Liderazgo Tecnológico,
+              Liderazgo Tecnológico
               <br />
-              <span className="text-ey-yellow">Estratégico y de Negocio</span>
+              <span className="text-ey-yellow">Estratégico</span>
             </motion.h1>
 
             {/* Description */}
@@ -71,7 +71,7 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
             >
-              Líder de equipos, creador de soluciones y gestor relacional de proyectos de más de 50 millones de dólares en industria minera, sumando un track récord de ventas que supera los 100 millones de dólares, donde he sido el artífice esencial del negocio.
+              Ingeniero Industrial con 20+ años liderando transformación digital en sectores mineros y energéticos. Track record comprobado con firmas Big 4 y empresas mineras Tier 1 en Latinoamérica.
             </motion.p>
 
             {/* CTA Buttons */}
