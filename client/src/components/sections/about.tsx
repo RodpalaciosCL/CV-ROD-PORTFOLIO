@@ -179,52 +179,55 @@ export default function About() {
               ))}
             </div>
             
-            {/* Career timeline */}
-            <motion.div 
-              className="bg-ey-dark rounded-3xl p-8 relative overflow-hidden"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
-              viewport={{ once: true }}
-            >
-              <div className="absolute inset-0 bg-gradient-to-br from-ey-yellow/10 to-transparent"></div>
-              <div className="relative">
-                <h3 className="text-2xl font-black text-ey-yellow mb-8 flex items-center">
-                  <Award className="w-6 h-6 mr-3" />
-                  Trayectoria Profesional
-                </h3>
-                <div className="space-y-6">
-                  {timeline.map((item, index) => (
-                    <motion.div 
-                      key={index}
-                      className="py-4 border-b border-ey-yellow/20 last:border-b-0"
-                      initial={{ opacity: 0, x: -20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      transition={{ duration: 0.6, delay: 0.1 * index }}
-                      viewport={{ once: true }}
-                    >
-                      <div className="flex items-start justify-between mb-2">
-                        <div className="flex items-center space-x-4">
-                          <div className="w-3 h-3 bg-ey-yellow rounded-full mt-1"></div>
-                          <div>
-                            <div className="text-ey-white font-bold text-lg">{item.company}</div>
-                            <div className="text-ey-white/70 font-medium">{item.role}</div>
-                          </div>
-                        </div>
-                        <div className="text-ey-yellow font-semibold text-sm">{item.period}</div>
-                      </div>
-                      {item.description && (
-                        <div className="ml-7 text-ey-white/80 text-sm leading-relaxed">
-                          {item.description}
-                        </div>
-                      )}
-                    </motion.div>
-                  ))}
-                </div>
-              </div>
-            </motion.div>
+
           </motion.div>
         </div>
+        
+        {/* Career timeline - Full width section */}
+        <motion.div 
+          className="mt-24 bg-ey-dark rounded-3xl p-8 relative overflow-hidden"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
+          viewport={{ once: true }}
+        >
+          <div className="absolute inset-0 bg-gradient-to-br from-ey-yellow/10 to-transparent"></div>
+          <div className="relative">
+            <h3 className="text-3xl font-black text-ey-yellow mb-12 flex items-center justify-center">
+              <Award className="w-8 h-8 mr-4" />
+              Trayectoria Profesional
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {timeline.map((item, index) => (
+                <motion.div 
+                  key={index}
+                  className="bg-ey-medium rounded-xl p-6 border border-ey-light hover:border-ey-yellow transition-all duration-300"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.1 * index }}
+                  viewport={{ once: true }}
+                  whileHover={{ y: -5 }}
+                >
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="w-4 h-4 bg-ey-yellow rounded-full"></div>
+                    <div className="text-ey-yellow font-bold text-sm bg-ey-yellow/10 px-3 py-1 rounded-full">
+                      {item.period}
+                    </div>
+                  </div>
+                  <div className="mb-3">
+                    <div className="text-ey-white font-bold text-xl mb-1">{item.company}</div>
+                    <div className="text-ey-yellow font-medium text-lg">{item.role}</div>
+                  </div>
+                  {item.description && (
+                    <div className="text-ey-white/80 text-sm leading-relaxed">
+                      {item.description}
+                    </div>
+                  )}
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </motion.div>
       </div>
     </section>
   );
