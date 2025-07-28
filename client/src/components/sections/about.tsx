@@ -179,6 +179,36 @@ export default function About() {
               ))}
             </div>
             
+            {/* Professional Summary - Two connected boxes */}
+            <motion.div 
+              className="grid grid-cols-1 md:grid-cols-2 gap-1 mb-12"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.8 }}
+              viewport={{ once: true }}
+            >
+              <div className="bg-ey-yellow/10 rounded-l-2xl md:rounded-r-none rounded-r-2xl p-8 border-l-4 border-ey-yellow">
+                <div className="flex items-center mb-4">
+                  <TrendingUp className="w-6 h-6 text-ey-yellow mr-3" />
+                  <h4 className="text-xl font-bold text-ey-yellow">Resumen Ejecutivo</h4>
+                </div>
+                <p className="text-ey-white/90 leading-relaxed">
+                  Vasta experiencia en problemas complejos, liderando equipos y desarrollando nuevos revenue streams, 
+                  aportando negocios, relacionamiento, credibilidad y experiencia a las prácticas en las cuales he sido parte 
+                  y donde siempre he dejado huella.
+                </p>
+              </div>
+              <div className="bg-ey-medium rounded-r-2xl md:rounded-l-none rounded-l-2xl p-8 border-r-4 border-ey-yellow">
+                <div className="flex items-center mb-4">
+                  <Award className="w-6 h-6 text-ey-yellow mr-3" />
+                  <h4 className="text-xl font-bold text-ey-yellow">Valor Diferencial</h4>
+                </div>
+                <p className="text-ey-white/90 leading-relaxed">
+                  Capacidad única de traducir desafíos técnicos complejos en oportunidades de negocio tangibles, 
+                  combinando expertise técnico profundo con visión estratégica empresarial.
+                </p>
+              </div>
+            </motion.div>
 
           </motion.div>
         </div>
