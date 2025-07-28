@@ -179,36 +179,7 @@ export default function About() {
               ))}
             </div>
             
-            {/* Professional Summary - Two connected boxes */}
-            <motion.div 
-              className="grid grid-cols-1 md:grid-cols-2 gap-1 mb-12"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.8 }}
-              viewport={{ once: true }}
-            >
-              <div className="bg-ey-yellow/10 rounded-l-2xl md:rounded-r-none rounded-r-2xl p-8 border-l-4 border-ey-yellow">
-                <div className="flex items-center mb-4">
-                  <TrendingUp className="w-6 h-6 text-ey-yellow mr-3" />
-                  <h4 className="text-xl font-bold text-ey-yellow">Resumen Ejecutivo</h4>
-                </div>
-                <p className="text-ey-white/90 leading-relaxed">
-                  Vasta experiencia en problemas complejos, liderando equipos y desarrollando nuevos revenue streams, 
-                  aportando negocios, relacionamiento, credibilidad y experiencia a las prácticas en las cuales he sido parte 
-                  y donde siempre he dejado huella.
-                </p>
-              </div>
-              <div className="bg-ey-medium rounded-r-2xl md:rounded-l-none rounded-l-2xl p-8 border-r-4 border-ey-yellow">
-                <div className="flex items-center mb-4">
-                  <Award className="w-6 h-6 text-ey-yellow mr-3" />
-                  <h4 className="text-xl font-bold text-ey-yellow">Valor Diferencial</h4>
-                </div>
-                <p className="text-ey-white/90 leading-relaxed">
-                  Capacidad única de traducir desafíos técnicos complejos en oportunidades de negocio tangibles, 
-                  combinando expertise técnico profundo con visión estratégica empresarial.
-                </p>
-              </div>
-            </motion.div>
+
 
           </motion.div>
         </div>
@@ -255,6 +226,56 @@ export default function About() {
                   )}
                 </motion.div>
               ))}
+              
+              {/* Professional Summary - Two additional cards */}
+              <motion.div 
+                className="bg-ey-yellow/10 rounded-xl p-6 border-l-4 border-ey-yellow"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.1 * timeline.length }}
+                viewport={{ once: true }}
+                whileHover={{ y: -5 }}
+              >
+                <div className="flex items-center justify-between mb-4">
+                  <div className="w-4 h-4 bg-ey-yellow rounded-full"></div>
+                  <div className="text-ey-yellow font-bold text-sm bg-ey-yellow/10 px-3 py-1 rounded-full">
+                    Resumen
+                  </div>
+                </div>
+                <div className="mb-3">
+                  <div className="text-ey-white font-bold text-xl mb-1">Perfil Ejecutivo</div>
+                  <div className="text-ey-yellow font-medium text-lg">Liderazgo & Estrategia</div>
+                </div>
+                <div className="text-ey-white/80 text-sm leading-relaxed">
+                  Vasta experiencia en problemas complejos, liderando equipos y desarrollando nuevos revenue streams, 
+                  aportando negocios, relacionamiento, credibilidad y experiencia a las prácticas en las cuales he sido parte 
+                  y donde siempre he dejado huella.
+                </div>
+              </motion.div>
+              
+              <motion.div 
+                className="bg-ey-medium rounded-xl p-6 border-r-4 border-ey-yellow"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.1 * (timeline.length + 1) }}
+                viewport={{ once: true }}
+                whileHover={{ y: -5 }}
+              >
+                <div className="flex items-center justify-between mb-4">
+                  <div className="w-4 h-4 bg-ey-yellow rounded-full"></div>
+                  <div className="text-ey-yellow font-bold text-sm bg-ey-yellow/10 px-3 py-1 rounded-full">
+                    Diferencial
+                  </div>
+                </div>
+                <div className="mb-3">
+                  <div className="text-ey-white font-bold text-xl mb-1">Valor Único</div>
+                  <div className="text-ey-yellow font-medium text-lg">Transformación Digital</div>
+                </div>
+                <div className="text-ey-white/80 text-sm leading-relaxed">
+                  Capacidad única de traducir desafíos técnicos complejos en oportunidades de negocio tangibles, 
+                  combinando expertise técnico profundo con visión estratégica empresarial para generar impacto real.
+                </div>
+              </motion.div>
             </div>
           </div>
         </motion.div>
