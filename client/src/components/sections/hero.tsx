@@ -47,7 +47,7 @@ export default function Hero() {
                 <div className="flex items-center space-x-3">
                   <Award className="w-5 h-5 text-ey-yellow" />
                   <span className="text-ey-yellow font-bold">Ingeniero Industrial</span>
-                  <span className="text-ey-white/80">Especialista en Transformación Digital</span>
+                  <span className="text-ey-white/80">Especialista en Transformación de Negocios</span>
                 </div>
               </div>
             </motion.div>
@@ -71,8 +71,7 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
             >
-              Ingeniero Industrial con 20+ años liderando transformación digital en sectores mineros y energéticos. 
-              Track record comprobado con firmas Big 4 y empresas mineras Tier 1 en Latinoamérica.
+              Profesional con más de 20 años liderando proyectos trascendentales en industrias mineras, retail, financial services y Oil & Gas, trabajando con un amplio abanico de compañías fortune 500.
             </motion.p>
 
             {/* CTA Buttons */}
