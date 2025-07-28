@@ -173,7 +173,7 @@ export default function Hero() {
               </div>
               
               {/* Simple accent elements */}
-              <div className="absolute -top-4 -right-4 w-8 h-8 bg-ey-yellow rounded border-4 border-ey-dark"></div>
+              <div className="absolute top-8 -right-4 w-8 h-8 bg-ey-yellow rounded border-4 border-ey-dark"></div>
               <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-ey-yellow rounded-full"></div>
             </div>
           </motion.div>
