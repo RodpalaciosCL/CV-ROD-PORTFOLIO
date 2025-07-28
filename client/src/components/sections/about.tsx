@@ -55,8 +55,8 @@ export default function About() {
               <div className="absolute inset-0 bg-gradient-to-br from-ey-yellow/20 to-ey-yellow/40 rounded-3xl blur-2xl group-hover:blur-3xl transition-all duration-500"></div>
               <div className="relative w-full h-[600px] rounded-3xl shadow-2xl overflow-hidden">
                 <img 
-                  src="https://res.cloudinary.com/dhobnlg73/image/upload/v1753563327/IMG_4613_gashr6.jpg" 
-                  alt="Rodrigo Palacios - Mining Technology Expert" 
+                  src="https://res.cloudinary.com/dhobnlg73/image/upload/v1753563329/7357fed7-e020-4627-806a-fbb75bf31a8b_gu8p59.jpg" 
+                  alt="Rodrigo Palacios - Professional Profile" 
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-ey-dark/40 to-transparent"></div>
