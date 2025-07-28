@@ -96,8 +96,8 @@ export default function About() {
               viewport={{ once: true }}
             >
               <h2 className="text-5xl font-black text-ey-white mb-8">
-                Liderazgo Tecnológico, 
-                <span className="block text-ey-yellow">Estratégico y de Negocio</span>
+                Liderazgo Tecnológico 
+                <span className="block text-ey-yellow">Estratégico</span>
               </h2>
             </motion.div>
             
@@ -108,7 +108,8 @@ export default function About() {
               transition={{ duration: 0.6, delay: 0.4 }}
               viewport={{ once: true }}
             >
-              Líder de equipos, creador de soluciones y gestor relacional de proyectos de más de 50 millones de dólares en industria minera, sumando un track récord de ventas que supera los 100 millones de dólares, donde he sido el artífice esencial del negocio.
+              Ingeniero Industrial con 20+ años liderando transformación digital en sectores mineros y energéticos. 
+              Track record comprobado con firmas Big 4 y empresas mineras Tier 1 en Latinoamérica.
             </motion.p>
             
             {/* Skills cards */}

@@ -71,7 +71,7 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
             >
-              Ingeniero Industrial con 20+ años liderando transformación digital en sectores mineros y energéticos. Track record comprobado con firmas Big 4 y empresas mineras Tier 1 en Latinoamérica.
+              Profesional con más de 20 años liderando proyectos trascendentales en industrias mineras, retail, financial services y Oil & Gas, trabajando con un amplio abanico de compañías fortune 500.
             </motion.p>
 
             {/* CTA Buttons */}
