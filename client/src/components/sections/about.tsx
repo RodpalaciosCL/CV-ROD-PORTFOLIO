@@ -24,10 +24,48 @@ export default function About() {
   ];
 
   const timeline = [
-    { company: "Kyndryl", period: "2022-Presente", role: "Strategic Partner" },
-    { company: "PwC", period: "2019-2022", role: "Senior Director" },
-    { company: "Deloitte", period: "2016-2019", role: "Principal" },
-    { company: "Accenture", period: "2012-2016", role: "Manager" }
+    { 
+      company: "AIrontech", 
+      period: "2023-Presente", 
+      role: "Managing Director & AI Leader",
+      description: "A cargo del PNL, los negocios estratégicos, el relacionamiento con clientes y la práctica de AI y Visión Computacional Minera"
+    },
+    { 
+      company: "Kyndryl", 
+      period: "2020-2022", 
+      role: "Partner - Líder de Consultoría",
+      description: "Líder de la práctica de Consultoría y de la vertical de Minería, para clientes como Codelco, Glencore, Capstone, entre otros."
+    },
+    { 
+      company: "PwC", 
+      period: "2019-2020", 
+      role: "Senior Director",
+      description: "Líder de la vertical de Minería y Ciberseguridad, donde también estuve a cargo del CoE Minero y el Robotics Center"
+    },
+    { 
+      company: "Deloitte", 
+      period: "2018-2019", 
+      role: "Senior Manager",
+      description: "Lideré la Digital Transformation Immersion, Cross Industrias, y también fui Líder de la práctica de Digital en Deloitte, siendo parte del comité global de transformación de la firma."
+    },
+    { 
+      company: "R/GA", 
+      period: "2018", 
+      role: "Country Manager",
+      description: "Lideré el desembarco de la firma más creativa del mundo, en donde tuve que hacer desde la inscripción, hasta la configuración completa del equipo y sus primeros deals locales y regionales."
+    },
+    { 
+      company: "Accenture", 
+      period: "2016-2017", 
+      role: "Technology Manager & Accenture Digital Leader",
+      description: "Lideré el desembarco de Accenture Digital en Chile, trayendo los primeros negocios y siendo artífice de dos grandes contratos para la firma en ese entonces."
+    },
+    { 
+      company: "Múltiples Compañías", 
+      period: "2006-2016", 
+      role: "Emprendedor & Líder Ejecutivo",
+      description: "Creé empresas de nicho, las cuales vendí a grandes grupos, y también lideré empresas de industrias clave, donde gané premios y reconocimientos por haber aumentado el revenue de manera única, entre otras cosas."
+    }
   ];
 
   return (
@@ -157,20 +195,27 @@ export default function About() {
                   {timeline.map((item, index) => (
                     <motion.div 
                       key={index}
-                      className="flex items-center justify-between py-3 border-b border-ey-yellow/20 last:border-b-0"
+                      className="py-4 border-b border-ey-yellow/20 last:border-b-0"
                       initial={{ opacity: 0, x: -20 }}
                       whileInView={{ opacity: 1, x: 0 }}
                       transition={{ duration: 0.6, delay: 0.1 * index }}
                       viewport={{ once: true }}
                     >
-                      <div className="flex items-center space-x-4">
-                        <div className="w-3 h-3 bg-ey-yellow rounded-full"></div>
-                        <div>
-                          <div className="text-ey-white font-bold text-lg">{item.company}</div>
-                          <div className="text-ey-white/70">{item.role}</div>
+                      <div className="flex items-start justify-between mb-2">
+                        <div className="flex items-center space-x-4">
+                          <div className="w-3 h-3 bg-ey-yellow rounded-full mt-1"></div>
+                          <div>
+                            <div className="text-ey-white font-bold text-lg">{item.company}</div>
+                            <div className="text-ey-white/70 font-medium">{item.role}</div>
+                          </div>
                         </div>
+                        <div className="text-ey-yellow font-semibold text-sm">{item.period}</div>
                       </div>
-                      <div className="text-ey-yellow font-semibold">{item.period}</div>
+                      {item.description && (
+                        <div className="ml-7 text-ey-white/80 text-sm leading-relaxed">
+                          {item.description}
+                        </div>
+                      )}
                     </motion.div>
                   ))}
                 </div>
