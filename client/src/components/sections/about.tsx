@@ -93,8 +93,8 @@ export default function About() {
               <div className="absolute inset-0 bg-gradient-to-br from-ey-yellow/20 to-ey-yellow/40 rounded-3xl blur-2xl group-hover:blur-3xl transition-all duration-500"></div>
               <div className="relative bg-ey-medium rounded-3xl p-1 border border-ey-light">
                 <img 
-                  src="https://res.cloudinary.com/dq01rvzrp/image/upload/v1732825331/esat_2022_profile_lw6tvz.jpg" 
-                  alt="Rodrigo Palacios - Professional Speaker" 
+                  src="https://res.cloudinary.com/dhobnlg73/image/upload/v1753563332/_CVA4769_Original_y7efhh.jpg" 
+                  alt="Rodrigo Palacios - Professional Profile" 
                   className="w-full h-[550px] object-cover rounded-3xl"
                 />
                 <div className="absolute bottom-6 left-6 bg-ey-dark/90 backdrop-blur-md rounded-xl p-4 border border-ey-yellow/30">
