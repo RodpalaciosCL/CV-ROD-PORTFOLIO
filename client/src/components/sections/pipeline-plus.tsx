@@ -78,7 +78,7 @@ export default function PipelinePlus() {
           viewport={{ once: true }}
         >
           <motion.h2 
-            className="text-6xl md:text-7xl font-black text-ey-white mb-6"
+            className="text-4xl md:text-7xl font-black text-ey-white mb-6"
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -106,7 +106,7 @@ export default function PipelinePlus() {
           viewport={{ once: true }}
         >
           <div className="absolute inset-0 bg-gradient-to-r from-ey-yellow/20 to-ey-yellow/10 rounded-3xl blur-xl"></div>
-          <div className="relative bg-ey-dark/80 backdrop-blur-sm rounded-3xl p-12 border border-ey-yellow/30">
+          <div className="relative bg-ey-dark/80 backdrop-blur-sm rounded-3xl p-6 md:p-12 border border-ey-yellow/30">
             <div className="text-center">
               <motion.div 
                 className="inline-flex items-center justify-center w-20 h-20 bg-ey-yellow rounded-2xl mb-8"
@@ -175,7 +175,7 @@ export default function PipelinePlus() {
           <div className="absolute inset-0 bg-gradient-to-br from-ey-yellow/20 via-ey-yellow/10 to-transparent rounded-3xl blur-3xl"></div>
           <div className="absolute -inset-4 bg-gradient-to-r from-ey-yellow/5 via-transparent to-ey-yellow/5 rounded-3xl blur-2xl animate-pulse"></div>
           
-          <div className="relative bg-gradient-to-br from-ey-dark via-ey-medium/30 to-ey-dark rounded-3xl p-16 border-2 border-ey-yellow/40 shadow-2xl backdrop-blur-sm">
+          <div className="relative bg-gradient-to-br from-ey-dark via-ey-medium/30 to-ey-dark rounded-3xl p-8 md:p-16 border-2 border-ey-yellow/40 shadow-2xl backdrop-blur-sm">
             
             {/* Consortium Header with Epic Visual */}
             <div className="text-center mb-20">
@@ -198,7 +198,7 @@ export default function PipelinePlus() {
               </motion.div>
               
               <motion.h3 
-                className="text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-ey-white via-ey-yellow to-ey-white mb-12"
+                className="text-3xl md:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-ey-white via-ey-yellow to-ey-white mb-12"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
@@ -216,7 +216,7 @@ export default function PipelinePlus() {
                 viewport={{ once: true }}
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-ey-yellow/10 via-ey-yellow/20 to-ey-yellow/10 rounded-3xl blur-xl"></div>
-                <div className="relative bg-ey-dark/90 backdrop-blur-lg rounded-3xl p-12 border border-ey-yellow/50">
+                <div className="relative bg-ey-dark/90 backdrop-blur-lg rounded-3xl p-6 md:p-12 border border-ey-yellow/50">
                   <div className="flex items-center justify-center mb-8">
                     <div className="h-1 flex-1 bg-gradient-to-r from-transparent via-ey-yellow to-transparent rounded-full"></div>
                     <span className="mx-6 text-ey-yellow font-black text-lg">ALIANZA TRANSFORMACIONAL</span>
@@ -337,7 +337,7 @@ export default function PipelinePlus() {
                     whileHover={{ scale: 1.02, y: -5 }}
                   >
                     <div className="absolute inset-0 bg-gradient-to-br from-ey-yellow/20 to-transparent rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
-                    <div className="relative bg-gradient-to-br from-ey-medium/80 via-ey-dark/50 to-ey-medium/80 backdrop-blur-sm rounded-2xl p-8 border-2 border-ey-yellow/30 group-hover:border-ey-yellow/60 transition-all duration-300 shadow-xl">
+                <div className="relative bg-gradient-to-br from-ey-medium/80 via-ey-dark/50 to-ey-medium/80 backdrop-blur-sm rounded-2xl p-4 md:p-8 border-2 border-ey-yellow/30 group-hover:border-ey-yellow/60 transition-all duration-300 shadow-xl">
                       <div className="flex items-start space-x-6">
                         <motion.div 
                           className="w-16 h-16 bg-gradient-to-br from-ey-yellow to-yellow-400 rounded-xl flex items-center justify-center shadow-lg"
@@ -385,16 +385,16 @@ export default function PipelinePlus() {
                       link.click();
                       document.body.removeChild(link);
                     }}
-                    className="relative bg-gradient-to-r from-ey-dark via-ey-medium to-ey-dark rounded-3xl px-12 py-8 border-2 border-ey-yellow/60 shadow-2xl hover:border-ey-yellow/80 transition-all duration-300 hover:scale-105 cursor-pointer"
+                    className="relative bg-gradient-to-r from-ey-dark via-ey-medium to-ey-dark rounded-3xl px-6 md:px-12 py-6 md:py-8 border-2 border-ey-yellow/60 shadow-2xl hover:border-ey-yellow/80 transition-all duration-300 hover:scale-105 cursor-pointer"
                   >
-                    <div className="flex items-center justify-center space-x-4">
+                    <div className="flex flex-col md:flex-row items-center justify-center space-y-2 md:space-y-0 md:space-x-4">
                       <motion.div
                         animate={{ rotate: 360 }}
                         transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
                       >
                         <Zap className="w-8 h-8 text-ey-yellow" />
                       </motion.div>
-                      <p className="text-2xl text-ey-white font-bold">
+                      <p className="text-lg md:text-2xl text-ey-white font-bold text-center">
                         <span className="text-ey-yellow font-black text-3xl">Próximo Nivel:</span>{' '}
                         <br className="md:hidden" />
                         <span className="text-ey-white/90">Revisión Business Case y estado contractual proyectos.</span>

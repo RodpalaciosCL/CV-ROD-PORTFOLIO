@@ -66,7 +66,7 @@ export default function Value() {
           viewport={{ once: true }}
         >
           <motion.h2 
-            className="text-5xl md:text-6xl font-black text-ey-white mb-8"
+            className="text-3xl md:text-6xl font-black text-ey-white mb-8"
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
