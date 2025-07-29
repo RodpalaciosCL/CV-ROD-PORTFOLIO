@@ -1,10 +1,21 @@
 import { motion } from "framer-motion";
-import { Award, Users, Calendar, MapPin, Mic, Star, X } from "lucide-react";
-import { useState } from "react";
+import { Award, Users, Calendar, MapPin, Mic, Star, X, ChevronLeft, ChevronRight } from "lucide-react";
+import { useState, useEffect } from "react";
 
 export default function SpeakingEvents() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [selectedIndex, setSelectedIndex] = useState<number>(0);
+  
   const events = [
+    {
+      image: "https://res.cloudinary.com/dhobnlg73/image/upload/v1753810173/_CVA4755_Original_qa2wwr.jpg"
+    },
+    {
+      image: "https://res.cloudinary.com/dhobnlg73/image/upload/v1753810158/IMG_1162_ofludo.jpg"
+    },
+    {
+      image: "https://res.cloudinary.com/dhobnlg73/image/upload/v1753810221/IMG_1555_kkzmpi.jpg"
+    },
     {
       image: "https://res.cloudinary.com/dhobnlg73/image/upload/v1753563333/IMG_2573_cewyx0.jpg"
     },
@@ -51,6 +62,40 @@ export default function SpeakingEvents() {
       image: "https://res.cloudinary.com/dhobnlg73/image/upload/v1753563331/IMG_3811_uwzew7.png"
     },
   ];
+  
+  // Keyboard navigation
+  useEffect(() => {
+    const handleKeyPress = (e: KeyboardEvent) => {
+      if (!selectedImage) return;
+      
+      if (e.key === 'ArrowLeft') {
+        const newIndex = selectedIndex > 0 ? selectedIndex - 1 : events.length - 1;
+        setSelectedIndex(newIndex);
+        setSelectedImage(events[newIndex].image);
+      } else if (e.key === 'ArrowRight') {
+        const newIndex = selectedIndex < events.length - 1 ? selectedIndex + 1 : 0;
+        setSelectedIndex(newIndex);
+        setSelectedImage(events[newIndex].image);
+      } else if (e.key === 'Escape') {
+        setSelectedImage(null);
+      }
+    };
+    
+    window.addEventListener('keydown', handleKeyPress);
+    return () => window.removeEventListener('keydown', handleKeyPress);
+  }, [selectedImage, selectedIndex, events]);
+  
+  const navigateImage = (direction: 'prev' | 'next') => {
+    if (direction === 'prev') {
+      const newIndex = selectedIndex > 0 ? selectedIndex - 1 : events.length - 1;
+      setSelectedIndex(newIndex);
+      setSelectedImage(events[newIndex].image);
+    } else {
+      const newIndex = selectedIndex < events.length - 1 ? selectedIndex + 1 : 0;
+      setSelectedIndex(newIndex);
+      setSelectedImage(events[newIndex].image);
+    }
+  };
 
   const recognitionStats = [
     { value: "15+", label: "Presentaciones", icon: Mic },
@@ -120,7 +165,10 @@ export default function SpeakingEvents() {
               transition={{ duration: 0.6, delay: 0.1 * index }}
               viewport={{ once: true }}
               whileHover={{ y: -10 }}
-              onClick={() => setSelectedImage(event.image)}
+              onClick={() => {
+                setSelectedImage(event.image);
+                setSelectedIndex(index);
+              }}
             >
               <div className="relative overflow-hidden rounded-3xl shadow-xl group-hover:shadow-2xl transition-all duration-500">
                 {/* Clean image without any overlay text */}
@@ -165,12 +213,40 @@ export default function SpeakingEvents() {
               alt="Professional event photo" 
               className="max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl"
             />
+            
+            {/* Close button */}
             <button
               onClick={() => setSelectedImage(null)}
               className="absolute top-4 right-4 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-colors duration-200"
             >
               <X className="w-6 h-6" />
             </button>
+            
+            {/* Navigation buttons */}
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                navigateImage('prev');
+              }}
+              className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-3 rounded-full transition-colors duration-200"
+            >
+              <ChevronLeft className="w-6 h-6" />
+            </button>
+            
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                navigateImage('next');
+              }}
+              className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-3 rounded-full transition-colors duration-200"
+            >
+              <ChevronRight className="w-6 h-6" />
+            </button>
+            
+            {/* Image counter */}
+            <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-black/50 text-white px-3 py-1 rounded-full text-sm">
+              {selectedIndex + 1} / {events.length}
+            </div>
           </motion.div>
         </motion.div>
       )}

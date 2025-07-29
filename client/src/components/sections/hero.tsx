@@ -141,7 +141,7 @@ export default function Hero() {
               <div className="relative bg-ey-medium border border-ey-light rounded-lg p-8">
                 <div className="aspect-square bg-ey-light rounded-lg overflow-hidden">
                   <img 
-                    src="https://res.cloudinary.com/dhobnlg73/image/upload/v1753563327/IMG_4613_gashr6.jpg" 
+                    src="https://res.cloudinary.com/dhobnlg73/image/upload/v1753808500/IMG_5278_zkcpuy.jpg" 
                     alt="Rodrigo Palacios - Mining Technology Expert Presentation" 
                     className="w-full h-full object-cover"
                   />

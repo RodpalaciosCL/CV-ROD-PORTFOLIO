@@ -97,8 +97,8 @@ export default function Contact() {
             transition={{ duration: 0.8, delay: 0.4 }}
             viewport={{ once: true }}
           >
-            Conversemos sobre cómo esta asociación estratégica puede desbloquear +150 oportunidades inmediatas 
-            y establecer a EY como el consultor tecnológico minero líder en Latinoamérica.
+            Conversemos sobre cómo esta asociación estratégica puede desbloquear oportunidades de largo plazo, 
+            y establecer a EY como el partner tecnológico minero líder en Latinoamérica.
           </motion.p>
           
           {/* Primary CTA */}
@@ -169,81 +169,6 @@ export default function Contact() {
               </div>
             </motion.div>
           ))}
-        </motion.div>
-        
-        {/* Next Steps */}
-        <motion.div 
-          className="relative group"
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 1 }}
-          viewport={{ once: true }}
-        >
-          <div className="absolute inset-0 bg-gradient-to-br from-ey-yellow/20 to-ey-yellow/40 rounded-3xl blur-2xl group-hover:blur-3xl transition-all duration-500"></div>
-          <div className="relative bg-ey-yellow/10 backdrop-blur-xl rounded-3xl p-12 border border-ey-yellow/30">
-            {/* Header */}
-            <motion.div 
-              className="text-center mb-12"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-            >
-              <h3 className="text-3xl font-black text-ey-white mb-4">Próximos Pasos</h3>
-              <p className="text-ey-white/80 text-lg">Proceso simplificado para iniciar la asociación estratégica</p>
-            </motion.div>
-            
-            {/* Steps */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {nextSteps.map((step, index) => (
-                <motion.div 
-                  key={index}
-                  className="group relative"
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.1 * index }}
-                  viewport={{ once: true }}
-                  whileHover={{ y: -5 }}
-                >
-                  <div className="bg-ey-dark/60 backdrop-blur-sm rounded-2xl p-8 border border-ey-yellow/20 hover:border-ey-yellow/40 transition-all duration-300 h-full flex flex-col">
-                    {/* Step number */}
-                    <div className="flex items-center mb-6">
-                      <motion.div 
-                        className="w-12 h-12 bg-ey-yellow rounded-xl flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300"
-                        animate={{ rotate: [0, 10, -10, 0] }}
-                        transition={{ duration: 2, repeat: Infinity, delay: index * 0.3 }}
-                      >
-                        <span className="text-ey-black font-black text-lg">{step.step}</span>
-                      </motion.div>
-                      <step.icon className="w-8 h-8 text-ey-yellow" />
-                    </div>
-                    
-                    {/* Content */}
-                    <h4 className="text-xl font-bold text-ey-white mb-3 group-hover:text-ey-yellow transition-colors">
-                      {step.title}
-                    </h4>
-                    <p className="text-ey-white/80 mb-4 leading-relaxed">{step.description}</p>
-                    <div className="text-ey-yellow font-semibold text-sm">{step.timeline}</div>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-
-            {/* Bottom emphasis */}
-            <motion.div 
-              className="text-center mt-12"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.6 }}
-              viewport={{ once: true }}
-            >
-              <div className="inline-block bg-ey-dark rounded-2xl px-8 py-4 border border-ey-yellow/30">
-                <p className="text-ey-white font-medium text-lg">
-                  <span className="text-ey-yellow font-black">Objetivo:</span> Establecer asociación estratégica que genere valor inmediato para ambas organizaciones
-                </p>
-              </div>
-            </motion.div>
-          </div>
         </motion.div>
       </div>
     </section>

@@ -45,7 +45,7 @@ export default function Footer() {
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            Propuesta estratégica para acelerar la práctica de tecnología minera en Latinoamérica
+            Propuesta estratégica para acelerar la práctica de tecnología minera en&nbsp;Latinoamérica
           </motion.p>
 
           {/* Key Stats */}

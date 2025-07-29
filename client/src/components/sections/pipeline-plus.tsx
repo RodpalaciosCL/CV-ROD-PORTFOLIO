@@ -5,7 +5,7 @@ export default function PipelinePlus() {
   const currentProjects = [
     {
       icon: Building,
-      title: "Data Centers - Norte de Chile",
+      title: "Data Centers -\nNorte de Chile",
       description: "Infraestructura crítica para la transformación digital minera",
       gradient: "from-blue-500 to-cyan-500"
     },
@@ -17,7 +17,7 @@ export default function PipelinePlus() {
     },
     {
       icon: Wifi,
-      title: "Primera Fibra Oscura del Norte-Centro de Chile",
+      title: "Primera Fibra Oscura del Norte-Centro\nde Chile",
       description: "Conectividad de alta velocidad para el corredor minero",
       gradient: "from-purple-500 to-pink-500"
     },
@@ -116,7 +116,8 @@ export default function PipelinePlus() {
                 <Zap className="w-10 h-10 text-ey-black" />
               </motion.div>
               <p className="text-xl text-ey-white leading-relaxed max-w-5xl mx-auto">
-                Hoy soy una <span className="text-ey-yellow font-black">pieza clave</span> en negociaciones que cambiarán radicalmente los ingresos de quienes sean parte de este consorcio transformacional.
+                Hoy soy una <span className="text-ey-yellow font-black">pieza clave</span> en negociaciones que cambiarán radicalmente<br/>
+                los ingresos de quienes sean parte de este consorcio transformacional.
               </p>
             </div>
           </div>
@@ -246,8 +247,10 @@ export default function PipelinePlus() {
                         whileHover={{ y: -5, scale: 1.05 }}
                       >
                         <div className="absolute inset-0 bg-gradient-to-br from-ey-yellow/20 to-transparent rounded-2xl blur-lg group-hover:blur-xl transition-all duration-300"></div>
-                        <div className="relative bg-ey-medium/80 backdrop-blur-sm rounded-2xl p-6 border border-ey-yellow/30 group-hover:border-ey-yellow/60 transition-all duration-300">
-                          <partner.icon className="w-8 h-8 text-ey-yellow mb-3" />
+                        <div className="relative bg-ey-medium/80 backdrop-blur-sm rounded-2xl p-6 border border-ey-yellow/30 group-hover:border-ey-yellow/60 transition-all duration-300 text-center">
+                          <div className="flex justify-center mb-3">
+                            <partner.icon className="w-8 h-8 text-ey-yellow" />
+                          </div>
                           <h4 className="text-lg font-black text-ey-white mb-2">{partner.name}</h4>
                           <p className="text-sm text-ey-white/70">{partner.type}</p>
                         </div>
@@ -373,7 +376,17 @@ export default function PipelinePlus() {
               >
                 <div className="relative inline-block">
                   <div className="absolute inset-0 bg-gradient-to-r from-ey-yellow/30 via-ey-yellow/50 to-ey-yellow/30 rounded-3xl blur-2xl animate-pulse"></div>
-                  <div className="relative bg-gradient-to-r from-ey-dark via-ey-medium to-ey-dark rounded-3xl px-12 py-8 border-2 border-ey-yellow/60 shadow-2xl">
+                  <button 
+                    onClick={() => {
+                      const link = document.createElement('a');
+                      link.href = 'https://res.cloudinary.com/dhobnlg73/raw/upload/v1753815264/PROYECTO_CRUCES_AI_V6_ikxvmu.xlsx';
+                      link.download = 'PROYECTO_CRUCES_AI_V6.xlsx';
+                      document.body.appendChild(link);
+                      link.click();
+                      document.body.removeChild(link);
+                    }}
+                    className="relative bg-gradient-to-r from-ey-dark via-ey-medium to-ey-dark rounded-3xl px-12 py-8 border-2 border-ey-yellow/60 shadow-2xl hover:border-ey-yellow/80 transition-all duration-300 hover:scale-105 cursor-pointer"
+                  >
                     <div className="flex items-center justify-center space-x-4">
                       <motion.div
                         animate={{ rotate: 360 }}
@@ -382,7 +395,7 @@ export default function PipelinePlus() {
                         <Zap className="w-8 h-8 text-ey-yellow" />
                       </motion.div>
                       <p className="text-2xl text-ey-white font-bold">
-                        <span className="text-ey-yellow font-black text-3xl">Próximo Nivel:</span> 
+                        <span className="text-ey-yellow font-black text-3xl">Próximo Nivel:</span>{' '}
                         <br className="md:hidden" />
                         <span className="text-ey-white/90">Revisión Business Case y estado contractual proyectos.</span>
                       </p>
@@ -393,7 +406,7 @@ export default function PipelinePlus() {
                         <TrendingUp className="w-8 h-8 text-ey-yellow" />
                       </motion.div>
                     </div>
-                  </div>
+                  </button>
                 </div>
               </motion.div>
             </div>

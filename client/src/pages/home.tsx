@@ -6,7 +6,9 @@ import OptimalSolution from "@/components/sections/optimal-solution";
 import Projects from "@/components/sections/projects";
 import ActivePipeline from "@/components/sections/active-pipeline";
 import WhatIveBeenDoing from "@/components/sections/what-ive-been-doing";
+import PlugAndPlaySolutions from "@/components/sections/plug-and-play-solutions";
 import PipelinePlus from "@/components/sections/pipeline-plus";
+import Strategic from "@/components/sections/strategic";
 import Value from "@/components/sections/value";
 import Efficiency from "@/components/sections/efficiency";
 import SpeakingEvents from "@/components/sections/speaking-events";
@@ -64,7 +66,9 @@ export default function Home() {
       <Projects />
       <ActivePipeline />
       <WhatIveBeenDoing />
+      <PlugAndPlaySolutions />
       <PipelinePlus />
+      <Strategic />
       <Value />
       <Efficiency />
       <OptimalSolution />

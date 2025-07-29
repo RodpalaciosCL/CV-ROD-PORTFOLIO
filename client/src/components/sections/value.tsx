@@ -5,7 +5,7 @@ export default function Value() {
   const valueProps = [
     { 
       icon: Zap, 
-      title: "Pipeline Inmediato", 
+      title: "Pipeline Pre Commit",
       value: "$150M+", 
       description: "Oportunidades activas con alto grado de cierre",
       gradient: "from-yellow-500 to-orange-500"
@@ -19,9 +19,9 @@ export default function Value() {
     },
     { 
       icon: Award, 
-      title: "Ecosistema Plug & Play", 
-      value: "1500+", 
-      description: "Partners con soluciones específicas",
+      title: "Ecosystem As a Service", 
+      value: "1000+", 
+      description: "Partners con capacidades específicas",
       gradient: "from-green-500 to-emerald-500"
     },
     { 
@@ -154,10 +154,8 @@ export default function Value() {
             >
               <div className="flex items-center justify-center mb-8">
                 <div className="h-1 flex-1 bg-gradient-to-r from-transparent via-ey-yellow to-transparent rounded-full"></div>
-                <div className="mx-8 flex items-center space-x-4">
-                  <Star className="w-10 h-10 text-ey-yellow" />
+                <div className="mx-8">
                   <h3 className="text-5xl font-black text-ey-yellow">Ventajas Competitivas</h3>
-                  <Star className="w-10 h-10 text-ey-yellow" />
                 </div>
                 <div className="h-1 flex-1 bg-gradient-to-r from-transparent via-ey-yellow to-transparent rounded-full"></div>
               </div>
@@ -244,27 +242,15 @@ export default function Value() {
               <div className="relative inline-block">
                 <div className="absolute inset-0 bg-gradient-to-r from-ey-yellow/30 via-ey-yellow/50 to-ey-yellow/30 rounded-3xl blur-2xl animate-pulse"></div>
                 <div className="relative bg-gradient-to-r from-ey-dark via-ey-medium to-ey-dark rounded-3xl px-12 py-8 border-2 border-ey-yellow/60 shadow-2xl">
-                  <div className="flex items-center justify-center space-x-4">
-                    <motion.div
-                      animate={{ rotate: 360 }}
-                      transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
-                    >
-                      <Star className="w-8 h-8 text-ey-yellow" />
-                    </motion.div>
-                    <div className="text-center">
-                      <p className="text-3xl text-ey-yellow font-black mb-2">Resultado</p>
-                      <p className="text-xl text-ey-white font-semibold">
-                        Socio estratégico integral con acceso inmediato
-                        <br />
-                        <span className="text-ey-yellow font-black">al mercado LATAM y Global</span>
-                      </p>
-                    </div>
-                    <motion.div
-                      animate={{ rotate: -360 }}
-                      transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
-                    >
-                      <Globe className="w-8 h-8 text-ey-yellow" />
-                    </motion.div>
+                  <div className="text-center">
+                    <p className="text-3xl text-ey-yellow font-black mb-2">Resultado</p>
+                    <p className="text-lg text-ey-white font-semibold leading-relaxed max-w-4xl mx-auto">
+                      Partner estratégico integral, con acceso inmediato al mercado LATAM y Global, 
+                      <br />
+                      y con una mirada disruptiva y atingente de cómo la industria está moviéndose 
+                      <br />
+                      <span className="text-ey-yellow font-black">y el rol clave que las big consulting firms deben jugar</span>
+                    </p>
                   </div>
                 </div>
               </div>

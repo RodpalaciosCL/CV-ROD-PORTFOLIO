@@ -1,5 +1,62 @@
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { Clock, DollarSign, TrendingUp, Target } from "lucide-react";
+import { useRef, useEffect, useState } from "react";
+
+// Individual probability bar component
+function ProbabilityBar({ probability, index }) {
+  const [width, setWidth] = useState(0);
+  const [hasAnimated, setHasAnimated] = useState(false);
+  const ref = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !hasAnimated) {
+          console.log(`Starting animation for bar ${index}`);
+          setHasAnimated(true);
+          
+          // Delay each bar's animation
+          const delay = index * 400; // 400ms delay between each bar
+          
+          setTimeout(() => {
+            console.log(`Animating bar ${index} to ${probability}%`);
+            setWidth(probability);
+          }, delay);
+        }
+      },
+      { threshold: 0.3 }
+    );
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    return () => {
+      if (ref.current) {
+        observer.unobserve(ref.current);
+      }
+    };
+  }, [probability, index, hasAnimated]);
+
+  return (
+    <div ref={ref}>
+      <div className="flex items-center justify-between mb-3">
+        <span className="text-ey-white/80 text-sm font-medium">Probabilidad</span>
+        <span className="text-ey-yellow font-black text-lg">{probability}%</span>
+      </div>
+      <div className="w-full bg-gray-700/50 rounded-full h-4 overflow-hidden border border-gray-600">
+        <div 
+          className="h-full rounded-full transition-all ease-out"
+          style={{ 
+            width: `${width}%`,
+            background: 'linear-gradient(to right, #FFC107, #FFD54F)',
+            transitionDuration: '1500ms'
+          }}
+        />
+      </div>
+    </div>
+  );
+}
 
 export default function ActivePipeline() {
   const opportunities = [
@@ -113,7 +170,7 @@ export default function ActivePipeline() {
             transition={{ duration: 0.8, delay: 0.4 }}
             viewport={{ once: true }}
           >
-$151.6M en oportunidades inmediatas listas para asociación con EY
+$151.6M en oportunidades mapeadas para asociación con EY
           </motion.p>
         </motion.div>
         
@@ -156,19 +213,7 @@ $151.6M en oportunidades inmediatas listas para asociación con EY
                   
                   {/* Probability */}
                   <div>
-                    <div className="flex items-center justify-between mb-3">
-                      <span className="text-ey-white/80 text-sm font-medium">Probabilidad</span>
-                      <span className="text-ey-yellow font-black text-lg">{opportunity.probability}%</span>
-                    </div>
-                    <div className="w-full bg-gray-700/50 rounded-full h-3 overflow-hidden">
-                      <motion.div 
-                        className="bg-gradient-to-r from-ey-yellow to-yellow-400 h-3 rounded-full"
-                        initial={{ width: 0 }}
-                        whileInView={{ width: `${opportunity.probability}%` }}
-                        transition={{ duration: 1.5, delay: 0.3 + 0.1 * index }}
-                        viewport={{ once: true }}
-                      />
-                    </div>
+                    <ProbabilityBar probability={opportunity.probability} index={index} />
                   </div>
                   
                   {/* Stage & Timeline */}
@@ -210,7 +255,7 @@ $151.6M en oportunidades inmediatas listas para asociación con EY
               ${totalValue}M
             </motion.div>
             <p className="text-ey-white text-xl font-medium max-w-2xl mx-auto leading-relaxed">
-              Listo para despliegue inmediato de asociación con EY
+              Para analizar, enlistar y asegurar!
             </p>
             
             {/* Floating metrics */}

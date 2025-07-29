@@ -1,8 +1,19 @@
 import { motion } from "framer-motion";
-import { Award, Users, TrendingUp, Zap, Target, Trophy, Rocket, Gem, Clock } from "lucide-react";
+import { Award, Users, TrendingUp, Zap, Target, Trophy, Rocket, Gem, Clock, Mountain } from "lucide-react";
 
 export default function Projects() {
   const projects = [
+    {
+      company: "Goldfields",
+      title: "Puesta en Marcha Mina",
+      value: "$21M USD",
+      team: "650 personas",
+      time: "12 meses",
+      result: "Re activación mina",
+      description: "Desarrollo de sistemas anti congelantes y término de instalación faena completa",
+      gradient: "from-amber-600 to-amber-800",
+      iconComponent: Mountain
+    },
     {
       company: "Glencore",
       title: "Sistema de Gestión de Activos",
@@ -108,7 +119,7 @@ export default function Projects() {
             Logros de Proyectos <span className="text-ey-yellow">Mayores</span>
           </motion.h2>
           <motion.p 
-            className="text-xl text-ey-white/80 max-w-4xl mx-auto leading-relaxed"
+            className="text-xl text-ey-white/80 max-w-6xl mx-auto leading-relaxed"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
@@ -185,45 +196,20 @@ export default function Projects() {
               </div>
             </motion.div>
           ))}
-          
-          {/* Summary Card */}
-          <motion.div 
-            variants={itemVariants}
-            className="group relative md:col-span-2 lg:col-span-1"
-            whileHover={{ y: -10, scale: 1.02 }}
-            transition={{ type: "spring", stiffness: 300 }}
-          >
-            <div className="relative bg-ey-medium rounded-lg p-8 h-full flex flex-col items-center justify-center text-center border border-ey-light hover:border-ey-yellow transition-all duration-300">
-              <motion.div 
-                className="w-16 h-16 bg-ey-yellow rounded-lg flex items-center justify-center mb-6"
-                animate={{ rotate: [0, 10, -10, 0] }}
-                transition={{ duration: 2, repeat: Infinity }}
-              >
-                <Award className="w-8 h-8 text-ey-black" />
-              </motion.div>
-              <div className="text-4xl font-black text-ey-yellow mb-4">$120M+</div>
-              <div className="text-ey-white text-lg font-semibold mb-2 leading-tight">En negocios en la industria minería, de energía y Oil&Gas, en los últimos 8 años...</div>
-              
-              {/* Floating particles */}
-              <div className="absolute inset-0 overflow-hidden rounded-3xl">
-                <motion.div 
-                  className="absolute top-4 right-4 w-2 h-2 bg-ey-yellow rounded-full"
-                  animate={{ opacity: [0, 1, 0], scale: [1, 1.5, 1] }}
-                  transition={{ duration: 2, repeat: Infinity, delay: 0 }}
-                />
-                <motion.div 
-                  className="absolute bottom-6 left-6 w-1.5 h-1.5 bg-ey-yellow rounded-full"
-                  animate={{ opacity: [0, 1, 0], scale: [1, 1.5, 1] }}
-                  transition={{ duration: 2, repeat: Infinity, delay: 0.5 }}
-                />
-                <motion.div 
-                  className="absolute top-1/2 left-4 w-1 h-1 bg-ey-yellow rounded-full"
-                  animate={{ opacity: [0, 1, 0], scale: [1, 1.5, 1] }}
-                  transition={{ duration: 2, repeat: Infinity, delay: 1 }}
-                />
-              </div>
-            </div>
-          </motion.div>
+        </motion.div>
+        
+        {/* Separate Total Section */}
+        <motion.div 
+          className="text-center mt-16"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+          <div className="text-6xl font-black text-ey-yellow mb-4">$141M+</div>
+          <p className="text-xl text-ey-white/80 max-w-4xl mx-auto leading-relaxed">
+            En negocios en la industria minería, de energía y Oil&Gas, en los últimos 8 años...
+          </p>
         </motion.div>
       </div>
     </section>
