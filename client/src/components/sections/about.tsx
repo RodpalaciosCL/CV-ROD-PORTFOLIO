@@ -139,8 +139,7 @@ export default function About() {
               transition={{ duration: 0.6, delay: 0.4 }}
               viewport={{ once: true }}
             >
-              Ingeniero Industrial con 20+ años liderando transformación digital en sectores mineros y energéticos. 
-              Track record comprobado con firmas Big 4 y empresas mineras Tier 1 en Latinoamérica.
+              Acompañando, desafiando y guiando a los clientes en sus procesos transformacionales
             </motion.p>
             
             {/* Skills cards */}
