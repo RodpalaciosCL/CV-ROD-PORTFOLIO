@@ -56,7 +56,7 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
             >
-              Con un track récord de más de $100M+ en proyectos para la Industria Minera, mi background se compone de experiencia en Minería, Oil&Gas, Retail, Financial Services, Cementeras y Agro, contando con una experiencia horizontal y ampliamente enriquecida para tomar decisiones certeras de negocio.
+              Acompañando, desafiando y guiando a los clientes en sus procesos transformacionales
             </motion.p>
 
             {/* CTA Button */}
@@ -76,7 +76,7 @@ export default function Hero() {
                 className="bg-ey-yellow text-ey-black px-12 py-6 text-lg font-bold rounded-lg shadow-lg hover:bg-yellow-400 transition-all duration-300 w-full sm:w-auto"
               >
                 <span className="flex items-center justify-center">
-                  Ver Pipeline de $150M+
+                  Ver Pipeline
                   <ArrowRight className="w-5 h-5 ml-2" />
                 </span>
               </Button>
@@ -157,9 +157,8 @@ export default function Hero() {
                 </div>
               </div>
               
-              {/* Simple accent elements */}
-              <div className="absolute top-8 -right-4 w-8 h-8 bg-ey-yellow rounded border-4 border-ey-dark"></div>
-              <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-ey-yellow rounded-full"></div>
+              {/* Static accent elements */}
+              <div className="absolute top-4 right-4 w-8 h-8 bg-ey-yellow rounded border-4 border-ey-dark"></div>
             </div>
           </motion.div>
         </div>

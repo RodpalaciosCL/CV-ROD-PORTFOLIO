@@ -5,6 +5,7 @@ import About from "@/components/sections/about";
 import OptimalSolution from "@/components/sections/optimal-solution";
 import Projects from "@/components/sections/projects";
 import ActivePipeline from "@/components/sections/active-pipeline";
+import WhatIveBeenDoing from "@/components/sections/what-ive-been-doing";
 import PipelinePlus from "@/components/sections/pipeline-plus";
 import Value from "@/components/sections/value";
 import Efficiency from "@/components/sections/efficiency";
@@ -62,6 +63,7 @@ export default function Home() {
       <About />
       <Projects />
       <ActivePipeline />
+      <WhatIveBeenDoing />
       <PipelinePlus />
       <Value />
       <Efficiency />

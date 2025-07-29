@@ -7,21 +7,21 @@ export default function Contact() {
     {
       icon: Mail,
       title: "Email",
-      value: "rodrigo.palacios@strategic.com",
+      value: "rodrigo@airontechs.com",
       description: "",
       gradient: "from-blue-500 to-blue-700"
     },
     {
       icon: Phone,
       title: "Teléfono",
-      value: "+56 9 1234 5678",
+      value: "+56971415496",
       description: "",
       gradient: "from-green-500 to-green-700"
     },
     {
       icon: User,
       title: "LinkedIn",
-      value: "linkedin.com/in/rodrigopalacios",
+      value: "linkedin.com/in/rodpalacios",
       description: "",
       gradient: "from-purple-500 to-purple-700"
     }
@@ -52,7 +52,7 @@ export default function Contact() {
   ];
 
   return (
-    <section id="contact" className="py-32 bg-gradient-to-br from-ey-dark via-gray-900 to-black relative overflow-hidden">
+    <section id="contact" className="py-32 pb-48 bg-gradient-to-br from-ey-dark via-gray-900 to-black relative overflow-hidden">
       {/* Animated background */}
       <div className="absolute inset-0">
         <motion.div 

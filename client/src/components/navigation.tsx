@@ -12,12 +12,8 @@ export default function Navigation() {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
       
-      // Hide/show navbar based on scroll direction
-      if (currentScrollY > lastScrollY && currentScrollY > 100) {
-        setIsVisible(false);
-      } else {
-        setIsVisible(true);
-      }
+      // Always keep navbar visible
+      setIsVisible(true);
       
       // Show/hide scroll to top button
       setShowScrollTop(currentScrollY > 400);
@@ -46,7 +42,7 @@ export default function Navigation() {
       <AnimatePresence>
         {isVisible && (
           <motion.nav 
-            className="fixed top-0 w-full bg-ey-dark/95 backdrop-blur-sm z-50 border-b border-ey-yellow/20"
+            className="fixed top-0 w-full bg-ey-dark backdrop-blur-md z-50 border-b border-ey-yellow/20 shadow-lg"
             initial={{ y: 0 }}
             animate={{ y: 0 }}
             exit={{ y: -100 }}

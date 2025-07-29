@@ -293,7 +293,7 @@ export default function PipelinePlus() {
                         <metric.icon className="w-10 h-10 text-ey-yellow" />
                       </motion.div>
                       <motion.div 
-                        className="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-ey-yellow to-yellow-300 mb-4"
+                        className="text-5xl font-black text-ey-yellow mb-4"
                         initial={{ scale: 0.8 }}
                         whileInView={{ scale: 1 }}
                         transition={{ type: "spring", stiffness: 200, delay: 0.3 + 0.1 * index }}
