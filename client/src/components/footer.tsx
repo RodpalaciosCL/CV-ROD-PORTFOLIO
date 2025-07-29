@@ -79,6 +79,9 @@ export default function Footer() {
             viewport={{ once: true }}
           />
 
+          {/* Spacer before true footer */}
+          <div className="h-16"></div>
+          
           {/* Copyright and Made with */}
           <motion.div 
             className="flex flex-col md:flex-row items-center justify-between text-ey-white/60 text-sm mt-8"
