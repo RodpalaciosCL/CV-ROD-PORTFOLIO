@@ -58,7 +58,7 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
             >
-              Acompañando, desafiando y guiando a los clientes en sus procesos transformacionales
+              Con un track récord de más de $100M+ en proyectos para la Industria Minera, mi background se compone de experiencia en Minería, Oil&Gas, Retail, Financial Services, Cementeras y Agro, contando con una experiencia horizontal y ampliamente enriquecida para tomar decisiones certeras de negocio.
             </motion.p>
 
             {/* CTA Button */}
