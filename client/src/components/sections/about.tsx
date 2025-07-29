@@ -127,8 +127,8 @@ export default function About() {
               viewport={{ once: true }}
             >
               <h2 className="text-5xl font-black text-ey-white mb-8">
-                Liderazgo Tecnológico 
-                <span className="block text-ey-yellow">Estratégico</span>
+                <span className="text-ey-yellow">Creando equipos, fortaleciendo relaciones</span>
+                <span className="block text-ey-white">y empoderando la práctica</span>
               </h2>
             </motion.div>
             
@@ -139,7 +139,7 @@ export default function About() {
               transition={{ duration: 0.6, delay: 0.4 }}
               viewport={{ once: true }}
             >
-              Acompañando, desafiando y guiando a los clientes en sus procesos transformacionales
+              para acompañar, desafiar y guiar a nuestros clientes en las decisiones más trascendentales
             </motion.p>
             
             {/* Skills cards */}
