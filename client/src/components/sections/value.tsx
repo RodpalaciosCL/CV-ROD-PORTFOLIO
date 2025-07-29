@@ -114,7 +114,7 @@ export default function Value() {
                 
                 {/* Value */}
                 <motion.div 
-                  className="text-4xl font-black text-ey-yellow mb-4"
+                  className="text-4xl font-black text-ey-yellow mb-4 flex items-center justify-center min-h-[3rem]"
                   initial={{ scale: 0.8 }}
                   whileInView={{ scale: 1 }}
                   transition={{ type: "spring", stiffness: 200, delay: 0.3 + 0.1 * index }}

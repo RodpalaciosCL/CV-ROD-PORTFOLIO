@@ -144,10 +144,10 @@ export default function WhatIveBeenDoing() {
               transition={{ duration: 0.6, delay: 0.8 }}
               viewport={{ once: true }}
             >
-              <h3 className="text-2xl font-black text-ey-white mb-4">
+              <h3 className="text-2xl font-black text-ey-white mb-2">
                 Proyectos en <span className="text-ey-yellow">Acción</span>
               </h3>
-              <p className="text-ey-white/80 text-lg leading-relaxed max-w-3xl mx-auto">
+              <p className="text-lg text-ey-white/80 leading-relaxed max-w-4xl mx-auto">
                 Desde bodegaje, predicción, asignación y alertas, hasta control operativo y visualización 360 de faenas
               </p>
             </motion.div>
