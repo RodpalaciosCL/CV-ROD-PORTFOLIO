@@ -70,6 +70,8 @@ export default function Home() {
       <OptimalSolution />
       <SpeakingEvents />
       <Contact />
+      {/* Spacer before footer */}
+      <div className="h-24 bg-ey-dark"></div>
       <Footer />
     </div>
   );
