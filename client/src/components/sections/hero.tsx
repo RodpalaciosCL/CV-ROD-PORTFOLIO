@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Download, Award, User } from "lucide-react";
 
-// Deploy timestamp: 2025-07-29T02:48:00Z
+// Deploy timestamp: 2025-07-29T02:52:44Z - CORRECTED HERO TEXT
 
 export default function Hero() {
   const [count1, setCount1] = useState(0);
