@@ -1,5 +1,5 @@
 import { motion, useInView } from "framer-motion";
-import { Clock, DollarSign, TrendingUp, Target } from "lucide-react";
+import { Clock, DollarSign, TrendingUp, Target, X, Building2, Zap, Handshake, Truck, BarChart3 } from "lucide-react";
 import { useRef, useEffect, useState } from "react";
 
 // Individual probability bar component
@@ -59,6 +59,8 @@ function ProbabilityBar({ probability, index }) {
 }
 
 export default function ActivePipeline() {
+  const [showCodelcoModal, setShowCodelcoModal] = useState(false);
+  
   const opportunities = [
     {
       company: "Anglo American",
@@ -187,7 +189,16 @@ $151.6M en oportunidades mapeadas para asociación con EY
               whileHover={{ scale: 1.02, y: -5 }}
             >
               <div className="absolute inset-0 bg-gradient-to-r from-ey-yellow/10 to-ey-yellow/20 rounded-2xl blur-lg group-hover:blur-xl transition-all duration-300"></div>
-              <div className="relative bg-ey-white/10 backdrop-blur-xl rounded-2xl p-8 border border-ey-yellow/20 hover:border-ey-yellow/40 transition-all duration-300">
+              <div 
+                className={`relative bg-ey-white/10 backdrop-blur-xl rounded-2xl p-8 border border-ey-yellow/20 hover:border-ey-yellow/40 transition-all duration-300 ${
+                  opportunity.company === 'Codelco' ? 'cursor-pointer' : ''
+                }`}
+                onClick={() => {
+                  if (opportunity.company === 'Codelco') {
+                    setShowCodelcoModal(true);
+                  }
+                }}
+              >
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-6 items-center">
                   {/* Company & Project */}
                   <div className="flex items-center space-x-4">
@@ -293,6 +304,140 @@ $151.6M en oportunidades mapeadas para asociación con EY
           </div>
         </motion.div>
       </div>
+      
+      {/* Modal de Codelco - Rediseñado */}
+      {showCodelcoModal && (
+        <motion.div 
+          className="fixed inset-0 bg-black/90 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          onClick={() => setShowCodelcoModal(false)}
+        >
+          <motion.div 
+            className="relative max-w-5xl w-full bg-ey-dark border-2 border-ey-yellow rounded-3xl shadow-2xl overflow-hidden"
+            initial={{ scale: 0.8, opacity: 0, y: 50 }}
+            animate={{ scale: 1, opacity: 1, y: 0 }}
+            exit={{ scale: 0.8, opacity: 0, y: 50 }}
+            transition={{ type: "spring", damping: 25, stiffness: 300 }}
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Header with gradient */}
+            <div className="bg-gradient-to-r from-ey-yellow to-ey-yellow/80 p-6 relative">
+              <button
+                onClick={() => setShowCodelcoModal(false)}
+                className="absolute top-4 right-4 bg-ey-black/20 hover:bg-ey-black/40 text-ey-black p-2 rounded-full transition-all duration-200 hover:scale-110"
+              >
+                <X className="w-6 h-6" />
+              </button>
+              
+              <div className="flex items-center space-x-4">
+                <div className="w-16 h-16 bg-red-600 rounded-xl flex items-center justify-center shadow-lg">
+                  <Building2 className="w-10 h-10 text-white" />
+                </div>
+                <div>
+                  <h3 className="text-3xl font-black text-white">
+                    Codelco - Sistema de Gestión Obsoletos
+                  </h3>
+                  <p className="text-ey-black/80 font-semibold text-lg">Información Detallada del Proyecto</p>
+                </div>
+              </div>
+            </div>
+            
+            {/* Content */}
+            <div className="p-8">
+              {/* Key Metrics Row */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                <div className="bg-ey-medium border border-ey-yellow/30 rounded-xl p-6 text-center">
+                  <DollarSign className="w-12 h-12 text-ey-yellow mx-auto mb-3" />
+                  <div className="text-3xl font-black text-ey-yellow mb-1">$2B</div>
+                  <div className="text-ey-white/80 font-medium">Valor Total Obsoletos</div>
+                </div>
+                
+                <div className="bg-ey-medium border border-ey-yellow/30 rounded-xl p-6 text-center">
+                  <BarChart3 className="w-12 h-12 text-ey-yellow mx-auto mb-3" />
+                  <div className="text-3xl font-black text-ey-yellow mb-1">$60M+</div>
+                  <div className="text-ey-white/80 font-medium">Vendido Año Pasado</div>
+                </div>
+                
+                <div className="bg-ey-medium border border-ey-yellow/30 rounded-xl p-6 text-center">
+                  <Target className="w-12 h-12 text-ey-yellow mx-auto mb-3" />
+                  <div className="text-2xl font-black text-ey-yellow mb-1">Contrato</div>
+                  <div className="text-ey-white/80 font-medium">Adjudicado</div>
+                </div>
+              </div>
+              
+              {/* Capabilities Grid */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="bg-ey-medium/80 backdrop-blur-sm rounded-xl p-6 border border-ey-yellow/20">
+                  <div className="flex items-start space-x-4">
+                    <div className="w-12 h-12 bg-ey-yellow rounded-lg flex items-center justify-center flex-shrink-0">
+                      <Building2 className="w-6 h-6 text-ey-black" />
+                    </div>
+                    <div>
+                      <h4 className="text-xl font-bold text-ey-white mb-2">Expertise en Codelco</h4>
+                      <p className="text-ey-white/90 leading-relaxed">
+                        Capacidad única de comprender la fibra de una parte clave del negocio de Codelco
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="bg-ey-medium/80 backdrop-blur-sm rounded-xl p-6 border border-ey-yellow/20">
+                  <div className="flex items-start space-x-4">
+                    <div className="w-12 h-12 bg-ey-yellow rounded-lg flex items-center justify-center flex-shrink-0">
+                      <Zap className="w-6 h-6 text-ey-black" />
+                    </div>
+                    <div>
+                      <h4 className="text-xl font-bold text-ey-white mb-2">Operación Inmediata</h4>
+                      <p className="text-ey-white/90 leading-relaxed">
+                        Capacidad inmediata de operación con infraestructura y procesos ya establecidos
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="bg-ey-medium/80 backdrop-blur-sm rounded-xl p-6 border border-ey-yellow/20">
+                  <div className="flex items-start space-x-4">
+                    <div className="w-12 h-12 bg-ey-yellow rounded-lg flex items-center justify-center flex-shrink-0">
+                      <Handshake className="w-6 h-6 text-ey-black" />
+                    </div>
+                    <div>
+                      <h4 className="text-xl font-bold text-ey-white mb-2">Alianzas Estratégicas</h4>
+                      <p className="text-ey-white/90 leading-relaxed">
+                        Asociación con NCA, la casa de subastas más grande de USA
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="bg-ey-medium/80 backdrop-blur-sm rounded-xl p-6 border border-ey-yellow/20">
+                  <div className="flex items-start space-x-4">
+                    <div className="w-12 h-12 bg-ey-yellow rounded-lg flex items-center justify-center flex-shrink-0">
+                      <Truck className="w-6 h-6 text-ey-black" />
+                    </div>
+                    <div>
+                      <h4 className="text-xl font-bold text-ey-white mb-2">Logística Integrada</h4>
+                      <p className="text-ey-white/90 leading-relaxed">
+                        Despliegue y logística lista con Ferronor para operaciones a gran escala
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Bottom CTA */}
+              <div className="mt-8 text-center">
+                <div className="inline-block bg-gradient-to-r from-ey-yellow/20 to-ey-yellow/10 border border-ey-yellow/30 rounded-xl px-8 py-4">
+                  <p className="text-ey-white font-bold text-lg">
+                    <span className="text-ey-yellow">Ventaja Competitiva:</span> Track record on/off +24 meses haciendo remates
+                  </p>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </motion.div>
+      )}
     </section>
   );
 }
