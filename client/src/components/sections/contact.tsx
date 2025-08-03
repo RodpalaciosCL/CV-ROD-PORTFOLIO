@@ -9,21 +9,24 @@ export default function Contact() {
       title: "Email",
       value: "rodrigo@airontechs.com",
       description: "",
-      gradient: "from-blue-500 to-blue-700"
+      gradient: "from-blue-500 to-blue-700",
+      action: () => window.location.href = 'mailto:rodrigo@airontechs.com'
     },
     {
       icon: Phone,
       title: "Teléfono",
       value: "+56971415496",
       description: "",
-      gradient: "from-green-500 to-green-700"
+      gradient: "from-green-500 to-green-700",
+      action: () => window.open('https://wa.me/56971415496', '_blank')
     },
     {
       icon: User,
       title: "LinkedIn",
       value: "linkedin.com/in/rodpalacios",
       description: "",
-      gradient: "from-purple-500 to-purple-700"
+      gradient: "from-purple-500 to-purple-700",
+      action: () => window.open('https://linkedin.com/in/rodpalacios', '_blank')
     }
   ];
 
@@ -145,12 +148,13 @@ export default function Contact() {
           {contactMethods.map((method, index) => (
             <motion.div 
               key={index}
-              className="group relative"
+              className="group relative cursor-pointer"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 * index }}
               viewport={{ once: true }}
               whileHover={{ y: -10 }}
+              onClick={method.action}
             >
               <div className="absolute inset-0 bg-gradient-to-br from-ey-yellow/10 to-ey-yellow/20 rounded-2xl blur-lg group-hover:blur-xl transition-all duration-300"></div>
               <div className="relative bg-ey-white/5 backdrop-blur-xl rounded-2xl p-8 border border-ey-yellow/20 hover:border-ey-yellow/40 transition-all duration-300 text-center">
@@ -164,8 +168,8 @@ export default function Contact() {
                 <h3 className="text-lg font-bold text-ey-white mb-3 group-hover:text-ey-yellow transition-colors">
                   {method.title}
                 </h3>
-                <p className="text-ey-yellow font-semibold mb-2">{method.value}</p>
-                <p className="text-ey-white/70 text-sm">{method.description}</p>
+                <p className="text-ey-yellow font-semibold mb-2 group-hover:underline">{method.value}</p>
+                <p className="text-ey-white/70 text-sm group-hover:text-ey-white/90 transition-colors">Click para contactar</p>
               </div>
             </motion.div>
           ))}

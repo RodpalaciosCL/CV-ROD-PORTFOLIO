@@ -7,6 +7,7 @@ import Projects from "@/components/sections/projects";
 import ActivePipeline from "@/components/sections/active-pipeline";
 import WhatIveBeenDoing from "@/components/sections/what-ive-been-doing";
 import PlugAndPlaySolutions from "@/components/sections/plug-and-play-solutions";
+import Security from "@/components/sections/security";
 import PipelinePlus from "@/components/sections/pipeline-plus";
 import Strategic from "@/components/sections/strategic";
 import Value from "@/components/sections/value";
@@ -67,6 +68,7 @@ export default function Home() {
       <ActivePipeline />
       <WhatIveBeenDoing />
       <PlugAndPlaySolutions />
+      <Security />
       <PipelinePlus />
       <Strategic />
       <Value />
