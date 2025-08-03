@@ -19,12 +19,12 @@ export default function Efficiency() {
     { label: "Nivel de Riesgo", value: "Mínimo", icon: Shield, negative: false },
     { label: "Acceso a Pipeline", value: "Inmediato", icon: Target, negative: false }
   ];
-
-  const roiMetrics = [
-    { value: "10x", label: "Despliegue Más Rápido", sublabel: "vs contratación tradicional" },
-    { value: "90%", label: "Reducción de Costos", sublabel: "vs contrataciones separadas" },
-    { value: "Inmediato", label: "Acceso a Pipeline", sublabel: "+$150M oportunidades" }
-  ];
+           
+            const roiMetrics = [
+              { value: "10x", label: "Despliegue Más Rápido", sublabel: "vs contratación tradicional" },
+              { value: "90%", label: "Reducción de Costos", sublabel: "vs contrataciones separadas" },
+              { value: "Inmediato", label: "Acceso a Pipeline", sublabel: "+$150M oportunidades" }
+            ];
 
   return (
     <section id="efficiency" className="py-32 bg-ey-dark relative overflow-hidden">
@@ -58,8 +58,7 @@ export default function Efficiency() {
           </motion.p>
         </motion.div>
         
-        {/* EY Profiles Section */}
-        <motion.div 
+        <motion.div
           className="relative mb-20"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}

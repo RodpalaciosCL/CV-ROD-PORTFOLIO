@@ -62,6 +62,23 @@ export default function SpeakingEvents() {
       image: "https://res.cloudinary.com/dhobnlg73/image/upload/v1753563331/IMG_3811_uwzew7.png"
     },
   ];
+
+  const newImages = [
+    "https://res.cloudinary.com/dhobnlg73/image/upload/v1754192222/97687553_1364588770397246_1578362694157729792_n_jev48f.jpg",
+    "https://res.cloudinary.com/dhobnlg73/image/upload/v1754192222/IMG_0069_jvvcoq.jpg",
+    "https://res.cloudinary.com/dhobnlg73/image/upload/v1754192222/0c08dac3-592e-4138-b852-0d1dfc07d9db_ysqh4t.jpg",
+    "https://res.cloudinary.com/dhobnlg73/image/upload/v1753810153/c82c4a60-4199-4a61-99c0-bd908f87a420_tchhwy.jpg",
+    "https://res.cloudinary.com/dhobnlg73/image/upload/v1753563331/16eca60a-fe76-48b3-a74b-8029c2cfc872_ri8vt7.jpg",
+    "https://res.cloudinary.com/dhobnlg73/image/upload/v1754192512/39cc8b3c-4a2e-4946-8e23-3408f9f708e9_cxlggn.jpg",
+    "https://res.cloudinary.com/dhobnlg73/image/upload/v1754194054/526656827_10163875433374225_7163308756814852465_n_fbpbfc.jpg",
+    "https://res.cloudinary.com/dhobnlg73/image/upload/v1754194054/IMG_2014_vv2xsv.jpg",
+    "https://res.cloudinary.com/dhobnlg73/image/upload/v1754194055/Captura_de_pantalla_2025-08-03_a_la_s_00.06.48_trgpdp.png",
+  ];
+
+  const combinedEvents = [
+    ...events,
+    ...newImages.map(image => ({ image })),
+  ];
   
   // Keyboard navigation
   useEffect(() => {
@@ -69,13 +86,13 @@ export default function SpeakingEvents() {
       if (!selectedImage) return;
       
       if (e.key === 'ArrowLeft') {
-        const newIndex = selectedIndex > 0 ? selectedIndex - 1 : events.length - 1;
+        const newIndex = selectedIndex > 0 ? selectedIndex - 1 : combinedEvents.length - 1;
         setSelectedIndex(newIndex);
-        setSelectedImage(events[newIndex].image);
+        setSelectedImage(combinedEvents[newIndex].image);
       } else if (e.key === 'ArrowRight') {
-        const newIndex = selectedIndex < events.length - 1 ? selectedIndex + 1 : 0;
+        const newIndex = selectedIndex < combinedEvents.length - 1 ? selectedIndex + 1 : 0;
         setSelectedIndex(newIndex);
-        setSelectedImage(events[newIndex].image);
+        setSelectedImage(combinedEvents[newIndex].image);
       } else if (e.key === 'Escape') {
         setSelectedImage(null);
       }
@@ -83,17 +100,17 @@ export default function SpeakingEvents() {
     
     window.addEventListener('keydown', handleKeyPress);
     return () => window.removeEventListener('keydown', handleKeyPress);
-  }, [selectedImage, selectedIndex, events]);
+  }, [selectedImage, selectedIndex, combinedEvents]);
   
   const navigateImage = (direction: 'prev' | 'next') => {
     if (direction === 'prev') {
-      const newIndex = selectedIndex > 0 ? selectedIndex - 1 : events.length - 1;
+      const newIndex = selectedIndex > 0 ? selectedIndex - 1 : combinedEvents.length - 1;
       setSelectedIndex(newIndex);
-      setSelectedImage(events[newIndex].image);
+      setSelectedImage(combinedEvents[newIndex].image);
     } else {
-      const newIndex = selectedIndex < events.length - 1 ? selectedIndex + 1 : 0;
+      const newIndex = selectedIndex < combinedEvents.length - 1 ? selectedIndex + 1 : 0;
       setSelectedIndex(newIndex);
-      setSelectedImage(events[newIndex].image);
+      setSelectedImage(combinedEvents[newIndex].image);
     }
   };
 
@@ -156,8 +173,8 @@ export default function SpeakingEvents() {
           transition={{ duration: 0.8, delay: 0.6 }}
           viewport={{ once: true }}
         >
-          {events.map((event, index) => (
-            <motion.div 
+          {combinedEvents.map((event, index) => (
+            <motion.div
               key={index}
               className="group relative cursor-pointer"
               initial={{ opacity: 0, y: 30 }}
@@ -245,7 +262,7 @@ export default function SpeakingEvents() {
             
             {/* Image counter */}
             <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-black/50 text-white px-3 py-1 rounded-full text-sm">
-              {selectedIndex + 1} / {events.length}
+              {selectedIndex + 1} / {combinedEvents.length}
             </div>
           </motion.div>
         </motion.div>
