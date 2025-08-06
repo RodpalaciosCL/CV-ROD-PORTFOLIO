@@ -185,7 +185,7 @@ export default function ActivePipeline() {
   const averageProbability = Math.round(opportunities.reduce((sum, opp) => sum + opp.probability, 0) / opportunities.length);
 
   return (
-    <section id="pipeline" className="py-16 bg-ey-dark relative overflow-hidden">
+    <section id="pipeline" className="pt-24 pb-16 bg-ey-dark relative overflow-hidden">
       {/* Animated background */}
       <div className="absolute inset-0">
         <motion.div 

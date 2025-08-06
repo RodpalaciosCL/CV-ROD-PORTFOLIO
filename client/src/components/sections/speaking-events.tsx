@@ -152,7 +152,7 @@ export default function SpeakingEvents() {
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
           >
-Hagámoslo juntos y <span className="text-ey-yellow">contémosle al mundo!</span>
+<span className="whitespace-nowrap">Hagámoslo juntos y <span className="text-ey-yellow">contémosle al mundo!</span></span>
           </motion.h2>
           <motion.p 
             className="text-xl text-ey-white/80 max-w-4xl mx-auto leading-relaxed"
@@ -161,7 +161,7 @@ Hagámoslo juntos y <span className="text-ey-yellow">contémosle al mundo!</span
             transition={{ duration: 0.8, delay: 0.4 }}
             viewport={{ once: true }}
           >
-            Liderazgo de pensamiento y presencia profesional en sectores mineros y tecnológicos
+            Tomemos la posta y seamos referentes en la industria
           </motion.p>
         </motion.div>
         

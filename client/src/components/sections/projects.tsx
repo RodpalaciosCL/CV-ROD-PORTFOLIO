@@ -93,7 +93,7 @@ export default function Projects() {
   };
 
   return (
-    <section id="projects" className="py-16 bg-ey-dark relative overflow-hidden">
+    <section id="projects" className="pt-24 pb-16 bg-ey-dark relative overflow-hidden">
       {/* Background elements */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-20 left-20 w-40 h-40 bg-ey-yellow rounded-full blur-3xl"></div>

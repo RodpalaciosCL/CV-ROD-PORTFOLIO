@@ -41,7 +41,7 @@ export default function Value() {
   ];
 
   return (
-    <section id="value" className="py-16 bg-ey-dark relative overflow-hidden">
+    <section id="value" className="pt-24 pb-16 bg-ey-dark relative overflow-hidden">
       {/* Animated background elements */}
       <div className="absolute inset-0">
         <motion.div 

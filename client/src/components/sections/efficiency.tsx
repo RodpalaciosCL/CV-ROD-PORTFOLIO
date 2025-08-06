@@ -20,7 +20,7 @@ export default function Efficiency() {
     },
     {
       icon: Target,
-      title: "Tiempo de disrompir",
+      title: "Hora de desafiar",
       description: "Traer revenues no explorados sin descuidar el as-is que ha llevado a EY al éxito",
       gradient: "from-ey-yellow to-orange-500"
     }
@@ -261,6 +261,116 @@ export default function Efficiency() {
                     </motion.div>
                   </div>
                 </motion.div>
+              </motion.div>
+              
+              {/* Statement Section */}
+              <motion.div 
+                className="mt-16"
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.6 }}
+                viewport={{ once: true }}
+              >
+                <div className="bg-gradient-to-br from-ey-medium/60 via-ey-dark/80 to-ey-medium/60 rounded-3xl p-8 border-2 border-ey-yellow/40 backdrop-blur-sm">
+                  <motion.h3 
+                    className="text-3xl md:text-4xl font-black text-ey-yellow mb-8 text-center"
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.8, delay: 0.2 }}
+                    viewport={{ once: true }}
+                  >
+                    Statement
+                  </motion.h3>
+                  
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    {/* Tengo */}
+                    <motion.div 
+                      className="bg-ey-white/5 rounded-2xl p-6 border border-ey-yellow/20"
+                      initial={{ opacity: 0, x: -30 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.8, delay: 0.3 }}
+                      viewport={{ once: true }}
+                    >
+                      <h4 className="text-xl font-black text-ey-yellow mb-3 flex items-center">
+                        <Users className="w-6 h-6 mr-2" />
+                        Tengo
+                      </h4>
+                      <p className="text-ey-white/90 text-base leading-relaxed">
+                        La capacidad de liderar equipos, visualizar talentos de manera temprana y potenciar el sentido de pertenencia y propósito, junto con hacer del trabajo un lugar cálido, desafiante y sumamente interesante, donde el ánimo por darlo sea una constante, y los beneficios por hacerlo sean el premio de esta colaboración en conjunto.
+                      </p>
+                    </motion.div>
+                    
+                    {/* Soy */}
+                    <motion.div 
+                      className="bg-ey-white/5 rounded-2xl p-6 border border-ey-yellow/20"
+                      initial={{ opacity: 0, x: 30 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.8, delay: 0.4 }}
+                      viewport={{ once: true }}
+                    >
+                      <h4 className="text-xl font-black text-ey-yellow mb-3 flex items-center">
+                        <Star className="w-6 h-6 mr-2" />
+                        Soy
+                      </h4>
+                      <p className="text-ey-white/90 text-base leading-relaxed">
+                        Un fiel embajador de los beneficios y oportunidades de trabajar en una big four, y una compañía como EY, que muchas veces quienes lo viven "desde siempre" no le toman el valor, pero la red, la documentación y cantidad de assets que se tiene al alcance y el nivel de aprendizaje y estímulos que se vienen a diario, son sólo comparables con estar cursando en MBA constante, y de la más alta calidad de contenido.
+                      </p>
+                    </motion.div>
+                  </div>
+                  
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-8">
+                    {/* Quiero */}
+                    <motion.div 
+                      className="bg-ey-white/5 rounded-2xl p-6 border border-ey-yellow/20"
+                      initial={{ opacity: 0, x: -30 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.8, delay: 0.5 }}
+                      viewport={{ once: true }}
+                    >
+                      <h4 className="text-xl font-black text-ey-yellow mb-3 flex items-center">
+                        <Target className="w-6 h-6 mr-2" />
+                        Quiero
+                      </h4>
+                      <p className="text-ey-white/90 text-base leading-relaxed">
+                        Conectarme con un equipo con hambre y ganas de ser líderes, y a su vez referentes, pero de esos que hablan sobre sus logros, aportes y calidad de entregables. Quiero ser "Pioneer y no "Follower", y que la industria nos valide por nuestros actos, y no los compromisos o promesas sin cumplir, y por último, quiero aportar a que la firma sea el referente cuando alguien piense en buscar, llamar o seleccionar un partner para acompañarlos en momentos complejos, decisivos, trascendentales y decidores.
+                      </p>
+                    </motion.div>
+                    
+                    {/* Puedo */}
+                    <motion.div 
+                      className="bg-ey-white/5 rounded-2xl p-6 border border-ey-yellow/20"
+                      initial={{ opacity: 0, x: 30 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.8, delay: 0.6 }}
+                      viewport={{ once: true }}
+                    >
+                      <h4 className="text-xl font-black text-ey-yellow mb-3 flex items-center">
+                        <Zap className="w-6 h-6 mr-2" />
+                        Puedo
+                      </h4>
+                      <p className="text-ey-white/90 text-base leading-relaxed">
+                        Aportar valor, frescura, una mirada altamente enfocada en el "negocio inteligente", como también una capacidad de articulación, seguimiento y cierre única, la cual debiese marcar un precedente en mediano plazo, junto con la forma en cómo abordar oportunidades, transformar problemáticas e identificar posibilidades no sólo para la práctica, sino también para el resto de la compañía, junto con ser un agente de cambio y evangelizador nato del trabajo en equipo, la colaboración como mantra y el respeto hacia lo que hacemos y el cómo lo ofrecemos.
+                      </p>
+                    </motion.div>
+                  </div>
+                  
+                  {/* Espero - Full width at bottom */}
+                  <motion.div 
+                    className="bg-gradient-to-r from-ey-yellow/10 via-ey-yellow/20 to-ey-yellow/10 rounded-2xl p-6 border-2 border-ey-yellow/30 mt-8"
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, delay: 0.7 }}
+                    viewport={{ once: true }}
+                  >
+                    <h4 className="text-xl font-black text-ey-yellow mb-3 flex items-center justify-center">
+                      <Heart className="w-6 h-6 mr-2" />
+                      Espero
+                    </h4>
+                    <p className="text-ey-white/90 text-base leading-relaxed text-center">
+                      Poder demostrarles mi gran capacidad de gestión, relacionamiento, visualización y aseguramiento, para lograr la escalabilidad de una práctica sostenible en el tiempo y altamente rentable como negocio.
+                    </p>
+                  </motion.div>
+                </div>
               </motion.div>
               
               <motion.div 

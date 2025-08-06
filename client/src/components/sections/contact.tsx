@@ -1,6 +1,40 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Mail, Phone, User, Calendar, MessageSquare, ArrowRight } from "lucide-react";
+import { useState, useEffect } from "react";
+
+// Typewriter effect component
+function TypewriterText({ text, delay = 0 }) {
+  const [displayText, setDisplayText] = useState('');
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsVisible(true);
+    }, delay);
+    return () => clearTimeout(timer);
+  }, [delay]);
+
+  useEffect(() => {
+    if (!isVisible) return;
+    
+    if (currentIndex < text.length) {
+      const timer = setTimeout(() => {
+        setDisplayText(prev => prev + text[currentIndex]);
+        setCurrentIndex(prev => prev + 1);
+      }, 80); // Speed of typing
+      return () => clearTimeout(timer);
+    }
+  }, [currentIndex, text, isVisible]);
+
+  return (
+    <span>
+      {displayText}
+      {currentIndex < text.length && <span className="animate-pulse">|</span>}
+    </span>
+  );
+}
 
 export default function Contact() {
   const contactMethods = [
@@ -91,7 +125,16 @@ export default function Contact() {
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            ¿Listo para Acelerar la <span className="text-ey-yellow">Práctica Minera de EY?</span>
+            <TypewriterText 
+              text="¿Listo para Acelerar la " 
+              delay={800}
+            />
+            <span className="text-ey-yellow">
+              <TypewriterText 
+                text="Práctica Minera de EY?"
+                delay={2400}
+              />
+            </span>
           </motion.h2>
           <motion.p 
             className="text-xl text-ey-yellow/80 mb-12 max-w-4xl mx-auto leading-relaxed"

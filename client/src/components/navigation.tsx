@@ -50,8 +50,14 @@ export default function Navigation() {
           >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="flex justify-between items-center py-4">
-                <div className="text-ey-yellow text-xl font-bold">RP</div>
-                <div className="hidden md:flex space-x-6">
+                <div className="flex items-center">
+                  <img 
+                    src="https://res.cloudinary.com/dhobnlg73/image/upload/v1754256023/EY_idKDHDpz8E_0_prmiha.svg" 
+                    alt="EY Logo" 
+                    className="h-9 w-auto -mt-1"
+                  />
+                </div>
+                <div className="hidden md:flex space-x-8">
                   <a href="#hero" onClick={(e) => handleNavClick(e, 'hero')} className="text-ey-white hover:text-ey-yellow transition-colors text-base font-medium">Inicio</a>
                   <a href="#about" onClick={(e) => handleNavClick(e, 'about')} className="text-ey-white hover:text-ey-yellow transition-colors text-base font-medium">Perfil</a>
                   <a href="#projects" onClick={(e) => handleNavClick(e, 'projects')} className="text-ey-white hover:text-ey-yellow transition-colors text-base font-medium">Proyectos</a>
@@ -61,12 +67,24 @@ export default function Navigation() {
                   <a href="#speaking" onClick={(e) => handleNavClick(e, 'speaking')} className="text-ey-white hover:text-ey-yellow transition-colors text-base font-medium">Liderazgo</a>
                   <a href="#contact" onClick={(e) => handleNavClick(e, 'contact')} className="text-ey-white hover:text-ey-yellow transition-colors text-base font-medium">Contacto</a>
                 </div>
-                <Button 
-                  onClick={() => window.open('https://wa.me/56971415496?text=Hola%20Rodrigo,%20me%20interesa%20conversar%20sobre%20la%20propuesta%20estratégica%20para%20EY', '_blank')}
-                  className="bg-ey-yellow text-ey-black hover:bg-yellow-400 font-bold text-sm px-6 py-2"
+                <motion.div
+                  animate={{ 
+                    color: ['#000000', '#dc2626', '#000000'] 
+                  }}
+                  transition={{ 
+                    duration: 3,
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                  }}
                 >
-                  Contactar
-                </Button>
+                  <Button 
+                    onClick={() => window.open('https://wa.me/56971415496?text=Hola%20Rodrigo,%20me%20interesa%20conversar%20sobre%20la%20propuesta%20estrat%C3%A9gica%20para%20EY', '_blank')}
+                    className="bg-ey-yellow hover:bg-yellow-400 font-bold text-sm px-6 py-2"
+                    style={{ color: 'inherit' }}
+                  >
+                    Contactar
+                  </Button>
+                </motion.div>
               </div>
             </div>
           </motion.nav>
