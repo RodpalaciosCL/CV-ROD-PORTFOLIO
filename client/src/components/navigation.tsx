@@ -57,7 +57,7 @@ export default function Navigation() {
                   <a href="#projects" onClick={(e) => handleNavClick(e, 'projects')} className="text-ey-white hover:text-ey-yellow transition-colors text-base font-medium">Proyectos</a>
                   <a href="#pipeline" onClick={(e) => handleNavClick(e, 'pipeline')} className="text-ey-white hover:text-ey-yellow transition-colors text-base font-medium">Pipeline</a>
                   <a href="#value" onClick={(e) => handleNavClick(e, 'value')} className="text-ey-white hover:text-ey-yellow transition-colors text-base font-medium">Valor</a>
-                  <a href="#efficiency" onClick={(e) => handleNavClick(e, 'efficiency')} className="text-ey-white hover:text-ey-yellow transition-colors text-base font-medium">ROI</a>
+                  <a href="#efficiency" onClick={(e) => handleNavClick(e, 'efficiency')} className="text-ey-white hover:text-ey-yellow transition-colors text-base font-medium">Propuesta</a>
                   <a href="#speaking" onClick={(e) => handleNavClick(e, 'speaking')} className="text-ey-white hover:text-ey-yellow transition-colors text-base font-medium">Liderazgo</a>
                   <a href="#contact" onClick={(e) => handleNavClick(e, 'contact')} className="text-ey-white hover:text-ey-yellow transition-colors text-base font-medium">Contacto</a>
                 </div>

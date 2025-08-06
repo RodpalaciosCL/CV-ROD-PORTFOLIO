@@ -58,6 +58,60 @@ function ProbabilityBar({ probability, index }) {
   );
 }
 
+// Compact probability bar component for the opportunities cards
+function CompactProbabilityBar({ probability, index }) {
+  const [width, setWidth] = useState(0);
+  const [hasAnimated, setHasAnimated] = useState(false);
+  const ref = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !hasAnimated) {
+          setHasAnimated(true);
+          
+          // Delay each bar's animation  
+          const delay = index * 200; // 200ms delay between each bar
+          
+          setTimeout(() => {
+            setWidth(probability);
+          }, delay);
+        }
+      },
+      { threshold: 0.3 }
+    );
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    return () => {
+      if (ref.current) {
+        observer.unobserve(ref.current);
+      }
+    };
+  }, [probability, index, hasAnimated]);
+
+  return (
+    <div ref={ref}>
+      <div className="flex items-center justify-between mb-2">
+        <span className="text-ey-white/80 text-xs font-medium">Probabilidad</span>
+        <span className="text-ey-yellow font-black text-sm">{probability}%</span>
+      </div>
+      <div className="w-full bg-gray-700/50 rounded-full h-2 overflow-hidden border border-gray-600">
+        <div 
+          className="h-full rounded-full transition-all ease-out"
+          style={{ 
+            width: `${width}%`,
+            background: 'linear-gradient(to right, #FFC107, #FFD54F)',
+            transitionDuration: '1200ms'
+          }}
+        />
+      </div>
+    </div>
+  );
+}
+
 export default function ActivePipeline() {
   
   const opportunities = [
@@ -131,7 +185,7 @@ export default function ActivePipeline() {
   const averageProbability = Math.round(opportunities.reduce((sum, opp) => sum + opp.probability, 0) / opportunities.length);
 
   return (
-    <section id="pipeline" className="py-32 bg-ey-dark relative overflow-hidden">
+    <section id="pipeline" className="py-16 bg-ey-dark relative overflow-hidden">
       {/* Animated background */}
       <div className="absolute inset-0">
         <motion.div 
@@ -149,14 +203,14 @@ export default function ActivePipeline() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         {/* Header */}
         <motion.div 
-          className="text-center mb-20"
+          className="text-center mb-8"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
           <motion.h2 
-            className="text-5xl md:text-6xl font-black text-ey-white mb-8"
+            className="text-3xl md:text-4xl font-black text-ey-white mb-4"
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -165,7 +219,7 @@ export default function ActivePipeline() {
             Pipeline de Negocios <span className="text-ey-yellow">Activo</span>
           </motion.h2>
           <motion.p 
-            className="text-2xl text-ey-yellow/80 max-w-4xl mx-auto font-light"
+            className="text-lg text-ey-yellow/80 max-w-4xl mx-auto font-light"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
@@ -176,56 +230,56 @@ $151.6M en oportunidades mapeadas para asociación con EY
         </motion.div>
         
         {/* Pipeline Dashboard */}
-        <div className="space-y-8 mb-16">
+        <div className="space-y-3 mb-12">
           {opportunities.map((opportunity, index) => (
             <motion.div 
               key={index}
               className="group relative"
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.1 * index }}
+              transition={{ duration: 0.8, delay: 0.05 * index }}
               viewport={{ once: true }}
-              whileHover={{ scale: 1.02, y: -5 }}
+              whileHover={{ scale: 1.01, y: -2 }}
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-ey-yellow/10 to-ey-yellow/20 rounded-2xl blur-lg group-hover:blur-xl transition-all duration-300"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-ey-yellow/10 to-ey-yellow/20 rounded-lg blur-lg group-hover:blur-xl transition-all duration-300"></div>
               <div 
-                className="relative bg-ey-white/10 backdrop-blur-xl rounded-2xl p-8 border border-ey-yellow/20 hover:border-ey-yellow/40 transition-all duration-300"
+                className="relative bg-ey-white/10 backdrop-blur-xl rounded-lg p-4 border border-ey-yellow/20 hover:border-ey-yellow/40 transition-all duration-300"
               >
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-6 items-center">
+                <div className="grid grid-cols-1 md:grid-cols-4 gap-4 items-center">
                   {/* Company & Project */}
-                  <div className="flex items-center space-x-4">
-                    <div className={`w-16 h-16 bg-gradient-to-br ${opportunity.color} rounded-xl flex items-center justify-center shadow-lg`}>
-                      <Target className="w-8 h-8 text-white" />
+                  <div className="flex items-center space-x-3">
+                    <div className={`w-10 h-10 bg-gradient-to-br ${opportunity.color} rounded-lg flex items-center justify-center shadow-lg`}>
+                      <Target className="w-5 h-5 text-white" />
                     </div>
                     <div>
-                      <h3 className="text-xl font-black text-ey-white group-hover:text-ey-yellow transition-colors">
+                      <h3 className="text-base font-black text-ey-white group-hover:text-ey-yellow transition-colors">
                         {opportunity.company}
                       </h3>
-                      <p className="text-ey-yellow/80 font-medium">{opportunity.project}</p>
+                      <p className="text-ey-yellow/80 font-medium text-sm">{opportunity.project}</p>
                     </div>
                   </div>
                   
                   {/* Value */}
                   <div className="text-center">
-                    <div className="flex items-center justify-center mb-2">
-                      <DollarSign className="w-5 h-5 text-ey-yellow mr-1" />
-                      <span className="text-3xl font-black text-ey-yellow">{opportunity.value}</span>
+                    <div className="flex items-center justify-center mb-1">
+                      <DollarSign className="w-4 h-4 text-ey-yellow mr-1" />
+                      <span className="text-xl font-black text-ey-yellow">{opportunity.value}</span>
                     </div>
-                    <div className="text-ey-white/70 text-sm font-medium">Valor del Proyecto</div>
+                    <div className="text-ey-white/70 text-xs font-medium">Valor del Proyecto</div>
                   </div>
                   
                   {/* Probability */}
                   <div>
-                    <ProbabilityBar probability={opportunity.probability} index={index} />
+                    <CompactProbabilityBar probability={opportunity.probability} index={index} />
                   </div>
                   
                   {/* Stage & Timeline */}
                   <div className="text-center">
-                    <div className="bg-ey-dark/60 rounded-lg p-3 mb-2">
-                      <div className="text-ey-white font-semibold text-sm">{opportunity.stage}</div>
+                    <div className="bg-ey-dark/60 rounded p-2 mb-1">
+                      <div className="text-ey-white font-semibold text-xs">{opportunity.stage}</div>
                     </div>
-                    <div className="flex items-center justify-center text-ey-yellow/80 text-sm">
-                      <Clock className="w-4 h-4 mr-1" />
+                    <div className="flex items-center justify-center text-ey-yellow/80 text-xs">
+                      <Clock className="w-3 h-3 mr-1" />
                       {opportunity.timeline}
                     </div>
                   </div>
@@ -243,13 +297,13 @@ $151.6M en oportunidades mapeadas para asociación con EY
           transition={{ duration: 0.8, delay: 0.6 }}
           viewport={{ once: true }}
         >
-          <div className="relative bg-ey-medium border border-ey-yellow rounded-lg p-12 text-center">
-            <div className="mb-6">
-              <DollarSign className="w-16 h-16 text-ey-yellow mx-auto" />
+          <div className="relative bg-ey-medium border border-ey-yellow rounded-lg p-6 text-center">
+            <div className="mb-4">
+              <DollarSign className="w-10 h-10 text-ey-yellow mx-auto" />
             </div>
-            <h3 className="text-3xl font-black text-ey-white mb-6">Pipeline Activo Total</h3>
+            <h3 className="text-xl font-black text-ey-white mb-4">Pipeline Activo Total</h3>
             <motion.div 
-              className="text-7xl md:text-8xl font-black text-ey-yellow mb-4"
+              className="text-5xl md:text-6xl font-black text-ey-yellow mb-2"
               initial={{ scale: 0.8 }}
               whileInView={{ scale: 1 }}
               transition={{ type: "spring", stiffness: 200, delay: 0.3 }}
@@ -257,40 +311,40 @@ $151.6M en oportunidades mapeadas para asociación con EY
             >
               ${totalValue}M
             </motion.div>
-            <p className="text-ey-white text-xl font-medium max-w-2xl mx-auto leading-relaxed">
+            <p className="text-ey-white/80 text-base font-medium max-w-xl mx-auto leading-relaxed">
               Para analizar, enlistar y asegurar!
             </p>
             
             {/* Floating metrics */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8">
               <motion.div 
-                className="bg-ey-dark/60 rounded-2xl p-6"
+                className="bg-ey-dark/60 rounded-lg p-4"
                 whileHover={{ scale: 1.05 }}
                 transition={{ type: "spring", stiffness: 300 }}
               >
-                <TrendingUp className="w-8 h-8 text-ey-yellow mx-auto mb-3" />
-                <div className="text-2xl font-black text-ey-yellow mb-2">{totalOpportunities}</div>
-                <div className="text-ey-white/80 font-medium">Oportunidades Activas</div>
+                <TrendingUp className="w-6 h-6 text-ey-yellow mx-auto mb-2" />
+                <div className="text-xl font-black text-ey-yellow mb-1">{totalOpportunities}</div>
+                <div className="text-ey-white/80 font-medium text-sm">Oportunidades Activas</div>
               </motion.div>
               
               <motion.div 
-                className="bg-ey-dark/60 rounded-2xl p-6"
+                className="bg-ey-dark/60 rounded-lg p-4"
                 whileHover={{ scale: 1.05 }}
                 transition={{ type: "spring", stiffness: 300 }}
               >
-                <Target className="w-8 h-8 text-ey-yellow mx-auto mb-3" />
-                <div className="text-2xl font-black text-ey-yellow mb-2">{averageProbability}%</div>
-                <div className="text-ey-white/80 font-medium">Probabilidad Promedio</div>
+                <Target className="w-6 h-6 text-ey-yellow mx-auto mb-2" />
+                <div className="text-xl font-black text-ey-yellow mb-1">{averageProbability}%</div>
+                <div className="text-ey-white/80 font-medium text-sm">Probabilidad Promedio</div>
               </motion.div>
               
               <motion.div 
-                className="bg-ey-dark/60 rounded-2xl p-6"
+                className="bg-ey-dark/60 rounded-lg p-4"
                 whileHover={{ scale: 1.05 }}
                 transition={{ type: "spring", stiffness: 300 }}
               >
-                <Clock className="w-8 h-8 text-ey-yellow mx-auto mb-3" />
-                <div className="text-2xl font-black text-ey-yellow mb-2">Q4 2025 - Q1 2026</div>
-                <div className="text-ey-white/80 font-medium">Timeline</div>
+                <Clock className="w-6 h-6 text-ey-yellow mx-auto mb-2" />
+                <div className="text-xl font-black text-ey-yellow mb-1">Q4 2025 - Q1 2026</div>
+                <div className="text-ey-white/80 font-medium text-sm">Timeline</div>
               </motion.div>
             </div>
           </div>

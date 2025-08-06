@@ -2,15 +2,14 @@ import { useEffect } from "react";
 import Navigation from "@/components/navigation";
 import Hero from "@/components/sections/hero";
 import About from "@/components/sections/about";
-import OptimalSolution from "@/components/sections/optimal-solution";
 import Projects from "@/components/sections/projects";
 import ActivePipeline from "@/components/sections/active-pipeline";
 import WhatIveBeenDoing from "@/components/sections/what-ive-been-doing";
-import PlugAndPlaySolutions from "@/components/sections/plug-and-play-solutions";
-import Security from "@/components/sections/security";
+import Solutions from "@/components/sections/solutions";
 import PipelinePlus from "@/components/sections/pipeline-plus";
 import Strategic from "@/components/sections/strategic";
 import Value from "@/components/sections/value";
+import CompetitiveAdvantages from "@/components/sections/competitive-advantages";
 import Efficiency from "@/components/sections/efficiency";
 import SpeakingEvents from "@/components/sections/speaking-events";
 import Contact from "@/components/sections/contact";
@@ -67,13 +66,12 @@ export default function Home() {
       <Projects />
       <ActivePipeline />
       <WhatIveBeenDoing />
-      <PlugAndPlaySolutions />
-      <Security />
+      <Solutions />
       <PipelinePlus />
       <Strategic />
       <Value />
+      <CompetitiveAdvantages />
       <Efficiency />
-      <OptimalSolution />
       <SpeakingEvents />
       <Contact />
       <Footer />

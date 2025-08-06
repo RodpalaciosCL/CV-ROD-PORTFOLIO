@@ -93,7 +93,7 @@ export default function Projects() {
   };
 
   return (
-    <section id="projects" className="py-32 bg-ey-dark relative overflow-hidden">
+    <section id="projects" className="py-16 bg-ey-dark relative overflow-hidden">
       {/* Background elements */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-20 left-20 w-40 h-40 bg-ey-yellow rounded-full blur-3xl"></div>
@@ -103,14 +103,14 @@ export default function Projects() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         {/* Header */}
         <motion.div 
-          className="text-center mb-20"
+          className="text-center mb-12"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
           <motion.h2 
-            className="text-5xl md:text-6xl font-black text-ey-white mb-8"
+            className="text-3xl md:text-4xl font-black text-ey-white mb-4"
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -119,7 +119,7 @@ export default function Projects() {
             Logros de Proyectos <span className="text-ey-yellow">Mayores</span>
           </motion.h2>
           <motion.p 
-            className="text-xl text-ey-white/80 max-w-6xl mx-auto leading-relaxed"
+            className="text-lg text-ey-white/80 max-w-4xl mx-auto leading-relaxed"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
@@ -131,7 +131,7 @@ export default function Projects() {
         
         {/* Projects Grid */}
         <motion.div 
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-12"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -145,53 +145,53 @@ export default function Projects() {
               whileHover={{ y: -10, scale: 1.02 }}
               transition={{ type: "spring", stiffness: 300 }}
             >
-              <div className="relative bg-ey-medium border border-ey-light rounded-lg p-8 hover:border-ey-yellow transition-all duration-300 h-full flex flex-col">
+              <div className="relative bg-ey-medium border border-ey-light rounded-lg p-4 hover:border-ey-yellow transition-all duration-300 h-full flex flex-col">
                 {/* Header */}
-                <div className="flex items-center mb-6">
-                  <div className="w-16 h-16 bg-ey-yellow rounded-lg mr-4 flex items-center justify-center shadow-lg">
-                    <project.iconComponent className="w-8 h-8 text-ey-black" />
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 bg-ey-yellow rounded-lg mr-3 flex items-center justify-center shadow-lg">
+                    <project.iconComponent className="w-6 h-6 text-ey-black" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-black text-ey-white">{project.company}</h3>
-                    <p className="text-ey-white/70 font-medium">{project.title}</p>
+                    <h3 className="text-lg font-black text-ey-white">{project.company}</h3>
+                    <p className="text-sm text-ey-white/70 font-medium">{project.title}</p>
                   </div>
                 </div>
 
                 {/* Metrics */}
-                <div className="space-y-4 mb-6 flex-grow">
+                <div className="space-y-2 mb-4 flex-grow">
                   <div className="flex justify-between items-center">
-                    <span className="text-ey-white/70 font-medium flex items-center">
-                      <Award className="w-4 h-4 mr-2" />
+                    <span className="text-sm text-ey-white/70 font-medium flex items-center">
+                      <Award className="w-3 h-3 mr-1" />
                       Valor:
                     </span>
-                    <span className="font-black text-ey-yellow text-lg">{project.value}</span>
+                    <span className="font-black text-ey-yellow text-base">{project.value}</span>
                   </div>
                   <div className="flex justify-between items-center">
-                    <span className="text-ey-white/70 font-medium flex items-center">
-                      <Clock className="w-4 h-4 mr-2" />
+                    <span className="text-sm text-ey-white/70 font-medium flex items-center">
+                      <Clock className="w-3 h-3 mr-1" />
                       Tiempo:
                     </span>
-                    <span className="font-semibold text-ey-white">{project.time}</span>
+                    <span className="font-semibold text-ey-white text-sm">{project.time}</span>
                   </div>
                   <div className="flex justify-between items-center">
-                    <span className="text-ey-white/70 font-medium flex items-center">
-                      <Users className="w-4 h-4 mr-2" />
+                    <span className="text-sm text-ey-white/70 font-medium flex items-center">
+                      <Users className="w-3 h-3 mr-1" />
                       Equipo:
                     </span>
-                    <span className="font-semibold text-ey-white">{project.team}</span>
+                    <span className="font-semibold text-ey-white text-sm">{project.team}</span>
                   </div>
-                  <div className="flex justify-between items-start min-h-[3rem]">
-                    <span className="text-ey-white/70 font-medium flex items-center">
-                      <TrendingUp className="w-4 h-4 mr-2" />
+                  <div className="flex justify-between items-start min-h-[2rem]">
+                    <span className="text-sm text-ey-white/70 font-medium flex items-center">
+                      <TrendingUp className="w-3 h-3 mr-1" />
                       Resultado:
                     </span>
-                    <span className="font-semibold text-ey-yellow text-right flex-1 ml-2">{project.result}</span>
+                    <span className="font-semibold text-ey-yellow text-right flex-1 ml-2 text-sm">{project.result}</span>
                   </div>
                 </div>
 
                 {/* Description */}
-                <div className="border-t border-ey-light pt-4 mt-auto">
-                  <p className="text-ey-white/80 leading-relaxed">{project.description}</p>
+                <div className="border-t border-ey-light pt-3 mt-auto">
+                  <p className="text-sm text-ey-white/80 leading-relaxed">{project.description}</p>
                 </div>
               </div>
             </motion.div>

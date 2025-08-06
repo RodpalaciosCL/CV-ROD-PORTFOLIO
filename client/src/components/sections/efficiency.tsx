@@ -1,30 +1,51 @@
 import { motion } from "framer-motion";
-import { TrendingUp, TrendingDown, Clock, DollarSign, Calendar, Users, Shield, Target, Zap, CheckCircle, XCircle, X } from "lucide-react";
+import { Star, Rocket, Target, Users, Heart, Zap, TrendingUp, Globe, Shield, X, DollarSign, TrendingDown, Clock, CheckCircle } from "lucide-react";
 import { useState } from "react";
 
 export default function Efficiency() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
-  const traditionalMetrics = [
-    { label: "Tiempo de Contratación", value: "4-6 meses", icon: Clock, negative: true },
-    { label: "Costo de Setup", value: "$2M", icon: DollarSign, negative: true },
-    { label: "Integración de Equipos", value: "6-8 meses", icon: Users, negative: true },
-    { label: "Nivel de Riesgo", value: "Alto", icon: XCircle, negative: true },
-    { label: "Acceso a Pipeline", value: "$0", icon: Target, negative: true }
+  
+  const motivations = [
+    {
+      icon: Heart,
+      title: "Respeto por EY",
+      description: "Track récord, perfiles, relacionamiento y presencia",
+      gradient: "from-red-500 to-pink-500"
+    },
+    {
+      icon: Rocket,
+      title: "Momento Espectacular",
+      description: "Desafiar la industria en uno de los momentos más transformadores de la historia",
+      gradient: "from-purple-500 to-indigo-500"
+    },
+    {
+      icon: Target,
+      title: "Tiempo de disrompir",
+      description: "Traer revenues no explorados sin descuidar el as-is que ha llevado a EY al éxito",
+      gradient: "from-ey-yellow to-orange-500"
+    }
   ];
-
-  const partnershipMetrics = [
-    { label: "Tiempo de Inicio", value: "Inmediato", icon: Clock, negative: false },
-    { label: "Costo de Setup", value: "$1", icon: DollarSign, negative: false },
-    { label: "Integración", value: "4-6 semanas", icon: Users, negative: false },
-    { label: "Nivel de Riesgo", value: "Mínimo", icon: Shield, negative: false },
-    { label: "Acceso a Pipeline", value: "Inmediato", icon: Target, negative: false }
+  
+  const valueProps = [
+    {
+      icon: Users,
+      title: "Optimización de Búsquedas",
+      description: "Acelerar y optimizar los procesos actuales de reclutamiento especializado",
+      benefit: "Eficiencia Inmediata"
+    },
+    {
+      icon: Globe,
+      title: "Acceso LATAM Comprobado",
+      description: "Pipeline activo de $150M+ y relaciones tier-1 establecidas",
+      benefit: "Revenue Inmediato"
+    },
+    {
+      icon: Zap,
+      title: "Capacidades Complementarias",
+      description: "20+ años en minería con liderazgo transformacional comprobado",
+      benefit: "Sinergia Estratégica"
+    }
   ];
-           
-            const roiMetrics = [
-              { value: "10x", label: "Despliegue Más Rápido", sublabel: "vs contratación tradicional" },
-              { value: "90%", label: "Reducción de Costos", sublabel: "vs contrataciones separadas" },
-              { value: "Inmediato", label: "Acceso a Pipeline", sublabel: "+$150M oportunidades" }
-            ];
 
   return (
     <section id="efficiency" className="py-32 bg-ey-dark relative overflow-hidden">
@@ -32,7 +53,7 @@ export default function Efficiency() {
         
         {/* Header */}
         <motion.div 
-          className="text-center mb-16"
+          className="text-center mb-20"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -45,185 +66,84 @@ export default function Efficiency() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            Análisis de Eficiencia <span className="text-ey-yellow">Asociación</span>
+            ¿Por Qué Quiero Ser Parte de <span className="text-ey-yellow">EY</span>?
           </motion.h2>
           <motion.p 
-            className="text-xl text-ey-white/80 max-w-4xl mx-auto leading-relaxed"
+            className="text-xl text-ey-white/80 max-w-5xl mx-auto leading-relaxed mb-8"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
             viewport={{ once: true }}
           >
-            Comparación clara de ROI: Asociación vs. Contratación Tradicional
+            Firma líder, Equipo de Liderazgo Excepcional, y el momento perfecto para desafiar la industria
           </motion.p>
+          <motion.div
+            className="inline-block bg-gradient-to-r from-ey-yellow/20 to-ey-yellow/10 backdrop-blur-sm rounded-2xl px-8 py-4 border border-ey-yellow/30"
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <p className="text-ey-yellow font-bold text-lg">
+              ¿Yo?
+            </p>
+          </motion.div>
+          <motion.div
+            className="inline-block bg-gradient-to-r from-red-500/20 to-orange-500/20 backdrop-blur-sm rounded-2xl px-8 py-4 border border-red-500/30 mt-20"
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <p className="text-red-400 font-bold text-lg">
+              Un Agente de cambio con hambre de comerse la industria, de verdad.
+            </p>
+          </motion.div>
         </motion.div>
-        
-        <motion.div
-          className="relative mb-20"
+
+        {/* Motivations Grid */}
+        <motion.div 
+          className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
+          transition={{ duration: 0.8, delay: 0.8 }}
           viewport={{ once: true }}
         >
-          <div className="relative bg-gradient-to-br from-ey-dark via-ey-medium/30 to-ey-dark rounded-3xl p-12 border-2 border-ey-yellow/40 shadow-2xl backdrop-blur-sm overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-br from-ey-yellow/10 via-ey-yellow/5 to-transparent rounded-3xl"></div>
-            
-            <div className="relative text-center mb-12">
-              <motion.h3 
-                className="text-4xl font-black text-ey-yellow mb-6"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8 }}
-                viewport={{ once: true }}
-              >
-                Perfiles que EY está Buscando
-              </motion.h3>
-              <motion.p 
-                className="text-xl text-ey-white/80 max-w-3xl mx-auto leading-relaxed"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-                viewport={{ once: true }}
-              >
-                Un solo socio estratégico que integra múltiples capacidades especializadas
-              </motion.p>
-            </div>
-            
+          {motivations.map((motivation, index) => (
             <motion.div 
-              className="relative group"
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
+              key={index}
+              className="group relative"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 * index }}
               viewport={{ once: true }}
+              whileHover={{ y: -10, scale: 1.02 }}
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-ey-yellow/20 to-ey-yellow/10 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
-              <div 
-                className="relative overflow-hidden rounded-2xl border-2 border-ey-yellow/50 shadow-2xl max-w-2xl mx-auto cursor-pointer"
-                onClick={() => setSelectedImage("https://res.cloudinary.com/dhobnlg73/image/upload/v1753743473/Captura_de_pantalla_2025-07-28_a_la_s_18.57.26_ot5sli.png")}
-              >
-                <img 
-                  src="https://res.cloudinary.com/dhobnlg73/image/upload/v1753743473/Captura_de_pantalla_2025-07-28_a_la_s_18.57.26_ot5sli.png" 
-                  alt="Perfiles profesionales que EY busca integrar" 
-                  className="w-full h-auto object-contain bg-white max-h-80"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-ey-dark/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                  <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-white text-sm font-semibold bg-black/50 px-3 py-1 rounded-full">
-                    Ver imagen completa
-                  </div>
+              <div className="relative bg-gradient-to-br from-ey-dark via-ey-medium/30 to-ey-dark rounded-2xl p-8 border-2 border-ey-yellow/30 shadow-xl backdrop-blur-sm overflow-hidden group-hover:border-ey-yellow/60 transition-all duration-300 h-full">
+                <div className="absolute inset-0 bg-gradient-to-br from-ey-yellow/5 via-ey-yellow/10 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                
+                <div className="relative z-10 text-center">
+                  <motion.div 
+                    className={`w-16 h-16 bg-gradient-to-br ${motivation.gradient} rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300`}
+                    whileHover={{ rotate: 10 }}
+                  >
+                    <motivation.icon className="w-8 h-8 text-white" />
+                  </motion.div>
+                  
+                  <h3 className="text-xl font-black text-ey-white mb-4 group-hover:text-ey-yellow transition-colors duration-300">
+                    {motivation.title}
+                  </h3>
+                  
+                  <p className="text-ey-white/80 leading-relaxed">
+                    {motivation.description}
+                  </p>
                 </div>
               </div>
             </motion.div>
-            
-            <motion.div 
-              className="text-center mt-8"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
-              viewport={{ once: true }}
-            >
-              <div className="inline-block bg-ey-yellow/20 backdrop-blur-sm rounded-2xl px-8 py-4 border border-ey-yellow/30">
-                <p className="text-ey-white font-medium text-lg">
-                  <span className="text-ey-yellow font-black">Ventaja:</span> Capacidad integral vs. múltiples contrataciones especializadas
-                </p>
-              </div>
-            </motion.div>
-          </div>
+          ))}
         </motion.div>
         
-        {/* Main Comparison */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20">
-          {/* Traditional Approach */}
-          <motion.div 
-            className="relative group"
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <div className="relative bg-ey-medium border border-ey-light rounded-lg p-8">
-              <div className="text-center mb-8">
-                <div className="w-20 h-20 bg-red-500 rounded-lg flex items-center justify-center mx-auto mb-4">
-                  <TrendingDown className="w-10 h-10 text-white" />
-                </div>
-                <h3 className="text-2xl font-black text-ey-white">Enfoque Tradicional</h3>
-                <p className="text-ey-white/70 font-medium">Múltiples contrataciones independientes</p>
-              </div>
-              
-              <div className="space-y-4 mb-8">
-                {traditionalMetrics.map((metric, index) => (
-                  <motion.div 
-                    key={index}
-                    className="bg-ey-light rounded-lg p-4 border border-red-500/30"
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.6, delay: 0.1 * index }}
-                    viewport={{ once: true }}
-                  >
-                    <div className="flex justify-between items-center">
-                      <div className="flex items-center space-x-3">
-                        <metric.icon className="w-5 h-5 text-red-400" />
-                        <span className="font-semibold text-ey-white">{metric.label}</span>
-                      </div>
-                      <span className="text-red-400 font-bold">{metric.value}</span>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-              
-              <div className="text-center bg-red-500/20 border border-red-500/30 rounded-lg p-6">
-                <div className="text-2xl font-black text-red-400 mb-2">Complejo & Costoso</div>
-                <p className="text-ey-white/70 font-medium">Múltiples procesos de contratación</p>
-              </div>
-            </div>
-          </motion.div>
-          
-          {/* Partnership Model */}
-          <motion.div 
-            className="relative group"
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <div className="relative bg-ey-medium border border-ey-yellow rounded-lg p-8">
-              <div className="text-center mb-8">
-                <div className="w-20 h-20 bg-ey-yellow rounded-lg flex items-center justify-center mx-auto mb-4">
-                  <TrendingUp className="w-10 h-10 text-ey-black" />
-                </div>
-                <h3 className="text-2xl font-black text-ey-white">Modelo de Asociación</h3>
-                <p className="text-ey-white/70 font-medium">Solución estratégica integrada</p>
-              </div>
-              
-              <div className="space-y-4 mb-8">
-                {partnershipMetrics.map((metric, index) => (
-                  <motion.div 
-                    key={index}
-                    className="bg-ey-light rounded-lg p-4 border border-ey-yellow/30"
-                    initial={{ opacity: 0, x: 20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.6, delay: 0.1 * index }}
-                    viewport={{ once: true }}
-                  >
-                    <div className="flex justify-between items-center">
-                      <div className="flex items-center space-x-3">
-                        <metric.icon className="w-5 h-5 text-ey-yellow" />
-                        <span className="font-semibold text-ey-white">{metric.label}</span>
-                      </div>
-                      <span className="text-ey-yellow font-bold">{metric.value}</span>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-              
-              <div className="text-center bg-ey-yellow/20 border border-ey-yellow/30 rounded-lg p-6">
-                <div className="text-2xl font-black text-ey-yellow mb-2">Estratégico & Eficiente</div>
-                <p className="text-ey-white/70 font-medium">Valor inmediato con resultados comprobados</p>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-        
-        {/* ROI Analysis */}
+        {/* Final CTA */}
         <motion.div 
           className="relative"
           initial={{ opacity: 0, y: 40 }}
@@ -231,69 +151,134 @@ export default function Efficiency() {
           transition={{ duration: 0.8, delay: 0.6 }}
           viewport={{ once: true }}
         >
-          <div className="relative bg-ey-medium border border-ey-yellow/30 rounded-lg p-12">
-            <div className="relative">
-              {/* Header */}
+          <div className="relative bg-gradient-to-br from-ey-dark via-ey-medium/40 to-ey-dark rounded-3xl p-16 border-2 border-ey-yellow/50 shadow-2xl backdrop-blur-sm overflow-hidden">
+            {/* Epic Background Effects */}
+            <div className="absolute inset-0 bg-gradient-to-br from-ey-yellow/15 via-ey-yellow/5 to-transparent rounded-3xl"></div>
+            <div className="absolute -inset-4 bg-gradient-to-r from-ey-yellow/10 via-transparent to-ey-yellow/10 rounded-3xl blur-2xl animate-pulse"></div>
+            
+            <div className="relative text-center">
               <motion.div 
-                className="text-center mb-12"
+                className="mb-8"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
+                transition={{ duration: 0.8 }}
                 viewport={{ once: true }}
               >
-                <h3 className="text-3xl font-black text-ey-yellow mb-4 flex items-center justify-center">
-                  <TrendingUp className="w-8 h-8 mr-3" />
-                  Análisis de ROI
-                  <TrendingUp className="w-8 h-8 ml-3" />
-                </h3>
-                <p className="text-ey-white/80 text-lg">Beneficios cuantificables de la asociación estratégica</p>
+                <div className="mb-8">
+                  <h3 className="text-4xl md:text-5xl font-black text-ey-white text-center">
+                    Un Momento Único en la 
+                    <span className="text-ey-yellow block mt-2">Historia de la Minería</span>
+                  </h3>
+                </div>
               </motion.div>
               
-              {/* ROI Metrics */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                {roiMetrics.map((metric, index) => (
-                  <motion.div 
-                    key={index}
-                    className="text-center"
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.6, delay: 0.1 * index }}
-                    viewport={{ once: true }}
-                  >
-                    <div className="bg-ey-light border border-ey-yellow/30 rounded-lg p-8">
-                      <div className="mb-6">
-                        {index === 0 && <Zap className="w-12 h-12 text-ey-yellow mx-auto" />}
-                        {index === 1 && <DollarSign className="w-12 h-12 text-ey-yellow mx-auto" />}
-                        {index === 2 && <Target className="w-12 h-12 text-ey-yellow mx-auto" />}
-                      </div>
-                      <motion.div 
-                        className="text-4xl font-black text-ey-yellow mb-4"
-                        initial={{ scale: 0.8 }}
-                        whileInView={{ scale: 1 }}
-                        transition={{ type: "spring", stiffness: 200, delay: 0.3 + 0.1 * index }}
-                        viewport={{ once: true }}
-                      >
-                        {metric.value}
-                      </motion.div>
-                      <div className="text-ey-white font-semibold text-lg mb-2">{metric.label}</div>
-                      <div className="text-ey-white/70 text-sm">{metric.sublabel}</div>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-              
-              {/* Bottom Summary */}
               <motion.div 
-                className="text-center mt-12"
-                initial={{ opacity: 0, y: 20 }}
+                className="max-w-6xl mx-auto space-y-8"
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.8 }}
+                transition={{ duration: 0.8, delay: 0.3 }}
                 viewport={{ once: true }}
               >
-                <div className="inline-block bg-ey-yellow rounded-lg px-8 py-4">
-                  <p className="text-ey-black font-black text-xl">
-                    Resultado: Asociación estratégica con ROI inmediato y riesgo mínimo
-                  </p>
+                <p className="text-xl md:text-2xl text-ey-white leading-relaxed">
+                  Estamos en un punto de inflexión donde la tecnología, sostenibilidad y <br />
+                  eficiencia operacional convergen para redefinir completamente la industria.
+                </p>
+                
+                {/* Cool Formula Section */}
+                <motion.div 
+                  className="relative"
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.8, delay: 0.5 }}
+                  viewport={{ once: true }}
+                >
+                  <div className="bg-gradient-to-r from-ey-yellow/10 via-ey-yellow/20 to-ey-yellow/10 rounded-3xl p-8 border-2 border-ey-yellow/30 backdrop-blur-sm">
+                    <div className="grid grid-cols-1 md:grid-cols-5 gap-4 items-center text-center">
+                      {/* Component 1 */}
+                      <motion.div 
+                        className="bg-ey-medium/50 rounded-2xl p-4 border border-ey-yellow/20"
+                        whileHover={{ scale: 1.05 }}
+                        transition={{ type: "spring", stiffness: 300 }}
+                      >
+                        <Users className="w-8 h-8 text-ey-yellow mx-auto mb-2" />
+                        <p className="text-ey-white font-bold text-sm leading-tight">
+                          Relacionamiento
+                        </p>
+                      </motion.div>
+                      
+                      {/* Plus */}
+                      <div className="text-ey-yellow text-3xl font-black">+</div>
+                      
+                      {/* Component 2 */}
+                      <motion.div 
+                        className="bg-ey-medium/50 rounded-2xl p-4 border border-ey-yellow/20"
+                        whileHover={{ scale: 1.05 }}
+                        transition={{ type: "spring", stiffness: 300 }}
+                      >
+                        <Target className="w-8 h-8 text-ey-yellow mx-auto mb-2" />
+                        <p className="text-ey-white font-bold text-sm leading-tight">
+                          Entendimiento
+                        </p>
+                      </motion.div>
+                      
+                      {/* Plus */}
+                      <div className="text-ey-yellow text-3xl font-black">+</div>
+                      
+                      {/* Component 3 */}
+                      <motion.div 
+                        className="bg-ey-medium/50 rounded-2xl p-4 border border-ey-yellow/20"
+                        whileHover={{ scale: 1.05 }}
+                        transition={{ type: "spring", stiffness: 300 }}
+                      >
+                        <Zap className="w-8 h-8 text-ey-yellow mx-auto mb-2" />
+                        <p className="text-ey-white font-bold text-sm leading-tight">
+                          Capacidad de entrega y visualización temprana
+                        </p>
+                      </motion.div>
+                    </div>
+                    
+                    {/* Equals */}
+                    <div className="text-center my-6">
+                      <div className="text-ey-yellow text-4xl font-black">=</div>
+                    </div>
+                    
+                    {/* Result */}
+                    <motion.div 
+                      className="bg-gradient-to-r from-ey-yellow/20 to-orange-500/20 rounded-2xl p-6 border-2 border-ey-yellow/50 text-center"
+                      whileHover={{ scale: 1.02 }}
+                      transition={{ type: "spring", stiffness: 200 }}
+                    >
+                      <div className="flex items-center justify-center mb-3">
+                        <TrendingUp className="w-6 h-6 text-ey-yellow mr-2" />
+                        <p className="text-ey-yellow font-black text-xl">
+                          Crecimiento sostenido de la práctica
+                        </p>
+                        <TrendingUp className="w-6 h-6 text-ey-yellow ml-2" />
+                      </div>
+                      <p className="text-ey-white font-semibold text-lg">
+                        y amplificación de la cuota de consulting para la compañía
+                      </p>
+                    </motion.div>
+                  </div>
+                </motion.div>
+              </motion.div>
+              
+              <motion.div 
+                className="mt-16"
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.8, delay: 0.8 }}
+                viewport={{ once: true }}
+              >
+                <div className="inline-flex items-center space-x-4 bg-gradient-to-r from-ey-yellow to-orange-500 rounded-2xl px-12 py-6 shadow-2xl">
+                  <Rocket className="w-10 h-10 text-white" />
+                  <div className="text-center">
+                    <p className="text-white font-black text-2xl mb-1">
+                      Ready to disrupt together?
+                    </p>
+                    <div className="w-16 h-1 bg-white/30 mx-auto rounded-full"></div>
+                  </div>
+                  <CheckCircle className="w-10 h-10 text-white" />
                 </div>
               </motion.div>
             </div>

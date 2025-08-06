@@ -152,7 +152,7 @@ export default function SpeakingEvents() {
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            Liderazgo Industrial & <span className="text-ey-yellow">Reconocimiento</span>
+Hagámoslo juntos y <span className="text-ey-yellow">contémosle al mundo!</span>
           </motion.h2>
           <motion.p 
             className="text-xl text-ey-white/80 max-w-4xl mx-auto leading-relaxed"

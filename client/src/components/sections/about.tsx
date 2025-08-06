@@ -69,14 +69,14 @@ export default function About() {
   ];
 
   return (
-    <section id="about" className="py-32 bg-ey-dark relative overflow-hidden">
+    <section id="about" className="pt-32 pb-16 bg-ey-dark relative overflow-hidden">
       {/* Background decorative elements */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-0 left-0 w-full h-full"></div>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
           {/* Photo section - Left side */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -95,7 +95,7 @@ export default function About() {
                 <img 
                   src="https://res.cloudinary.com/dhobnlg73/image/upload/v1753563332/_CVA4769_Original_y7efhh.jpg" 
                   alt="Rodrigo Palacios - Professional Profile" 
-                  className="w-full h-[550px] object-cover rounded-3xl"
+                  className="w-full h-[400px] object-cover rounded-3xl"
                 />
               </div>
             </motion.div>
@@ -126,14 +126,14 @@ export default function About() {
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-5xl font-black text-ey-white mb-8">
+              <h2 className="text-3xl lg:text-4xl font-black text-ey-white mb-6">
                 <span className="text-ey-yellow">Creando equipos, fortaleciendo relaciones</span>
                 <span className="block text-ey-white">y empoderando la práctica</span>
               </h2>
             </motion.div>
             
             <motion.p 
-              className="text-xl text-ey-white/80 mb-12 leading-relaxed"
+              className="text-lg text-ey-white/80 mb-8 leading-relaxed"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
@@ -143,7 +143,7 @@ export default function About() {
             </motion.p>
             
             {/* Skills cards */}
-            <div className="space-y-6 mb-12">
+            <div className="space-y-4 mb-8">
               {skills.map((skill, index) => (
                 <motion.div 
                   key={index}
@@ -154,15 +154,15 @@ export default function About() {
                   viewport={{ once: true }}
                   whileHover={{ x: 10 }}
                 >
-                  <div className="flex items-start space-x-6 bg-ey-medium rounded-lg p-6 border border-ey-light hover:border-ey-yellow transition-all duration-300">
-                    <div className="w-16 h-16 bg-ey-yellow rounded-lg flex items-center justify-center">
-                      <skill.icon className="w-8 h-8 text-ey-black" />
+                  <div className="flex items-start space-x-4 bg-ey-medium rounded-lg p-4 border border-ey-light hover:border-ey-yellow transition-all duration-300">
+                    <div className="w-12 h-12 bg-ey-yellow rounded-lg flex items-center justify-center flex-shrink-0">
+                      <skill.icon className="w-6 h-6 text-ey-black" />
                     </div>
                     <div className="flex-1">
-                      <h3 className="text-xl font-bold text-ey-white mb-2">
+                      <h3 className="text-lg font-bold text-ey-white mb-1">
                         {skill.title}
                       </h3>
-                      <p className="text-ey-white/80 leading-relaxed">{skill.description}</p>
+                      <p className="text-sm text-ey-white/80 leading-relaxed">{skill.description}</p>
                     </div>
                   </div>
                 </motion.div>
@@ -176,7 +176,7 @@ export default function About() {
         
         {/* Career timeline - Full width section */}
         <motion.div 
-          className="mt-24 bg-ey-dark rounded-3xl p-8 relative overflow-hidden"
+          className="mt-12 bg-ey-dark rounded-3xl p-4 relative overflow-hidden"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
@@ -184,33 +184,33 @@ export default function About() {
         >
           <div className="absolute inset-0 bg-gradient-to-br from-ey-yellow/10 to-transparent"></div>
           <div className="relative">
-            <h3 className="text-3xl font-black text-ey-yellow mb-12 flex items-center justify-center">
-              <Award className="w-8 h-8 mr-4" />
+            <h3 className="text-3xl md:text-4xl font-black text-ey-yellow mb-4 flex items-center justify-center">
+              <Award className="w-5 h-5 mr-2" />
               Trayectoria Profesional
             </h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               {timeline.map((item, index) => (
                 <motion.div 
                   key={index}
-                  className="bg-ey-medium rounded-xl p-6 border border-ey-light hover:border-ey-yellow transition-all duration-300"
+                  className="bg-ey-medium rounded-xl p-4 border border-ey-light hover:border-ey-yellow transition-all duration-300"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.1 * index }}
                   viewport={{ once: true }}
                   whileHover={{ y: -5 }}
                 >
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="w-4 h-4 bg-ey-yellow rounded-full"></div>
-                    <div className="text-ey-yellow font-bold text-sm bg-ey-yellow/10 px-3 py-1 rounded-full">
+                  <div className="flex items-center justify-between mb-3">
+                    <div className="w-3 h-3 bg-ey-yellow rounded-full"></div>
+                    <div className="text-ey-yellow font-bold text-xs bg-ey-yellow/10 px-2 py-1 rounded-full">
                       {item.period}
                     </div>
                   </div>
-                  <div className="mb-3">
-                    <div className="text-ey-white font-bold text-xl mb-1">{item.company}</div>
-                    <div className="text-ey-yellow font-medium text-lg">{item.role}</div>
+                  <div className="mb-2">
+                    <div className="text-ey-white font-bold text-lg mb-1">{item.company}</div>
+                    <div className="text-ey-yellow font-medium text-sm">{item.role}</div>
                   </div>
                   {item.description && (
-                    <div className="text-ey-white/80 text-sm leading-relaxed">
+                    <div className="text-ey-white/80 text-xs leading-relaxed">
                       {item.description}
                     </div>
                   )}
@@ -219,24 +219,24 @@ export default function About() {
               
               {/* Professional Summary - Two additional cards */}
               <motion.div 
-                className="bg-ey-yellow/10 rounded-xl p-6 border-l-4 border-ey-yellow"
+                className="bg-ey-yellow/10 rounded-xl p-4 border-l-4 border-ey-yellow"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.1 * timeline.length }}
                 viewport={{ once: true }}
                 whileHover={{ y: -5 }}
               >
-                <div className="flex items-center justify-between mb-4">
-                  <div className="w-4 h-4 bg-ey-yellow rounded-full"></div>
-                  <div className="text-ey-yellow font-bold text-sm bg-ey-yellow/10 px-3 py-1 rounded-full">
+                <div className="flex items-center justify-between mb-3">
+                  <div className="w-3 h-3 bg-ey-yellow rounded-full"></div>
+                  <div className="text-ey-yellow font-bold text-xs bg-ey-yellow/10 px-2 py-1 rounded-full">
                     Resumen
                   </div>
                 </div>
-                <div className="mb-3">
-                  <div className="text-ey-white font-bold text-xl mb-1">Perfil Ejecutivo</div>
-                  <div className="text-ey-yellow font-medium text-lg">Liderazgo & Estrategia</div>
+                <div className="mb-2">
+                  <div className="text-ey-white font-bold text-lg mb-1">Perfil Ejecutivo</div>
+                  <div className="text-ey-yellow font-medium text-sm">Liderazgo & Estrategia</div>
                 </div>
-                <div className="text-ey-white/80 text-sm leading-relaxed">
+                <div className="text-ey-white/80 text-xs leading-relaxed">
                   Vasta experiencia en problemas complejos, liderando equipos y desarrollando nuevos revenue streams, 
                   aportando negocios, relacionamiento, credibilidad y experiencia a las prácticas en las cuales he sido parte 
                   y donde siempre he dejado huella.
@@ -244,24 +244,24 @@ export default function About() {
               </motion.div>
               
               <motion.div 
-                className="bg-ey-medium rounded-xl p-6 border-r-4 border-ey-yellow"
+                className="bg-ey-medium rounded-xl p-4 border-r-4 border-ey-yellow"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.1 * (timeline.length + 1) }}
                 viewport={{ once: true }}
                 whileHover={{ y: -5 }}
               >
-                <div className="flex items-center justify-between mb-4">
-                  <div className="w-4 h-4 bg-ey-yellow rounded-full"></div>
-                  <div className="text-ey-yellow font-bold text-sm bg-ey-yellow/10 px-3 py-1 rounded-full">
+                <div className="flex items-center justify-between mb-3">
+                  <div className="w-3 h-3 bg-ey-yellow rounded-full"></div>
+                  <div className="text-ey-yellow font-bold text-xs bg-ey-yellow/10 px-2 py-1 rounded-full">
                     Diferencial
                   </div>
                 </div>
-                <div className="mb-3">
-                  <div className="text-ey-white font-bold text-xl mb-1">Valor Único</div>
-                  <div className="text-ey-yellow font-medium text-lg">Transformación Digital</div>
+                <div className="mb-2">
+                  <div className="text-ey-white font-bold text-lg mb-1">Valor Único</div>
+                  <div className="text-ey-yellow font-medium text-sm">Transformación Digital</div>
                 </div>
-                <div className="text-ey-white/80 text-sm leading-relaxed">
+                <div className="text-ey-white/80 text-xs leading-relaxed">
                   Capacidad única de traducir desafíos técnicos complejos en oportunidades de negocio tangibles, 
                   combinando expertise técnico profundo con visión estratégica empresarial para generar impacto real.
                 </div>

@@ -1,4 +1,3 @@
-import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Download, Award, User } from "lucide-react";
@@ -6,30 +5,9 @@ import { ArrowRight, Download, Award, User } from "lucide-react";
 // Deploy timestamp: 2025-07-29T02:52:44Z - CORRECTED HERO TEXT
 
 export default function Hero() {
-  const [count1, setCount1] = useState(0);
-  const [count2, setCount2] = useState(0);
-  const [count3, setCount3] = useState(0);
-
-  useEffect(() => {
-    const timer1 = setTimeout(() => {
-      if (count1 < 120) setCount1(count1 + 2);
-    }, 50);
-    const timer2 = setTimeout(() => {
-      if (count2 < 12) setCount2(count2 + 1);
-    }, 100);
-    const timer3 = setTimeout(() => {
-      if (count3 < 150) setCount3(count3 + 2.5);
-    }, 80);
-
-    return () => {
-      clearTimeout(timer1);
-      clearTimeout(timer2);
-      clearTimeout(timer3);
-    };
-  }, [count1, count2, count3]);
 
   return (
-    <section id="hero" className="min-h-screen bg-ey-dark pt-20 flex items-center">
+    <section id="hero" className="min-h-screen bg-ey-dark pt-16 flex items-center">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Left Content */}
@@ -41,7 +19,7 @@ export default function Hero() {
 
             {/* Main Heading */}
             <motion.h1 
-              className="text-4xl md:text-7xl font-black text-ey-white mb-6 leading-tight"
+              className="text-4xl md:text-7xl font-black text-ey-white mb-4 leading-tight"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
@@ -53,7 +31,7 @@ export default function Hero() {
 
             {/* Description */}
             <motion.p 
-              className="text-xl text-ey-white/80 mb-12 leading-relaxed max-w-2xl"
+              className="text-xl text-ey-white/80 mb-8 leading-relaxed max-w-2xl"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
@@ -63,7 +41,7 @@ export default function Hero() {
 
             {/* CTA Button */}
             <motion.div 
-              className="mb-16"
+              className="mb-12"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.8 }}
@@ -92,38 +70,23 @@ export default function Hero() {
               transition={{ duration: 0.8, delay: 1 }}
             >
               <div className="text-center p-4 bg-ey-medium border border-ey-light rounded-lg">
-                <motion.div 
-                  className="text-3xl font-black text-ey-yellow mb-2"
-                  initial={{ scale: 0.5 }}
-                  animate={{ scale: 1 }}
-                  transition={{ type: "spring", stiffness: 200, delay: 1.2 }}
-                >
-                  ${count1}M+
-                </motion.div>
+                <div className="text-3xl font-black text-ey-yellow mb-2">
+                  $120M+
+                </div>
                 <div className="text-ey-white text-sm font-medium">Proyectos de la industria entregados</div>
               </div>
               
               <div className="text-center p-4 bg-ey-medium border border-ey-light rounded-lg">
-                <motion.div 
-                  className="text-3xl font-black text-ey-yellow mb-2"
-                  initial={{ scale: 0.5 }}
-                  animate={{ scale: 1 }}
-                  transition={{ type: "spring", stiffness: 200, delay: 1.4 }}
-                >
-                  {count2}+
-                </motion.div>
+                <div className="text-3xl font-black text-ey-yellow mb-2">
+                  12+
+                </div>
                 <div className="text-ey-white text-sm font-medium">Clientes Mineros</div>
               </div>
               
               <div className="text-center p-4 bg-ey-medium border border-ey-light rounded-lg">
-                <motion.div 
-                  className="text-3xl font-black text-ey-yellow mb-2"
-                  initial={{ scale: 0.5 }}
-                  animate={{ scale: 1 }}
-                  transition={{ type: "spring", stiffness: 200, delay: 1.6 }}
-                >
-                  ${Math.round(count3)}M+
-                </motion.div>
+                <div className="text-3xl font-black text-ey-yellow mb-2">
+                  $150M+
+                </div>
                 <div className="text-ey-white text-sm font-medium">Pipeline Activo</div>
               </div>
             </motion.div>

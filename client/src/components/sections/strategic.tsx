@@ -10,7 +10,7 @@ export default function Strategic() {
         { heading: "Gen AI desmonta el modelo tradicional de horas facturables",
           detail: "Los LLM analizan el 100 % de las transacciones en minutos y generan reportes sin muestreo. Esto elimina tareas junior y comprime auditorías de 6 semanas a 6 horas." },
         { heading: "PwC invirtió US$ 1 B para automatizar auditoría y consultoría",
-          detail: "Prevén que 30 % del compliance estará 100 % automatizado antes de 2027. Si EY no actúa ahora, llegará segundo." },
+          detail: "Prevén que 30 % del compliance estará 100 % automatizado antes de 2027, y consultoría operará basado en AI en casi el 70% de sus procesos" },
         { heading: "Clientes construyen copilotos internos que entregan en horas",
           detail: "Coca-Cola ya dispone de un bot financiero con GPT-4 que produce dashboards de riesgo en tiempo real a coste marginal." },
         { heading: "Start-ups como Harvey AI reemplazan servicios Big Four completos",
@@ -156,7 +156,7 @@ export default function Strategic() {
             >
               <div className="text-center">
                 <p className="text-4xl text-ey-yellow font-black mb-2">¿Qué esperamos?</p>
-                <p className="text-lg text-ey-white/80 font-medium">Framework de ataque</p>
+                <p className="text-lg text-ey-white/80 font-medium">Descarga el Framework de ataque</p>
               </div>
             </button>
           </div>

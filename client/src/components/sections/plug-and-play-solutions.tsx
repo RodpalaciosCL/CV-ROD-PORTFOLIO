@@ -1,42 +1,21 @@
 import { motion } from "framer-motion";
-import { useState } from "react";
 import {
-  Building2,
-  Shield,
   Camera,
   BarChart3,
-  Monitor,
   Droplets,
   Lightbulb,
-  Zap,
-  Cog,
-  Activity,
   Pickaxe,
-  X,
-  ChevronDown,
-  ChevronUp
+  Cog,
+  Building2,
+  Zap,
+  Cpu,
+  Settings,
+  Users,
+  Bot
 } from "lucide-react";
 
-export default function PlugAndPlaySolutions() {
-  const [selectedImage, setSelectedImage] = useState<string | null>(null);
-
+export default function Operation() {
   const solutions = [
-    {
-      icon: Building2,
-      name: "HotelCommander",
-      tagline: "Gestión hotelera integral de campamentos mineros",
-      description: "Check-in digital, control de contratistas y dashboards de ocupación en tiempo real",
-      media: "https://res.cloudinary.com/dhobnlg73/image/upload/v1750620086/reservations_calendar_highquality_mdxwqp.webp",
-      type: "image"
-    },
-    {
-      icon: Shield,
-      name: "SafeApp",
-      tagline: "Plataforma digital de seguridad minera",
-      description: "Checklist digital, registro de incidentes y control automático de EPP",
-      media: "https://res.cloudinary.com/dhobnlg73/image/upload/v1750620085/banner-blog-10-1024x576_g3buzv.jpg",
-      type: "image"
-    },
     {
       icon: Camera,
       name: "WAIhouse",
@@ -70,36 +49,12 @@ export default function PlugAndPlaySolutions() {
       type: "image"
     },
     {
-      icon: Droplets,
-      name: "Secure & Secure",
-      tagline: "Acceso seguro",
-      description: "Control visitas e internos. Prevención acoso",
-      media: "https://res.cloudinary.com/dhobnlg73/image/upload/v1750693911/Captura_de_pantalla_2025-06-23_a_la_s_11.51.34_c8xmcy.png",
-      type: "image"
-    },
-    {
-      icon: Shield,
-      name: "Accesspress",
-      tagline: "Control inteligente de acceso seguro",
-      description: "Sistema integral de control de accesos y gestión de personal con identificación biométrica",
-      media: "https://res.cloudinary.com/dhobnlg73/image/upload/v1750694512/Captura_de_pantalla_2025-06-23_a_la_s_12.01.42_dof0qh.png",
-      type: "image"
-    },
-    {
       icon: Pickaxe,
-      name: "Ley del Mineral IA",
+      name: "Ley del Mineral",
       tagline: "Identificación inteligente en tiempo real",
       description: "IA para detectar ley mineral, optimizar palas de extracción y maximizar valor por tonelada",
       media: "https://res.cloudinary.com/dhobnlg73/image/upload/v1750690573/ChatGPT_Image_22_jun_2025_15_40_22_lsewla.png",
       type: "image"
-    },
-    {
-      icon: Activity,
-      name: "Predictive Maintenance",
-      tagline: "Monitoreo vibraciones y desgaste predictivo",
-      description: "Alertas preventivas para molinos SAG, correas y equipos críticos usando sensores IoT + IA",
-      media: "https://res.cloudinary.com/dhobnlg73/video/upload/v1750691069/3_msvtot.mov",
-      type: "video"
     },
     {
       icon: Cog,
@@ -110,42 +65,57 @@ export default function PlugAndPlaySolutions() {
       type: "video"
     },
     {
+      icon: Building2,
+      name: "HotelCommander",
+      tagline: "Gestión hotelera integral de campamentos mineros",
+      description: "Check-in digital, control de contratistas y dashboards de ocupación en tiempo real",
+      media: "https://res.cloudinary.com/dhobnlg73/image/upload/v1750620086/reservations_calendar_highquality_mdxwqp.webp",
+      type: "image"
+    },
+    {
       icon: Zap,
       name: "Neural Operations",
       tagline: "Centro de comando inteligente unificado",
       description: "Operación remota centralizada con IA para eficiencia energética y control predictivo total",
       media: "https://www.youtube.com/embed/BoHxSpEPg4Y?autoplay=1&mute=1&loop=1&playlist=BoHxSpEPg4Y&controls=0&showinfo=0&rel=0&modestbranding=1",
       type: "iframe"
+    },
+    {
+      icon: Cpu,
+      name: "Digital Twins",
+      tagline: "Simulación y predicción de escenarios de seguridad",
+      description: "Modelos predictivos de riesgo operacional, simulación de emergencias y evacuaciones, optimización de protocolos de seguridad y análisis de patrones de incidentes",
+      media: "https://res.cloudinary.com/dhobnlg73/video/upload/v1754189788/prevu3d_ezb9kn.mov",
+      type: "video"
+    },
+    {
+      icon: Settings,
+      name: "Control Operacional Inteligente",
+      tagline: "Sistema avanzado de control operacional",
+      description: "Monitoreo y control centralizado de todas las operaciones mineras con IA predictiva",
+      media: "https://res.cloudinary.com/dhobnlg73/image/upload/v1754425940/Captura_de_pantalla_2025-08-05_a_la_s_16.28.43_jfvimn.png",
+      type: "image"
+    },
+    {
+      icon: Users,
+      name: "CIO & CFO as A Service",
+      tagline: "Servicios ejecutivos especializados",
+      description: "Consultoría estratégica y gestión financiera/tecnológica para operaciones mineras",
+      media: "https://res.cloudinary.com/dhobnlg73/image/upload/v1754425961/Captura_de_pantalla_2025-08-05_a_la_s_16.29.07_jxnnu8.png",
+      type: "image"
+    },
+    {
+      icon: Bot,
+      name: "Agentes",
+      tagline: "Agentes inteligentes automatizados",
+      description: "IA conversacional y agentes autónomos para atención al cliente y soporte operacional",
+      media: "https://res.cloudinary.com/dhobnlg73/image/upload/v1754425987/Captura_de_pantalla_2025-08-05_a_la_s_16.29.14_rhugni.png",
+      type: "image"
     }
   ];
 
   return (
-    <section
-      id="plug-and-play-solutions"
-      className="py-16 bg-[var(--dark-bg)] border-t border-[var(--border-subtle)]"
-    >
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-8">
-          <motion.h2
-            className="text-3xl md:text-4xl font-bold mb-4 text-[var(--accent-orange)] font-montserrat"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-          >
-            Soluciones Plug & Play
-          </motion.h2>
-          <motion.p
-            className="text-xl text-[var(--text-secondary)] max-w-4xl mx-auto mb-4"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2, duration: 0.6 }}
-            viewport={{ once: true }}
-          >
-            Portfolio de Productos & Servicio de demanda crítica
-          </motion.p>
-        </div>
-
+    <div>
         <motion.div
           className="grid md:grid-cols-2 gap-12 mb-16"
           initial={{ opacity: 0, y: 30 }}
@@ -184,12 +154,7 @@ export default function PlugAndPlaySolutions() {
                     </div>
 
                     <div
-                      className="bg-white rounded-lg aspect-video relative overflow-hidden cursor-pointer hover:scale-105 transition-transform duration-300"
-                      onClick={() => {
-                        if (solution.type === "image" || solution.type === "video") {
-                          setSelectedImage(solution.media);
-                        }
-                      }}
+                      className="bg-white rounded-lg aspect-video relative overflow-hidden"
                     >
                       {solution.type === "image" ? (
                         <img
@@ -214,7 +179,7 @@ export default function PlugAndPlaySolutions() {
                           frameBorder="0"
                           allow="autoplay; encrypted-media"
                           allowFullScreen
-                        />
+                        ></iframe>
                       )}
                     </div>
                   </motion.div>
@@ -245,39 +210,6 @@ export default function PlugAndPlaySolutions() {
               </motion.div>
             ))}
           </motion.div>
-      </div>
-
-      {selectedImage && (
-        <motion.div
-          className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          onClick={() => setSelectedImage(null)}
-        >
-          <motion.div
-            className="relative max-w-5xl max-h-[90vh] bg-white rounded-2xl overflow-hidden shadow-2xl"
-            initial={{ scale: 0.8, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            exit={{ scale: 0.8, opacity: 0 }}
-            onClick={(e) => e.stopPropagation()}
-          >
-            <button
-              onClick={() => setSelectedImage(null)}
-              className="absolute top-2 right-2 z-20 bg-black/70 hover:bg-black/90 text-white rounded-full p-2 transition-colors duration-200 shadow-lg"
-            >
-              <X size={20} />
-            </button>
-            {selectedImage && (
-              <img
-                src={selectedImage}
-                alt="Vista detallada"
-                className="w-full h-full object-contain"
-              />
-            )}
-          </motion.div>
-        </motion.div>
-      )}
-    </section>
+    </div>
   );
 }

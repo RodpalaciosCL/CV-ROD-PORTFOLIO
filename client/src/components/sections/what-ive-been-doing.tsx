@@ -26,7 +26,7 @@ export default function WhatIveBeenDoing() {
   };
 
   return (
-    <section className="py-32 bg-gradient-to-br from-ey-medium via-ey-dark to-black relative overflow-hidden">
+    <section className="py-16 bg-gradient-to-br from-ey-medium via-ey-dark to-black relative overflow-hidden">
       {/* Animated background */}
       <div className="absolute inset-0">
         <motion.div 
@@ -44,29 +44,29 @@ export default function WhatIveBeenDoing() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         {/* Header */}
         <motion.div 
-          className="text-center mb-16"
+          className="text-center mb-8"
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
           <motion.h2 
-            className="text-5xl md:text-6xl font-black text-ey-white mb-8"
+            className="text-3xl md:text-4xl font-black text-ey-white mb-4"
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            ¿Qué he estado <span className="text-ey-yellow">haciendo?</span>
+            Acá un resumen de lo que he estado <span className="text-ey-yellow">haciendo</span>
           </motion.h2>
           <motion.p 
-            className="text-xl text-ey-white/80 max-w-4xl mx-auto leading-relaxed"
+            className="text-lg text-ey-yellow/80 max-w-4xl mx-auto font-light"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
             viewport={{ once: true }}
           >
-            Un vistazo a mis últimos 6 meses transformando la industria.
+            estos últimos 6 meses en la industria mineria
           </motion.p>
         </motion.div>
 
@@ -82,7 +82,7 @@ export default function WhatIveBeenDoing() {
           <div className="absolute inset-0 bg-gradient-to-br from-ey-yellow/20 via-ey-yellow/10 to-transparent rounded-3xl blur-2xl group-hover:blur-3xl transition-all duration-500"></div>
           <div className="absolute -inset-2 bg-gradient-to-r from-ey-yellow/10 via-transparent to-ey-yellow/10 rounded-3xl blur-xl animate-pulse"></div>
           
-          <div className="relative bg-gradient-to-br from-ey-dark via-ey-medium/50 to-ey-dark rounded-3xl p-8 border-2 border-ey-yellow/40 shadow-2xl backdrop-blur-sm">
+          <div className="relative bg-gradient-to-br from-ey-dark via-ey-medium/50 to-ey-dark rounded-3xl p-6 border-2 border-ey-yellow/40 shadow-2xl backdrop-blur-sm">
             {/* Video Container */}
             <div className="relative aspect-video rounded-2xl overflow-hidden bg-black shadow-2xl">
               <video
@@ -138,16 +138,16 @@ export default function WhatIveBeenDoing() {
 
             {/* Video Description */}
             <motion.div 
-              className="mt-8 text-center"
+              className="mt-6 text-center"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.8 }}
               viewport={{ once: true }}
             >
-              <h3 className="text-2xl font-black text-ey-white mb-2">
+              <h3 className="text-xl font-black text-ey-white mb-2">
                 Proyectos en <span className="text-ey-yellow">Acción</span>
               </h3>
-              <p className="text-lg text-ey-white/80 leading-relaxed max-w-4xl mx-auto">
+              <p className="text-base text-ey-white/80 leading-relaxed max-w-3xl mx-auto">
                 Desde bodegaje, predicción, asignación y alertas, hasta control operativo y visualización 360 de faenas
               </p>
             </motion.div>
