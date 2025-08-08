@@ -1,12 +1,13 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { ChevronUp } from "lucide-react";
+import { ChevronUp, Menu, X } from "lucide-react";
 
 export default function Navigation() {
   const [isVisible, setIsVisible] = useState(true);
   const [showScrollTop, setShowScrollTop] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -21,20 +22,45 @@ export default function Navigation() {
       setLastScrollY(currentScrollY);
     };
 
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [lastScrollY]);
+    // Cerrar menú móvil al hacer scroll
+    const handleScrollAndCloseMenu = () => {
+      handleScroll();
+      if (mobileMenuOpen) {
+        setMobileMenuOpen(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScrollAndCloseMenu, { passive: true });
+    return () => window.removeEventListener('scroll', handleScrollAndCloseMenu);
+  }, [lastScrollY, mobileMenuOpen]);
+
+  // Cerrar menú móvil al redimensionar ventana
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 768 && mobileMenuOpen) {
+        setMobileMenuOpen(false);
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, [mobileMenuOpen]);
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
     e.preventDefault();
     const element = document.getElementById(targetId);
     if (element) {
       element.scrollIntoView({ behavior: 'auto', block: 'start' });
+      setMobileMenuOpen(false); // Cerrar menú móvil al navegar
     }
   };
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'auto' });
+  };
+
+  const toggleMobileMenu = () => {
+    setMobileMenuOpen(!mobileMenuOpen);
   };
 
   return (
@@ -50,42 +76,94 @@ export default function Navigation() {
           >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="flex justify-between items-center py-4">
+                {/* Logo */}
                 <div className="flex items-center">
                   <img 
                     src="https://res.cloudinary.com/dhobnlg73/image/upload/v1754256023/EY_idKDHDpz8E_0_prmiha.svg" 
                     alt="EY Logo" 
-                    className="h-9 w-auto -mt-1"
+                    className="h-8 w-auto -mt-1"
                   />
                 </div>
-                <div className="hidden md:flex space-x-8">
-                  <a href="#hero" onClick={(e) => handleNavClick(e, 'hero')} className="text-ey-white hover:text-ey-yellow transition-colors text-base font-medium">Inicio</a>
-                  <a href="#about" onClick={(e) => handleNavClick(e, 'about')} className="text-ey-white hover:text-ey-yellow transition-colors text-base font-medium">Perfil</a>
-                  <a href="#projects" onClick={(e) => handleNavClick(e, 'projects')} className="text-ey-white hover:text-ey-yellow transition-colors text-base font-medium">Proyectos</a>
-                  <a href="#pipeline" onClick={(e) => handleNavClick(e, 'pipeline')} className="text-ey-white hover:text-ey-yellow transition-colors text-base font-medium">Pipeline</a>
-                  <a href="#value" onClick={(e) => handleNavClick(e, 'value')} className="text-ey-white hover:text-ey-yellow transition-colors text-base font-medium">Valor</a>
-                  <a href="#efficiency" onClick={(e) => handleNavClick(e, 'efficiency')} className="text-ey-white hover:text-ey-yellow transition-colors text-base font-medium">Propuesta</a>
-                  <a href="#speaking" onClick={(e) => handleNavClick(e, 'speaking')} className="text-ey-white hover:text-ey-yellow transition-colors text-base font-medium">Liderazgo</a>
-                  <a href="#contact" onClick={(e) => handleNavClick(e, 'contact')} className="text-ey-white hover:text-ey-yellow transition-colors text-base font-medium">Contacto</a>
-                </div>
-                <motion.div
-                  animate={{ 
-                    color: ['#000000', '#dc2626', '#000000'] 
-                  }}
-                  transition={{ 
-                    duration: 3,
-                    repeat: Infinity,
-                    ease: "easeInOut"
-                  }}
-                >
-                  <Button 
-                    onClick={() => window.open('https://wa.me/56971415496?text=Hola%20Rodrigo,%20me%20interesa%20conversar%20sobre%20la%20propuesta%20estrat%C3%A9gica%20para%20EY', '_blank')}
-                    className="bg-ey-yellow hover:bg-yellow-400 font-bold text-sm px-6 py-2"
-                    style={{ color: 'inherit' }}
+                
+                {/* Desktop Menu */}
+                <div className="hidden md:flex items-center space-x-6">
+                  <a href="#hero" onClick={(e) => handleNavClick(e, 'hero')} className="text-ey-white hover:text-ey-yellow transition-colors text-sm font-medium">Inicio</a>
+                  <a href="#about" onClick={(e) => handleNavClick(e, 'about')} className="text-ey-white hover:text-ey-yellow transition-colors text-sm font-medium">Perfil</a>
+                  <a href="#projects" onClick={(e) => handleNavClick(e, 'projects')} className="text-ey-white hover:text-ey-yellow transition-colors text-sm font-medium">Proyectos</a>
+                  <a href="#pipeline" onClick={(e) => handleNavClick(e, 'pipeline')} className="text-ey-white hover:text-ey-yellow transition-colors text-sm font-medium">Pipeline</a>
+                  <a href="#value" onClick={(e) => handleNavClick(e, 'value')} className="text-ey-white hover:text-ey-yellow transition-colors text-sm font-medium">Valor</a>
+                  <a href="#efficiency" onClick={(e) => handleNavClick(e, 'efficiency')} className="text-ey-white hover:text-ey-yellow transition-colors text-sm font-medium">Propuesta</a>
+                  <a href="#speaking" onClick={(e) => handleNavClick(e, 'speaking')} className="text-ey-white hover:text-ey-yellow transition-colors text-sm font-medium">Liderazgo</a>
+                  <a href="#contact" onClick={(e) => handleNavClick(e, 'contact')} className="text-ey-white hover:text-ey-yellow transition-colors text-sm font-medium">Contacto</a>
+                  
+                  {/* Desktop Contact Button */}
+                  <motion.div
+                    animate={{ 
+                      color: ['#000000', '#dc2626', '#000000'] 
+                    }}
+                    transition={{ 
+                      duration: 3,
+                      repeat: Infinity,
+                      ease: "easeInOut"
+                    }}
                   >
-                    Contactar
-                  </Button>
-                </motion.div>
+                    <Button 
+                      onClick={() => window.open('https://wa.me/56971415496?text=Hola%20Rodrigo,%20me%20interesa%20conversar%20sobre%20la%20propuesta%20estrat%C3%A9gica%20para%20EY', '_blank')}
+                      className="bg-ey-yellow hover:bg-yellow-400 font-bold text-xs px-4 py-2"
+                      style={{ color: 'inherit' }}
+                    >
+                      Contactar
+                    </Button>
+                  </motion.div>
+                </div>
+
+                {/* Mobile Menu Button */}
+                <div className="md:hidden">
+                  <button
+                    onClick={toggleMobileMenu}
+                    className="text-ey-white hover:text-ey-yellow transition-colors p-2"
+                  >
+                    {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+                  </button>
+                </div>
               </div>
+
+              {/* Mobile Menu */}
+              <AnimatePresence>
+                {mobileMenuOpen && (
+                  <motion.div
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: 'auto' }}
+                    exit={{ opacity: 0, height: 0 }}
+                    transition={{ duration: 0.3 }}
+                    className="md:hidden border-t border-ey-yellow/20"
+                  >
+                    <div className="py-4 space-y-4">
+                      <a href="#hero" onClick={(e) => handleNavClick(e, 'hero')} className="block text-ey-white hover:text-ey-yellow transition-colors text-base font-medium py-2">Inicio</a>
+                      <a href="#about" onClick={(e) => handleNavClick(e, 'about')} className="block text-ey-white hover:text-ey-yellow transition-colors text-base font-medium py-2">Perfil</a>
+                      <a href="#projects" onClick={(e) => handleNavClick(e, 'projects')} className="block text-ey-white hover:text-ey-yellow transition-colors text-base font-medium py-2">Proyectos</a>
+                      <a href="#pipeline" onClick={(e) => handleNavClick(e, 'pipeline')} className="block text-ey-white hover:text-ey-yellow transition-colors text-base font-medium py-2">Pipeline</a>
+                      <a href="#value" onClick={(e) => handleNavClick(e, 'value')} className="block text-ey-white hover:text-ey-yellow transition-colors text-base font-medium py-2">Valor</a>
+                      <a href="#efficiency" onClick={(e) => handleNavClick(e, 'efficiency')} className="block text-ey-white hover:text-ey-yellow transition-colors text-base font-medium py-2">Propuesta</a>
+                      <a href="#speaking" onClick={(e) => handleNavClick(e, 'speaking')} className="block text-ey-white hover:text-ey-yellow transition-colors text-base font-medium py-2">Liderazgo</a>
+                      <a href="#contact" onClick={(e) => handleNavClick(e, 'contact')} className="block text-ey-white hover:text-ey-yellow transition-colors text-base font-medium py-2">Contacto</a>
+                      
+                      {/* Mobile Contact Button */}
+                      <div className="pt-4 border-t border-ey-yellow/20">
+                        <Button 
+                          onClick={() => {
+                            window.open('https://wa.me/56971415496?text=Hola%20Rodrigo,%20me%20interesa%20conversar%20sobre%20la%20propuesta%20estrat%C3%A9gica%20para%20EY', '_blank');
+                            setMobileMenuOpen(false);
+                          }}
+                          className="w-full bg-ey-yellow hover:bg-yellow-400 text-black font-bold py-3"
+                        >
+                          📱 Contactar por WhatsApp
+                        </Button>
+                      </div>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </div>
           </motion.nav>
         )}
