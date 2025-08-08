@@ -120,8 +120,8 @@ export default function Navigation() {
                   >
                     <Button 
                       onClick={() => window.open('https://wa.me/56971415496?text=Hola%20Rodrigo,%20me%20interesa%20conversar%20sobre%20la%20propuesta%20estrat%C3%A9gica%20para%20EY', '_blank')}
-                      className="bg-ey-yellow hover:bg-yellow-400 font-bold text-xs px-4 py-2"
-                      style={{ color: 'inherit' }}
+                      className="bg-ey-yellow hover:bg-yellow-400 font-bold text-xs rounded-lg border border-ey-yellow/20 px-2 py-1"
+                      style={{ color: 'inherit', height: '32px', minWidth: '70px' }}
                     >
                       {t('nav.contactButton')}
                     </Button>
