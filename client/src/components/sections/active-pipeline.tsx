@@ -1,9 +1,11 @@
 import { motion, useInView } from "framer-motion";
 import { Clock, DollarSign, TrendingUp, Target, Building2, Zap, Handshake, Truck, BarChart3 } from "lucide-react";
 import { useRef, useEffect, useState } from "react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 // Individual probability bar component
 function ProbabilityBar({ probability, index }) {
+  const { t } = useLanguage();
   const [width, setWidth] = useState(0);
   const [hasAnimated, setHasAnimated] = useState(false);
   const ref = useRef(null);
@@ -41,7 +43,7 @@ function ProbabilityBar({ probability, index }) {
   return (
     <div ref={ref}>
       <div className="flex items-center justify-between mb-3">
-        <span className="text-ey-white/80 text-sm font-medium">Probabilidad</span>
+        <span className="text-ey-white/80 text-sm font-medium">{t('pipeline.probability')}</span>
         <span className="text-ey-yellow font-black text-lg">{probability}%</span>
       </div>
       <div className="w-full bg-gray-700/50 rounded-full h-4 overflow-hidden border border-gray-600">
@@ -60,6 +62,7 @@ function ProbabilityBar({ probability, index }) {
 
 // Compact probability bar component for the opportunities cards
 function CompactProbabilityBar({ probability, index }) {
+  const { t } = useLanguage();
   const [width, setWidth] = useState(0);
   const [hasAnimated, setHasAnimated] = useState(false);
   const ref = useRef(null);
@@ -95,7 +98,7 @@ function CompactProbabilityBar({ probability, index }) {
   return (
     <div ref={ref}>
       <div className="flex items-center justify-between mb-2">
-        <span className="text-ey-white/80 text-xs font-medium">Probabilidad</span>
+        <span className="text-ey-white/80 text-xs font-medium">{t('pipeline.probability')}</span>
         <span className="text-ey-yellow font-black text-sm">{probability}%</span>
       </div>
       <div className="w-full bg-gray-700/50 rounded-full h-2 overflow-hidden border border-gray-600">
@@ -113,68 +116,69 @@ function CompactProbabilityBar({ probability, index }) {
 }
 
 export default function ActivePipeline() {
+  const { t } = useLanguage();
   
   const opportunities = [
     {
-      company: "Anglo American",
-      project: "Implementación Robots de Inspección",
+      company: t('pipeline.anglo.title'),
+      project: t('pipeline.anglo.subtitle'),
       value: "$6.2M",
       probability: 93,
-      stage: "Propuesta Final",
+      stage: t('pipeline.anglo.stage'),
       timeline: "Q3 2025",
       color: "from-blue-500 to-blue-700"
     },
     {
-      company: "Antofagasta Minerals",
-      project: "Digital Twins & AI Warehouse",
+      company: t('pipeline.antofagasta.title'),
+      project: t('pipeline.antofagasta.subtitle'),
       value: "$3.3M",
       probability: 85,
-      stage: "Definición Prueba de Concepto",
+      stage: t('pipeline.antofagasta.stage'),
       timeline: "Q3 2025",
       color: "from-purple-500 to-purple-700"
     },
     {
-      company: "Sierra Gorda",
-      project: "Optimización de Procesos IoT",
+      company: t('pipeline.sierra.title'),
+      project: t('pipeline.sierra.subtitle'),
       value: "$1.8M",
       probability: 80,
-      stage: "Fase Piloto",
+      stage: t('pipeline.sierra.stage'),
       timeline: "Q3 2025",
       color: "from-orange-500 to-orange-700"
     },
     {
-      company: "BHP Spence",
-      project: "Warehouse Inteligente",
+      company: t('pipeline.bhp.title'),
+      project: t('pipeline.bhp.subtitle'),
       value: "$4.3M",
       probability: 95,
-      stage: "Aprobación Piloto",
+      stage: t('pipeline.bhp.stage'),
       timeline: "Q3 2025",
       color: "from-green-500 to-green-700"
     },
     {
-      company: "Codelco",
-      project: "Sistema de Gestión Obsoletos",
+      company: t('pipeline.codelco_obsolete.title'),
+      project: t('pipeline.codelco_obsolete.subtitle'),
       value: "$130M",
       probability: 95,
-      stage: "Cerrando acuerdo primera etapa",
+      stage: t('pipeline.codelco_obsolete.stage'),
       timeline: "Q3 2025",
       color: "from-red-600 to-red-800"
     },
     {
-      company: "Minera San Gerónimo",
-      project: "Plataforma Centralización Procesos",
+      company: t('pipeline.san_geronimo.title'),
+      project: t('pipeline.san_geronimo.subtitle'),
       value: "$2M",
       probability: 96,
-      stage: "Acordando Alcance final",
+      stage: t('pipeline.san_geronimo.stage'),
       timeline: "Q3 2025",
       color: "from-indigo-500 to-indigo-700"
     },
     {
-      company: "Minera Carola-Coemin",
-      project: "Gestión Inteligente Bodegas Externas",
+      company: t('pipeline.carola.title'),
+      project: t('pipeline.carola.subtitle'),
       value: "$4M",
       probability: 80,
-      stage: "Acordando fecha piloto",
+      stage: t('pipeline.carola.stage'),
       timeline: "Q3 2025",
       color: "from-teal-500 to-teal-700"
     }
@@ -216,7 +220,7 @@ export default function ActivePipeline() {
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            Pipeline de Negocios <span className="text-ey-yellow">Activo</span>
+            {t('pipeline.title')} <span className="text-ey-yellow">{t('pipeline.title_highlight')}</span>
           </motion.h2>
           <motion.p 
             className="text-lg text-ey-yellow/80 max-w-4xl mx-auto font-light"
@@ -225,7 +229,7 @@ export default function ActivePipeline() {
             transition={{ duration: 0.8, delay: 0.4 }}
             viewport={{ once: true }}
           >
-$151.6M en oportunidades mapeadas para asociación con EY
+            {t('pipeline.subtitle')}
           </motion.p>
         </motion.div>
         
@@ -265,7 +269,7 @@ $151.6M en oportunidades mapeadas para asociación con EY
                       <DollarSign className="w-4 h-4 text-ey-yellow mr-1" />
                       <span className="text-xl font-black text-ey-yellow">{opportunity.value}</span>
                     </div>
-                    <div className="text-ey-white/70 text-xs font-medium">Valor del Proyecto</div>
+                    <div className="text-ey-white/70 text-xs font-medium">{t('pipeline.project_value')}</div>
                   </div>
                   
                   {/* Probability */}
@@ -301,7 +305,7 @@ $151.6M en oportunidades mapeadas para asociación con EY
             <div className="mb-4">
               <DollarSign className="w-10 h-10 text-ey-yellow mx-auto" />
             </div>
-            <h3 className="text-xl font-black text-ey-white mb-4">Pipeline Activo Total</h3>
+            <h3 className="text-xl font-black text-ey-white mb-4">{t('pipeline.total_active')}</h3>
             <motion.div 
               className="text-5xl md:text-6xl font-black text-ey-yellow mb-2"
               initial={{ scale: 0.8 }}
@@ -312,7 +316,7 @@ $151.6M en oportunidades mapeadas para asociación con EY
               ${totalValue}M
             </motion.div>
             <p className="text-ey-white/80 text-base font-medium max-w-xl mx-auto leading-relaxed">
-              Para analizar, enlistar y asegurar!
+              {t('pipeline.subtitle_action')}
             </p>
             
             {/* Floating metrics */}
@@ -324,7 +328,7 @@ $151.6M en oportunidades mapeadas para asociación con EY
               >
                 <TrendingUp className="w-6 h-6 text-ey-yellow mx-auto mb-2" />
                 <div className="text-xl font-black text-ey-yellow mb-1">{totalOpportunities}</div>
-                <div className="text-ey-white/80 font-medium text-sm">Oportunidades Activas</div>
+                <div className="text-ey-white/80 font-medium text-sm">{t('pipeline.opportunities')}</div>
               </motion.div>
               
               <motion.div 
@@ -334,7 +338,7 @@ $151.6M en oportunidades mapeadas para asociación con EY
               >
                 <Target className="w-6 h-6 text-ey-yellow mx-auto mb-2" />
                 <div className="text-xl font-black text-ey-yellow mb-1">{averageProbability}%</div>
-                <div className="text-ey-white/80 font-medium text-sm">Probabilidad Promedio</div>
+                <div className="text-ey-white/80 font-medium text-sm">{t('pipeline.avg_probability')}</div>
               </motion.div>
               
               <motion.div 
@@ -344,7 +348,7 @@ $151.6M en oportunidades mapeadas para asociación con EY
               >
                 <Clock className="w-6 h-6 text-ey-yellow mx-auto mb-2" />
                 <div className="text-xl font-black text-ey-yellow mb-1">Q4 2025 - Q1 2026</div>
-                <div className="text-ey-white/80 font-medium text-sm">Timeline</div>
+                <div className="text-ey-white/80 font-medium text-sm">{t('pipeline.timeline')}</div>
               </motion.div>
             </div>
           </div>
@@ -367,7 +371,7 @@ $151.6M en oportunidades mapeadas para asociación con EY
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              Negocio <span className="text-ey-yellow">Estrella</span>
+              {t('pipeline.star_business')}
             </motion.h3>
             <motion.p 
               className="text-2xl text-ey-yellow font-bold"
@@ -376,7 +380,7 @@ $151.6M en oportunidades mapeadas para asociación con EY
               transition={{ duration: 0.8, delay: 0.2 }}
               viewport={{ once: true }}
             >
-              "Gestión de Obsoletos"
+              "{t('pipeline.obsolete.title')}"
             </motion.p>
           </div>
 
@@ -390,9 +394,9 @@ $151.6M en oportunidades mapeadas para asociación con EY
                 </div>
                 <div>
                   <h4 className="text-2xl font-black text-white mb-1">
-                    Sistema de Gestión Obsoletos
+                    {t('pipeline.obsolete.title')}
                   </h4>
-                  <p className="text-ey-black/80 font-semibold text-sm">Información Detallada del Proyecto</p>
+                  <p className="text-ey-black/80 font-semibold text-sm">{t('pipeline.obsolete.subtitle')}</p>
                 </div>
               </div>
             </div>
@@ -401,17 +405,17 @@ $151.6M en oportunidades mapeadas para asociación con EY
             <div className="grid grid-cols-3 gap-4 mb-6">
               <div className="bg-ey-white/10 backdrop-blur-sm border border-ey-yellow/30 rounded-lg p-3 text-center">
                 <div className="text-2xl font-black text-ey-yellow mb-1">$2B</div>
-                <div className="text-ey-white/80 font-medium text-xs">Valor Total</div>
+                <div className="text-ey-white/80 font-medium text-xs">{t('pipeline.obsolete.total_value')}</div>
               </div>
               
               <div className="bg-ey-white/10 backdrop-blur-sm border border-ey-yellow/30 rounded-lg p-3 text-center">
                 <div className="text-2xl font-black text-ey-yellow mb-1">$60M+</div>
-                <div className="text-ey-white/80 font-medium text-xs">Vendido</div>
+                <div className="text-ey-white/80 font-medium text-xs">{t('pipeline.obsolete.sold')}</div>
               </div>
               
               <div className="bg-ey-white/10 backdrop-blur-sm border border-ey-yellow/30 rounded-lg p-3 text-center">
-                <div className="text-lg font-black text-ey-yellow mb-1">Contrato</div>
-                <div className="text-ey-white/80 font-medium text-xs">Adjudicado</div>
+                <div className="text-lg font-black text-ey-yellow mb-1">{t('pipeline.obsolete.contract')}</div>
+                <div className="text-ey-white/80 font-medium text-xs">{t('pipeline.obsolete.awarded')}</div>
               </div>
             </div>
             
@@ -423,9 +427,9 @@ $151.6M en oportunidades mapeadas para asociación con EY
                     <Building2 className="w-4 h-4 text-ey-black" />
                   </div>
                   <div>
-                    <h5 className="text-sm font-bold text-ey-white mb-1">Expertise en Codelco</h5>
+                    <h5 className="text-sm font-bold text-ey-white mb-1">{t('pipeline.obsolete.expertise')}</h5>
                     <p className="text-ey-white/80 text-xs leading-tight">
-                      Capacidad única en el negocio
+                      {t('pipeline.obsolete.expertise_desc')}
                     </p>
                   </div>
                 </div>
@@ -437,9 +441,9 @@ $151.6M en oportunidades mapeadas para asociación con EY
                     <Zap className="w-4 h-4 text-ey-black" />
                   </div>
                   <div>
-                    <h5 className="text-sm font-bold text-ey-white mb-1">Operación Inmediata</h5>
+                    <h5 className="text-sm font-bold text-ey-white mb-1">{t('pipeline.obsolete.immediate')}</h5>
                     <p className="text-ey-white/80 text-xs leading-tight">
-                      Infraestructura ya establecida
+                      {t('pipeline.obsolete.immediate_desc')}
                     </p>
                   </div>
                 </div>
@@ -451,9 +455,9 @@ $151.6M en oportunidades mapeadas para asociación con EY
                     <Handshake className="w-4 h-4 text-ey-black" />
                   </div>
                   <div>
-                    <h5 className="text-sm font-bold text-ey-white mb-1">Alianzas Estratégicas</h5>
+                    <h5 className="text-sm font-bold text-ey-white mb-1">{t('pipeline.obsolete.alliances')}</h5>
                     <p className="text-ey-white/80 text-xs leading-tight">
-                      Asociación con NCA (USA)
+                      {t('pipeline.obsolete.alliances_desc')}
                     </p>
                   </div>
                 </div>
@@ -465,9 +469,9 @@ $151.6M en oportunidades mapeadas para asociación con EY
                     <Truck className="w-4 h-4 text-ey-black" />
                   </div>
                   <div>
-                    <h5 className="text-sm font-bold text-ey-white mb-1">Logística Integrada</h5>
+                    <h5 className="text-sm font-bold text-ey-white mb-1">{t('pipeline.obsolete.logistics')}</h5>
                     <p className="text-ey-white/80 text-xs leading-tight">
-                      Despliegue con Ferronor
+                      {t('pipeline.obsolete.logistics_desc')}
                     </p>
                   </div>
                 </div>
@@ -484,7 +488,7 @@ $151.6M en oportunidades mapeadas para asociación con EY
             >
               <div className="inline-block bg-gradient-to-r from-ey-yellow/20 to-ey-yellow/10 border border-ey-yellow/30 rounded-xl px-8 py-4">
                 <p className="text-ey-white font-bold text-lg">
-                  <span className="text-ey-yellow">Ventaja Competitiva:</span> Track record on/off +24 meses haciendo remates
+                  <span className="text-ey-yellow">Ventaja Competitiva:</span> {t('pipeline.obsolete.advantage')}
                 </p>
               </div>
             </motion.div>

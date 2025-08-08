@@ -1,8 +1,10 @@
 import { motion } from "framer-motion";
 import { Star, Rocket, Target, Users, Heart, Zap, TrendingUp, Globe, Shield, X, DollarSign, TrendingDown, Clock, CheckCircle } from "lucide-react";
 import { useState } from "react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function Efficiency() {
+  const { t } = useLanguage();
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   
   const motivations = [
@@ -66,7 +68,7 @@ export default function Efficiency() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            ¿Por Qué Quiero Ser Parte de <span className="text-ey-yellow">EY</span>?
+            {t('efficiency.main_title')} <span className="text-ey-yellow">{t('efficiency.ey_highlight')}</span>?
           </motion.h2>
           <motion.p 
             className="text-xl text-ey-white/80 max-w-5xl mx-auto leading-relaxed mb-8"
@@ -75,7 +77,7 @@ export default function Efficiency() {
             transition={{ duration: 0.8, delay: 0.4 }}
             viewport={{ once: true }}
           >
-            Firma líder, Equipo de Liderazgo Excepcional, y el momento perfecto para desafiar la industria
+            {t('efficiency.main_subtitle')}
           </motion.p>
           <motion.div
             className="inline-block bg-gradient-to-r from-ey-yellow/20 to-ey-yellow/10 backdrop-blur-sm rounded-2xl px-8 py-4 border border-ey-yellow/30"
@@ -85,7 +87,7 @@ export default function Efficiency() {
             viewport={{ once: true }}
           >
             <p className="text-ey-yellow font-bold text-lg">
-              ¿Yo?
+              {t('efficiency.me_question')}
             </p>
           </motion.div>
           <motion.div
@@ -96,7 +98,7 @@ export default function Efficiency() {
             viewport={{ once: true }}
           >
             <p className="text-red-400 font-bold text-lg">
-              Un Agente de cambio con hambre de comerse la industria, de verdad.
+              {t('efficiency.change_agent')}
             </p>
           </motion.div>
         </motion.div>

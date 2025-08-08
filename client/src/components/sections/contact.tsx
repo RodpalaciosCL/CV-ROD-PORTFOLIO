@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Mail, Phone, User, Calendar, MessageSquare, ArrowRight } from "lucide-react";
 import { useState, useEffect } from "react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 // Typewriter effect component
 function TypewriterText({ text, delay = 0 }) {
@@ -37,6 +38,8 @@ function TypewriterText({ text, delay = 0 }) {
 }
 
 export default function Contact() {
+  const { t } = useLanguage();
+  
   const contactMethods = [
     {
       icon: Mail,
@@ -125,16 +128,16 @@ export default function Contact() {
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            <TypewriterText 
-              text="¿Listo para Acelerar la " 
-              delay={800}
-            />
-            <span className="text-ey-yellow">
               <TypewriterText 
-                text="Práctica Minera de EY?"
-                delay={2400}
+                text={t('contact.title_part1')} 
+                delay={800}
               />
             </span>
+            <span className="text-ey-yellow">
+              <TypewriterText 
+                text={t('contact.title_part2')}
+                delay={2400}
+              />
           </motion.h2>
           <motion.p 
             className="text-xl text-ey-yellow/80 mb-12 max-w-4xl mx-auto leading-relaxed"
@@ -143,8 +146,7 @@ export default function Contact() {
             transition={{ duration: 0.8, delay: 0.4 }}
             viewport={{ once: true }}
           >
-            Conversemos sobre cómo esta asociación estratégica puede desbloquear oportunidades de largo plazo, 
-            y establecer a EY como el partner tecnológico minero líder en Latinoamérica.
+            {t('contact.subtitle')}
           </motion.p>
           
           {/* Primary CTA */}
@@ -163,7 +165,7 @@ export default function Contact() {
                 className="relative bg-ey-yellow text-ey-black px-12 py-6 text-xl font-black rounded-2xl shadow-2xl hover:shadow-ey-yellow/25 transition-all duration-300 group"
               >
                 <span className="relative z-10 flex items-center">
-                  Contactar
+                  {t('contact.cta_button')}
                   <ArrowRight className="w-6 h-6 ml-3 group-hover:translate-x-1 transition-transform" />
                 </span>
                 <div className="absolute inset-0 bg-gradient-to-r from-yellow-400 to-ey-yellow rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -212,7 +214,7 @@ export default function Contact() {
                   {method.title}
                 </h3>
                 <p className="text-ey-yellow font-semibold mb-2 group-hover:underline">{method.value}</p>
-                <p className="text-ey-white/70 text-sm group-hover:text-ey-white/90 transition-colors">Click para contactar</p>
+                <p className="text-ey-white/70 text-sm group-hover:text-ey-white/90 transition-colors">{t('contact.click_to_contact')}</p>
               </div>
             </motion.div>
           ))}

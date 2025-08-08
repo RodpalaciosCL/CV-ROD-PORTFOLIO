@@ -1,8 +1,10 @@
 import { motion } from "framer-motion";
 import { Award, Users, Calendar, MapPin, Mic, Star, X, ChevronLeft, ChevronRight } from "lucide-react";
 import { useState, useEffect } from "react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function SpeakingEvents() {
+  const { t } = useLanguage();
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const [selectedIndex, setSelectedIndex] = useState<number>(0);
   
@@ -152,7 +154,7 @@ export default function SpeakingEvents() {
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
           >
-<span className="whitespace-nowrap">Hagámoslo juntos y <span className="text-ey-yellow">contémosle al mundo!</span></span>
+<span className="whitespace-nowrap">{t('speaking.title')} <span className="text-ey-yellow">{t('speaking.title_highlight')}</span></span>
           </motion.h2>
           <motion.p 
             className="text-xl text-ey-white/80 max-w-4xl mx-auto leading-relaxed"
@@ -161,7 +163,7 @@ export default function SpeakingEvents() {
             transition={{ duration: 0.8, delay: 0.4 }}
             viewport={{ once: true }}
           >
-            Tomemos la posta y seamos referentes en la industria
+            {t('speaking.subtitle')}
           </motion.p>
         </motion.div>
         
@@ -198,7 +200,7 @@ export default function SpeakingEvents() {
                   {/* Hover overlay to indicate clickable */}
                   <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 flex items-center justify-center">
                     <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-white text-sm font-semibold bg-black/50 px-3 py-1 rounded-full">
-                      Ver imagen completa
+                      {t('speaking.view_image')}
                     </div>
                   </div>
                 </div>

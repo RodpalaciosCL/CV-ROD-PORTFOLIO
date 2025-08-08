@@ -1,44 +1,47 @@
 import { motion } from "framer-motion";
 import { Activity, Car, Workflow } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function Maintenance() {
+  const { t } = useLanguage();
+  
   const maintenanceTechnologies = [
     {
-      title: "Predictive Operation",
-      subtitle: "Monitoreo vibraciones y desgaste predictivo",
+      title: t('maintenance.predictive.title'),
+      subtitle: t('maintenance.predictive.subtitle'),
       icon: <Activity className="w-8 h-8" />,
       media: "https://res.cloudinary.com/dhobnlg73/video/upload/v1750691069/3_msvtot.mov",
       bullets: [
-        "Alertas preventivas para molinos SAG",
-        "Monitoreo de correas y equipos críticos",
-        "Sensores IoT + IA integrados",
-        "Reducción de paradas no programadas"
+        t('maintenance.predictive.bullet1'),
+        t('maintenance.predictive.bullet2'),
+        t('maintenance.predictive.bullet3'),
+        t('maintenance.predictive.bullet4')
       ],
       color: "from-indigo-500 to-indigo-700"
     },
     {
-      title: "Vehicle Control",
-      subtitle: "Control inteligente de vehículos mineros",
+      title: t('maintenance.vehicle.title'),
+      subtitle: t('maintenance.vehicle.subtitle'),
       icon: <Car className="w-8 h-8" />,
       media: "https://www.slideteam.net/media/catalog/product/cache/1280x720/i/o/iot_predictive_maintenance_dashboard_for_mining_vehicle_slide01.jpg",
       bullets: [
-        "Dashboard predictivo para vehículos mineros",
-        "Monitoreo IoT en tiempo real",
-        "Mantenimiento preventivo automatizado",
-        "Optimización de rendimiento vehicular"
+        t('maintenance.vehicle.bullet1'),
+        t('maintenance.vehicle.bullet2'),
+        t('maintenance.vehicle.bullet3'),
+        t('maintenance.vehicle.bullet4')
       ],
       color: "from-blue-500 to-blue-700"
     },
     {
-      title: "IoT for Process and Workflows",
-      subtitle: "Internet de las cosas para procesos y flujos de trabajo",
+      title: t('maintenance.iot.title'),
+      subtitle: t('maintenance.iot.subtitle'),
       icon: <Workflow className="w-8 h-8" />,
       media: "https://image.chitra.live/api/v1/wps/791f42f/bb478e74-0911-4497-aba7-e090c8d478ea/2/IoT-Technology-for-the-Mining-Industry-1074x654.jpg",
       bullets: [
-        "Automatización de procesos con IoT",
-        "Flujos de trabajo inteligentes",
-        "Conectividad industrial avanzada",
-        "Optimización de operaciones mineras"
+        t('maintenance.iot.bullet1'),
+        t('maintenance.iot.bullet2'),
+        t('maintenance.iot.bullet3'),
+        t('maintenance.iot.bullet4')
       ],
       color: "from-green-500 to-green-700"
     }
@@ -131,8 +134,8 @@ export default function Maintenance() {
             <div className="flex items-center justify-center space-x-4">
               <Activity className="w-12 h-12 text-ey-yellow" />
               <div className="text-center">
-                <p className="text-3xl text-ey-yellow font-black mb-2">Mantenimiento Predictivo</p>
-                <p className="text-lg text-ey-white/80 font-medium">Operaciones inteligentes y eficientes</p>
+                <p className="text-3xl text-ey-yellow font-black mb-2">{t('maintenance.cta.title')}</p>
+                <p className="text-lg text-ey-white/80 font-medium">{t('maintenance.cta.subtitle')}</p>
               </div>
             </div>
           </div>

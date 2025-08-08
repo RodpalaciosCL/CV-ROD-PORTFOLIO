@@ -1,45 +1,48 @@
 import { motion } from "framer-motion";
 import { AlertTriangle, Zap, Target, TrendingUp } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function Strategic() {
+  const { t } = useLanguage();
+  
   const insights = [
     {
-      category: "La Realidad del AI",
-      impact: "DISRUPCIÓN TOTAL",
-      description: "Gen AI está redefiniendo el panorama competitivo",
+      category: t('strategic.insights_old.ai_reality.category'),
+      impact: t('strategic.insights_old.ai_reality.impact'),
+      description: t('strategic.insights_old.ai_reality.description'),
       findings: [
-        "Gen AI desmonta el modelo tradicional de horas facturables",
-        "PwC invirtió US$ 1B para automatizar auditoría y consultoría",
-        "Clientes desarrollan copilotos internos que entregan en horas lo que antes tomaba meses",
-        "Startups como Harvey AI reemplazan servicios completos de Big Four"
+        t('strategic.insights_old.ai_reality.findings.0'),
+        t('strategic.insights_old.ai_reality.findings.1'),
+        t('strategic.insights_old.ai_reality.findings.2'),
+        t('strategic.insights_old.ai_reality.findings.3')
       ],
       icon: AlertTriangle,
       gradient: "from-red-600 via-red-500 to-orange-400",
       shadowColor: "shadow-red-500/25"
     },
     {
-      category: "Imperativo de Velocidad",
-      impact: "ADAPTACIÓN INMEDIATA",
-      description: "El mercado exige resultados en tiempo real",
+      category: t('strategic.insights_old.velocity_imperative.category'),
+      impact: t('strategic.insights_old.velocity_imperative.impact'),
+      description: t('strategic.insights_old.velocity_imperative.description'),
       findings: [
-        "Clientes pagan por impacto en 48 horas, no en 6 meses",
-        "War-rooms con AI generan MVPs funcionales en la primera sesión",
-        "Modelo de co-creación en vivo reemplaza ciclos tradicionales de evaluación",
-        "La competencia real son analistas internos con GPT-4 y herramientas no-code"
+        t('strategic.insights_old.velocity_imperative.findings.0'),
+        t('strategic.insights_old.velocity_imperative.findings.1'),
+        t('strategic.insights_old.velocity_imperative.findings.2'),
+        t('strategic.insights_old.velocity_imperative.findings.3')
       ],
       icon: Zap,
       gradient: "from-orange-500 via-yellow-500 to-amber-400",
       shadowColor: "shadow-orange-500/25"
     },
     {
-      category: "Oportunidad Estratégica",
-      impact: "LIDERAZGO EN INNOVACIÓN",
-      description: "Propuesta de transformación para EY",
+      category: t('strategic.insights_old.strategic_opportunity.category'),
+      impact: t('strategic.insights_old.strategic_opportunity.impact'),
+      description: t('strategic.insights_old.strategic_opportunity.description'),
       findings: [
-        "Práctica de prototipado ultrarrápido con equipos híbridos",
-        "Demos funcionales en 72h con modelo de pricing por adopción",
-        "Potencial de US$ 50M en revenue incremental en 12 meses",
-        "Posicionamiento como líder en consultoría AI-native"
+        t('strategic.insights_old.strategic_opportunity.findings.0'),
+        t('strategic.insights_old.strategic_opportunity.findings.1'),
+        t('strategic.insights_old.strategic_opportunity.findings.2'),
+        t('strategic.insights_old.strategic_opportunity.findings.3')
       ],
       icon: Target,
       gradient: "from-emerald-600 via-green-500 to-teal-400",
@@ -79,7 +82,7 @@ export default function Strategic() {
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            Propuesta <span className="text-ey-yellow">Estratégica</span>
+            {t('strategic.old_title')} <span className="text-ey-yellow">{t('strategic.old_title_highlight')}</span>
           </motion.h2>
           <motion.p 
             className="text-2xl text-ey-white/80 max-w-4xl mx-auto leading-relaxed font-medium"
@@ -88,7 +91,7 @@ export default function Strategic() {
             transition={{ duration: 0.8, delay: 0.4 }}
             viewport={{ once: true }}
           >
-            Cambiando el rumbo de los próximos 10 años
+            {t('strategic.old_subtitle')}
           </motion.p>
         </motion.div>
 
@@ -197,11 +200,11 @@ export default function Strategic() {
             <div className="absolute inset-0 bg-gradient-to-r from-ey-yellow/30 via-ey-yellow/50 to-ey-yellow/30 rounded-3xl blur-2xl animate-pulse"></div>
             <div className="relative bg-gradient-to-r from-ey-dark via-ey-medium to-ey-dark rounded-3xl px-12 py-8 border-2 border-ey-yellow/60 shadow-2xl">
               <div className="text-center">
-                <p className="text-3xl text-ey-yellow font-black mb-2">El Futuro es Ahora</p>
+                <p className="text-3xl text-ey-yellow font-black mb-2">{t('strategic.old_cta.title')}</p>
                 <p className="text-xl text-ey-white font-semibold">
-                  La disrupción no espera.
+                  {t('strategic.old_cta.line1')}
                   <br />
-                  <span className="text-ey-yellow font-black">EY puede liderar o seguir.</span>
+                  <span className="text-ey-yellow font-black">{t('strategic.old_cta.line2')}</span>
                 </p>
               </div>
             </div>

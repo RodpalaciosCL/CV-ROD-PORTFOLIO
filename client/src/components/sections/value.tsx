@@ -1,43 +1,46 @@
 import { motion } from "framer-motion";
 import { Zap, Users, Award, Globe, Check, Star } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function Value() {
+  const { t } = useLanguage();
+  
   const valueProps = [
     { 
       icon: Zap, 
-      title: "Pipeline Pre Commit",
+      title: t('value.pipeline.title'),
       value: "$150M+", 
-      description: "Oportunidades activas con alto grado de cierre",
+      description: t('value.pipeline.description'),
       gradient: "from-yellow-500 to-orange-500"
     },
     { 
       icon: Users, 
-      title: "Red Establecida", 
+      title: t('value.network.title'), 
       value: "Tier 1", 
-      description: "Relaciones directas con empresas mineras principales",
+      description: t('value.network.description'),
       gradient: "from-blue-500 to-purple-500"
     },
     { 
       icon: Award, 
-      title: "Ecosystem As a Service", 
+      title: t('value.ecosystem.title'), 
       value: "1000+", 
-      description: "Partners con capacidades específicas",
+      description: t('value.ecosystem.description'),
       gradient: "from-green-500 to-emerald-500"
     },
     { 
       icon: Globe, 
-      title: "Gateway LATAM", 
+      title: t('value.gateway.title'), 
       value: "4+", 
-      description: "Para expansión regional",
+      description: t('value.gateway.description'),
       gradient: "from-purple-500 to-pink-500"
     }
   ];
 
   const advantages = [
-    "Capacidad de desarrollar y escalar negocios y relacionamiento activo",
-    "Experiencia minera en terreno y para assets críticos de la operación",
-    "Alta capacidad de gestionar equipos ágiles, sostenibles y equitativos",
-    "Track record con Big 4 consulting y grandes empresas de tecnología mundiales"
+    t('competitive.advantage1'),
+    t('competitive.advantage2'),
+    t('competitive.advantage3'),
+    t('competitive.advantage4')
   ];
 
   return (
@@ -72,7 +75,7 @@ export default function Value() {
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            Propuesta de Valor <span className="text-ey-yellow">Única</span>
+            {t('value.title')} <span className="text-ey-yellow">{t('value.title_highlight')}</span>
           </motion.h2>
           <motion.p 
             className="text-lg text-ey-white/80 max-w-3xl mx-auto"
@@ -81,7 +84,7 @@ export default function Value() {
             transition={{ duration: 0.8, delay: 0.4 }}
             viewport={{ once: true }}
           >
-            Ventajas competitivas que hacen esta asociación estratégicamente valiosa para EY
+            {t('value.subtitle')}
           </motion.p>
         </motion.div>
         

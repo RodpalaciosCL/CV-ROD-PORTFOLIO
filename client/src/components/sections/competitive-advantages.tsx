@@ -1,12 +1,15 @@
 import { motion } from "framer-motion";
 import { Check } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function CompetitiveAdvantages() {
+  const { t } = useLanguage();
+  
   const advantages = [
-    "Capacidad de desarrollar y escalar negocios y relacionamiento activo",
-    "Experiencia minera en terreno y para assets críticos de la operación",
-    "Alta capacidad de gestionar equipos ágiles, sostenibles y equitativos",
-    "Track record con Big 4 consulting y grandes empresas de tecnología mundiales"
+    t('competitive.advantage1'),
+    t('competitive.advantage2'),
+    t('competitive.advantage3'),
+    t('competitive.advantage4')
   ];
 
   return (
@@ -50,12 +53,12 @@ export default function CompetitiveAdvantages() {
               <div className="flex items-center justify-center mb-4">
                 <div className="h-1 flex-1 bg-gradient-to-r from-transparent via-ey-yellow to-transparent rounded-full"></div>
                 <div className="mx-6">
-                  <h2 className="text-3xl md:text-4xl font-black text-ey-yellow">Ventajas Competitivas</h2>
+                  <h2 className="text-3xl md:text-4xl font-black text-ey-yellow">{t('competitive.title')}</h2>
                 </div>
                 <div className="h-1 flex-1 bg-gradient-to-r from-transparent via-ey-yellow to-transparent rounded-full"></div>
               </div>
               <p className="text-base text-ey-white/80 max-w-3xl mx-auto">
-                Capacidad de desarrollar y escalar negocios y relacionamiento activo
+                {t('competitive.subtitle')}
               </p>
             </motion.div>
             
@@ -138,13 +141,13 @@ export default function CompetitiveAdvantages() {
                 <div className="absolute inset-0 bg-gradient-to-r from-ey-yellow/30 via-ey-yellow/50 to-ey-yellow/30 rounded-2xl blur-xl animate-pulse"></div>
                 <div className="relative bg-gradient-to-r from-ey-dark via-ey-medium to-ey-dark rounded-2xl px-8 py-4 border-2 border-ey-yellow/60 shadow-2xl">
                   <div className="text-center">
-                    <p className="text-2xl text-ey-yellow font-black mb-2">Resultado</p>
+                    <p className="text-2xl text-ey-yellow font-black mb-2">{t('competitive.result_title')}</p>
                     <p className="text-base text-ey-white font-semibold leading-relaxed max-w-3xl mx-auto">
-                      Partner estratégico integral, con acceso inmediato al mercado LATAM y Global, 
+                      {t('competitive.result_part1')}
                       <br />
-                      y con una mirada disruptiva y atingente de cómo la industria está moviéndose 
+                      {t('competitive.result_part2')}
                       <br />
-                      <span className="text-ey-yellow font-black">y el rol clave que las big consulting firms deben jugar</span>
+                      <span className="text-ey-yellow font-black">{t('competitive.result_highlight')}</span>
                     </p>
                   </div>
                 </div>

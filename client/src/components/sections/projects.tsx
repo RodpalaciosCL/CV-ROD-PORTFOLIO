@@ -1,71 +1,74 @@
 import { motion } from "framer-motion";
 import { Award, Users, TrendingUp, Zap, Target, Trophy, Rocket, Gem, Clock, Mountain } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function Projects() {
+  const { t } = useLanguage();
+  
   const projects = [
     {
-      company: "Goldfields",
-      title: "Puesta en Marcha Mina",
+      company: t('major_projects.goldfields.title'),
+      title: t('major_projects.goldfields.subtitle'),
       value: "$21M USD",
-      team: "650 personas",
-      time: "12 meses",
-      result: "Re activación mina",
-      description: "Desarrollo de sistemas anti congelantes y término de instalación faena completa",
+      team: `650 ${t('projects.units.people')}`,
+      time: `12 ${t('projects.units.months')}`,
+      result: t('major_projects.goldfields.result'),
+      description: t('major_projects.goldfields.description'),
       gradient: "from-amber-600 to-amber-800",
       iconComponent: Mountain
     },
     {
-      company: "Glencore",
-      title: "Sistema de Gestión de Activos",
+      company: t('major_projects.glencore.title'),
+      title: t('major_projects.glencore.subtitle'),
       value: "$8M USD",
-      team: "9 personas",
-      time: "12 meses",
-      result: "90% eficiencia",
-      description: "Desarrollo plataforma de control de activos por 20 billones de dólares",
+      team: `9 ${t('projects.units.people')}`,
+      time: `12 ${t('projects.units.months')}`,
+      result: t('major_projects.glencore.result'),
+      description: t('major_projects.glencore.description'),
       gradient: "from-blue-600 to-blue-800",
       iconComponent: Zap
     },
     {
-      company: "CODELCO",
-      title: "Mesa de ayuda AI",
+      company: t('major_projects.codelco.title'),
+      title: t('major_projects.codelco.subtitle'),
       value: "$50M USD",
-      team: "15 personas",
-      time: "24 meses",
-      result: "97% de eficiencia versus 75% actual",
-      description: "Re diseño completo de la plataforma de gestión de incidentes",
+      team: `15 ${t('projects.units.people')}`,
+      time: `24 ${t('projects.units.months')}`,
+      result: t('major_projects.codelco.result'),
+      description: t('major_projects.codelco.description'),
       gradient: "from-red-600 to-red-800",
       iconComponent: Target
     },
     {
-      company: "PwC",
-      title: "Centro de Robótica y CoE Minero Avanzado",
+      company: t('major_projects.pwc_center.title'),
+      title: t('major_projects.pwc_center.subtitle'),
       value: "$20M USD",
-      team: "25 personas",
-      time: "12 meses",
-      result: "Nuevo revenue stream, participación de mercado y amplificación de scope en cuentas actuales",
-      description: "Centro especializado de robótica y excelencia operacional minera",
+      team: `25 ${t('projects.units.people')}`,
+      time: `12 ${t('projects.units.months')}`,
+      result: t('major_projects.pwc_center.result'),
+      description: t('major_projects.pwc_center.description'),
       gradient: "from-orange-500 to-orange-700",
       iconComponent: Trophy
     },
     {
-      company: "R/GA",
-      title: "Landing Chile y primeros deals regionales",
+      company: t('major_projects.rga_landing.title'),
+      title: t('major_projects.rga_landing.subtitle'),
       value: "$25M USD",
-      team: "35 personas",
-      time: "13 meses",
-      result: "Pipeline robusto en Energía, Minería y Autopistas a nivel regional",
-      description: "Establecimiento de operaciones regionales y desarrollo de cartera de clientes",
+      team: `35 ${t('projects.units.people')}`,
+      time: `13 ${t('projects.units.months')}`,
+      result: t('major_projects.rga_landing.result'),
+      description: t('major_projects.rga_landing.description'),
       gradient: "from-green-600 to-green-800",
       iconComponent: Rocket
     },
     {
-      company: "Accenture",
-      title: "Desarrollo de la práctica y Digitalización Vertical Minería",
+      company: t('major_projects.accenture_practice.title'),
+      title: t('major_projects.accenture_practice.subtitle'),
       value: "$12M USD",
-      team: "23 personas",
-      time: "15 meses",
-      result: "Incremento en revenue global del negocio de Chile y la región",
-      description: "Creación y desarrollo de práctica vertical especializada en minería",
+      team: `23 ${t('projects.units.people')}`,
+      time: `15 ${t('projects.units.months')}`,
+      result: t('major_projects.accenture_practice.result'),
+      description: t('major_projects.accenture_practice.description'),
       gradient: "from-purple-600 to-purple-800",
       iconComponent: Gem
     }
@@ -116,7 +119,7 @@ export default function Projects() {
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            Logros de Proyectos <span className="text-ey-yellow">Mayores</span>
+            {t('projects.title')} <span className="text-ey-yellow">{t('projects.title_highlight')}</span>
           </motion.h2>
           <motion.p 
             className="text-lg text-ey-white/80 max-w-4xl mx-auto leading-relaxed"
@@ -125,7 +128,7 @@ export default function Projects() {
             transition={{ duration: 0.8, delay: 0.4 }}
             viewport={{ once: true }}
           >
-            Track record comprobado entregando soluciones tecnológicas complejas para empresas mineras Tier&nbsp;1
+            {t('projects.subtitle')}
           </motion.p>
         </motion.div>
         
@@ -162,28 +165,28 @@ export default function Projects() {
                   <div className="flex justify-between items-center">
                     <span className="text-sm text-ey-white/70 font-medium flex items-center">
                       <Award className="w-3 h-3 mr-1" />
-                      Valor:
+                      {t('projects.value')}:
                     </span>
                     <span className="font-black text-ey-yellow text-base">{project.value}</span>
                   </div>
                   <div className="flex justify-between items-center">
                     <span className="text-sm text-ey-white/70 font-medium flex items-center">
                       <Clock className="w-3 h-3 mr-1" />
-                      Tiempo:
+                      {t('projects.time')}:
                     </span>
                     <span className="font-semibold text-ey-white text-sm">{project.time}</span>
                   </div>
                   <div className="flex justify-between items-center">
                     <span className="text-sm text-ey-white/70 font-medium flex items-center">
                       <Users className="w-3 h-3 mr-1" />
-                      Equipo:
+                      {t('projects.team')}:
                     </span>
                     <span className="font-semibold text-ey-white text-sm">{project.team}</span>
                   </div>
                   <div className="flex justify-between items-start min-h-[2rem]">
                     <span className="text-sm text-ey-white/70 font-medium flex items-center">
                       <TrendingUp className="w-3 h-3 mr-1" />
-                      Resultado:
+                      {t('projects.result')}:
                     </span>
                     <span className="font-semibold text-ey-yellow text-right flex-1 ml-2 text-sm">{project.result}</span>
                   </div>
@@ -208,7 +211,7 @@ export default function Projects() {
         >
           <div className="text-6xl font-black text-ey-yellow mb-4">$141M+</div>
           <p className="text-xl text-ey-white/80 max-w-4xl mx-auto leading-relaxed">
-            En negocios en la industria minería, de energía y Oil&Gas, en los últimos 8 años...
+            {t('projects.total_description')}
           </p>
         </motion.div>
       </div>

@@ -1,8 +1,10 @@
 import { motion } from "framer-motion";
 import { Play, Pause, Volume2, VolumeX } from "lucide-react";
 import { useState, useRef } from "react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function WhatIveBeenDoing() {
+  const { t } = useLanguage();
   const [isPlaying, setIsPlaying] = useState(false);
   const [isMuted, setIsMuted] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -57,7 +59,7 @@ export default function WhatIveBeenDoing() {
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            Acá un resumen de lo que he estado <span className="text-ey-yellow">haciendo</span>
+            {t('doing.title')} <span className="text-ey-yellow">{t('doing.title_highlight')}</span>
           </motion.h2>
           <motion.p 
             className="text-lg text-ey-yellow/80 max-w-4xl mx-auto font-light"
@@ -66,7 +68,7 @@ export default function WhatIveBeenDoing() {
             transition={{ duration: 0.8, delay: 0.4 }}
             viewport={{ once: true }}
           >
-            estos últimos 6 meses en la industria mineria
+            {t('doing.subtitle')}
           </motion.p>
         </motion.div>
 
@@ -130,7 +132,7 @@ export default function WhatIveBeenDoing() {
                   </motion.button>
                   
                   <div className="text-ey-white text-sm font-medium">
-                    Proyectos en Acción - Últimos 6 meses
+                    {t('doing.video_title')}
                   </div>
                 </div>
               </div>
@@ -145,10 +147,10 @@ export default function WhatIveBeenDoing() {
               viewport={{ once: true }}
             >
               <h3 className="text-xl font-black text-ey-white mb-2">
-                Proyectos en <span className="text-ey-yellow">Acción</span>
+                {t('doing.projects_title_part1')} <span className="text-ey-yellow">{t('doing.projects_title_part2')}</span>
               </h3>
               <p className="text-base text-ey-white/80 leading-relaxed max-w-3xl mx-auto">
-                Desde bodegaje, predicción, asignación y alertas, hasta control operativo y visualización 360 de faenas
+                {t('doing.projects_description')}
               </p>
             </motion.div>
           </div>

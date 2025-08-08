@@ -1,48 +1,51 @@
 import { motion } from "framer-motion";
 import BulletAccordion from "@/components/BulletAccordion";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function Strategic() {
+  const { t } = useLanguage();
+  
   const insights = [
     {
-      title: "La Realidad del AI · Disrupción total",
+      title: t('strategic.insights.ai_reality.title'),
       subtitle: "",
       bullets: [
-        { heading: "Gen AI desmonta el modelo tradicional de horas facturables",
-          detail: "Los LLM analizan el 100 % de las transacciones en minutos y generan reportes sin muestreo. Esto elimina tareas junior y comprime auditorías de 6 semanas a 6 horas." },
-        { heading: "PwC invirtió US$ 1 B para automatizar auditoría y consultoría",
-          detail: "Prevén que 30 % del compliance estará 100 % automatizado antes de 2027, y consultoría operará basado en AI en casi el 70% de sus procesos" },
-        { heading: "Clientes construyen copilotos internos que entregan en horas",
-          detail: "Coca-Cola ya dispone de un bot financiero con GPT-4 que produce dashboards de riesgo en tiempo real a coste marginal." },
-        { heading: "Start-ups como Harvey AI reemplazan servicios Big Four completos",
-          detail: "Harvey atiende a >40 firmas legales del Top 100; EY Legal pierde terreno en contratos estándar y due-diligence." }
+        { heading: t('strategic.insights.ai_reality.bullets.0.heading'),
+          detail: t('strategic.insights.ai_reality.bullets.0.detail') },
+        { heading: t('strategic.insights.ai_reality.bullets.1.heading'),
+          detail: t('strategic.insights.ai_reality.bullets.1.detail') },
+        { heading: t('strategic.insights.ai_reality.bullets.2.heading'),
+          detail: t('strategic.insights.ai_reality.bullets.2.detail') },
+        { heading: t('strategic.insights.ai_reality.bullets.3.heading'),
+          detail: t('strategic.insights.ai_reality.bullets.3.detail') }
       ]
     },
     {
-      title: "Imperativo de Velocidad · Adaptación inmediata",
+      title: t('strategic.insights.velocity_imperative.title'),
       subtitle: "",
       bullets: [
-        { heading: "Clientes pagan por impacto en 48 h, no en 6 meses",
-          detail: "CFOs exigen ROI este mismo trimestre; un prototipo que no se usa en 2 días se cancela." },
-        { heading: "War-rooms con Gen AI generan MVPs funcionales en la primera sesión",
-          detail: "Prompt-engineer + datos → backend, UI y pruebas unitarias en vivo." },
-        { heading: "Co-creación en vivo reemplaza ciclos de evaluación clásicos",
-          detail: "Cada commit está ligado a decisiones de negocio, no a entregables de PowerPoint." },
-        { heading: "La verdadera competencia: analistas internos con GPT-4 + no-code",
-          detail: "Con Retool & Zapier, un analista arma bots en un fin de semana con su tarjeta corporativa." }
+        { heading: t('strategic.insights.velocity_imperative.bullets.0.heading'),
+          detail: t('strategic.insights.velocity_imperative.bullets.0.detail') },
+        { heading: t('strategic.insights.velocity_imperative.bullets.1.heading'),
+          detail: t('strategic.insights.velocity_imperative.bullets.1.detail') },
+        { heading: t('strategic.insights.velocity_imperative.bullets.2.heading'),
+          detail: t('strategic.insights.velocity_imperative.bullets.2.detail') },
+        { heading: t('strategic.insights.velocity_imperative.bullets.3.heading'),
+          detail: t('strategic.insights.velocity_imperative.bullets.3.detail') }
       ]
     },
     {
-      title: "Oportunidad Estratégica · Liderazgo en innovación",
+      title: t('strategic.insights.strategic_opportunity.title'),
       subtitle: "",
       bullets: [
-        { heading: "Práctica de prototipado ultrarrápido con equipos híbridos",
-          detail: "Quads de 4 personas: Consultor + full-stack + ML-engineer + prompt-engineer; ciclos de 72 h 'descubrimiento-diseño-demo'." },
-        { heading: "Demos funcionales en 72 h con pricing por adopción",
-          detail: "Fee base bajo + success fee ligado a usuarios activos / ahorro generado." },
-        { heading: "Potencial de US$ 50 M en revenue incremental en 12 meses",
-          detail: "10 proyectos '72 h' por trimestre × ticket medio US$ 1.25 M + success fee." },
-        { heading: "Posicionamiento como líder en consultoría AI-native",
-          detail: "Primer portafolio 'built-with-GenAI' certificado, 18 meses antes que la competencia." }
+        { heading: t('strategic.insights.strategic_opportunity.bullets.0.heading'),
+          detail: t('strategic.insights.strategic_opportunity.bullets.0.detail') },
+        { heading: t('strategic.insights.strategic_opportunity.bullets.1.heading'),
+          detail: t('strategic.insights.strategic_opportunity.bullets.1.detail') },
+        { heading: t('strategic.insights.strategic_opportunity.bullets.2.heading'),
+          detail: t('strategic.insights.strategic_opportunity.bullets.2.detail') },
+        { heading: t('strategic.insights.strategic_opportunity.bullets.3.heading'),
+          detail: t('strategic.insights.strategic_opportunity.bullets.3.detail') }
       ]
     }
   ];
@@ -79,7 +82,7 @@ export default function Strategic() {
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            Propuesta <span className="text-ey-yellow">Estratégica</span>
+            {t('strategic.title')} <span className="text-ey-yellow">{t('strategic.title_highlight')}</span>
           </motion.h2>
           <motion.p 
             className="text-2xl text-ey-white/80 max-w-4xl mx-auto leading-relaxed font-medium"
@@ -88,7 +91,7 @@ export default function Strategic() {
             transition={{ duration: 0.8, delay: 0.4 }}
             viewport={{ once: true }}
           >
-            Cambiando el rumbo de los próximos 10 años
+            {t('strategic.subtitle')}
           </motion.p>
         </motion.div>
 
@@ -114,7 +117,7 @@ export default function Strategic() {
                   <div className="h-px flex-1 bg-gradient-to-r from-transparent via-ey-yellow/50 to-transparent"></div>
                   <div className="mx-6 px-6 py-2 bg-ey-yellow/10 rounded-full border border-ey-yellow/30">
                     <span className="text-sm font-bold text-ey-yellow uppercase tracking-wider">
-                      {index === 0 ? 'REALIDAD' : index === 1 ? 'VELOCIDAD' : 'OPORTUNIDAD'}
+                      {index === 0 ? t('strategic.categories.reality') : index === 1 ? t('strategic.categories.velocity') : t('strategic.categories.opportunity')}
                     </span>
                   </div>
                   <div className="h-px flex-1 bg-gradient-to-r from-transparent via-ey-yellow/50 to-transparent"></div>
@@ -155,8 +158,8 @@ export default function Strategic() {
               className="relative bg-gradient-to-r from-ey-dark via-ey-medium to-ey-dark rounded-3xl px-12 py-8 border-2 border-ey-yellow/60 shadow-2xl hover:border-ey-yellow/80 transition-all duration-300 hover:scale-105 cursor-pointer"
             >
               <div className="text-center">
-                <p className="text-4xl text-ey-yellow font-black mb-2">¿Qué esperamos?</p>
-                <p className="text-lg text-ey-white/80 font-medium">Descarga el Framework de ataque</p>
+                <p className="text-4xl text-ey-yellow font-black mb-2">{t('strategic.cta.title')}</p>
+                <p className="text-lg text-ey-white/80 font-medium">{t('strategic.cta.subtitle')}</p>
               </div>
             </button>
           </div>

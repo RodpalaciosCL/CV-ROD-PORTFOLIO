@@ -13,102 +13,105 @@ import {
   Users,
   Bot
 } from "lucide-react";
+import { useLanguage } from '../../contexts/LanguageContext';
 
 export default function Operation() {
+  const { t } = useLanguage();
+  
   const solutions = [
     {
       icon: Camera,
-      name: "WAIhouse",
-      tagline: "Automatización de bodegas con IA",
-      description: "Inventarios automáticos por visión computacional e integración ERP",
+      name: t('solutions.waihouse.name'),
+      tagline: t('solutions.waihouse.tagline'),
+      description: t('solutions.waihouse.description'),
       media: "https://res.cloudinary.com/dhobnlg73/image/upload/v1750620085/668c1c12e8a58030d5568f21_642d7a5f4d77d19c2f6fa8c2_xzGehktapAgabSW56yhCmigLzY3uCWACMrR6p4lkLfw_owddtl.jpg",
       type: "image"
     },
     {
       icon: BarChart3,
-      name: "Mining360",
-      tagline: "Dashboard centralizado de KPIs mineros",
-      description: "Control en tiempo real de procesos operativos e insights basados en Big Data",
+      name: t('solutions.mining360.name'),
+      tagline: t('solutions.mining360.tagline'),
+      description: t('solutions.mining360.description'),
       media: "https://res.cloudinary.com/dhobnlg73/image/upload/v1750620085/Underground_Tracking_pg6jlu.webp",
       type: "image"
     },
     {
       icon: Droplets,
-      name: "Control Hídrico de Faena",
-      tagline: "Sistema Inteligente para control de flujo y consumo",
-      description: "Monitoreo y gestión automatizada del recurso hídrico con optimización predictiva",
+      name: t('solutions.water_control.name'),
+      tagline: t('solutions.water_control.tagline'),
+      description: t('solutions.water_control.description'),
       media: "https://res.cloudinary.com/dhobnlg73/image/upload/v1750693432/Captura_de_pantalla_2025-06-23_a_la_s_11.42.11_rw4lpf.png",
       type: "image"
     },
     {
       icon: Lightbulb,
-      name: "Mining Lights",
-      tagline: "Sistema inteligente de control eficiente energético",
-      description: "Sistema automatizado de gestión lumínica con mantenimiento predictivo y eficiencia energética",
+      name: t('solutions.mining_lights.name'),
+      tagline: t('solutions.mining_lights.tagline'),
+      description: t('solutions.mining_lights.description'),
       media: "https://res.cloudinary.com/dhobnlg73/image/upload/v1750694512/Captura_de_pantalla_2025-06-23_a_la_s_12.01.42_dof0qh.png",
       type: "image"
     },
     {
       icon: Pickaxe,
-      name: "Ley del Mineral",
-      tagline: "Identificación inteligente en tiempo real",
-      description: "IA para detectar ley mineral, optimizar palas de extracción y maximizar valor por tonelada",
+      name: t('solutions.mineral_law.name'),
+      tagline: t('solutions.mineral_law.tagline'),
+      description: t('solutions.mineral_law.description'),
       media: "https://res.cloudinary.com/dhobnlg73/image/upload/v1750690573/ChatGPT_Image_22_jun_2025_15_40_22_lsewla.png",
       type: "image"
     },
     {
       icon: Cog,
-      name: "RPA Intelligence",
-      tagline: "Automatización predictiva de procesos",
-      description: "Workflows automáticos que predicen fallas y ejecutan acciones preventivas sin intervención humana",
+      name: t('solutions.rpa_intelligence.name'),
+      tagline: t('solutions.rpa_intelligence.tagline'),
+      description: t('solutions.rpa_intelligence.description'),
       media: "https://res.cloudinary.com/dhobnlg73/video/upload/v1750691060/1_gxiukm.mov",
       type: "video"
     },
     {
       icon: Building2,
-      name: "HotelCommander",
-      tagline: "Gestión hotelera integral de campamentos mineros",
-      description: "Check-in digital, control de contratistas y dashboards de ocupación en tiempo real",
+      name: t('solutions.hotel_commander.name'),
+      tagline: t('solutions.hotel_commander.tagline'),
+      description: t('solutions.hotel_commander.description'),
       media: "https://res.cloudinary.com/dhobnlg73/image/upload/v1750620086/reservations_calendar_highquality_mdxwqp.webp",
       type: "image"
     },
     {
       icon: Zap,
-      name: "Neural Operations",
-      tagline: "Centro de comando inteligente unificado",
-      description: "Operación remota centralizada con IA para eficiencia energética y control predictivo total",
+      name: t('solutions.neural_operations.name'),
+      tagline: t('solutions.neural_operations.tagline'),
+      description: t('solutions.neural_operations.description'),
       media: "https://www.youtube.com/embed/BoHxSpEPg4Y?autoplay=1&mute=1&loop=1&playlist=BoHxSpEPg4Y&controls=0&showinfo=0&rel=0&modestbranding=1",
       type: "iframe"
     },
     {
       icon: Cpu,
-      name: "Digital Twins",
-      tagline: "Simulación y predicción de escenarios de seguridad",
-      description: "Modelos predictivos de riesgo operacional, simulación de emergencias y evacuaciones, optimización de protocolos de seguridad y análisis de patrones de incidentes",
+      name: t('solutions.digital_twins.name'),
+      tagline: t('solutions.digital_twins.tagline'),
+      description: t('solutions.digital_twins.description'),
       media: "https://res.cloudinary.com/dhobnlg73/video/upload/v1754189788/prevu3d_ezb9kn.mov",
       type: "video"
     },
     {
       icon: Settings,
-      name: "Control Operacional Inteligente",
-      tagline: "Sistema avanzado de control operacional",
-      description: "Monitoreo y control centralizado de todas las operaciones mineras con IA predictiva",
+      name: t('solutions.operational_control.name'),
+      tagline: t('solutions.operational_control.tagline'),
+      description: t('solutions.operational_control.description'),
       media: "https://res.cloudinary.com/dhobnlg73/image/upload/v1754425940/Captura_de_pantalla_2025-08-05_a_la_s_16.28.43_jfvimn.png",
       type: "image"
     },
     {
       icon: Users,
-      name: "CIO & CFO as A Service",
-      tagline: "Servicios ejecutivos especializados",
-      description: "Consultoría estratégica y gestión financiera/tecnológica para operaciones mineras",
+      name: t('solutions.cio_cfo_service.name'),
+      tagline: t('solutions.cio_cfo_service.tagline'),
+      description: t('solutions.cio_cfo_service.description'),
       media: "https://res.cloudinary.com/dhobnlg73/image/upload/v1754425961/Captura_de_pantalla_2025-08-05_a_la_s_16.29.07_jxnnu8.png",
       type: "image"
     },
     {
       icon: Bot,
-      name: "Agentes",
-      tagline: "Agentes inteligentes automatizados",
-      description: "IA conversacional y agentes autónomos para atención al cliente y soporte operacional",
+      name: t('solutions.agents.name'),
+      tagline: t('solutions.agents.tagline'),
+      description: t('solutions.agents.description'),
       media: "https://res.cloudinary.com/dhobnlg73/image/upload/v1754425987/Captura_de_pantalla_2025-08-05_a_la_s_16.29.14_rhugni.png",
       type: "image"
     }
@@ -204,7 +207,7 @@ export default function Operation() {
 
                   <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-ey-yellow/20 to-ey-yellow/10 border border-ey-yellow/30 rounded-full px-4 py-2 shadow-sm hover:shadow-md transition-all duration-300">
                     <div className="w-2 h-2 bg-ey-yellow rounded-full animate-pulse"></div>
-                    <span className="text-ey-yellow font-bold text-sm">Ready to Deploy</span>
+                    <span className="text-ey-yellow font-bold text-sm">{t('solutions.ready_to_deploy')}</span>
                   </div>
                 </motion.div>
               </motion.div>
