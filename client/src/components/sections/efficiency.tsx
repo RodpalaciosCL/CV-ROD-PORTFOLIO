@@ -10,20 +10,20 @@ export default function Efficiency() {
   const motivations = [
     {
       icon: Heart,
-      title: "Respeto por EY",
-      description: "Track récord, perfiles, relacionamiento y presencia",
+      title: t('efficiency.motivations.respect.title'),
+      description: t('efficiency.motivations.respect.description'),
       gradient: "from-red-500 to-pink-500"
     },
     {
       icon: Rocket,
-      title: "Momento Espectacular",
-      description: "Desafiar la industria en uno de los momentos más transformadores de la historia",
+      title: t('efficiency.motivations.moment.title'),
+      description: t('efficiency.motivations.moment.description'),
       gradient: "from-purple-500 to-indigo-500"
     },
     {
       icon: Target,
-      title: "Hora de desafiar",
-      description: "Traer revenues no explorados sin descuidar el as-is que ha llevado a EY al éxito",
+      title: t('efficiency.motivations.challenge.title'),
+      description: t('efficiency.motivations.challenge.description'),
       gradient: "from-ey-yellow to-orange-500"
     }
   ];
@@ -168,8 +168,8 @@ export default function Efficiency() {
               >
                 <div className="mb-8">
                   <h3 className="text-4xl md:text-5xl font-black text-ey-white text-center">
-                    Un Momento Único en la 
-                    <span className="text-ey-yellow block mt-2">Historia de la Minería</span>
+                    {t('efficiency.unique_moment.title')} 
+                    <span className="text-ey-yellow block mt-2">{t('efficiency.unique_moment.title_highlight')}</span>
                   </h3>
                 </div>
               </motion.div>
@@ -182,8 +182,7 @@ export default function Efficiency() {
                 viewport={{ once: true }}
               >
                 <p className="text-xl md:text-2xl text-ey-white leading-relaxed">
-                  Estamos en un punto de inflexión donde la tecnología, sostenibilidad y <br />
-                  eficiencia operacional convergen para redefinir completamente la industria.
+                  {t('efficiency.unique_moment.description')}
                 </p>
                 
                 {/* Cool Formula Section */}
@@ -204,7 +203,7 @@ export default function Efficiency() {
                       >
                         <Users className="w-8 h-8 text-ey-yellow mx-auto mb-2" />
                         <p className="text-ey-white font-bold text-sm leading-tight">
-                          Relacionamiento
+                          {t('efficiency.formula.relationship')}
                         </p>
                       </motion.div>
                       
@@ -219,7 +218,7 @@ export default function Efficiency() {
                       >
                         <Target className="w-8 h-8 text-ey-yellow mx-auto mb-2" />
                         <p className="text-ey-white font-bold text-sm leading-tight">
-                          Entendimiento
+                          {t('efficiency.formula.understanding')}
                         </p>
                       </motion.div>
                       
@@ -234,7 +233,7 @@ export default function Efficiency() {
                       >
                         <Zap className="w-8 h-8 text-ey-yellow mx-auto mb-2" />
                         <p className="text-ey-white font-bold text-sm leading-tight">
-                          Capacidad de entrega y visualización temprana
+                          {t('efficiency.formula.delivery')}
                         </p>
                       </motion.div>
                     </div>
@@ -253,12 +252,12 @@ export default function Efficiency() {
                       <div className="flex items-center justify-center mb-3">
                         <TrendingUp className="w-6 h-6 text-ey-yellow mr-2" />
                         <p className="text-ey-yellow font-black text-xl">
-                          Crecimiento sostenido de la práctica
+                          {t('efficiency.formula.result')}
                         </p>
                         <TrendingUp className="w-6 h-6 text-ey-yellow ml-2" />
                       </div>
                       <p className="text-ey-white font-semibold text-lg">
-                        y amplificación de la cuota de consulting para la compañía
+                        {t('efficiency.formula.amplification')}
                       </p>
                     </motion.div>
                   </div>
@@ -281,7 +280,7 @@ export default function Efficiency() {
                     transition={{ duration: 0.8, delay: 0.2 }}
                     viewport={{ once: true }}
                   >
-                    Statement
+                    {t('efficiency.statement.title')}
                   </motion.h3>
                   
                   <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -295,10 +294,10 @@ export default function Efficiency() {
                     >
                       <h4 className="text-xl font-black text-ey-yellow mb-3 flex items-center">
                         <Users className="w-6 h-6 mr-2" />
-                        Tengo
+                        {t('efficiency.statement.tengo.title')}
                       </h4>
                       <p className="text-ey-white/90 text-base leading-relaxed">
-                        La capacidad de liderar equipos, visualizar talentos de manera temprana y potenciar el sentido de pertenencia y propósito, junto con hacer del trabajo un lugar cálido, desafiante y sumamente interesante, donde el ánimo por darlo sea una constante, y los beneficios por hacerlo sean el premio de esta colaboración en conjunto.
+                        {t('efficiency.statement.tengo.content')}
                       </p>
                     </motion.div>
                     
@@ -312,10 +311,10 @@ export default function Efficiency() {
                     >
                       <h4 className="text-xl font-black text-ey-yellow mb-3 flex items-center">
                         <Star className="w-6 h-6 mr-2" />
-                        Soy
+                        {t('efficiency.statement.soy.title')}
                       </h4>
                       <p className="text-ey-white/90 text-base leading-relaxed">
-                        Un fiel embajador de los beneficios y oportunidades de trabajar en una big four, y una compañía como EY, que muchas veces quienes lo viven "desde siempre" no le toman el valor, pero la red, la documentación y cantidad de assets que se tiene al alcance y el nivel de aprendizaje y estímulos que se vienen a diario, son sólo comparables con estar cursando en MBA constante, y de la más alta calidad de contenido.
+                        {t('efficiency.statement.soy.content')}
                       </p>
                     </motion.div>
                   </div>
@@ -331,10 +330,10 @@ export default function Efficiency() {
                     >
                       <h4 className="text-xl font-black text-ey-yellow mb-3 flex items-center">
                         <Target className="w-6 h-6 mr-2" />
-                        Quiero
+                        {t('efficiency.statement.quiero.title')}
                       </h4>
                       <p className="text-ey-white/90 text-base leading-relaxed">
-                        Conectarme con un equipo con hambre y ganas de ser líderes, y a su vez referentes, pero de esos que hablan sobre sus logros, aportes y calidad de entregables. Quiero ser "Pioneer y no "Follower", y que la industria nos valide por nuestros actos, y no los compromisos o promesas sin cumplir, y por último, quiero aportar a que la firma sea el referente cuando alguien piense en buscar, llamar o seleccionar un partner para acompañarlos en momentos complejos, decisivos, trascendentales y decidores.
+                        {t('efficiency.statement.quiero.content')}
                       </p>
                     </motion.div>
                     
@@ -348,10 +347,10 @@ export default function Efficiency() {
                     >
                       <h4 className="text-xl font-black text-ey-yellow mb-3 flex items-center">
                         <Zap className="w-6 h-6 mr-2" />
-                        Puedo
+                        {t('efficiency.statement.puedo.title')}
                       </h4>
                       <p className="text-ey-white/90 text-base leading-relaxed">
-                        Aportar valor, frescura, una mirada altamente enfocada en el "negocio inteligente", como también una capacidad de articulación, seguimiento y cierre única, la cual debiese marcar un precedente en mediano plazo, junto con la forma en cómo abordar oportunidades, transformar problemáticas e identificar posibilidades no sólo para la práctica, sino también para el resto de la compañía, junto con ser un agente de cambio y evangelizador nato del trabajo en equipo, la colaboración como mantra y el respeto hacia lo que hacemos y el cómo lo ofrecemos.
+                        {t('efficiency.statement.puedo.content')}
                       </p>
                     </motion.div>
                   </div>
@@ -366,10 +365,10 @@ export default function Efficiency() {
                   >
                     <h4 className="text-xl font-black text-ey-yellow mb-3 flex items-center justify-center">
                       <Heart className="w-6 h-6 mr-2" />
-                      Espero
+                      {t('efficiency.statement.espero.title')}
                     </h4>
                     <p className="text-ey-white/90 text-base leading-relaxed text-center">
-                      Poder demostrarles mi gran capacidad de gestión, relacionamiento, visualización y aseguramiento, para lograr la escalabilidad de una práctica sostenible en el tiempo y altamente rentable como negocio.
+                      {t('efficiency.statement.espero.content')}
                     </p>
                   </motion.div>
                 </div>
@@ -386,7 +385,7 @@ export default function Efficiency() {
                   <Rocket className="w-10 h-10 text-white" />
                   <div className="text-center">
                     <p className="text-white font-black text-2xl mb-1">
-                      Ready to disrupt together?
+                      {t('efficiency.final_cta')}
                     </p>
                     <div className="w-16 h-1 bg-white/30 mx-auto rounded-full"></div>
                   </div>

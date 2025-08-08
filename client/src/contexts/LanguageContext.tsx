@@ -274,7 +274,7 @@ const translations = {
     'pipeline.active_opportunities': 'Oportunidades Activas',
     'pipeline.average_probability': 'Probabilidad Promedio',
 
-    // Projects section (NEW)
+    // Projects section (NEW) - Major projects section
     'projects.title': 'Logros de Proyectos',
     'projects.title_highlight': 'Mayores',
     'projects.subtitle': 'Track record comprobado entregando soluciones tecnológicas complejas para empresas mineras Tier 1',
@@ -305,6 +305,53 @@ const translations = {
     'efficiency.main_subtitle': 'Firma líder, Equipo de Liderazgo Excepcional, y el momento perfecto para desafiar la industria',
     'efficiency.me_question': '¿Yo?',
     'efficiency.change_agent': 'Un Agente de cambio con hambre de comerse la industria, de verdad.',
+    
+    // Efficiency motivations
+    'efficiency.motivations.respect.title': 'Respeto por EY',
+    'efficiency.motivations.respect.description': 'Track récord, perfiles, relacionamiento y presencia',
+    'efficiency.motivations.moment.title': 'Momento Espectacular',
+    'efficiency.motivations.moment.description': 'Desafiar la industria en uno de los momentos más transformadores de la historia',
+    'efficiency.motivations.challenge.title': 'Hora de desafiar',
+    'efficiency.motivations.challenge.description': 'Traer revenues no explorados sin descuidar el as-is que ha llevado a EY al éxito',
+    
+    // Value Props
+    'efficiency.valueprops.optimization.title': 'Optimización de Búsquedas',
+    'efficiency.valueprops.optimization.description': 'Acelerar y optimizar los procesos actuales de reclutamiento especializado',
+    'efficiency.valueprops.optimization.benefit': 'Eficiencia Inmediata',
+    'efficiency.valueprops.latam.title': 'Acceso LATAM Comprobado',
+    'efficiency.valueprops.latam.description': 'Pipeline activo de $150M+ y relaciones tier-1 establecidas',
+    'efficiency.valueprops.latam.benefit': 'Revenue Inmediato',
+    'efficiency.valueprops.capabilities.title': 'Capacidades Complementarias',
+    'efficiency.valueprops.capabilities.description': '20+ años en minería con liderazgo transformacional comprobado',
+    'efficiency.valueprops.capabilities.benefit': 'Sinergia Estratégica',
+    
+    // Unique moment section
+    'efficiency.unique_moment.title': 'Un Momento Único en la',
+    'efficiency.unique_moment.title_highlight': 'Historia de la Minería',
+    'efficiency.unique_moment.description': 'Estamos en un punto de inflexión donde la tecnología, sostenibilidad y eficiencia operacional convergen para redefinir completamente la industria.',
+    
+    // Formula components
+    'efficiency.formula.relationship': 'Relacionamiento',
+    'efficiency.formula.understanding': 'Entendimiento',
+    'efficiency.formula.delivery': 'Capacidad de entrega y visualización temprana',
+    'efficiency.formula.result': 'Crecimiento sostenido de la práctica',
+    'efficiency.formula.amplification': 'y amplificación de la cuota de consulting para la compañía',
+    
+    // Statement section
+    'efficiency.statement.title': 'Statement',
+    'efficiency.statement.tengo.title': 'Tengo',
+    'efficiency.statement.tengo.content': 'La capacidad de liderar equipos, visualizar talentos de manera temprana y potenciar el sentido de pertenencia y propósito, junto con hacer del trabajo un lugar cálido, desafiante y sumamente interesante, donde el ánimo por darlo sea una constante, y los beneficios por hacerlo sean el premio de esta colaboración en conjunto.',
+    'efficiency.statement.soy.title': 'Soy',
+    'efficiency.statement.soy.content': 'Un fiel embajador de los beneficios y oportunidades de trabajar en una big four, y una compañía como EY, que muchas veces quienes lo viven "desde siempre" no le toman el valor, pero la red, la documentación y cantidad de assets que se tiene al alcance y el nivel de aprendizaje y estímulos que se vienen a diario, son sólo comparables con estar cursando en MBA constante, y de la más alta calidad de contenido.',
+    'efficiency.statement.quiero.title': 'Quiero',
+    'efficiency.statement.quiero.content': 'Conectarme con un equipo con hambre y ganas de ser líderes, y a su vez referentes, pero de esos que hablan sobre sus logros, aportes y calidad de entregables. Quiero ser "Pioneer y no "Follower", y que la industria nos valide por nuestros actos, y no los compromisos o promesas sin cumplir, y por último, quiero aportar a que la firma sea el referente cuando alguien piense en buscar, llamar o seleccionar un partner para acompañarlos en momentos complejos, decisivos, trascendentales y decidores.',
+    'efficiency.statement.puedo.title': 'Puedo',
+    'efficiency.statement.puedo.content': 'Aportar valor, frescura, una mirada altamente enfocada en el "negocio inteligente", como también una capacidad de articulación, seguimiento y cierre única, la cual debiese marcar un precedente en mediano plazo, junto con la forma en cómo abordar oportunidades, transformar problemáticas e identificar posibilidades no sólo para la práctica, sino también para el resto de la compañía, junto con ser un agente de cambio y evangelizador nato del trabajo en equipo, la colaboración como mantra y el respeto hacia lo que hacemos y el cómo lo ofrecemos.',
+    'efficiency.statement.espero.title': 'Espero',
+    'efficiency.statement.espero.content': 'Poder demostrarles mi gran capacidad de gestión, relacionamiento, visualización y aseguramiento, para lograr la escalabilidad de una práctica sostenible en el tiempo y altamente rentable como negocio.',
+    
+    // Final CTA
+    'efficiency.final_cta': 'Ready to disrupt together?',
 
     // Speaking Events section (NEW)
     'speaking.title': 'Hagámoslo juntos y',
@@ -703,6 +750,53 @@ const translations = {
     'efficiency.main_subtitle': 'Leading firm, Exceptional Leadership Team, and the perfect moment to challenge the industry',
     'efficiency.me_question': 'Me?',
     'efficiency.change_agent': 'A change agent hungry to disrupt the industry, for real.',
+    
+    // Efficiency motivations
+    'efficiency.motivations.respect.title': 'Respect for EY',
+    'efficiency.motivations.respect.description': 'Track record, profiles, relationships and presence',
+    'efficiency.motivations.moment.title': 'Spectacular Moment',
+    'efficiency.motivations.moment.description': 'Challenging the industry in one of the most transformative moments in history',
+    'efficiency.motivations.challenge.title': 'Time to challenge',
+    'efficiency.motivations.challenge.description': 'Bring unexplored revenues without neglecting the as-is that has led EY to success',
+    
+    // Value Props
+    'efficiency.valueprops.optimization.title': 'Search Optimization',
+    'efficiency.valueprops.optimization.description': 'Accelerate and optimize current specialized recruitment processes',
+    'efficiency.valueprops.optimization.benefit': 'Immediate Efficiency',
+    'efficiency.valueprops.latam.title': 'Proven LATAM Access',
+    'efficiency.valueprops.latam.description': 'Active pipeline of $150M+ and established tier-1 relationships',
+    'efficiency.valueprops.latam.benefit': 'Immediate Revenue',
+    'efficiency.valueprops.capabilities.title': 'Complementary Capabilities',
+    'efficiency.valueprops.capabilities.description': '20+ years in mining with proven transformational leadership',
+    'efficiency.valueprops.capabilities.benefit': 'Strategic Synergy',
+    
+    // Unique moment section
+    'efficiency.unique_moment.title': 'A Unique Moment in',
+    'efficiency.unique_moment.title_highlight': 'Mining History',
+    'efficiency.unique_moment.description': 'We are at an inflection point where technology, sustainability and operational efficiency converge to completely redefine the industry.',
+    
+    // Formula components
+    'efficiency.formula.relationship': 'Relationships',
+    'efficiency.formula.understanding': 'Understanding',
+    'efficiency.formula.delivery': 'Delivery capacity and early visualization',
+    'efficiency.formula.result': 'Sustained practice growth',
+    'efficiency.formula.amplification': 'and amplification of consulting quota for the company',
+    
+    // Statement section
+    'efficiency.statement.title': 'Statement',
+    'efficiency.statement.tengo.title': 'I Have',
+    'efficiency.statement.tengo.content': 'The ability to lead teams, visualize talent early and enhance the sense of belonging and purpose, along with making work a warm, challenging and extremely interesting place, where the spirit to give it is a constant, and the benefits of doing so are the reward of this collaboration together.',
+    'efficiency.statement.soy.title': 'I Am',
+    'efficiency.statement.soy.content': 'A faithful ambassador of the benefits and opportunities of working in a big four, and a company like EY, which often those who live it "forever" do not take the value, but the network, documentation and amount of assets that are at your fingertips and the level of learning and stimuli that come daily, are only comparable to being studying in constant MBA, and of the highest quality content.',
+    'efficiency.statement.quiero.title': 'I Want',
+    'efficiency.statement.quiero.content': 'To connect with a team with hunger and desire to be leaders, and in turn referents, but those who talk about their achievements, contributions and quality of deliverables. I want to be "Pioneer and not "Follower", and for the industry to validate us by our actions, and not the commitments or unfulfilled promises, and finally, I want to contribute to making the firm the reference when someone thinks of looking, calling or selecting a partner to accompany them in complex, decisive, transcendental and deciding moments.',
+    'efficiency.statement.puedo.title': 'I Can',
+    'efficiency.statement.puedo.content': 'Contribute value, freshness, a highly focused view on "intelligent business", as well as a unique capacity for articulation, follow-up and closure, which should set a precedent in the medium term, along with the way to approach opportunities, transform problems and identify possibilities not only for the practice, but also for the rest of the company, along with being an agent of change and natural evangelist of teamwork, collaboration as a mantra and respect for what we do and how we offer it.',
+    'efficiency.statement.espero.title': 'I Hope',
+    'efficiency.statement.espero.content': 'To be able to demonstrate my great capacity for management, relationship building, visualization and assurance, to achieve the scalability of a practice that is sustainable over time and highly profitable as a business.',
+    
+    // Final CTA
+    'efficiency.final_cta': 'Ready to disrupt together?',
 
     // Speaking Events section (NEW)
     'speaking.title': 'Let\'s do it together and',
