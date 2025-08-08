@@ -50,11 +50,36 @@ const Analytics = () => {
   const fetchAnalyticsData = async () => {
     try {
       setLoading(true);
-      const response = await fetch(
-        `/api/analytics/data?days=${timeRange}&includeOwner=${includeOwner}`
+      
+      // Leer desde localStorage (funciona sin servidor)
+      const visitsData = JSON.parse(localStorage.getItem('analytics-visits') || '[]');
+      
+      const daysAgo = new Date();
+      daysAgo.setDate(daysAgo.getDate() - parseInt(timeRange));
+      
+      let filteredData = visitsData.filter((visit: any) => 
+        new Date(visit.timestamp) > daysAgo
       );
-      const analyticsData = await response.json();
-      setData(analyticsData);
+      
+      const stats = {
+        totalVisits: filteredData.length,
+        uniqueIPs: [...new Set(filteredData.map((v: any) => v.ip))].length,
+        eyVisits: 0,
+        miningVisits: 0,
+        countries: [...new Set(filteredData.map((v: any) => v.geo?.country || 'Unknown'))],
+        topPages: Object.entries(
+          filteredData.reduce((acc: any, v: any) => {
+            acc[v.page] = (acc[v.page] || 0) + 1;
+            return acc;
+          }, {})
+        ).sort(([,a], [,b]) => (b as number) - (a as number)).slice(0, 10),
+        recentVisits: filteredData
+          .sort((a: any, b: any) => new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime())
+          .slice(0, 20),
+        companyTypes: [['Other', filteredData.length]]
+      };
+      
+      setData({ stats, visits: filteredData });
       setLastUpdate(new Date());
     } catch (error) {
       console.error('Error fetching analytics:', error);

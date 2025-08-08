@@ -6,7 +6,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/not-found";
 import Home from "@/pages/home";
 import Analytics from "@/pages/Analytics";
-import AnalyticsTracker from "@/components/AnalyticsTracker";
+import SimpleAnalytics from "@/components/SimpleAnalytics";
 
 function Router() {
   return (
@@ -23,7 +23,7 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
         <Toaster />
-        <AnalyticsTracker />
+        <SimpleAnalytics />
         <Router />
       </TooltipProvider>
     </QueryClientProvider>
