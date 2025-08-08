@@ -1,70 +1,73 @@
 import { Lightbulb, Settings, Zap, Award, TrendingUp } from "lucide-react";
 import { motion } from "framer-motion";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function About() {
+  const { t } = useLanguage();
+  
   const skills = [
     { 
       icon: Lightbulb, 
-      title: "Relacionamiento", 
-      description: "Amplia red de contactos en la Industria Minera, donde he dedicado tiempo a estar con quienes toman decisiones y en donde estas ocurren.",
+      titleKey: "about.relationship.title", 
+      descriptionKey: "about.relationship.description",
       color: "from-blue-500 to-cyan-500"
     },
     { 
       icon: Settings, 
-      title: "Entendimiento", 
-      description: "Estos últimos años me he dedicado profundamente a estar en faena, comprender los reales problemas y vivir los dolores con los equipos que ejecutan, adentrándome como nunca en el real día a día de la operación minera compleja.",
+      titleKey: "about.understanding.title", 
+      descriptionKey: "about.understanding.description",
       color: "from-purple-500 to-pink-500"
     },
     { 
       icon: Zap, 
-      title: "Crecimiento", 
-      description: "La capacidad de tomar la oportunidad o transformar el problema y entregar TANGIBILIDAD, para generar la necesidade en el cliente desde el minuto cero.",
+      titleKey: "about.growth.title", 
+      descriptionKey: "about.growth.description",
       color: "from-orange-500 to-red-500"
     }
   ];
 
   const timeline = [
     { 
-      company: "AIrontech", 
-      period: "2023-Presente", 
-      role: "Managing Director & AI Leader",
-      description: "A cargo del PNL, los negocios estratégicos, el relacionamiento con clientes y la práctica de AI y Visión Computacional Minera"
+      companyKey: "projects.airontech.title", 
+      period: "2023-Present", 
+      roleKey: "projects.airontech.role",
+      descriptionKey: "projects.airontech.description"
     },
     { 
-      company: "Kyndryl", 
+      companyKey: "projects.kyndryl.title", 
       period: "2020-2022", 
-      role: "Partner - Líder de Consultoría",
-      description: "Líder de la práctica de Consultoría y de la vertical de Minería, para clientes como Codelco, Glencore, Capstone, entre otros."
+      roleKey: "projects.kyndryl.role",
+      descriptionKey: "projects.kyndryl.description"
     },
     { 
-      company: "PwC", 
+      companyKey: "projects.pwc.title", 
       period: "2019-2020", 
-      role: "Senior Director",
-      description: "Líder de la vertical de Minería y Ciberseguridad, donde también estuve a cargo del CoE Minero y el Robotics Center"
+      roleKey: "projects.pwc.role",
+      descriptionKey: "projects.pwc.description"
     },
     { 
-      company: "Deloitte", 
+      companyKey: "projects.deloitte.title", 
       period: "2018-2019", 
-      role: "Senior Manager",
-      description: "Lideré la Digital Transformation Immersion, Cross Industrias, y también fui Líder de la práctica de Digital en Deloitte, siendo parte del comité global de transformación de la firma."
+      roleKey: "projects.deloitte.role",
+      descriptionKey: "projects.deloitte.description"
     },
     { 
-      company: "R/GA", 
+      companyKey: "projects.rga.title", 
       period: "2018", 
-      role: "Country Manager",
-      description: "Lideré el desembarco de la firma más creativa del mundo, en donde tuve que hacer desde la inscripción, hasta la configuración completa del equipo y sus primeros deals locales y regionales."
+      roleKey: "projects.rga.role",
+      descriptionKey: "projects.rga.description"
     },
     { 
-      company: "Accenture", 
+      companyKey: "projects.accenture.title", 
       period: "2016-2017", 
-      role: "Technology Manager & Accenture Digital Leader",
-      description: "Lideré el desembarco de Accenture Digital en Chile, trayendo los primeros negocios y siendo artífice de dos grandes contratos para la firma en ese entonces."
+      roleKey: "projects.accenture.role",
+      descriptionKey: "projects.accenture.description"
     },
     { 
-      company: "Múltiples Compañías", 
+      companyKey: "projects.multiple.title", 
       period: "2006-2016", 
-      role: "Emprendedor & Líder Ejecutivo",
-      description: "Creé empresas de nicho, las cuales vendí a grandes grupos, y también lideré empresas de industrias clave, donde gané premios y reconocimientos por haber aumentado el revenue de manera única, entre otras cosas."
+      roleKey: "projects.multiple.role",
+      descriptionKey: "projects.multiple.description"
     }
   ];
 
@@ -109,7 +112,7 @@ export default function About() {
               viewport={{ once: true }}
             >
               <div className="text-2xl font-black">20+</div>
-              <div className="text-sm font-semibold">Años Exp.</div>
+              <div className="text-sm font-semibold">Years Exp.</div>
             </motion.div>
           </motion.div>
           
@@ -127,8 +130,8 @@ export default function About() {
               viewport={{ once: true }}
             >
               <h2 className="text-3xl lg:text-4xl font-black text-ey-white mb-6">
-                <span className="text-ey-yellow">Creando equipos, fortaleciendo relaciones</span>
-                <span className="block text-ey-white">y empoderando la práctica</span>
+                <span className="text-ey-yellow">{t('about.title')}</span>
+                <span className="block text-ey-white">{t('about.subtitle')}</span>
               </h2>
             </motion.div>
             
@@ -139,7 +142,7 @@ export default function About() {
               transition={{ duration: 0.6, delay: 0.4 }}
               viewport={{ once: true }}
             >
-              para acompañar, desafiar y guiar a nuestros clientes en las decisiones más trascendentales
+              {t('about.description')}
             </motion.p>
             
             {/* Skills cards */}
@@ -160,17 +163,14 @@ export default function About() {
                     </div>
                     <div className="flex-1">
                       <h3 className="text-lg font-bold text-ey-white mb-1">
-                        {skill.title}
+                        {t(skill.titleKey)}
                       </h3>
-                      <p className="text-sm text-ey-white/80 leading-relaxed">{skill.description}</p>
+                      <p className="text-sm text-ey-white/80 leading-relaxed">{t(skill.descriptionKey)}</p>
                     </div>
                   </div>
                 </motion.div>
               ))}
             </div>
-            
-
-
           </motion.div>
         </div>
         
@@ -186,7 +186,7 @@ export default function About() {
           <div className="relative">
             <h3 className="text-3xl md:text-4xl font-black text-ey-yellow mb-4 flex items-center justify-center">
               <Award className="w-5 h-5 mr-2" />
-              Trayectoria Profesional
+              {t('projects.title')}
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               {timeline.map((item, index) => (
@@ -206,14 +206,12 @@ export default function About() {
                     </div>
                   </div>
                   <div className="mb-2">
-                    <div className="text-ey-white font-bold text-lg mb-1">{item.company}</div>
-                    <div className="text-ey-yellow font-medium text-sm">{item.role}</div>
+                    <div className="text-ey-white font-bold text-lg mb-1">{t(item.companyKey)}</div>
+                    <div className="text-ey-yellow font-medium text-sm">{t(item.roleKey)}</div>
                   </div>
-                  {item.description && (
-                    <div className="text-ey-white/80 text-xs leading-relaxed">
-                      {item.description}
-                    </div>
-                  )}
+                  <div className="text-ey-white/80 text-xs leading-relaxed">
+                    {t(item.descriptionKey)}
+                  </div>
                 </motion.div>
               ))}
               
@@ -229,17 +227,15 @@ export default function About() {
                 <div className="flex items-center justify-between mb-3">
                   <div className="w-3 h-3 bg-ey-yellow rounded-full"></div>
                   <div className="text-ey-yellow font-bold text-xs bg-ey-yellow/10 px-2 py-1 rounded-full">
-                    Resumen
+                    Summary
                   </div>
                 </div>
                 <div className="mb-2">
-                  <div className="text-ey-white font-bold text-lg mb-1">Perfil Ejecutivo</div>
-                  <div className="text-ey-yellow font-medium text-sm">Liderazgo & Estrategia</div>
+                  <div className="text-ey-white font-bold text-lg mb-1">{t('value.executive.title')}</div>
+                  <div className="text-ey-yellow font-medium text-sm">{t('value.executive.subtitle')}</div>
                 </div>
                 <div className="text-ey-white/80 text-xs leading-relaxed">
-                  Vasta experiencia en problemas complejos, liderando equipos y desarrollando nuevos revenue streams, 
-                  aportando negocios, relacionamiento, credibilidad y experiencia a las prácticas en las cuales he sido parte 
-                  y donde siempre he dejado huella.
+                  {t('value.executive.description')}
                 </div>
               </motion.div>
               
@@ -254,16 +250,15 @@ export default function About() {
                 <div className="flex items-center justify-between mb-3">
                   <div className="w-3 h-3 bg-ey-yellow rounded-full"></div>
                   <div className="text-ey-yellow font-bold text-xs bg-ey-yellow/10 px-2 py-1 rounded-full">
-                    Diferencial
+                    {t('value.differential.title')}
                   </div>
                 </div>
                 <div className="mb-2">
-                  <div className="text-ey-white font-bold text-lg mb-1">Valor Único</div>
-                  <div className="text-ey-yellow font-medium text-sm">Transformación Digital</div>
+                  <div className="text-ey-white font-bold text-lg mb-1">{t('value.differential.subtitle')}</div>
+                  <div className="text-ey-yellow font-medium text-sm">{t('value.transformation.title')}</div>
                 </div>
                 <div className="text-ey-white/80 text-xs leading-relaxed">
-                  Capacidad única de traducir desafíos técnicos complejos en oportunidades de negocio tangibles, 
-                  combinando expertise técnico profundo con visión estratégica empresarial para generar impacto real.
+                  {t('value.differential.description')}
                 </div>
               </motion.div>
             </div>

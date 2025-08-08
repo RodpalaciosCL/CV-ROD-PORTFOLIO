@@ -3,15 +3,17 @@ import { useState } from 'react';
 import Operation from './plug-and-play-solutions';
 import Security from './security';
 import Maintenance from './maintenance';
-
-const tabs = [
-  { id: 'operation', label: 'Operación', component: <Operation /> },
-  { id: 'security', label: 'Seguridad', component: <Security /> },
-  { id: 'maintenance', label: 'Mantenimiento', component: <Maintenance /> },
-];
+import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function Solutions() {
-  const [activeTab, setActiveTab] = useState(tabs[0].id);
+  const { t } = useLanguage();
+  const [activeTab, setActiveTab] = useState('operation');
+  
+  const tabs = [
+    { id: 'operation', labelKey: 'solutions.tab_operation', component: <Operation /> },
+    { id: 'security', labelKey: 'solutions.tab_security', component: <Security /> },
+    { id: 'maintenance', labelKey: 'solutions.tab_maintenance', component: <Maintenance /> },
+  ];
 
   return (
     <section id="solutions" className="py-24 bg-ey-dark">
@@ -24,7 +26,7 @@ export default function Solutions() {
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
           >
-            Soluciones <span className="text-ey-yellow">Altamente Demandadas por la Industria</span>
+            {t('solutions.title')} <span className="text-ey-yellow">{t('solutions.title_highlight')}</span>
           </motion.h2>
           <motion.p 
             className="text-lg text-ey-white/70 max-w-3xl mx-auto"
@@ -33,7 +35,7 @@ export default function Solutions() {
             transition={{ duration: 0.5, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            De las cuales tengo en su mayoría la <span className="text-ey-yellow font-semibold">capacidad de vender e implementar en tiempo récord</span>.
+            {t('solutions.description')} <span className="text-ey-yellow font-semibold">{t('solutions.description_highlight')}</span>.
           </motion.p>
         </div>
 
@@ -51,7 +53,7 @@ export default function Solutions() {
                       : 'text-ey-white/70 hover:text-ey-white hover:bg-ey-white/10'
                   }`}
                 >
-                  {tab.label}
+                  {t(tab.labelKey)}
                   {activeTab === tab.id && (
                     <motion.div 
                       className="absolute inset-0 bg-ey-yellow/20 rounded-xl blur-md"
