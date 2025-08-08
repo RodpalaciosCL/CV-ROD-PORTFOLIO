@@ -214,20 +214,6 @@ const translations = {
     'pipeline.opportunities.6.status': 'Acordando fecha piloto',
     'pipeline.opportunities.6.timeline': 'Q3 2025',
     
-    // What I've Been Doing
-    'doing.title': 'Acá un resumen de lo que he estado haciendo',
-    'doing.subtitle': 'estos últimos 6 meses en la industria mineria',
-    'doing.projects_title': 'Proyectos en Acción - Últimos 6 meses',
-    'doing.projects_subtitle': 'Desde bodegaje, predicción, asignación y alertas, hasta control operativo y visualización 360 de faenas',
-    
-    // Solutions Section
-    'solutions.title': 'Soluciones',
-    'solutions.title_highlight': 'Altamente Demandadas por la Industria',
-    'solutions.description': 'De las cuales tengo en su mayoría la',
-    'solutions.description_highlight': 'capacidad de vender e implementar en tiempo récord',
-    'solutions.tab_operation': 'Operación',
-    'solutions.tab_security': 'Seguridad',
-    'solutions.tab_maintenance': 'Mantenimiento',
     
     // Security Solutions
     'security.safeapp.title': 'SafeApp',
@@ -274,17 +260,6 @@ const translations = {
     'pipeline.active_opportunities': 'Oportunidades Activas',
     'pipeline.average_probability': 'Probabilidad Promedio',
 
-    // Projects section (NEW) - Major projects section
-    'projects.title': 'Logros de Proyectos',
-    'projects.title_highlight': 'Mayores',
-    'projects.subtitle': 'Track record comprobado entregando soluciones tecnológicas complejas para empresas mineras Tier 1',
-    'projects.value': 'Valor',
-    'projects.time': 'Tiempo',
-    'projects.team': 'Equipo',
-    'projects.result': 'Resultado',
-    'projects.total_description': 'En negocios en la industria minería, de energía y Oil&Gas, en los últimos 8 años...',
-    'projects.units.people': 'personas',
-    'projects.units.months': 'meses',
 
     // Value section (NEW)
     'value.title': 'Propuesta de Valor',
@@ -444,37 +419,6 @@ const translations = {
     'strategic.insights.strategic_opportunity.bullets.3.heading': 'Posicionamiento como líder en consultoría AI-native',
     'strategic.insights.strategic_opportunity.bullets.3.detail': 'Primer portafolio \'built-with-GenAI\' certificado, 18 meses antes que la competencia.',
     
-    // Strategic old version
-    'strategic.old_title': 'Propuesta',
-    'strategic.old_title_highlight': 'Estratégica',
-    'strategic.old_subtitle': 'Cambiando el rumbo de los próximos 10 años',
-    'strategic.old_cta.title': 'El Futuro es Ahora',
-    'strategic.old_cta.line1': 'La disrupción no espera.',
-    'strategic.old_cta.line2': 'EY puede liderar o seguir.',
-    
-    'strategic.insights_old.ai_reality.category': 'La Realidad del AI',
-    'strategic.insights_old.ai_reality.impact': 'DISRUPCIÓN TOTAL',
-    'strategic.insights_old.ai_reality.description': 'Gen AI está redefiniendo el panorama competitivo',
-    'strategic.insights_old.ai_reality.findings.0': 'Gen AI desmonta el modelo tradicional de horas facturables',
-    'strategic.insights_old.ai_reality.findings.1': 'PwC invirtió US$ 1B para automatizar auditoría y consultoría',
-    'strategic.insights_old.ai_reality.findings.2': 'Clientes desarrollan copilotos internos que entregan en horas lo que antes tomaba meses',
-    'strategic.insights_old.ai_reality.findings.3': 'Startups como Harvey AI reemplazan servicios completos de Big Four',
-    
-    'strategic.insights_old.velocity_imperative.category': 'Imperativo de Velocidad',
-    'strategic.insights_old.velocity_imperative.impact': 'ADAPTACIÓN INMEDIATA',
-    'strategic.insights_old.velocity_imperative.description': 'El mercado exige resultados en tiempo real',
-    'strategic.insights_old.velocity_imperative.findings.0': 'Clientes pagan por impacto en 48 horas, no en 6 meses',
-    'strategic.insights_old.velocity_imperative.findings.1': 'War-rooms con AI generan MVPs funcionales en la primera sesión',
-    'strategic.insights_old.velocity_imperative.findings.2': 'Modelo de co-creación en vivo reemplaza ciclos tradicionales de evaluación',
-    'strategic.insights_old.velocity_imperative.findings.3': 'La competencia real son analistas internos con GPT-4 y herramientas no-code',
-    
-    'strategic.insights_old.strategic_opportunity.category': 'Oportunidad Estratégica',
-    'strategic.insights_old.strategic_opportunity.impact': 'LIDERAZGO EN INNOVACIÓN',
-    'strategic.insights_old.strategic_opportunity.description': 'Propuesta de transformación para EY',
-    'strategic.insights_old.strategic_opportunity.findings.0': 'Práctica de prototipado ultrarrápido con equipos híbridos',
-    'strategic.insights_old.strategic_opportunity.findings.1': 'Demos funcionales en 72h con modelo de pricing por adopción',
-    'strategic.insights_old.strategic_opportunity.findings.2': 'Potencial de US$ 50M en revenue incremental en 12 meses',
-    'strategic.insights_old.strategic_opportunity.findings.3': 'Posicionamiento como líder en consultoría AI-native',
 
     // What I've Been Doing section (NEW)
     'doing.title': 'Acá un resumen de lo que he estado',
@@ -721,15 +665,6 @@ const translations = {
     'pipeline.active_opportunities': 'Active Opportunities',
     'pipeline.average_probability': 'Average Probability',
 
-    // Projects section (NEW)
-    'projects.title': 'Major Project',
-    'projects.title_highlight': 'Achievements',
-    'projects.subtitle': 'Proven track record delivering complex technological solutions for Tier 1 mining companies',
-    'projects.value': 'Value',
-    'projects.time': 'Time',
-    'projects.team': 'Team',
-    'projects.result': 'Result',
-    'projects.total_description': 'In business in mining, energy and Oil&Gas industries, in the last 8 years...',
 
     // Value section (NEW)
     'value.title': 'Unique Value',

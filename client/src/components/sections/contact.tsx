@@ -128,6 +128,7 @@ export default function Contact() {
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
           >
+            <span>
               <TypewriterText 
                 text={t('contact.title_part1')} 
                 delay={800}
@@ -138,6 +139,7 @@ export default function Contact() {
                 text={t('contact.title_part2')}
                 delay={2400}
               />
+            </span>
           </motion.h2>
           <motion.p 
             className="text-xl text-ey-yellow/80 mb-12 max-w-4xl mx-auto leading-relaxed"
