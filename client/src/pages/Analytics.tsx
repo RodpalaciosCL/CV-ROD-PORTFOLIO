@@ -58,7 +58,7 @@ const Analytics = () => {
       daysAgo.setDate(daysAgo.getDate() - parseInt(timeRange));
       
       let filteredData = visitsData.filter((visit: any) => 
-        new Date(visit.timestamp) > daysAgo
+        new Date(visit.timestamp) > daysAgo && visit.page !== '/analytics'
       );
       
       const stats = {
@@ -90,14 +90,15 @@ const Analytics = () => {
 
   const cleanupOldData = async () => {
     try {
-      const response = await fetch('/api/analytics/cleanup?days=90', {
-        method: 'DELETE'
-      });
-      const result = await response.json();
-      alert(`Limpiados ${result.removed} registros antiguos. Quedan ${result.remaining} registros.`);
+      const confirmDelete = window.confirm('¿Estás seguro de que quieres borrar todos los datos de analytics?');
+      if (!confirmDelete) return;
+      
+      localStorage.removeItem('analytics-visits');
+      alert('Todos los datos de analytics han sido borrados.');
       fetchAnalyticsData();
     } catch (error) {
       console.error('Error cleaning up data:', error);
+      alert('Error al borrar los datos.');
     }
   };
 
@@ -363,10 +364,8 @@ const Analytics = () => {
               </thead>
               <tbody>
                 {stats.recentVisits.map((visit, index) => {
-                  const browserInfo = visit.userAgent?.includes('Chrome') ? '🖥️ Chrome' :
-                                    visit.userAgent?.includes('Safari') ? '🖥️ Safari' :
-                                    visit.userAgent?.includes('Firefox') ? '🔥 Firefox' :
-                                    visit.userAgent?.includes('Mobile') ? '📱 Móvil' : '🖥️ Desktop';
+                  // Usar la información ya procesada por el tracker mejorado
+                  const browserInfo = visit.userAgent || '🖥️ Desktop';
                   
                   return (
                     <tr key={visit.id} className="border-b border-gray-800">

@@ -19,6 +19,11 @@ const ImprovedAnalytics = () => {
   useEffect(() => {
     const trackVisit = async () => {
       try {
+        // No trackear visitas a la página de analytics
+        if (window.location.pathname === '/analytics') {
+          return;
+        }
+
         // Obtener información básica
         const visitData: Visit = {
           id: Date.now().toString(),
