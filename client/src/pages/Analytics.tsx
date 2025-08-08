@@ -53,65 +53,10 @@ const Analytics = () => {
       
       let visitsData = [];
       
-      // Leer datos reales desde localStorage
-      const localData = JSON.parse(localStorage.getItem('analytics-visits') || '[]');
-      visitsData = [...localData];
+      // Leer SOLO datos reales desde localStorage
+      visitsData = JSON.parse(localStorage.getItem('analytics-visits') || '[]');
       
-      // Generar algunos datos de ejemplo para mostrar funcionalidad
-      if (visitsData.length < 5) {
-        const sampleVisits = [
-          {
-            id: 'sample1',
-            timestamp: new Date(Date.now() - 3600000).toISOString(), // 1 hora atrás
-            ip: '201.215.123.45',
-            page: 'Home',
-            userAgent: '📱 Chrome',
-            referrer: 'Direct',
-            screenResolution: '375x812',
-            geo: {
-              country: 'Chile',
-              city: 'Santiago',
-              org: 'Movistar Chile S.A.'
-            }
-          },
-          {
-            id: 'sample2', 
-            timestamp: new Date(Date.now() - 7200000).toISOString(), // 2 horas atrás
-            ip: '190.95.161.22',
-            page: 'Home',
-            userAgent: '🖥️ Chrome',
-            referrer: 'https://www.google.com',
-            screenResolution: '1920x1080',
-            geo: {
-              country: 'Chile',
-              city: 'Valparaíso',
-              org: 'Entel Chile S.A.'
-            }
-          },
-          {
-            id: 'sample3',
-            timestamp: new Date(Date.now() - 10800000).toISOString(), // 3 horas atrás
-            ip: '186.67.89.123',
-            page: 'Home', 
-            userAgent: '📱 Safari',
-            referrer: 'https://www.linkedin.com',
-            screenResolution: '414x896',
-            geo: {
-              country: 'Chile',
-              city: 'Concepción',
-              org: 'WOM S.A.'
-            }
-          }
-        ];
-        
-        // Solo agregar ejemplos si no hay datos reales
-        const hasRealData = localData.some((visit: any) => !visit.id.startsWith('sample'));
-        if (!hasRealData) {
-          visitsData = [...sampleVisits, ...visitsData];
-        }
-      }
-      
-      console.debug('[Analytics] Datos cargados:', visitsData.length);
+      console.debug('[Analytics] Datos reales cargados:', visitsData.length);
       
       const daysAgo = new Date();
       daysAgo.setDate(daysAgo.getDate() - parseInt(timeRange));
