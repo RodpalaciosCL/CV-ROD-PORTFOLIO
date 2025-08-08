@@ -31,21 +31,21 @@ export default function Efficiency() {
   const valueProps = [
     {
       icon: Users,
-      title: "Optimización de Búsquedas",
-      description: "Acelerar y optimizar los procesos actuales de reclutamiento especializado",
-      benefit: "Eficiencia Inmediata"
+      title: t('efficiency.valueprops.optimization.title'),
+      description: t('efficiency.valueprops.optimization.description'),
+      benefit: t('efficiency.valueprops.optimization.benefit')
     },
     {
       icon: Globe,
-      title: "Acceso LATAM Comprobado",
-      description: "Pipeline activo de $150M+ y relaciones tier-1 establecidas",
-      benefit: "Revenue Inmediato"
+      title: t('efficiency.valueprops.latam.title'),
+      description: t('efficiency.valueprops.latam.description'),
+      benefit: t('efficiency.valueprops.latam.benefit')
     },
     {
       icon: Zap,
-      title: "Capacidades Complementarias",
-      description: "20+ años en minería con liderazgo transformacional comprobado",
-      benefit: "Sinergia Estratégica"
+      title: t('efficiency.valueprops.capabilities.title'),
+      description: t('efficiency.valueprops.capabilities.description'),
+      benefit: t('efficiency.valueprops.capabilities.benefit')
     }
   ];
 
