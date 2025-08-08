@@ -88,44 +88,29 @@ const ImprovedAnalytics = () => {
           }
         }
 
-        // Enviar a JSONBin (servicio gratuito y confiable)
+        // Enviar a sistema propio (inspirado en tu INVESTMENT-DECK exitoso)
         try {
-          // Leer datos existentes
-          const readResponse = await fetch('https://api.jsonbin.io/v3/b/67056d2bacd3cb34a8a0e7f5/latest', {
-            headers: {
-              'X-Master-Key': '$2a$10$9vKm.rQ8j5tH3nP2oE6lSuXwZ4kL7mF1dG8cB9xA5yU3sV0eR2qI6'
-            }
-          });
-          
-          let existingData = [];
-          if (readResponse.ok) {
-            const result = await readResponse.json();
-            existingData = result.record.visits || [];
-          }
-          
-          // Agregar nueva visita
-          existingData.push(visitData);
-          
-          // Mantener solo las últimas 100 visitas
-          if (existingData.length > 100) {
-            existingData = existingData.slice(-100);
-          }
-          
-          // Guardar datos actualizados
-          await fetch('https://api.jsonbin.io/v3/b/67056d2bacd3cb34a8a0e7f5', {
-            method: 'PUT',
+          const response = await fetch('/api/track-visit', {
+            method: 'POST',
             headers: {
               'Content-Type': 'application/json',
-              'X-Master-Key': '$2a$10$9vKm.rQ8j5tH3nP2oE6lSuXwZ4kL7mF1dG8cB9xA5yU3sV0eR2qI6'
             },
             body: JSON.stringify({
-              visits: existingData
-            })
+              page: visitData.page,
+              referrer: visitData.referrer,
+              userAgent: visitData.userAgent,
+              screenResolution: visitData.screenResolution,
+              // No incluir IP y geo porque el servidor los obtiene automáticamente
+            }),
           });
           
-          console.debug('[Analytics] Enviado a JSONBin:', visitData);
-        } catch (webhookError) {
-          console.debug('[Analytics] Error enviando a JSONBin:', webhookError);
+          if (response.ok) {
+            console.debug('[Analytics] Visita registrada correctamente');
+          } else {
+            throw new Error('Error del servidor');
+          }
+        } catch (trackError) {
+          console.debug('[Analytics] Error registrando visita:', trackError);
         }
         
         // También guardar localmente como respaldo

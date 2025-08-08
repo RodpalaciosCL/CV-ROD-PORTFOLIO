@@ -53,23 +53,23 @@ const Analytics = () => {
       
       let visitsData = [];
       
-      // Leer desde JSONBin primero, localStorage como respaldo
+      // Leer desde API propia de Vercel
       try {
-        const response = await fetch('https://api.jsonbin.io/v3/b/67056d2bacd3cb34a8a0e7f5/latest', {
-          headers: {
-            'X-Master-Key': '$2a$10$9vKm.rQ8j5tH3nP2oE6lSuXwZ4kL7mF1dG8cB9xA5yU3sV0eR2qI6'
-          }
-        });
+        const response = await fetch('/api/get-visits');
         
         if (response.ok) {
           const result = await response.json();
-          visitsData = result.record.visits || [];
-          console.debug('[Analytics] Datos cargados desde JSONBin:', visitsData.length);
+          if (result.success) {
+            visitsData = result.visits || [];
+            console.debug('[Analytics] Datos cargados desde API:', visitsData.length);
+          } else {
+            throw new Error('API error');
+          }
         } else {
-          throw new Error('JSONBin error');
+          throw new Error('API response error');
         }
-      } catch (jsonbinError) {
-        console.debug('[Analytics] Error con JSONBin, usando localStorage:', jsonbinError);
+      } catch (apiError) {
+        console.debug('[Analytics] Error con API, usando localStorage:', apiError);
         visitsData = JSON.parse(localStorage.getItem('analytics-visits') || '[]');
         console.debug('[Analytics] Datos locales cargados:', visitsData.length);
       }
