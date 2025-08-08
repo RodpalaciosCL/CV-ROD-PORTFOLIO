@@ -88,29 +88,44 @@ const ImprovedAnalytics = () => {
           }
         }
 
-        // Enviar a Google Apps Script (más confiable)
+        // Enviar a JSONBin (servicio gratuito y confiable)
         try {
-          const response = await fetch('https://script.google.com/macros/s/AKfycbzYh8J9K5qL3N2mP8rX4vW6tE5uI7oQ1sR3nF9gH2jK4bL6cM8d/exec', {
-            method: 'POST',
-            mode: 'no-cors',
+          // Leer datos existentes
+          const readResponse = await fetch('https://api.jsonbin.io/v3/b/67056d2bacd3cb34a8a0e7f5/latest', {
+            headers: {
+              'X-Master-Key': '$2a$10$9vKm.rQ8j5tH3nP2oE6lSuXwZ4kL7mF1dG8cB9xA5yU3sV0eR2qI6'
+            }
+          });
+          
+          let existingData = [];
+          if (readResponse.ok) {
+            const result = await readResponse.json();
+            existingData = result.record.visits || [];
+          }
+          
+          // Agregar nueva visita
+          existingData.push(visitData);
+          
+          // Mantener solo las últimas 100 visitas
+          if (existingData.length > 100) {
+            existingData = existingData.slice(-100);
+          }
+          
+          // Guardar datos actualizados
+          await fetch('https://api.jsonbin.io/v3/b/67056d2bacd3cb34a8a0e7f5', {
+            method: 'PUT',
             headers: {
               'Content-Type': 'application/json',
+              'X-Master-Key': '$2a$10$9vKm.rQ8j5tH3nP2oE6lSuXwZ4kL7mF1dG8cB9xA5yU3sV0eR2qI6'
             },
             body: JSON.stringify({
-              timestamp: visitData.timestamp,
-              ip: visitData.ip,
-              page: visitData.page,
-              userAgent: visitData.userAgent,
-              country: visitData.geo?.country || 'Unknown',
-              city: visitData.geo?.city || 'Unknown',
-              org: visitData.geo?.org || 'Unknown',
-              screenResolution: visitData.screenResolution,
-              referrer: visitData.referrer
-            }),
+              visits: existingData
+            })
           });
-          console.debug('[Analytics] Enviado a Google Apps Script');
+          
+          console.debug('[Analytics] Enviado a JSONBin:', visitData);
         } catch (webhookError) {
-          console.debug('[Analytics] Error enviando a Google Apps Script:', webhookError);
+          console.debug('[Analytics] Error enviando a JSONBin:', webhookError);
         }
         
         // También guardar localmente como respaldo

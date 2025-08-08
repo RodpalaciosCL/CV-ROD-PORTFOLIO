@@ -53,10 +53,26 @@ const Analytics = () => {
       
       let visitsData = [];
       
-      // Leer SOLO datos reales desde localStorage
-      visitsData = JSON.parse(localStorage.getItem('analytics-visits') || '[]');
-      
-      console.debug('[Analytics] Datos reales cargados:', visitsData.length);
+      // Leer desde JSONBin primero, localStorage como respaldo
+      try {
+        const response = await fetch('https://api.jsonbin.io/v3/b/67056d2bacd3cb34a8a0e7f5/latest', {
+          headers: {
+            'X-Master-Key': '$2a$10$9vKm.rQ8j5tH3nP2oE6lSuXwZ4kL7mF1dG8cB9xA5yU3sV0eR2qI6'
+          }
+        });
+        
+        if (response.ok) {
+          const result = await response.json();
+          visitsData = result.record.visits || [];
+          console.debug('[Analytics] Datos cargados desde JSONBin:', visitsData.length);
+        } else {
+          throw new Error('JSONBin error');
+        }
+      } catch (jsonbinError) {
+        console.debug('[Analytics] Error con JSONBin, usando localStorage:', jsonbinError);
+        visitsData = JSON.parse(localStorage.getItem('analytics-visits') || '[]');
+        console.debug('[Analytics] Datos locales cargados:', visitsData.length);
+      }
       
       const daysAgo = new Date();
       daysAgo.setDate(daysAgo.getDate() - parseInt(timeRange));
