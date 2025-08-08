@@ -7,7 +7,7 @@ import { ArrowRight, Download, Award, User } from "lucide-react";
 export default function Hero() {
 
   return (
-    <section id="hero" className="min-h-screen bg-ey-dark pt-16 flex items-center">
+    <section id="hero" className="min-h-screen bg-ey-dark pt-20 md:pt-24 flex items-center">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Left Content */}
@@ -64,30 +64,30 @@ export default function Hero() {
 
             {/* Metrics Grid */}
             <motion.div 
-              className="grid grid-cols-3 gap-6"
+              className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6"
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 1 }}
             >
-              <div className="text-center p-4 bg-ey-medium border border-ey-light rounded-lg">
-                <div className="text-3xl font-black text-ey-yellow mb-2">
+              <div className="text-center p-3 sm:p-4 bg-ey-medium border border-ey-light rounded-lg">
+                <div className="text-2xl sm:text-3xl font-black text-ey-yellow mb-1 sm:mb-2">
                   $120M+
                 </div>
-                <div className="text-ey-white text-sm font-medium">Proyectos de la industria entregados</div>
+                <div className="text-ey-white text-xs sm:text-sm font-medium leading-tight">Proyectos de la industria entregados</div>
               </div>
               
-              <div className="text-center p-4 bg-ey-medium border border-ey-light rounded-lg">
-                <div className="text-3xl font-black text-ey-yellow mb-2">
+              <div className="text-center p-3 sm:p-4 bg-ey-medium border border-ey-light rounded-lg">
+                <div className="text-2xl sm:text-3xl font-black text-ey-yellow mb-1 sm:mb-2">
                   12+
                 </div>
-                <div className="text-ey-white text-sm font-medium">Clientes Mineros</div>
+                <div className="text-ey-white text-xs sm:text-sm font-medium">Clientes Mineros</div>
               </div>
               
-              <div className="text-center p-4 bg-ey-medium border border-ey-light rounded-lg">
-                <div className="text-3xl font-black text-ey-yellow mb-2">
+              <div className="text-center p-3 sm:p-4 bg-ey-medium border border-ey-light rounded-lg">
+                <div className="text-2xl sm:text-3xl font-black text-ey-yellow mb-1 sm:mb-2">
                   $150M+
                 </div>
-                <div className="text-ey-white text-sm font-medium">Pipeline Activo</div>
+                <div className="text-ey-white text-xs sm:text-sm font-medium">Pipeline Activo</div>
               </div>
             </motion.div>
           </motion.div>

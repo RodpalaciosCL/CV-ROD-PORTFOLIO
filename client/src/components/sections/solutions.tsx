@@ -37,17 +37,17 @@ export default function Solutions() {
           </motion.p>
         </div>
 
-        {/* Selector de categorías mejorado */}
-        <div className="flex justify-center mb-12">
-          <div className="bg-ey-medium/30 backdrop-blur-xl rounded-2xl p-2 border border-ey-yellow/20 shadow-2xl">
-            <div className="flex space-x-2">
+        {/* Selector de categorías responsive */}
+        <div className="flex justify-center mb-12 px-4">
+          <div className="w-full max-w-2xl bg-ey-medium/30 backdrop-blur-xl rounded-2xl p-2 border border-ey-yellow/20 shadow-2xl">
+            <div className="grid grid-cols-3 gap-1 sm:flex sm:space-x-2">
               {tabs.map(tab => (
                 <button
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id)}
-                  className={`relative px-8 py-4 rounded-xl font-bold text-sm transition-all duration-300 ${
+                  className={`relative px-3 sm:px-6 py-3 sm:py-4 rounded-xl font-bold text-xs sm:text-sm transition-all duration-300 text-center ${
                     activeTab === tab.id 
-                      ? 'bg-ey-yellow text-ey-dark shadow-lg transform scale-105' 
+                      ? 'bg-ey-yellow text-ey-dark shadow-lg scale-105' 
                       : 'text-ey-white/70 hover:text-ey-white hover:bg-ey-white/10'
                   }`}
                 >
