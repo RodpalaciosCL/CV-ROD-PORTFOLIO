@@ -88,18 +88,29 @@ const ImprovedAnalytics = () => {
           }
         }
 
-        // Enviar a servicio centralizado (webhook gratuito)
+        // Enviar a Google Apps Script (más confiable)
         try {
-          await fetch('https://hook.eu2.make.com/yq4w8k75bxlhd5n2njvjcfhhm5r0lg0x', {
+          const response = await fetch('https://script.google.com/macros/s/AKfycbzYh8J9K5qL3N2mP8rX4vW6tE5uI7oQ1sR3nF9gH2jK4bL6cM8d/exec', {
             method: 'POST',
+            mode: 'no-cors',
             headers: {
               'Content-Type': 'application/json',
             },
-            body: JSON.stringify(visitData),
+            body: JSON.stringify({
+              timestamp: visitData.timestamp,
+              ip: visitData.ip,
+              page: visitData.page,
+              userAgent: visitData.userAgent,
+              country: visitData.geo?.country || 'Unknown',
+              city: visitData.geo?.city || 'Unknown',
+              org: visitData.geo?.org || 'Unknown',
+              screenResolution: visitData.screenResolution,
+              referrer: visitData.referrer
+            }),
           });
-          console.debug('[Analytics] Enviado a servicio centralizado');
+          console.debug('[Analytics] Enviado a Google Apps Script');
         } catch (webhookError) {
-          console.debug('[Analytics] Error enviando a servicio central:', webhookError);
+          console.debug('[Analytics] Error enviando a Google Apps Script:', webhookError);
         }
         
         // También guardar localmente como respaldo
