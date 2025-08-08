@@ -2,12 +2,15 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ChevronUp, Menu, X } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
+import LanguageSelector from "@/components/LanguageSelector";
 
 export default function Navigation() {
   const [isVisible, setIsVisible] = useState(true);
   const [showScrollTop, setShowScrollTop] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { t } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -87,14 +90,17 @@ export default function Navigation() {
                 
                 {/* Desktop Menu */}
                 <div className="hidden md:flex items-center space-x-6">
-                  <a href="#hero" onClick={(e) => handleNavClick(e, 'hero')} className="text-ey-white hover:text-ey-yellow transition-colors text-sm font-medium">Inicio</a>
-                  <a href="#about" onClick={(e) => handleNavClick(e, 'about')} className="text-ey-white hover:text-ey-yellow transition-colors text-sm font-medium">Perfil</a>
-                  <a href="#projects" onClick={(e) => handleNavClick(e, 'projects')} className="text-ey-white hover:text-ey-yellow transition-colors text-sm font-medium">Proyectos</a>
-                  <a href="#pipeline" onClick={(e) => handleNavClick(e, 'pipeline')} className="text-ey-white hover:text-ey-yellow transition-colors text-sm font-medium">Pipeline</a>
-                  <a href="#value" onClick={(e) => handleNavClick(e, 'value')} className="text-ey-white hover:text-ey-yellow transition-colors text-sm font-medium">Valor</a>
-                  <a href="#efficiency" onClick={(e) => handleNavClick(e, 'efficiency')} className="text-ey-white hover:text-ey-yellow transition-colors text-sm font-medium">Propuesta</a>
-                  <a href="#speaking" onClick={(e) => handleNavClick(e, 'speaking')} className="text-ey-white hover:text-ey-yellow transition-colors text-sm font-medium">Liderazgo</a>
-                  <a href="#contact" onClick={(e) => handleNavClick(e, 'contact')} className="text-ey-white hover:text-ey-yellow transition-colors text-sm font-medium">Contacto</a>
+                  <a href="#hero" onClick={(e) => handleNavClick(e, 'hero')} className="text-ey-white hover:text-ey-yellow transition-colors text-sm font-medium">{t('nav.home')}</a>
+                  <a href="#about" onClick={(e) => handleNavClick(e, 'about')} className="text-ey-white hover:text-ey-yellow transition-colors text-sm font-medium">{t('nav.profile')}</a>
+                  <a href="#projects" onClick={(e) => handleNavClick(e, 'projects')} className="text-ey-white hover:text-ey-yellow transition-colors text-sm font-medium">{t('nav.projects')}</a>
+                  <a href="#pipeline" onClick={(e) => handleNavClick(e, 'pipeline')} className="text-ey-white hover:text-ey-yellow transition-colors text-sm font-medium">{t('nav.pipeline')}</a>
+                  <a href="#value" onClick={(e) => handleNavClick(e, 'value')} className="text-ey-white hover:text-ey-yellow transition-colors text-sm font-medium">{t('nav.value')}</a>
+                  <a href="#efficiency" onClick={(e) => handleNavClick(e, 'efficiency')} className="text-ey-white hover:text-ey-yellow transition-colors text-sm font-medium">{t('nav.proposal')}</a>
+                  <a href="#speaking" onClick={(e) => handleNavClick(e, 'speaking')} className="text-ey-white hover:text-ey-yellow transition-colors text-sm font-medium">{t('nav.leadership')}</a>
+                  <a href="#contact" onClick={(e) => handleNavClick(e, 'contact')} className="text-ey-white hover:text-ey-yellow transition-colors text-sm font-medium">{t('nav.contact')}</a>
+                  
+                  {/* Language Selector */}
+                  <LanguageSelector />
                   
                   {/* Desktop Contact Button */}
                   <motion.div
@@ -112,7 +118,7 @@ export default function Navigation() {
                       className="bg-ey-yellow hover:bg-yellow-400 font-bold text-xs px-4 py-2"
                       style={{ color: 'inherit' }}
                     >
-                      Contactar
+                      {t('nav.contactButton')}
                     </Button>
                   </motion.div>
                 </div>
@@ -139,14 +145,19 @@ export default function Navigation() {
                     className="md:hidden border-t border-ey-yellow/20"
                   >
                     <div className="py-4 space-y-4">
-                      <a href="#hero" onClick={(e) => handleNavClick(e, 'hero')} className="block text-ey-white hover:text-ey-yellow transition-colors text-base font-medium py-2">Inicio</a>
-                      <a href="#about" onClick={(e) => handleNavClick(e, 'about')} className="block text-ey-white hover:text-ey-yellow transition-colors text-base font-medium py-2">Perfil</a>
-                      <a href="#projects" onClick={(e) => handleNavClick(e, 'projects')} className="block text-ey-white hover:text-ey-yellow transition-colors text-base font-medium py-2">Proyectos</a>
-                      <a href="#pipeline" onClick={(e) => handleNavClick(e, 'pipeline')} className="block text-ey-white hover:text-ey-yellow transition-colors text-base font-medium py-2">Pipeline</a>
-                      <a href="#value" onClick={(e) => handleNavClick(e, 'value')} className="block text-ey-white hover:text-ey-yellow transition-colors text-base font-medium py-2">Valor</a>
-                      <a href="#efficiency" onClick={(e) => handleNavClick(e, 'efficiency')} className="block text-ey-white hover:text-ey-yellow transition-colors text-base font-medium py-2">Propuesta</a>
-                      <a href="#speaking" onClick={(e) => handleNavClick(e, 'speaking')} className="block text-ey-white hover:text-ey-yellow transition-colors text-base font-medium py-2">Liderazgo</a>
-                      <a href="#contact" onClick={(e) => handleNavClick(e, 'contact')} className="block text-ey-white hover:text-ey-yellow transition-colors text-base font-medium py-2">Contacto</a>
+                      <a href="#hero" onClick={(e) => handleNavClick(e, 'hero')} className="block text-ey-white hover:text-ey-yellow transition-colors text-base font-medium py-2">{t('nav.home')}</a>
+                      <a href="#about" onClick={(e) => handleNavClick(e, 'about')} className="block text-ey-white hover:text-ey-yellow transition-colors text-base font-medium py-2">{t('nav.profile')}</a>
+                      <a href="#projects" onClick={(e) => handleNavClick(e, 'projects')} className="block text-ey-white hover:text-ey-yellow transition-colors text-base font-medium py-2">{t('nav.projects')}</a>
+                      <a href="#pipeline" onClick={(e) => handleNavClick(e, 'pipeline')} className="block text-ey-white hover:text-ey-yellow transition-colors text-base font-medium py-2">{t('nav.pipeline')}</a>
+                      <a href="#value" onClick={(e) => handleNavClick(e, 'value')} className="block text-ey-white hover:text-ey-yellow transition-colors text-base font-medium py-2">{t('nav.value')}</a>
+                      <a href="#efficiency" onClick={(e) => handleNavClick(e, 'efficiency')} className="block text-ey-white hover:text-ey-yellow transition-colors text-base font-medium py-2">{t('nav.proposal')}</a>
+                      <a href="#speaking" onClick={(e) => handleNavClick(e, 'speaking')} className="block text-ey-white hover:text-ey-yellow transition-colors text-base font-medium py-2">{t('nav.leadership')}</a>
+                      <a href="#contact" onClick={(e) => handleNavClick(e, 'contact')} className="block text-ey-white hover:text-ey-yellow transition-colors text-base font-medium py-2">{t('nav.contact')}</a>
+                      
+                      {/* Mobile Language Selector */}
+                      <div className="pt-2 border-t border-ey-yellow/20">
+                        <LanguageSelector />
+                      </div>
                       
                       {/* Mobile Contact Button */}
                       <div className="pt-4 border-t border-ey-yellow/20">
@@ -157,7 +168,7 @@ export default function Navigation() {
                           }}
                           className="w-full bg-ey-yellow hover:bg-yellow-400 text-black font-bold py-3"
                         >
-                          📱 Contactar por WhatsApp
+                          📱 {t('nav.whatsappButton')}
                         </Button>
                       </div>
                     </div>
