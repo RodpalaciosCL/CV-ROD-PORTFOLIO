@@ -1,0 +1,114 @@
+[
+  {
+    "id": 1754682532785.898,
+    "timestamp": "2025-08-08T19:48:52.768Z",
+    "ip": "127.0.0.1",
+    "page": "/",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",
+    "screenResolution": "1710x1107",
+    "isOwner": true,
+    "geo": {
+      "country": "Local",
+      "city": "Local Dev",
+      "org": "Local Development"
+    },
+    "companyType": "Other"
+  },
+  {
+    "id": 1754682600915.5308,
+    "timestamp": "2025-08-08T19:50:00.903Z",
+    "ip": "127.0.0.1",
+    "page": "/",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",
+    "screenResolution": "1710x1107",
+    "isOwner": true,
+    "geo": {
+      "country": "Local",
+      "city": "Local Dev",
+      "org": "Local Development"
+    },
+    "companyType": "Other"
+  },
+  {
+    "id": 1754682620593.9924,
+    "timestamp": "2025-08-08T19:50:20.593Z",
+    "ip": "127.0.0.1",
+    "page": "/",
+    "referrer": "Direct",
+    "userAgent": "Unknown",
+    "screenResolution": "Unknown",
+    "isOwner": true,
+    "geo": {
+      "country": "Local",
+      "city": "Local Dev",
+      "org": "Local Development"
+    },
+    "companyType": "Other"
+  },
+  {
+    "id": 1754682620718.9922,
+    "timestamp": "2025-08-08T19:50:20.714Z",
+    "ip": "127.0.0.1",
+    "page": "/analytics",
+    "referrer": "Direct",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",
+    "screenResolution": "1710x1107",
+    "isOwner": true,
+    "geo": {
+      "country": "Local",
+      "city": "Local Dev",
+      "org": "Local Development"
+    },
+    "companyType": "Other"
+  },
+  {
+    "id": 1754682812673.9475,
+    "timestamp": "2025-08-08T19:53:32.673Z",
+    "ip": "127.0.0.1",
+    "page": "/",
+    "referrer": "Direct",
+    "userAgent": "Unknown",
+    "screenResolution": "Unknown",
+    "isOwner": true,
+    "geo": {
+      "country": "Local",
+      "city": "Local Dev",
+      "org": "Local Development",
+      "timezone": "Local"
+    }
+  },
+  {
+    "id": 1754682813929.8157,
+    "timestamp": "2025-08-08T19:53:33.914Z",
+    "ip": "127.0.0.1",
+    "page": "/analytics",
+    "referrer": "http://localhost:3000/analytics",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",
+    "screenResolution": "1710x1107",
+    "isOwner": true,
+    "geo": {
+      "country": "Local",
+      "city": "Local Dev",
+      "org": "Local Development",
+      "timezone": "Local"
+    }
+  },
+  {
+    "id": 1754682906833.799,
+    "timestamp": "2025-08-08T19:55:06.821Z",
+    "ip": "127.0.0.1",
+    "page": "/analytics",
+    "referrer": "http://localhost:3000/analytics",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",
+    "screenResolution": "1710x1107",
+    "isOwner": true,
+    "geo": {
+      "country": "Local",
+      "city": "Local Dev",
+      "org": "Local Development",
+      "timezone": "Local"
+    }
+  }
+]
