@@ -88,7 +88,21 @@ const ImprovedAnalytics = () => {
           }
         }
 
-        // Guardar en localStorage (versión móvil)
+        // Enviar a servicio centralizado (webhook gratuito)
+        try {
+          await fetch('https://hook.eu2.make.com/yq4w8k75bxlhd5n2njvjcfhhm5r0lg0x', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(visitData),
+          });
+          console.debug('[Analytics] Enviado a servicio centralizado');
+        } catch (webhookError) {
+          console.debug('[Analytics] Error enviando a servicio central:', webhookError);
+        }
+        
+        // También guardar localmente como respaldo
         if (!localStorage.getItem('analytics-visits')) {
           localStorage.setItem('analytics-visits', '[]');
         }

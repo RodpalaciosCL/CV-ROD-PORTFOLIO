@@ -51,8 +51,27 @@ const Analytics = () => {
     try {
       setLoading(true);
       
-      // Leer desde localStorage (funciona sin servidor)
-      const visitsData = JSON.parse(localStorage.getItem('analytics-visits') || '[]');
+      let visitsData = [];
+      
+      // Intentar leer desde servicio centralizado primero
+      try {
+        const centralResponse = await fetch('https://hook.eu2.make.com/w2c8k9h5qxjhf3n4ojklcfddm7t1eg2y');
+        if (centralResponse.ok) {
+          const centralData = await centralResponse.json();
+          if (Array.isArray(centralData)) {
+            visitsData = centralData;
+            console.debug('[Analytics] Datos cargados desde servicio centralizado:', visitsData.length);
+          }
+        }
+      } catch (centralError) {
+        console.debug('[Analytics] Error leyendo datos centralizados:', centralError);
+      }
+      
+      // Si no hay datos centralizados o falla, usar localStorage como respaldo
+      if (visitsData.length === 0) {
+        visitsData = JSON.parse(localStorage.getItem('analytics-visits') || '[]');
+        console.debug('[Analytics] Usando datos locales como respaldo:', visitsData.length);
+      }
       
       const daysAgo = new Date();
       daysAgo.setDate(daysAgo.getDate() - parseInt(timeRange));
