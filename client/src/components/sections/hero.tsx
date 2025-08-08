@@ -1,10 +1,12 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Download, Award, User } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 // Deploy timestamp: 2025-07-29T02:52:44Z - CORRECTED HERO TEXT
 
 export default function Hero() {
+  const { t } = useLanguage();
 
   return (
     <section id="hero" className="min-h-screen bg-ey-dark pt-20 md:pt-24 flex items-center">
@@ -24,9 +26,9 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              Liderazgo Tecnológico, 
+              {t('hero.title')} 
               <br />
-              <span className="text-ey-yellow">Estratégico y de Negocio</span>
+              <span className="text-ey-yellow">{t('hero.subtitle')}</span>
             </motion.h1>
 
             {/* Description */}
@@ -36,7 +38,7 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
             >
-              Con un track récord trabajando para las mineras más grandes del mundo, mi background se extiende a industrias de Oil&Gas, Retail, Financial Services, Cementeras y Agro, contando con una experiencia horizontal y ampliamente enriquecida para tomar decisiones certeras de negocio.
+              {t('hero.description')}
             </motion.p>
 
             {/* CTA Button */}
@@ -56,7 +58,7 @@ export default function Hero() {
                 className="bg-ey-yellow text-ey-black px-12 py-6 text-lg font-bold rounded-lg shadow-lg hover:bg-yellow-400 transition-all duration-300 w-full sm:w-auto"
               >
                 <span className="flex items-center justify-center">
-                  Ver Pipeline
+                  {t('hero.cta')}
                   <ArrowRight className="w-5 h-5 ml-2" />
                 </span>
               </Button>
@@ -73,21 +75,21 @@ export default function Hero() {
                 <div className="text-2xl sm:text-3xl font-black text-ey-yellow mb-1 sm:mb-2">
                   $120M+
                 </div>
-                <div className="text-ey-white text-xs sm:text-sm font-medium leading-tight">Proyectos de la industria entregados</div>
+                <div className="text-ey-white text-xs sm:text-sm font-medium leading-tight">{t('hero.metric1')}</div>
               </div>
               
               <div className="text-center p-3 sm:p-4 bg-ey-medium border border-ey-light rounded-lg">
                 <div className="text-2xl sm:text-3xl font-black text-ey-yellow mb-1 sm:mb-2">
                   12+
                 </div>
-                <div className="text-ey-white text-xs sm:text-sm font-medium">Clientes Mineros</div>
+                <div className="text-ey-white text-xs sm:text-sm font-medium">{t('hero.metric2')}</div>
               </div>
               
               <div className="text-center p-3 sm:p-4 bg-ey-medium border border-ey-light rounded-lg">
                 <div className="text-2xl sm:text-3xl font-black text-ey-yellow mb-1 sm:mb-2">
                   $150M+
                 </div>
-                <div className="text-ey-white text-xs sm:text-sm font-medium">Pipeline Activo</div>
+                <div className="text-ey-white text-xs sm:text-sm font-medium">{t('hero.metric3')}</div>
               </div>
             </motion.div>
           </motion.div>
@@ -113,11 +115,11 @@ export default function Hero() {
                 {/* Professional credentials */}
                 <div className="mt-6 space-y-3">
                   <div className="bg-ey-yellow text-ey-black px-4 py-2 rounded text-center font-bold text-sm">
-                    Mining Technology Expert
+                    {t('hero.expert_badge')}
                   </div>
                   
                   <div className="bg-ey-light text-ey-white px-4 py-2 rounded text-center font-semibold text-sm border border-ey-yellow/30">
-                    Big 4 Consulting Background
+                    {t('hero.consulting_badge')}
                   </div>
                 </div>
               </div>

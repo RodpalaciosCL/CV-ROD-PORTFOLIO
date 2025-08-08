@@ -88,17 +88,22 @@ export default function Navigation() {
                   />
                 </div>
                 
-                {/* Desktop Menu */}
-                <div className="hidden md:flex items-center space-x-6">
-                  <a href="#hero" onClick={(e) => handleNavClick(e, 'hero')} className="text-ey-white hover:text-ey-yellow transition-colors text-sm font-medium">{t('nav.home')}</a>
-                  <a href="#about" onClick={(e) => handleNavClick(e, 'about')} className="text-ey-white hover:text-ey-yellow transition-colors text-sm font-medium">{t('nav.profile')}</a>
-                  <a href="#projects" onClick={(e) => handleNavClick(e, 'projects')} className="text-ey-white hover:text-ey-yellow transition-colors text-sm font-medium">{t('nav.projects')}</a>
-                  <a href="#pipeline" onClick={(e) => handleNavClick(e, 'pipeline')} className="text-ey-white hover:text-ey-yellow transition-colors text-sm font-medium">{t('nav.pipeline')}</a>
-                  <a href="#value" onClick={(e) => handleNavClick(e, 'value')} className="text-ey-white hover:text-ey-yellow transition-colors text-sm font-medium">{t('nav.value')}</a>
-                  <a href="#efficiency" onClick={(e) => handleNavClick(e, 'efficiency')} className="text-ey-white hover:text-ey-yellow transition-colors text-sm font-medium">{t('nav.proposal')}</a>
-                  <a href="#speaking" onClick={(e) => handleNavClick(e, 'speaking')} className="text-ey-white hover:text-ey-yellow transition-colors text-sm font-medium">{t('nav.leadership')}</a>
-                  <a href="#contact" onClick={(e) => handleNavClick(e, 'contact')} className="text-ey-white hover:text-ey-yellow transition-colors text-sm font-medium">{t('nav.contact')}</a>
-                  
+                {/* Desktop Menu - Centrado */}
+                <div className="hidden md:flex items-center justify-center flex-1">
+                  <div className="flex items-center space-x-4">
+                    <a href="#hero" onClick={(e) => handleNavClick(e, 'hero')} className="text-ey-white hover:text-ey-yellow transition-colors text-sm font-medium">{t('nav.home')}</a>
+                    <a href="#about" onClick={(e) => handleNavClick(e, 'about')} className="text-ey-white hover:text-ey-yellow transition-colors text-sm font-medium">{t('nav.profile')}</a>
+                    <a href="#projects" onClick={(e) => handleNavClick(e, 'projects')} className="text-ey-white hover:text-ey-yellow transition-colors text-sm font-medium">{t('nav.projects')}</a>
+                    <a href="#pipeline" onClick={(e) => handleNavClick(e, 'pipeline')} className="text-ey-white hover:text-ey-yellow transition-colors text-sm font-medium">{t('nav.pipeline')}</a>
+                    <a href="#value" onClick={(e) => handleNavClick(e, 'value')} className="text-ey-white hover:text-ey-yellow transition-colors text-sm font-medium">{t('nav.value')}</a>
+                    <a href="#efficiency" onClick={(e) => handleNavClick(e, 'efficiency')} className="text-ey-white hover:text-ey-yellow transition-colors text-sm font-medium">{t('nav.proposal')}</a>
+                    <a href="#speaking" onClick={(e) => handleNavClick(e, 'speaking')} className="text-ey-white hover:text-ey-yellow transition-colors text-sm font-medium">{t('nav.leadership')}</a>
+                    <a href="#contact" onClick={(e) => handleNavClick(e, 'contact')} className="text-ey-white hover:text-ey-yellow transition-colors text-sm font-medium">{t('nav.contact')}</a>
+                  </div>
+                </div>
+                
+                {/* Desktop Right Side - Language + Contact */}
+                <div className="hidden md:flex items-center space-x-3">
                   {/* Language Selector */}
                   <LanguageSelector />
                   
