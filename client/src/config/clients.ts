@@ -57,9 +57,9 @@ export const getClientConfig = (): ClientConfig => {
   
   const hostname = window.location.hostname;
   
-  // Para desarrollo local y URLs de Vercel, usar metso como default
+  // Para desarrollo local y URLs de Vercel, usar bhp como default para este proyecto
   if (hostname === 'localhost' || hostname === '127.0.0.1' || hostname.includes('vercel.app')) {
-    return clientConfigs.metso;
+    return clientConfigs.bhp;
   }
   
   const subdomain = hostname.split('.')[0];
