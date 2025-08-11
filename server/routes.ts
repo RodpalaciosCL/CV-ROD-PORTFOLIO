@@ -17,11 +17,17 @@ export async function registerRoutes(app: Express): Promise<Server> {
   // Track visits
   app.post('/api/analytics/track', async (req, res) => {
     try {
+      console.log('🔍 Analytics track request received:', req.body);
       const { page, referrer, userAgent, screenResolution, timestamp } = req.body;
       const clientIP = req.ip || req.headers['x-forwarded-for'] || req.connection?.remoteAddress || '127.0.0.1';
       const realIP = Array.isArray(clientIP) ? clientIP[0] : clientIP.toString().split(',')[0].trim();
       
-      console.log(`📊 Visit: ${realIP} -> ${page}`);
+      console.log(`📊 Tracking visit: ${realIP} -> ${page}`, {
+        ip: realIP,
+        userAgent: userAgent?.substring(0, 50),
+        referrer,
+        page
+      });
       
       // Obtener geolocalización real por IP (si no es local)
       let geoData = { country: 'Unknown', city: 'Unknown', org: 'Unknown', timezone: 'Unknown' };
@@ -70,6 +76,37 @@ export async function registerRoutes(app: Express): Promise<Server> {
     } catch (error) {
       console.error('Error tracking:', error);
       res.status(500).json({ error: 'Failed to track' });
+    }
+  });
+  
+  // Test endpoint to debug analytics
+  app.get('/api/analytics/test', async (req, res) => {
+    try {
+      const clientIP = req.ip || req.headers['x-forwarded-for'] || req.connection?.remoteAddress || '127.0.0.1';
+      const realIP = Array.isArray(clientIP) ? clientIP[0] : clientIP.toString().split(',')[0].trim();
+      
+      let analyticsData = [];
+      try {
+        const data = await fs.readFile(analyticsFile, 'utf8');
+        analyticsData = JSON.parse(data);
+      } catch (error) {
+        console.log('📁 Analytics file does not exist or is empty');
+      }
+      
+      res.json({
+        success: true,
+        debug: {
+          analyticsFile,
+          fileExists: await fs.access(analyticsFile).then(() => true).catch(() => false),
+          dataCount: analyticsData.length,
+          clientIP: realIP,
+          headers: req.headers,
+          lastEntries: analyticsData.slice(-3)
+        }
+      });
+    } catch (error) {
+      console.error('Debug error:', error);
+      res.status(500).json({ error: error.message });
     }
   });
   
