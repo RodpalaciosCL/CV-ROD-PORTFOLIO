@@ -49,15 +49,15 @@ export const clientConfigs: Record<string, ClientConfig> = {
 };
 
 export const getClientConfig = (): ClientConfig => {
-  if (typeof window === 'undefined') return clientConfigs.default;
+  if (typeof window === 'undefined') return clientConfigs.metso;
   
   const hostname = window.location.hostname;
-  const subdomain = hostname.split('.')[0];
   
-  // Para desarrollo local, usar metso como default
-  if (hostname === 'localhost' || hostname === '127.0.0.1') {
+  // Para desarrollo local y URLs de Vercel, usar metso como default
+  if (hostname === 'localhost' || hostname === '127.0.0.1' || hostname.includes('vercel.app')) {
     return clientConfigs.metso;
   }
   
+  const subdomain = hostname.split('.')[0];
   return clientConfigs[subdomain] || clientConfigs.default;
 };
