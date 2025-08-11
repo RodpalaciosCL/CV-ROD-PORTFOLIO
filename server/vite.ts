@@ -78,10 +78,10 @@ export function serveStatic(app: Express) {
 
   app.use(express.static(distPath));
 
-  // Only serve index.html for non-API routes
+  // Only serve index.html for non-API and non-asset routes
   app.get("*", (req, res, next) => {
-    // Skip API routes - let them 404 if not handled
-    if (req.path.startsWith('/api/')) {
+    // Skip API routes and assets - let them 404 if not handled
+    if (req.path.startsWith('/api/') || req.path.startsWith('/assets/')) {
       return next();
     }
     res.sendFile(path.resolve(distPath, "index.html"));
