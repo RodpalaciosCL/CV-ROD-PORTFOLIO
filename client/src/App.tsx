@@ -8,6 +8,7 @@ import Home from "@/pages/home";
 import Analytics from "@/pages/Analytics";
 import ImprovedAnalytics from "@/components/ImprovedAnalytics";
 import { LanguageProvider } from "@/contexts/LanguageContext";
+import { useVisitTracker } from "@/hooks/useVisitTracker";
 
 function Router() {
   return (
@@ -20,6 +21,9 @@ function Router() {
 }
 
 function App() {
+  // Track visits automatically
+  useVisitTracker();
+  
   return (
     <LanguageProvider>
       <QueryClientProvider client={queryClient}>
