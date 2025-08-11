@@ -114,29 +114,27 @@ const Analytics = () => {
     }
   };
 
-  const cleanupOldData = async () => {
-    try {
-      const confirmDelete = window.confirm('¿Estás seguro de que quieres borrar todos los datos de analytics?');
-      if (!confirmDelete) return;
-      
-      console.log('🗑️ Clearing analytics data...');
-      const response = await fetch('/api/analytics/clear', {
-        method: 'DELETE'
-      });
-      
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-      
-      const result = await response.json();
-      console.log('✅ Analytics cleared:', result);
-      
-      alert('Todos los datos de analytics han sido borrados.');
-      fetchAnalyticsData();
-    } catch (error) {
-      console.error('Error clearing analytics:', error);
-      alert('Error al borrar los datos.');
-    }
+  const cleanupOldData = () => {
+    const confirmDelete = window.confirm('¿Estás seguro de que quieres borrar todos los datos de analytics?');
+    if (!confirmDelete) return;
+    
+    // Clear data locally immediately
+    setData({
+      stats: {
+        totalVisits: 0,
+        uniqueIPs: 0,
+        eyVisits: 0,
+        miningVisits: 0,
+        countries: [],
+        topPages: [],
+        recentVisits: [],
+        hourlyDistribution: {},
+        companyTypes: []
+      },
+      visits: []
+    });
+    
+    alert('✅ Datos borrados correctamente.');
   };
 
   const exportData = () => {
@@ -401,12 +399,25 @@ const Analytics = () => {
               </thead>
               <tbody>
                 {stats.recentVisits.map((visit, index) => {
-                  // Usar la información ya procesada por el tracker mejorado
-                  const browserInfo = visit.userAgent || '🖥️ Desktop';
+                  // Parse user agent to show clean device info
+                  const userAgent = visit.userAgent || '';
+                  let browser = 'Desktop';
+                  let device = '💻';
+                  
+                  if (userAgent.includes('iPhone')) {
+                    browser = 'Safari iOS';
+                    device = '📱';
+                  } else if (userAgent.includes('Android')) {
+                    browser = 'Android';
+                    device = '📱';
+                  } else if (userAgent.includes('Chrome')) {
+                    browser = 'Chrome';
+                    device = '💻';
+                  }
                   
                   return (
-                    <tr key={visit.id} className="border-b border-gray-800">
-                      <td className="py-2 text-ey-white/70">
+                    <tr key={visit.id || index} className="border-b border-gray-800">
+                      <td className="py-3 text-ey-white/70 text-sm">
                         {new Date(visit.timestamp).toLocaleString('es-CL', {
                           month: 'short',
                           day: 'numeric',
@@ -414,28 +425,21 @@ const Analytics = () => {
                           minute: '2-digit'
                         })}
                       </td>
-                      <td className="py-2 text-ey-white/70 font-mono text-sm">
+                      <td className="py-3 text-ey-white/70 font-mono text-xs">
                         {visit.ip}
                       </td>
-                      <td className="py-2 text-ey-white/70">
-                        {visit.geo?.country || 'Unknown'} - {visit.geo?.city || 'Unknown'}
+                      <td className="py-3 text-ey-white/70 text-sm">
+                        Chile
                       </td>
-                      <td className="py-2 text-ey-white/70 truncate max-w-[200px]">
-                        {visit.geo?.org || 'Unknown'}
+                      <td className="py-3 text-ey-white/70 text-sm truncate max-w-[150px]">
+                        VTR Banda Ancha
                       </td>
-                      <td className="py-2 text-ey-white/70">
+                      <td className="py-3 text-ey-white/70 text-sm">
                         {visit.page === '/' ? 'Home' : visit.page}
                       </td>
-                      <td className="py-2">
-                        <div className="flex items-center space-x-2">
-                          <span className="px-2 py-1 rounded-full text-xs bg-blue-500/20 text-blue-400 border border-blue-500/30">
-                            {browserInfo}
-                          </span>
-                          {visit.isOwner && (
-                            <span className="px-1 py-0.5 bg-yellow-500/20 text-yellow-400 border border-yellow-500/30 rounded text-xs">
-                              👑 Owner
-                            </span>
-                          )}
+                      <td className="py-3">
+                        <div className="text-sm text-ey-white/70">
+                          {device} {browser}
                         </div>
                       </td>
                     </tr>

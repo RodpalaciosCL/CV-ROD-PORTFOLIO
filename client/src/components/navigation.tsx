@@ -10,7 +10,7 @@ export default function Navigation() {
   const [showScrollTop, setShowScrollTop] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const { t } = useLanguage();
+  const { t, language, setLanguage } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -79,6 +79,32 @@ export default function Navigation() {
           >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="flex justify-between items-center py-4">
+                {/* Mobile Language Selector - PRIMERA POSICIÓN */}
+                <div className="md:hidden">
+                  <div className="flex items-center bg-red-500 rounded-lg p-1 border-2 border-red-600 shadow-lg">
+                    <button
+                      onClick={() => setLanguage('es')}
+                      className={`px-3 py-1 text-sm font-bold rounded transition-all duration-200 ${
+                        language === 'es'
+                          ? 'text-white bg-black'
+                          : 'text-white hover:text-yellow-300'
+                      }`}
+                    >
+                      ES
+                    </button>
+                    <button
+                      onClick={() => setLanguage('en')}
+                      className={`px-3 py-1 text-sm font-bold rounded transition-all duration-200 ${
+                        language === 'en'
+                          ? 'text-white bg-black'
+                          : 'text-white hover:text-yellow-300'
+                      }`}
+                    >
+                      EN
+                    </button>
+                  </div>
+                </div>
+                
                 {/* Logo */}
                 <div className="flex items-center">
                   <img 
