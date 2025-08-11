@@ -782,7 +782,7 @@ const translations = {
 
     // Pipeline section (NEW)
     'pipeline.title': 'Business Pipeline',
-    'pipeline.title_highlight': 'Active',
+    'pipeline.title_highlight': '',
     'pipeline.subtitle': '$151.6M in mapped opportunities for EY partnership',
     'pipeline.probability': 'Probability',
     'pipeline.project_value': 'Project Value',
