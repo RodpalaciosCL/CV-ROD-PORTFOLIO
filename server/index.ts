@@ -8,10 +8,37 @@ app.set('trust proxy', true);
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
+// Simple visit tracking
+const logVisit = async (req: any) => {
+  try {
+    const ip = req.ip || req.headers['x-forwarded-for'] || req.connection?.remoteAddress || 'unknown';
+    const realIP = Array.isArray(ip) ? ip[0] : ip.toString().split(',')[0].trim();
+    
+    const visit = {
+      timestamp: new Date().toISOString(),
+      date: new Date().toLocaleDateString('es-CL'),
+      time: new Date().toLocaleTimeString('es-CL'),
+      ip: realIP,
+      page: req.path,
+      userAgent: req.headers['user-agent'] || 'unknown',
+      referrer: req.headers.referer || 'direct'
+    };
+    
+    console.log(`📊 VISIT: ${visit.date} ${visit.time} | ${realIP} | ${req.path} | ${req.headers['user-agent']?.substring(0, 50)}`);
+  } catch (error) {
+    console.error('Error logging visit:', error);
+  }
+};
+
 app.use((req, res, next) => {
   const start = Date.now();
   const path = req.path;
   let capturedJsonResponse: Record<string, any> | undefined = undefined;
+
+  // Track visits to main pages
+  if (!path.startsWith('/assets') && !path.startsWith('/api') && req.method === 'GET') {
+    logVisit(req);
+  }
 
   const originalResJson = res.json;
   res.json = function (bodyJson, ...args) {

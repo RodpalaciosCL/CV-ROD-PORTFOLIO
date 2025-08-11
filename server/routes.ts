@@ -42,14 +42,34 @@ async function logVisit(req: any) {
 export async function registerRoutes(app: Express): Promise<Server> {
   console.log('🚀 Registering routes...');
   
-  // Registrar TODAS las visitas automáticamente
-  app.use((req, res, next) => {
-    // Solo trackear páginas principales, no assets
-    if (!req.path.startsWith('/assets') && !req.path.startsWith('/api') && req.method === 'GET') {
-      logVisit(req);
+  // Super simple visits endpoint
+  app.get('/api/visits', async (req, res) => {
+    try {
+      console.log('Visits endpoint called');
+      
+      let visits = [];
+      try {
+        const data = await fs.readFile(analyticsFile, 'utf8');
+        visits = JSON.parse(data);
+      } catch (error) {
+        visits = [];
+      }
+      
+      console.log(`Returning ${visits.length} visits`);
+      
+      res.json({
+        message: 'Visit tracking is working!',
+        timestamp: new Date().toISOString(),
+        total: visits.length,
+        recent: visits.slice(-10).reverse() // Últimas 10
+      });
+    } catch (error) {
+      console.error('Error in visits endpoint:', error);
+      res.status(500).json({ error: 'Failed to get visits' });
     }
-    next();
   });
+  
+  console.log('✅ Simple /api/visits endpoint registered');
   
   // Track visits
   app.post('/api/analytics/track', async (req, res) => {
@@ -147,90 +167,6 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
   
-  // Delete/Clear analytics data
-  app.delete('/api/analytics/clear', async (req, res) => {
-    try {
-      await fs.writeFile(analyticsFile, JSON.stringify([], null, 2));
-      console.log('🗑️ Analytics data cleared');
-      res.json({ success: true, message: 'Analytics data cleared' });
-    } catch (error) {
-      console.error('Error clearing analytics:', error);
-      res.status(500).json({ error: 'Failed to clear analytics' });
-    }
-  });
-  
-  // Endpoint simple para ver visitas
-  app.get('/api/visits', async (req, res) => {
-    try {
-      let visits = [];
-      try {
-        const data = await fs.readFile(analyticsFile, 'utf8');
-        visits = JSON.parse(data);
-      } catch (error) {
-        visits = [];
-      }
-      
-      // Últimas 50 visitas
-      const recentVisits = visits.slice(-50).reverse();
-      
-      res.json({
-        total: visits.length,
-        recent: recentVisits
-      });
-    } catch (error) {
-      console.error('Error getting visits:', error);
-      res.status(500).json({ error: 'Failed to get visits' });
-    }
-  });
-  
-  // Get analytics data
-  app.get('/api/analytics/data', async (req, res) => {
-    try {
-      const { includeOwner = 'true', days = '7' } = req.query;
-      
-      let analyticsData = [];
-      try {
-        const data = await fs.readFile(analyticsFile, 'utf8');
-        analyticsData = JSON.parse(data);
-      } catch (error) {
-        analyticsData = [];
-      }
-      
-      const daysAgo = new Date();
-      daysAgo.setDate(daysAgo.getDate() - parseInt(days as string));
-      
-      let filteredData = analyticsData.filter((visit: any) => 
-        new Date(visit.timestamp) > daysAgo
-      );
-      
-      if (includeOwner === 'false') {
-        filteredData = filteredData.filter((visit: any) => !visit.isOwner);
-      }
-      
-      const stats = {
-        totalVisits: filteredData.length,
-        uniqueIPs: [...new Set(filteredData.map((v: any) => v.ip))].length,
-        eyVisits: 0,
-        miningVisits: 0,
-        countries: [...new Set(filteredData.map((v: any) => v.geo?.country || 'Unknown'))],
-        topPages: Object.entries(
-          filteredData.reduce((acc: any, v: any) => {
-            acc[v.page] = (acc[v.page] || 0) + 1;
-            return acc;
-          }, {})
-        ).sort(([,a], [,b]) => (b as number) - (a as number)).slice(0, 10),
-        recentVisits: filteredData
-          .sort((a: any, b: any) => new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime())
-          .slice(0, 20),
-        companyTypes: [['Other', filteredData.length]]
-      };
-      
-      res.json({ stats, visits: filteredData });
-    } catch (error) {
-      console.error('Error getting analytics:', error);
-      res.status(500).json({ error: 'Failed to get analytics' });
-    }
-  });
 
   const httpServer = createServer(app);
 
