@@ -90,7 +90,7 @@ const ImprovedAnalytics = () => {
 
         // Enviar a sistema propio (inspirado en tu INVESTMENT-DECK exitoso)
         try {
-          const response = await fetch('/api/track-visit', {
+          const response = await fetch('/api/analytics/track', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',

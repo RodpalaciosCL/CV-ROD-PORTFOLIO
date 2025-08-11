@@ -50,59 +50,36 @@ const Analytics = () => {
   const fetchAnalyticsData = async () => {
     try {
       setLoading(true);
+      console.log('🔄 Fetching analytics data...');
       
-      let visitsData = [];
+      const response = await fetch(`/api/analytics/data?includeOwner=${includeOwner}&days=${timeRange}`);
       
-      // Leer desde API propia de Vercel
-      try {
-        const response = await fetch('/api/get-visits');
-        
-        if (response.ok) {
-          const result = await response.json();
-          if (result.success) {
-            visitsData = result.visits || [];
-            console.debug('[Analytics] Datos cargados desde API:', visitsData.length);
-          } else {
-            throw new Error('API error');
-          }
-        } else {
-          throw new Error('API response error');
-        }
-      } catch (apiError) {
-        console.debug('[Analytics] Error con API, usando localStorage:', apiError);
-        visitsData = JSON.parse(localStorage.getItem('analytics-visits') || '[]');
-        console.debug('[Analytics] Datos locales cargados:', visitsData.length);
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
       }
       
-      const daysAgo = new Date();
-      daysAgo.setDate(daysAgo.getDate() - parseInt(timeRange));
+      const result = await response.json();
+      console.log('📊 Analytics data received:', result);
       
-      let filteredData = visitsData.filter((visit: any) => 
-        new Date(visit.timestamp) > daysAgo && visit.page !== '/analytics'
-      );
-      
-      const stats = {
-        totalVisits: filteredData.length,
-        uniqueIPs: [...new Set(filteredData.map((v: any) => v.ip))].length,
-        eyVisits: 0,
-        miningVisits: 0,
-        countries: [...new Set(filteredData.map((v: any) => v.geo?.country || 'Unknown'))],
-        topPages: Object.entries(
-          filteredData.reduce((acc: any, v: any) => {
-            acc[v.page] = (acc[v.page] || 0) + 1;
-            return acc;
-          }, {})
-        ).sort(([,a], [,b]) => (b as number) - (a as number)).slice(0, 10),
-        recentVisits: filteredData
-          .sort((a: any, b: any) => new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime())
-          .slice(0, 20),
-        companyTypes: [['Other', filteredData.length]]
-      };
-      
-      setData({ stats, visits: filteredData });
+      setData(result);
       setLastUpdate(new Date());
     } catch (error) {
       console.error('Error fetching analytics:', error);
+      // Fallback data
+      setData({
+        stats: {
+          totalVisits: 0,
+          uniqueIPs: 0,
+          eyVisits: 0,
+          miningVisits: 0,
+          countries: [],
+          topPages: [],
+          recentVisits: [],
+          hourlyDistribution: {},
+          companyTypes: []
+        },
+        visits: []
+      });
     } finally {
       setLoading(false);
     }
@@ -113,11 +90,22 @@ const Analytics = () => {
       const confirmDelete = window.confirm('¿Estás seguro de que quieres borrar todos los datos de analytics?');
       if (!confirmDelete) return;
       
-      localStorage.removeItem('analytics-visits');
+      console.log('🗑️ Clearing analytics data...');
+      const response = await fetch('/api/analytics/clear', {
+        method: 'DELETE'
+      });
+      
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      
+      const result = await response.json();
+      console.log('✅ Analytics cleared:', result);
+      
       alert('Todos los datos de analytics han sido borrados.');
       fetchAnalyticsData();
     } catch (error) {
-      console.error('Error cleaning up data:', error);
+      console.error('Error clearing analytics:', error);
       alert('Error al borrar los datos.');
     }
   };

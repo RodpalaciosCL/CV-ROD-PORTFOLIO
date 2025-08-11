@@ -73,6 +73,18 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
   
+  // Delete/Clear analytics data
+  app.delete('/api/analytics/clear', async (req, res) => {
+    try {
+      await fs.writeFile(analyticsFile, JSON.stringify([], null, 2));
+      console.log('🗑️ Analytics data cleared');
+      res.json({ success: true, message: 'Analytics data cleared' });
+    } catch (error) {
+      console.error('Error clearing analytics:', error);
+      res.status(500).json({ error: 'Failed to clear analytics' });
+    }
+  });
+  
   // Get analytics data
   app.get('/api/analytics/data', async (req, res) => {
     try {
