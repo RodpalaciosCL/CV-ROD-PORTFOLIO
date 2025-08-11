@@ -220,7 +220,7 @@ export default function ActivePipeline() {
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            {t('pipeline.title')} <span className="text-ey-yellow">{t('pipeline.title_highlight')}</span>
+            {t('pipeline.title')}
           </motion.h2>
           <motion.p 
             className="text-lg text-ey-yellow/80 max-w-4xl mx-auto font-light"
