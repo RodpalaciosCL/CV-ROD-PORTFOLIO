@@ -65,6 +65,25 @@ app.use((req, res, next) => {
   next();
 });
 
+// Simple test endpoint BEFORE everything else
+app.get('/api/test', (req, res) => {
+  console.log('TEST endpoint hit!');
+  res.json({ message: 'API is working!', timestamp: new Date().toISOString() });
+});
+
+// Simple visits endpoint BEFORE everything else  
+app.get('/api/visits', (req, res) => {
+  console.log('VISITS endpoint hit!');
+  res.json({ 
+    message: 'Visits endpoint working!',
+    total: 0,
+    recent: [],
+    timestamp: new Date().toISOString()
+  });
+});
+
+console.log('🔧 Direct API routes registered');
+
 (async () => {
   // Register API routes FIRST
   const server = await registerRoutes(app);
