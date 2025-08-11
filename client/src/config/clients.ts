@@ -20,8 +20,8 @@ export const clientConfigs: Record<string, ClientConfig> = {
   },
   bhp: {
     name: 'BHP',
-    logo: 'https://companieslogo.com/img/orig/BHP-c74db9b7.png',
-    logoFilters: 'brightness-0 invert',
+    logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/BHP_2017_logo.svg/2560px-BHP_2017_logo.svg.png',
+    logoFilters: '',
     industry: 'minería',
     whatsappMessage: 'Hola Rodrigo, me interesa conversar sobre la propuesta estratégica para BHP',
     colors: {
