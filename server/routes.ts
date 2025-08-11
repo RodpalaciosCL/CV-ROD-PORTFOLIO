@@ -4,18 +4,52 @@ import { storage } from "./storage";
 import { promises as fs } from "fs";
 import path from "path";
 
+const analyticsFile = path.join(process.cwd(), 'visits.json');
+
+// Función para registrar visitas
+async function logVisit(req: any) {
+  try {
+    const ip = req.ip || req.headers['x-forwarded-for'] || req.connection?.remoteAddress || 'unknown';
+    const realIP = Array.isArray(ip) ? ip[0] : ip.toString().split(',')[0].trim();
+    
+    const visit = {
+      timestamp: new Date().toISOString(),
+      date: new Date().toLocaleDateString('es-CL'),
+      time: new Date().toLocaleTimeString('es-CL'),
+      ip: realIP,
+      page: req.path,
+      userAgent: req.headers['user-agent'] || 'unknown',
+      referrer: req.headers.referer || 'direct'
+    };
+    
+    let visits = [];
+    try {
+      const data = await fs.readFile(analyticsFile, 'utf8');
+      visits = JSON.parse(data);
+    } catch (error) {
+      visits = [];
+    }
+    
+    visits.push(visit);
+    await fs.writeFile(analyticsFile, JSON.stringify(visits, null, 2));
+    
+    console.log(`📊 VISIT: ${visit.date} ${visit.time} | ${realIP} | ${req.path}`);
+  } catch (error) {
+    console.error('Error logging visit:', error);
+  }
+}
+
 export async function registerRoutes(app: Express): Promise<Server> {
   console.log('🚀 Registering routes...');
   
-  // put application routes here
-  // prefix all routes with /api
-
-  // use storage to perform CRUD operations on the storage interface
-  // e.g. storage.insertUser(user) or storage.getUserByUsername(username)
-
-  // Analytics endpoints
-  console.log('📊 Setting up Analytics endpoints...');
-  const analyticsFile = path.join(process.cwd(), 'analytics-data.json');
+  // Registrar TODAS las visitas automáticamente
+  app.use((req, res, next) => {
+    // Solo trackear páginas principales, no assets
+    if (!req.path.startsWith('/assets') && !req.path.startsWith('/api') && req.method === 'GET') {
+      logVisit(req);
+    }
+    next();
+  });
   
   // Track visits
   app.post('/api/analytics/track', async (req, res) => {
@@ -122,6 +156,30 @@ export async function registerRoutes(app: Express): Promise<Server> {
     } catch (error) {
       console.error('Error clearing analytics:', error);
       res.status(500).json({ error: 'Failed to clear analytics' });
+    }
+  });
+  
+  // Endpoint simple para ver visitas
+  app.get('/api/visits', async (req, res) => {
+    try {
+      let visits = [];
+      try {
+        const data = await fs.readFile(analyticsFile, 'utf8');
+        visits = JSON.parse(data);
+      } catch (error) {
+        visits = [];
+      }
+      
+      // Últimas 50 visitas
+      const recentVisits = visits.slice(-50).reverse();
+      
+      res.json({
+        total: visits.length,
+        recent: recentVisits
+      });
+    } catch (error) {
+      console.error('Error getting visits:', error);
+      res.status(500).json({ error: 'Failed to get visits' });
     }
   });
   
