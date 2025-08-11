@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
+import { getClientConfig } from '@/config/clients';
 
 type Language = 'es' | 'en';
 
@@ -6,6 +7,7 @@ interface LanguageContextType {
   language: Language;
   setLanguage: (lang: Language) => void;
   t: (key: string) => string;
+  clientName: string;
 }
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
@@ -1213,6 +1215,7 @@ const translations = {
 
 export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [language, setLanguage] = useState<Language>('es');
+  const clientConfig = getClientConfig();
 
   useEffect(() => {
     // Cargar idioma desde localStorage
@@ -1228,11 +1231,23 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
   };
 
   const t = (key: string): string => {
-    return (translations[language] as any)[key] || key;
+    let translation = (translations[language] as any)[key] || key;
+    
+    // Reemplazar dinámicamente referencias al cliente
+    if (typeof translation === 'string') {
+      translation = translation.replace(/Metso/g, clientConfig.name);
+    }
+    
+    return translation;
   };
 
   return (
-    <LanguageContext.Provider value={{ language, setLanguage: changeLanguage, t }}>
+    <LanguageContext.Provider value={{ 
+      language, 
+      setLanguage: changeLanguage, 
+      t,
+      clientName: clientConfig.name 
+    }}>
       {children}
     </LanguageContext.Provider>
   );

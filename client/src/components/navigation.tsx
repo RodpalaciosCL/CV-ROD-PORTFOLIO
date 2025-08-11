@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { ChevronUp, Menu, X } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import LanguageSelector from "@/components/LanguageSelector";
+import { getClientConfig } from "@/config/clients";
 
 export default function Navigation() {
   const [isVisible, setIsVisible] = useState(true);
@@ -11,6 +12,7 @@ export default function Navigation() {
   const [lastScrollY, setLastScrollY] = useState(0);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { t, language, setLanguage } = useLanguage();
+  const clientConfig = getClientConfig();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -79,12 +81,12 @@ export default function Navigation() {
           >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="flex justify-between items-center py-4">
-                {/* Metso Logo */}
+                {/* Client Logo */}
                 <div className="flex items-center">
                   <img 
-                    src="https://companieslogo.com/img/orig/METSO.HE_BIG.D-51c666e1.png?t=1720244492" 
-                    alt="Metso Logo" 
-                    className="h-5 w-auto -mt-1 brightness-0 invert"
+                    src={clientConfig.logo} 
+                    alt={`${clientConfig.name} Logo`} 
+                    className={`h-5 w-auto -mt-1 ${clientConfig.logoFilters || ''}`}
                   />
                 </div>
                 
@@ -119,7 +121,7 @@ export default function Navigation() {
                     }}
                   >
                     <Button 
-                      onClick={() => window.open('https://wa.me/56971415496?text=Hola%20Rodrigo,%20me%20interesa%20conversar%20sobre%20la%20propuesta%20estrat%C3%A9gica%20para%20Metso', '_blank')}
+                      onClick={() => window.open(`https://wa.me/56971415496?text=${encodeURIComponent(clientConfig.whatsappMessage)}`, '_blank')}
                       className="bg-ey-yellow hover:bg-yellow-400 font-bold text-xs rounded-lg border border-ey-yellow/20 px-2 py-1"
                       style={{ color: 'inherit', height: '32px', minWidth: '70px' }}
                     >
@@ -194,7 +196,7 @@ export default function Navigation() {
                       <div className="pt-4 border-t border-ey-yellow/20">
                         <Button 
                           onClick={() => {
-                            window.open('https://wa.me/56971415496?text=Hola%20Rodrigo,%20me%20interesa%20conversar%20sobre%20la%20propuesta%20estrat%C3%A9gica%20para%20Metso', '_blank');
+                            window.open(`https://wa.me/56971415496?text=${encodeURIComponent(clientConfig.whatsappMessage)}`, '_blank');
                             setMobileMenuOpen(false);
                           }}
                           className="w-full bg-ey-yellow hover:bg-yellow-400 text-black font-bold py-3"
