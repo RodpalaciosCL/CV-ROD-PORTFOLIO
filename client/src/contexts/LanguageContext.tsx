@@ -39,8 +39,8 @@ const translations = {
     // Solutions Section
     'solutions.title': 'Soluciones',
     'solutions.title_highlight': 'Altamente Demandadas por la Industria',
-    'solutions.description': 'De las cuales tengo en su mayoría la',
-    'solutions.description_highlight': 'capacidad de vender e implementar en tiempo récord',
+    'solutions.description': 'En las cuales he estado trabajando con',
+    'solutions.description_highlight': 'líderes de la minería global',
     'solutions.tab_operation': 'Operación',
     'solutions.tab_security': 'Seguridad',
     'solutions.tab_maintenance': 'Mantenimiento',
@@ -120,7 +120,7 @@ const translations = {
     
     // Active Pipeline
     'pipeline.title': 'Pipeline de Negocios Activo',
-    'pipeline.subtitle': 'en oportunidades mapeadas para asociación con EY',
+    'pipeline.subtitle': 'en oportunidades mapeadas para asociación con Metso',
     'pipeline.anglo.title': 'Anglo American',
     'pipeline.anglo.subtitle': 'Implementación Robots de Inspección',
     'pipeline.anglo.stage': 'Propuesta Final',
@@ -275,7 +275,7 @@ const translations = {
     // Value section (NEW)
     'value.title': 'Propuesta de Valor',
     'value.title_highlight': 'Única',
-    'value.subtitle': 'Ventajas competitivas que hacen esta asociación estratégicamente valiosa para EY',
+    'value.subtitle': 'Ventajas competitivas que hacen esta asociación estratégicamente valiosa para Metso',
     'value.pipeline.title': 'Pipeline Pre Commit',
     'value.pipeline.description': 'Oportunidades activas con alto grado de cierre',
     'value.network.title': 'Red Establecida',
@@ -287,18 +287,18 @@ const translations = {
 
     // Efficiency section (NEW)
     'efficiency.main_title': '¿Por Qué Quiero Ser Parte de',
-    'efficiency.ey_highlight': 'EY',
+    'efficiency.ey_highlight': 'Metso',
     'efficiency.main_subtitle': 'Firma líder, Equipo de Liderazgo Excepcional, y el momento perfecto para desafiar la industria',
     'efficiency.me_question': '¿Yo?',
     'efficiency.change_agent': 'Un Agente de cambio con hambre de comerse la industria, de verdad.',
     
     // Efficiency motivations
-    'efficiency.motivations.respect.title': 'Respeto por EY',
+    'efficiency.motivations.respect.title': 'Respeto por Metso',
     'efficiency.motivations.respect.description': 'Track récord, perfiles, relacionamiento y presencia',
     'efficiency.motivations.moment.title': 'Momento Espectacular',
     'efficiency.motivations.moment.description': 'Desafiar la industria en uno de los momentos más transformadores de la historia',
     'efficiency.motivations.challenge.title': 'Hora de desafiar',
-    'efficiency.motivations.challenge.description': 'Traer revenues no explorados sin descuidar el as-is que ha llevado a EY al éxito',
+    'efficiency.motivations.challenge.description': 'Traer revenues no explorados sin descuidar el as-is que ha llevado a Metso al éxito',
     
     // Value Props
     'efficiency.valueprops.optimization.title': 'Optimización de Búsquedas',
@@ -328,7 +328,7 @@ const translations = {
     'efficiency.statement.tengo.title': 'Tengo',
     'efficiency.statement.tengo.content': 'La capacidad de liderar equipos, visualizar talentos de manera temprana y potenciar el sentido de pertenencia y propósito, junto con hacer del trabajo un lugar cálido, desafiante y sumamente interesante, donde el ánimo por darlo sea una constante, y los beneficios por hacerlo sean el premio de esta colaboración en conjunto.',
     'efficiency.statement.soy.title': 'Soy',
-    'efficiency.statement.soy.content': 'Un fiel embajador de los beneficios y oportunidades de trabajar en una big four, y una compañía como EY, que muchas veces quienes lo viven "desde siempre" no le toman el valor, pero la red, la documentación y cantidad de assets que se tiene al alcance y el nivel de aprendizaje y estímulos que se vienen a diario, son sólo comparables con estar cursando en MBA constante, y de la más alta calidad de contenido.',
+    'efficiency.statement.soy.content': 'Un fiel embajador de los beneficios y oportunidades de trabajar en una empresa líder global, y una compañía como Metso, que muchas veces quienes lo viven "desde siempre" no le toman el valor, pero la red, la documentación y cantidad de assets que se tiene al alcance y el nivel de aprendizaje y estímulos que se vienen a diario, son sólo comparables con estar cursando en MBA constante, y de la más alta calidad de contenido.',
     'efficiency.statement.quiero.title': 'Quiero',
     'efficiency.statement.quiero.content': 'Conectarme con un equipo con hambre y ganas de ser líderes, y a su vez referentes, pero de esos que hablan sobre sus logros, aportes y calidad de entregables. Quiero ser "Pioneer y no "Follower", y que la industria nos valide por nuestros actos, y no los compromisos o promesas sin cumplir, y por último, quiero aportar a que la firma sea el referente cuando alguien piense en buscar, llamar o seleccionar un partner para acompañarlos en momentos complejos, decisivos, trascendentales y decidores.',
     'efficiency.statement.puedo.title': 'Puedo',
@@ -342,8 +342,8 @@ const translations = {
     // New Efficiency Section Translations
     'efficiency.operation.title': 'Operación inteligente que mueve el tonelaje hoy',
     'efficiency.operation.subtitle': 'AI, visión y IoT para seguridad, continuidad y menor costo por tonelada — enfoque en minería latinoamericana.',
-    'efficiency.tracks.title': 'Mi Aporte a EY',
-    'efficiency.respect.title': 'Respeto por EY',
+    'efficiency.tracks.title': 'Mi Aporte a Metso',
+    'efficiency.respect.title': 'Respeto por Metso',
     'efficiency.respect.description': 'Track récord, perfiles excepcionales y presencia líder en el mercado',
     'efficiency.challenge.title': 'Hora de desafiar',
     'efficiency.challenge.description': 'Traer revenues no explorados manteniendo la excelencia del as-is',
@@ -372,7 +372,7 @@ const translations = {
     
     // Tracks Section translations
     'tracks.title': 'Mi Aporte a',
-    'tracks.title_highlight': 'EY',
+    'tracks.title_highlight': 'Metso',
     'tracks.kpi_metrics': 'Métricas clave',
     'tracks.closing.title': 'Transformando la minería con',
     'tracks.closing.highlight': 'innovación responsable',
@@ -460,13 +460,13 @@ const translations = {
 
     // Contact section (NEW)
     'contact.title_part1': '¿Listo para Acelerar la ',
-    'contact.title_part2': 'Práctica Minera de EY?',
-    'contact.subtitle': 'Conversemos sobre cómo esta asociación estratégica puede desbloquear oportunidades de largo plazo, y establecer a EY como el partner tecnológico minero líder en Latinoamérica.',
+    'contact.title_part2': 'Práctica Minera de Metso?',
+    'contact.subtitle': 'Conversemos sobre cómo esta asociación estratégica puede desbloquear oportunidades de largo plazo, y establecer a Metso como el partner tecnológico minero líder en Latinoamérica.',
     'contact.cta_button': 'Contactar',
     'contact.click_to_contact': 'Click para contactar',
 
     // Footer section (NEW)
-    'footer.copyright': '© 2025 | Rodrigo Palacios Strategic Partnership | Propuesta confidencial para EY.',
+    'footer.copyright': '© 2025 | Rodrigo Palacios Strategic Partnership | Propuesta confidencial para Metso.',
 
     // Competitive Advantages section (NEW)
     'competitive.title': 'Ventajas Competitivas',
@@ -521,7 +521,7 @@ const translations = {
     'strategic.insights.ai_reality.bullets.2.heading': 'Clientes construyen copilotos internos que entregan en horas',
     'strategic.insights.ai_reality.bullets.2.detail': 'Coca-Cola ya dispone de un bot financiero con GPT-4 que produce dashboards de riesgo en tiempo real a coste marginal.',
     'strategic.insights.ai_reality.bullets.3.heading': 'Start-ups como Harvey AI reemplazan servicios Big Four completos',
-    'strategic.insights.ai_reality.bullets.3.detail': 'Harvey atiende a >40 firmas legales del Top 100; EY Legal pierde terreno en contratos estándar y due-diligence.',
+    'strategic.insights.ai_reality.bullets.3.detail': 'Harvey atiende a >40 firmas legales del Top 100; las grandes consultoras pierden terreno en contratos estándar y due-diligence.',
     
     'strategic.insights.velocity_imperative.title': 'Imperativo de Velocidad · Adaptación inmediata',
     'strategic.insights.velocity_imperative.bullets.0.heading': 'Clientes pagan por impacto en 48 h, no en 6 meses',
@@ -783,7 +783,7 @@ const translations = {
     // Pipeline section (NEW)
     'pipeline.title': 'Business Pipeline',
     'pipeline.title_highlight': '',
-    'pipeline.subtitle': '$151.6M in mapped opportunities for EY partnership',
+    'pipeline.subtitle': '$151.6M in mapped opportunities for Metso partnership',
     'pipeline.probability': 'Probability',
     'pipeline.project_value': 'Project Value',
     'pipeline.active_opportunities': 'Active Opportunities',
@@ -858,7 +858,7 @@ const translations = {
     'strategic.insights.ai_reality.bullets.2.heading': 'Clients build internal copilots that deliver in hours',
     'strategic.insights.ai_reality.bullets.2.detail': 'Coca-Cola already has a financial bot with GPT-4 that produces real-time risk dashboards at marginal cost.',
     'strategic.insights.ai_reality.bullets.3.heading': 'Start-ups like Harvey AI replace complete Big Four services',
-    'strategic.insights.ai_reality.bullets.3.detail': 'Harvey serves >40 Top 100 law firms; EY Legal loses ground in standard contracts and due-diligence.',
+    'strategic.insights.ai_reality.bullets.3.detail': 'Harvey serves >40 Top 100 law firms; major consultancies lose ground in standard contracts and due-diligence.',
     
     'strategic.insights.velocity_imperative.title': 'Speed Imperative · Immediate Adaptation',
     'strategic.insights.velocity_imperative.bullets.0.heading': 'Clients pay for impact in 48h, not in 6 months',
@@ -884,7 +884,7 @@ const translations = {
     // Value section (NEW)
     'value.title': 'Unique Value',
     'value.title_highlight': 'Proposition',
-    'value.subtitle': 'Competitive advantages that make this partnership strategically valuable for EY',
+    'value.subtitle': 'Competitive advantages that make this partnership strategically valuable for Metso',
     'value.pipeline.title': 'Pipeline Pre Commit',
     'value.pipeline.description': 'Active opportunities with high closure probability',
     'value.network.title': 'Established Network',
@@ -896,18 +896,18 @@ const translations = {
 
     // Efficiency section (NEW)
     'efficiency.main_title': 'Why I Want to Be Part of',
-    'efficiency.ey_highlight': 'EY',
+    'efficiency.ey_highlight': 'Metso',
     'efficiency.main_subtitle': 'Leading firm, Exceptional Leadership Team, and the perfect moment to challenge the industry',
     'efficiency.me_question': 'Me?',
     'efficiency.change_agent': 'A change agent hungry to disrupt the industry, for real.',
     
     // Efficiency motivations
-    'efficiency.motivations.respect.title': 'Respect for EY',
+    'efficiency.motivations.respect.title': 'Respect for Metso',
     'efficiency.motivations.respect.description': 'Track record, profiles, relationships and presence',
     'efficiency.motivations.moment.title': 'Spectacular Moment',
     'efficiency.motivations.moment.description': 'Challenging the industry in one of the most transformative moments in history',
     'efficiency.motivations.challenge.title': 'Time to challenge',
-    'efficiency.motivations.challenge.description': 'Bring unexplored revenues without neglecting the as-is that has led EY to success',
+    'efficiency.motivations.challenge.description': 'Bring unexplored revenues without neglecting the as-is that has led Metso to success',
     
     // Value Props
     'efficiency.valueprops.optimization.title': 'Search Optimization',
@@ -937,7 +937,7 @@ const translations = {
     'efficiency.statement.tengo.title': 'I Have',
     'efficiency.statement.tengo.content': 'The ability to lead teams, visualize talent early and enhance the sense of belonging and purpose, along with making work a warm, challenging and extremely interesting place, where the spirit to give it is a constant, and the benefits of doing so are the reward of this collaboration together.',
     'efficiency.statement.soy.title': 'I Am',
-    'efficiency.statement.soy.content': 'A faithful ambassador of the benefits and opportunities of working in a big four, and a company like EY, which often those who live it "forever" do not take the value, but the network, documentation and amount of assets that are at your fingertips and the level of learning and stimuli that come daily, are only comparable to being studying in constant MBA, and of the highest quality content.',
+    'efficiency.statement.soy.content': 'A faithful ambassador of the benefits and opportunities of working in a global leader company, and a company like Metso, which often those who live it "forever" do not take the value, but the network, documentation and amount of assets that are at your fingertips and the level of learning and stimuli that come daily, are only comparable to being studying in constant MBA, and of the highest quality content.',
     'efficiency.statement.quiero.title': 'I Want',
     'efficiency.statement.quiero.content': 'To connect with a team with hunger and desire to be leaders, and in turn referents, but those who talk about their achievements, contributions and quality of deliverables. I want to be "Pioneer and not "Follower", and for the industry to validate us by our actions, and not the commitments or unfulfilled promises, and finally, I want to contribute to making the firm the reference when someone thinks of looking, calling or selecting a partner to accompany them in complex, decisive, transcendental and deciding moments.',
     'efficiency.statement.puedo.title': 'I Can',
@@ -951,8 +951,8 @@ const translations = {
     // New Efficiency Section Translations (English)
     'efficiency.operation.title': 'Smart operation that moves tonnage today',
     'efficiency.operation.subtitle': 'AI, vision and IoT for safety, continuity and lower cost per ton — focus on Latin American mining.',
-    'efficiency.tracks.title': 'My Contribution to EY', 
-    'efficiency.respect.title': 'Respect for EY',
+    'efficiency.tracks.title': 'My Contribution to Metso',
+    'efficiency.respect.title': 'Respect for Metso',
     'efficiency.respect.description': 'Track record, exceptional profiles and leading market presence',
     'efficiency.challenge.title': 'Time to challenge',
     'efficiency.challenge.description': 'Bring unexplored revenues while maintaining as-is excellence',
@@ -987,13 +987,13 @@ const translations = {
 
     // Contact section (NEW)
     'contact.title_part1': 'Ready to Accelerate ',
-    'contact.title_part2': 'EY\'s Mining Practice?',
-    'contact.subtitle': 'Let\'s discuss how this strategic partnership can unlock long-term opportunities and establish EY as the leading mining technology partner in Latin America.',
+    'contact.title_part2': 'Metso\'s Mining Practice?',
+    'contact.subtitle': 'Let\'s discuss how this strategic partnership can unlock long-term opportunities and establish Metso as the leading mining technology partner in Latin America.',
     'contact.cta_button': 'Contact',
     'contact.click_to_contact': 'Click to contact',
 
     // Footer section (NEW)
-    'footer.copyright': '© 2025 | Rodrigo Palacios Strategic Partnership | Confidential proposal for EY.',
+    'footer.copyright': '© 2025 | Rodrigo Palacios Strategic Partnership | Confidential proposal for Metso.',
 
     // Competitive Advantages section (NEW)
     'competitive.title': 'Competitive Advantages',
@@ -1129,7 +1129,7 @@ const translations = {
     
     // Tracks Section translations
     'tracks.title': 'My Contribution to',
-    'tracks.title_highlight': 'EY',
+    'tracks.title_highlight': 'Metso',
     'tracks.kpi_metrics': 'Key metrics',
     'tracks.closing.title': 'Transforming mining with',
     'tracks.closing.highlight': 'responsible innovation',

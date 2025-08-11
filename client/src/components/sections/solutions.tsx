@@ -39,33 +39,48 @@ export default function Solutions() {
           </motion.p>
         </div>
 
-        {/* Selector de categorías responsive */}
-        <div className="flex justify-center mb-12 px-4">
-          <div className="w-full max-w-2xl bg-ey-medium/30 backdrop-blur-xl rounded-2xl p-2 border border-ey-yellow/20 shadow-2xl">
-            <div className="grid grid-cols-3 gap-1 sm:flex sm:space-x-2">
-              {tabs.map(tab => (
-                <button
+        {/* Selector de categorías - Diseño horizontal mejorado */}
+        <div className="flex justify-center mb-16">
+          <motion.div 
+            className="bg-gradient-to-r from-ey-medium/40 via-ey-medium/30 to-ey-medium/40 backdrop-blur-2xl rounded-full p-1.5 border border-ey-yellow/30 shadow-xl"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            viewport={{ once: true }}
+          >
+            <div className="flex space-x-1">
+              {tabs.map((tab, index) => (
+                <motion.button
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id)}
-                  className={`relative px-3 sm:px-6 py-3 sm:py-4 rounded-xl font-bold text-xs sm:text-sm transition-all duration-300 text-center ${
+                  className={`relative px-8 py-4 rounded-full font-bold text-sm md:text-base transition-all duration-500 whitespace-nowrap min-w-[120px] md:min-w-[140px] ${
                     activeTab === tab.id 
-                      ? 'bg-ey-yellow text-ey-dark shadow-lg scale-105' 
-                      : 'text-ey-white/70 hover:text-ey-white hover:bg-ey-white/10'
+                      ? 'bg-ey-yellow text-ey-dark shadow-lg transform scale-105' 
+                      : 'text-ey-white/80 hover:text-ey-white hover:bg-ey-white/10 hover:scale-102'
                   }`}
+                  whileHover={{ scale: activeTab === tab.id ? 1.05 : 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  initial={{ opacity: 0, x: index * 10 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ 
+                    opacity: { duration: 0.4, delay: 0.6 + index * 0.1 },
+                    x: { duration: 0.4, delay: 0.6 + index * 0.1 },
+                    scale: { type: "spring", stiffness: 400, damping: 17 }
+                  }}
                 >
-                  {t(tab.labelKey)}
+                  <span className="relative z-10">{t(tab.labelKey)}</span>
                   {activeTab === tab.id && (
                     <motion.div 
-                      className="absolute inset-0 bg-ey-yellow/20 rounded-xl blur-md"
-                      layoutId="activeBackground"
+                      className="absolute inset-0 bg-gradient-to-r from-ey-yellow/20 via-ey-yellow/10 to-ey-yellow/20 rounded-full blur-lg"
+                      layoutId="tabHighlight"
                       initial={false}
-                      transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+                      transition={{ type: "spring", bounce: 0.15, duration: 0.6 }}
                     />
                   )}
-                </button>
+                </motion.button>
               ))}
             </div>
-          </div>
+          </motion.div>
         </div>
 
         <div className="mt-8">
