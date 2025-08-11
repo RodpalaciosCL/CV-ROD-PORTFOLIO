@@ -52,7 +52,7 @@ const Analytics = () => {
       setLoading(true);
       console.log('🔄 Fetching analytics data...');
       
-      const response = await fetch(`/api/analytics/data?includeOwner=${includeOwner}&days=${timeRange}`);
+      const response = await fetch('/api/visits');
       
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
@@ -61,7 +61,36 @@ const Analytics = () => {
       const result = await response.json();
       console.log('📊 Analytics data received:', result);
       
-      setData(result);
+      // Transformar datos simples a formato analytics
+      const visits = result.recent || [];
+      const uniqueIPs = [...new Set(visits.map((v: any) => v.ip))].length;
+      const countries = [...new Set(visits.map((v: any) => 'Unknown'))];
+      const topPages = Object.entries(
+        visits.reduce((acc: any, v: any) => {
+          acc[v.page] = (acc[v.page] || 0) + 1;
+          return acc;
+        }, {})
+      ).sort(([,a], [,b]) => (b as number) - (a as number));
+      
+      setData({
+        stats: {
+          totalVisits: result.total || 0,
+          uniqueIPs,
+          eyVisits: 0,
+          miningVisits: 0,
+          countries,
+          topPages: topPages.slice(0, 10),
+          recentVisits: visits.map((v: any) => ({
+            ...v,
+            id: v.timestamp,
+            geo: { country: 'Unknown', city: 'Unknown', org: 'Unknown' },
+            isOwner: false
+          })),
+          hourlyDistribution: {},
+          companyTypes: []
+        },
+        visits
+      });
       setLastUpdate(new Date());
     } catch (error) {
       console.error('Error fetching analytics:', error);

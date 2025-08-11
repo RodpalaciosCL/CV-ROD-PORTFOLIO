@@ -39,7 +39,10 @@ app.use((req, res, next) => {
 });
 
 (async () => {
+  // Register API routes FIRST
   const server = await registerRoutes(app);
+  
+  console.log('✅ API routes registered');
 
   app.use((err: any, _req: Request, res: Response, _next: NextFunction) => {
     const status = err.status || err.statusCode || 500;
@@ -55,6 +58,7 @@ app.use((req, res, next) => {
   if (app.get("env") === "development") {
     await setupVite(app, server);
   } else {
+    console.log('📁 Setting up static file serving...');
     serveStatic(app);
   }
 
