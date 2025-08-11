@@ -79,33 +79,7 @@ export default function Navigation() {
           >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="flex justify-between items-center py-4">
-                {/* Mobile Language Selector - PRIMERA POSICIÓN */}
-                <div className="md:hidden">
-                  <div className="flex items-center bg-red-500 rounded-lg p-1 border-2 border-red-600 shadow-lg">
-                    <button
-                      onClick={() => setLanguage('es')}
-                      className={`px-3 py-1 text-sm font-bold rounded transition-all duration-200 ${
-                        language === 'es'
-                          ? 'text-white bg-black'
-                          : 'text-white hover:text-yellow-300'
-                      }`}
-                    >
-                      ES
-                    </button>
-                    <button
-                      onClick={() => setLanguage('en')}
-                      className={`px-3 py-1 text-sm font-bold rounded transition-all duration-200 ${
-                        language === 'en'
-                          ? 'text-white bg-black'
-                          : 'text-white hover:text-yellow-300'
-                      }`}
-                    >
-                      EN
-                    </button>
-                  </div>
-                </div>
-                
-                {/* Logo */}
+                {/* Logo - SIEMPRE A LA IZQUIERDA */}
                 <div className="flex items-center">
                   <img 
                     src="https://res.cloudinary.com/dhobnlg73/image/upload/v1754256023/EY_idKDHDpz8E_0_prmiha.svg" 
@@ -154,8 +128,34 @@ export default function Navigation() {
                   </motion.div>
                 </div>
 
-                {/* Mobile Menu Button */}
-                <div className="md:hidden">
+                {/* Mobile Right Side - Language + Menu */}
+                <div className="md:hidden flex items-center space-x-3">
+                  {/* Mobile Language Selector - ARMÓNICO */}
+                  <div className="flex items-center bg-ey-yellow/10 rounded-lg p-1 border border-ey-yellow/30">
+                    <button
+                      onClick={() => setLanguage('es')}
+                      className={`px-2 py-1 text-xs font-semibold rounded transition-all duration-200 ${
+                        language === 'es'
+                          ? 'text-ey-dark bg-ey-yellow'
+                          : 'text-ey-white/70 hover:text-ey-white'
+                      }`}
+                    >
+                      ES
+                    </button>
+                    <div className="w-px h-3 bg-ey-yellow/30" />
+                    <button
+                      onClick={() => setLanguage('en')}
+                      className={`px-2 py-1 text-xs font-semibold rounded transition-all duration-200 ${
+                        language === 'en'
+                          ? 'text-ey-dark bg-ey-yellow'
+                          : 'text-ey-white/70 hover:text-ey-white'
+                      }`}
+                    >
+                      EN
+                    </button>
+                  </div>
+                  
+                  {/* Mobile Menu Button */}
                   <button
                     onClick={toggleMobileMenu}
                     className="text-ey-white hover:text-ey-yellow transition-colors p-2"
