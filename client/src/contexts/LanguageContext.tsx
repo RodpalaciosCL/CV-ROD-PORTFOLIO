@@ -59,7 +59,7 @@ const translations = {
     'about.growth.description': 'La capacidad de tomar la oportunidad o transformar el problema y entregar TANGIBILIDAD, para generar la necesidade en el cliente desde el minuto cero.',
     
     // Projects Section  
-    'projects.title': 'Trayectoria Profesional',
+    'projects.title': 'Proyectos',
     'projects.airontech.title': 'AIrontech',
     'projects.airontech.role': 'Managing Director & AI Leader',
     'projects.airontech.description': 'A cargo del PNL, los negocios estratégicos, el relacionamiento con clientes y la práctica de AI y Visión Computacional Minera',
@@ -263,7 +263,7 @@ const translations = {
     'pipeline.average_probability': 'Probabilidad Promedio',
     
     // Projects section missing translations
-    'projects.title_highlight': 'Mayores',
+    'projects.title_highlight': 'de mayor alcance durante los últimos años',
     'projects.subtitle': 'Track record comprobado entregando soluciones tecnológicas complejas para empresas mineras Tier 1',
     'projects.value': 'Valor',
     'projects.time': 'Tiempo',
@@ -673,7 +673,7 @@ const translations = {
     'about.growth.description': 'The ability to take the opportunity or transform the problem and deliver TANGIBILITY, to generate need in the client from minute zero.',
     
     // Projects Section  
-    'projects.title': 'Professional Career',
+    'projects.title': 'Projects',
     'projects.airontech.title': 'AIrontech',
     'projects.airontech.role': 'Managing Director & AI Leader',
     'projects.airontech.description': 'In charge of NLP, strategic business, customer relationships and AI and Mining Computer Vision practice',
@@ -836,7 +836,7 @@ const translations = {
     'pipeline.obsolete.advantage': 'Competitive Advantage: Track record on/off +24 months doing auctions',
     
     // Projects section missing translations
-    'projects.title_highlight': 'Achievements',
+    'projects.title_highlight': 'of greater scope in recent years',
     'projects.subtitle': 'Proven track record delivering complex technological solutions for Tier 1 mining companies',
     'projects.value': 'Value',
     'projects.time': 'Time',

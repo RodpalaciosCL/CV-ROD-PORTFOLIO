@@ -12,7 +12,8 @@ export default function Efficiency() {
     { name: "Antofagasta Minerals", logo: "/logos/antofagasta.svg" },
     { name: "Codelco", logo: "/logos/codelco.svg" },
     { name: "BHP", logo: "/logos/bhp.svg" },
-    { name: "Teck", logo: "/logos/teck.svg" }
+    { name: "Teck", logo: "/logos/teck.svg" },
+    { name: "Otros", logo: "/logos/otros.svg" }
   ];
   
   
