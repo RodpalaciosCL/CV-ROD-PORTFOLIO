@@ -5,6 +5,8 @@ import { promises as fs } from "fs";
 import path from "path";
 
 export async function registerRoutes(app: Express): Promise<Server> {
+  console.log('🚀 Registering routes...');
+  
   // put application routes here
   // prefix all routes with /api
 
@@ -12,6 +14,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
   // e.g. storage.insertUser(user) or storage.getUserByUsername(username)
 
   // Analytics endpoints
+  console.log('📊 Setting up Analytics endpoints...');
   const analyticsFile = path.join(process.cwd(), 'analytics-data.json');
   
   // Track visits
