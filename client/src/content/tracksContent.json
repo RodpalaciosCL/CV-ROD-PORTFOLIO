@@ -1,0 +1,82 @@
+{
+  "meta": { "version": "1.1", "updated": "2025-08-11" },
+  "hero": {
+    "title": "Operación inteligente que mueve el tonelaje hoy",
+    "subtitle": "AI, visión y IoT para seguridad, continuidad y menor costo por tonelada — enfoque en minería latinoamericana."
+  },
+  "clients": [
+    { "name": "Anglo American", "logo": "/logos/anglo.svg" },
+    { "name": "Antofagasta Minerals", "logo": "/logos/antofagasta.svg" },
+    { "name": "Codelco", "logo": "/logos/codelco.svg" },
+    { "name": "Teck", "logo": "/logos/teck.svg" },
+    { "name": "Otros", "logo": "/logos/otros.svg" }
+  ],
+  "kpis": [
+    { "label": "Revenue Stream", "value": "50% nuevos revenue stream", "icon": "DollarSign" },
+    { "label": "Tiempo Respuesta", "value": "80% menor tiempo de respuesta y factor wow para potenciar cierre", "icon": "Timer" },
+    { "label": "Expansión Mercado", "value": "5x veces más expansión y llegada al mercado", "icon": "TrendingUp" },
+    { "label": "Enfoque Proactivo", "value": "100% de enfoque proactivo y desafiante", "icon": "Target" }
+  ],
+  "tracks": [
+    {
+      "key": "negocio-estrategia",
+      "title": "Track 1 — Desarrollo de Negocio y Estrategia",
+      "subtitle": "Revenue architecture conectada a KPIs operativos",
+      "icon": "Briefcase",
+      "bullets": [
+        { "title": "Framework de crecimiento", "text": "Value pools mina–planta (Asset Health, Energía/Agua) priorizados por impacto en 90 días." },
+        { "title": "Account expansion", "text": "Multithreading con CFO/COO/HSE y backlog anual secuenciado por retorno." },
+        { "title": "Pricing por resultado", "text": "Fee + gain-share anclado a throughput, recuperación y seguridad; piloto medible." },
+        { "title": "Go-to-market acelerado", "text": "Alianzas con OEM/cloud; business cases listos para comité en 6 semanas." },
+        { "title": "Gobierno comercial", "text": "QBR/MBR con indicadores líderes (ACV, ciclo, hit-rate) y orquestación delivery-account." },
+        { "title": "Expansión de la práctica", "text": "Cross-over con la compañía completa y sus derivadas para maximizar sinergias y oportunidades de crecimiento conjunto." },
+        { "title": "Inmersión en cuenta", "text": "Estado actual de la cuenta y relacionamiento con cliente, identificando oportunidades tempranas y puntos de apalancamiento." },
+        { "title": "Visión temprana", "text": "Capacidad absoluta de comprender posibilidades en fases tempranas para anticipar necesidades y proponer soluciones proactivas." },
+        { "title": "Optimización y preferencia", "text": "A mayor optimización y eficiencia, mayores réditos y preferencia del cliente, creando un ciclo virtuoso de valor." }
+      ],
+      "dataHooks": ["ACV", "Cycle", "% outcome-based", "Hit-rate"]
+    },
+    {
+      "key": "innovacion-cliente",
+      "title": "Track 2 — Innovación y Co-creación con Cliente",
+      "subtitle": "Anticipamos necesidades, co-creamos y escalamos",
+      "icon": "Sparkles",
+      "bullets": [
+        { "title": "Envisioning con outcomes", "text": "4h con Operaciones/Mantenimiento/HSE; 3 outcomes y path-to-value en 6 semanas." },
+        { "title": "Benchmark y playbooks", "text": "Gap en confiabilidad, agua y seguridad; playbook por sitio con owners y prioridades." },
+        { "title": "Design sprints en sitio", "text": "MVPs integrados a historians/SCADA/BI en 5 días; medimos adopción y readiness." },
+        { "title": "Value discovery continuo", "text": "Radar de pains financiables antes de la demanda formal; sponsor ejecutivo claro." },
+        { "title": "Narrativa y ROI", "text": "One-pager financiero por iniciativa (riesgo, retorno, compliance) para aprobar rápido." }
+      ],
+      "dataHooks": ["Lead time prototipo", "Idea→piloto", "Adopción", "Aprobación capex/opex"]
+    },
+    {
+      "key": "operacion-inteligente",
+      "title": "Track 3 — Operación Inteligente y Tecnología",
+      "subtitle": "Datos, modelos y procesos en el ritmo operativo",
+      "icon": "Cpu",
+      "bullets": [
+        { "title": "Intelligent Ops Platform", "text": "Data fabric edge-to-cloud (IoT/visión/OT) con gobierno; 2–3 casos faro financian el programa." },
+        { "title": "Control Tower Minero", "text": "KPIs diarios (throughput, downtime, energía, agua, GHG) y gestión por excepciones." },
+        { "title": "AI-in-the-loop", "text": "PPE/zona segura y predictivo de fallas con OT automática; meta −20% tiempo no planificado." },
+        { "title": "Runbooks y automatización", "text": "Orquestación alerta→tarea→cierre (SAP PM, PI/AVEVA, SCADA) con verificación." },
+        { "title": "MLOps y calidad", "text": "A/B de operación, guardrails y drift; piloto→producción en <90 días con métricas firmadas." }
+      ],
+      "dataHooks": ["MTBF", "MTTR", "% alarmas resueltas", "Ahorro energía/agua"]
+    },
+    {
+      "key": "personas-sostenibilidad",
+      "title": "Track 4 — Personas, ESG y Relacionamiento",
+      "subtitle": "Capacidades internas, licencia social y valor a largo plazo",
+      "icon": "Users",
+      "bullets": [
+        { "title": "ESG como ventaja", "text": "Iniciativas trazables en emisiones, agua y seguridad; elegibles a green financing." },
+        { "title": "Mining Tech Academy", "text": "Formación on-the-job para PO, reliability y data translators; certificación por adopción." },
+        { "title": "Stakeholder & licencia social", "text": "Mapa de operación-comunidades-regulador y mesas con hitos trimestrales." },
+        { "title": "Gobernanza y beneficios", "text": "PMO ágil con tracking financiero/no financiero; evita proyectos huérfanos." },
+        { "title": "Cultura de seguridad", "text": "Near-miss y feedback anónimo con cierres de acción visibles en la torre." }
+      ],
+      "dataHooks": ["Horas formadas", "Metas ESG", "NPS ejecutivo/campo", "Auditorías"]
+    }
+  ]
+}

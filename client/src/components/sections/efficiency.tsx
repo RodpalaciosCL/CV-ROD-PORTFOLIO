@@ -1,433 +1,314 @@
 import { motion } from "framer-motion";
-import { Star, Rocket, Target, Users, Heart, Zap, TrendingUp, Globe, Shield, X, DollarSign, TrendingDown, Clock, CheckCircle } from "lucide-react";
-import { useState } from "react";
+import { Shield, ArrowRight, CheckCircle, Timer, Activity, Droplets, TrendingUp, Briefcase, Sparkles, Cpu, Users, Star, Target, Heart, Zap, Rocket } from "lucide-react";
+import TracksSection from "./TracksSection";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function Efficiency() {
   const { t } = useLanguage();
-  const [selectedImage, setSelectedImage] = useState<string | null>(null);
   
-  const motivations = [
+  // Client logos para prueba social
+  const clients = [
+    { name: "Anglo American", logo: "/logos/anglo.svg" },
+    { name: "Antofagasta Minerals", logo: "/logos/antofagasta.svg" },
+    { name: "Codelco", logo: "/logos/codelco.svg" },
+    { name: "Teck", logo: "/logos/teck.svg" },
+    { name: "Gold Fields", logo: "/logos/goldfields.svg" }
+  ];
+  
+  
+  // Datos para "Cómo trabajamos" (3 pasos)
+  const howWeWork = [
     {
-      icon: Heart,
-      title: t('efficiency.motivations.respect.title'),
-      description: t('efficiency.motivations.respect.description'),
-      gradient: "from-red-500 to-pink-500"
+      step: "1",
+      title: t('efficiency.discovery.title'),
+      duration: t('efficiency.discovery.duration'),
+      description: t('efficiency.discovery.description')
     },
     {
-      icon: Rocket,
-      title: t('efficiency.motivations.moment.title'),
-      description: t('efficiency.motivations.moment.description'),
-      gradient: "from-purple-500 to-indigo-500"
+      step: "2",
+      title: t('efficiency.mvp.title'),
+      duration: t('efficiency.mvp.duration'),
+      description: t('efficiency.mvp.description')
     },
     {
-      icon: Target,
-      title: t('efficiency.motivations.challenge.title'),
-      description: t('efficiency.motivations.challenge.description'),
-      gradient: "from-ey-yellow to-orange-500"
+      step: "3",
+      title: t('efficiency.scale.title'),
+      duration: t('efficiency.scale.duration'),
+      description: t('efficiency.scale.description')
     }
   ];
   
-  const valueProps = [
+  // Risk & Governance items
+  const riskGovernance = [
+    {
+      icon: Shield,
+      title: t('efficiency.security_data.title'),
+      description: t('efficiency.security_data.description')
+    },
+    {
+      icon: CheckCircle,
+      title: t('efficiency.guaranteed_delivery.title'),
+      description: t('efficiency.guaranteed_delivery.description')
+    },
     {
       icon: Users,
-      title: t('efficiency.valueprops.optimization.title'),
-      description: t('efficiency.valueprops.optimization.description'),
-      benefit: t('efficiency.valueprops.optimization.benefit')
-    },
-    {
-      icon: Globe,
-      title: t('efficiency.valueprops.latam.title'),
-      description: t('efficiency.valueprops.latam.description'),
-      benefit: t('efficiency.valueprops.latam.benefit')
-    },
-    {
-      icon: Zap,
-      title: t('efficiency.valueprops.capabilities.title'),
-      description: t('efficiency.valueprops.capabilities.description'),
-      benefit: t('efficiency.valueprops.capabilities.benefit')
+      title: t('efficiency.continuity.title'),
+      description: t('efficiency.continuity.description')
     }
   ];
 
   return (
-    <section id="efficiency" className="py-32 bg-ey-dark relative overflow-hidden">
+    <section id="efficiency" className="py-16 md:py-24 bg-ey-dark relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        {/* Header */}
+        {/* 1. Hero Section - Premium Executive Design */}
         <motion.div 
-          className="text-center mb-20"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          className="relative mb-24"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 1 }}
           viewport={{ once: true }}
         >
-          <motion.h2 
-            className="text-5xl md:text-6xl font-black text-center text-ey-white mb-8 leading-tight"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            {t('efficiency.main_title')} <span className="text-ey-yellow">{t('efficiency.ey_highlight')}</span>?
-          </motion.h2>
-          <motion.p 
-            className="text-xl text-ey-white/80 max-w-5xl mx-auto leading-relaxed mb-8"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            viewport={{ once: true }}
-          >
-            {t('efficiency.main_subtitle')}
-          </motion.p>
-          <motion.div
-            className="inline-block bg-gradient-to-r from-ey-yellow/20 to-ey-yellow/10 backdrop-blur-sm rounded-2xl px-8 py-4 border border-ey-yellow/30"
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-            viewport={{ once: true }}
-          >
-            <p className="text-ey-yellow font-bold text-lg">
-              {t('efficiency.me_question')}
-            </p>
-          </motion.div>
-          <motion.div
-            className="inline-block bg-gradient-to-r from-red-500/20 to-orange-500/20 backdrop-blur-sm rounded-2xl px-8 py-4 border border-red-500/30 mt-20"
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <p className="text-red-400 font-bold text-lg">
-              {t('efficiency.change_agent')}
-            </p>
-          </motion.div>
-        </motion.div>
-
-        {/* Motivations Grid */}
-        <motion.div 
-          className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.8 }}
-          viewport={{ once: true }}
-        >
-          {motivations.map((motivation, index) => (
+          {/* Background Effects */}
+          <div className="absolute inset-0 opacity-10">
+            <div className="absolute top-0 left-1/4 w-72 h-72 bg-ey-yellow rounded-full blur-3xl"></div>
+            <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-orange-500 rounded-full blur-3xl"></div>
+          </div>
+          
+          <div className="relative z-10">
+            
+            {/* ¿Por Qué Quiero Ser Parte de EY? */}
             <motion.div 
-              key={index}
-              className="group relative"
-              initial={{ opacity: 0, y: 30 }}
+              className="text-center mb-16"
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 * index }}
+              transition={{ duration: 0.8, delay: 0.6 }}
               viewport={{ once: true }}
-              whileHover={{ y: -10, scale: 1.02 }}
             >
-              <div className="relative bg-gradient-to-br from-ey-dark via-ey-medium/30 to-ey-dark rounded-2xl p-8 border-2 border-ey-yellow/30 shadow-xl backdrop-blur-sm overflow-hidden group-hover:border-ey-yellow/60 transition-all duration-300 h-full">
-                <div className="absolute inset-0 bg-gradient-to-br from-ey-yellow/5 via-ey-yellow/10 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                
-                <div className="relative z-10 text-center">
-                  <motion.div 
-                    className={`w-16 h-16 bg-gradient-to-br ${motivation.gradient} rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300`}
-                    whileHover={{ rotate: 10 }}
-                  >
-                    <motivation.icon className="w-8 h-8 text-white" />
-                  </motion.div>
-                  
-                  <h3 className="text-xl font-black text-ey-white mb-4 group-hover:text-ey-yellow transition-colors duration-300">
-                    {motivation.title}
-                  </h3>
-                  
-                  <p className="text-ey-white/80 leading-relaxed">
-                    {motivation.description}
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-ey-white mb-6">{t('efficiency.main_title')} <span className="text-ey-yellow">{t('efficiency.ey_highlight')}</span>?</h2>
+              <p className="text-lg md:text-xl text-ey-white/80 mb-12">{t('efficiency.main_subtitle')}</p>
+              
+            </motion.div>
+
+            {/* Value Proposition Cards */}
+            <motion.div 
+              className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-7xl mx-auto mb-16"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+              viewport={{ once: true }}
+            >
+              <motion.div 
+                className="bg-gradient-to-br from-ey-medium/30 to-ey-dark/60 backdrop-blur-lg rounded-2xl p-8 border border-ey-yellow/20 text-center group hover:border-ey-yellow/40 transition-all duration-300"
+                whileHover={{ y: -8, scale: 1.02 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
+                <div className="w-16 h-16 bg-gradient-to-br from-red-500 to-pink-500 rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <Heart className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-lg md:text-xl font-bold text-ey-yellow mb-4">{t('efficiency.motivations.respect.title')}</h3>
+                <p className="text-sm md:text-base text-ey-white/80 leading-relaxed">{t('efficiency.motivations.respect.description')}</p>
+              </motion.div>
+              
+              <motion.div 
+                className="bg-gradient-to-br from-ey-yellow/20 to-orange-500/20 backdrop-blur-lg rounded-2xl p-8 border-2 border-ey-yellow/40 text-center relative overflow-hidden"
+                whileHover={{ scale: 1.05 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
+                <div className="absolute inset-0 bg-gradient-to-br from-ey-yellow/10 to-transparent"></div>
+                <div className="relative z-10">
+                  <div className="w-16 h-16 bg-gradient-to-br from-ey-yellow to-orange-500 rounded-xl flex items-center justify-center mx-auto mb-6">
+                    <Rocket className="w-8 h-8 text-white" />
+                  </div>
+                  <h3 className="text-xl md:text-2xl font-black text-ey-yellow mb-4">{t('efficiency.motivations.moment.title')}</h3>
+                  <p className="text-base md:text-lg text-ey-white font-semibold leading-relaxed">
+                    {t('efficiency.motivations.moment.description')}
                   </p>
+                </div>
+              </motion.div>
+              
+              <motion.div 
+                className="bg-gradient-to-br from-ey-medium/30 to-ey-dark/60 backdrop-blur-lg rounded-2xl p-8 border border-ey-yellow/20 text-center group hover:border-ey-yellow/40 transition-all duration-300"
+                whileHover={{ y: -8, scale: 1.02 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
+                <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-indigo-500 rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <Target className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-lg md:text-xl font-bold text-ey-yellow mb-4">{t('efficiency.motivations.challenge.title')}</h3>
+                <p className="text-sm md:text-base text-ey-white/80 leading-relaxed">{t('efficiency.motivations.challenge.description')}</p>
+              </motion.div>
+            </motion.div>
+
+            {/* Un Momento Único */}
+            <motion.div 
+              className="text-center mb-16"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 1.0 }}
+              viewport={{ once: true }}
+            >
+            <div className="bg-gradient-to-r from-ey-yellow/10 to-orange-500/10 rounded-xl p-8 border border-ey-yellow/20 max-w-4xl mx-auto">
+                <h2 className="text-2xl md:text-3xl font-black text-ey-white mb-6">{t('efficiency.unique_moment.title')} <span className="text-ey-yellow">{t('efficiency.unique_moment.title_highlight')}</span></h2>
+                <div className="w-16 h-px bg-ey-yellow/30 mx-auto mb-6"></div>
+                <p className="text-lg md:text-xl text-ey-white/80 leading-relaxed">
+                  {t('efficiency.unique_moment.description')}
+                </p>
+              </div>
+            </motion.div>
+
+
+            {/* Statement Section */}
+            <motion.div 
+              className="mb-16"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 1.4 }}
+              viewport={{ once: true }}
+            >
+              <div className="max-w-6xl mx-auto">
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-ey-yellow text-center mb-12">{t('efficiency.statement.title')}</h2>
+                
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  <div className="bg-ey-medium/20 backdrop-blur-sm rounded-xl p-6 border border-ey-yellow/20">
+                    <h3 className="text-xl font-bold text-ey-yellow mb-4">{t('efficiency.statement.tengo.title')}</h3>
+                    <p className="text-ey-white/80 leading-relaxed">
+                      {t('efficiency.statement.tengo.content')}
+                    </p>
+                  </div>
+                  
+                  <div className="bg-ey-medium/20 backdrop-blur-sm rounded-xl p-6 border border-ey-yellow/20">
+                    <h3 className="text-xl font-bold text-ey-yellow mb-4">{t('efficiency.statement.soy.title')}</h3>
+                    <p className="text-ey-white/80 leading-relaxed">
+                      {t('efficiency.statement.soy.content')}
+                    </p>
+                  </div>
+                  
+                  <div className="bg-ey-medium/20 backdrop-blur-sm rounded-xl p-6 border border-ey-yellow/20">
+                    <h3 className="text-xl font-bold text-ey-yellow mb-4">{t('efficiency.statement.quiero.title')}</h3>
+                    <p className="text-ey-white/80 leading-relaxed">
+                      {t('efficiency.statement.quiero.content')}
+                    </p>
+                  </div>
+                  
+                  <div className="bg-ey-medium/20 backdrop-blur-sm rounded-xl p-6 border border-ey-yellow/20">
+                    <h3 className="text-xl font-bold text-ey-yellow mb-4">{t('efficiency.statement.puedo.title')}</h3>
+                    <p className="text-ey-white/80 leading-relaxed">
+                      {t('efficiency.statement.puedo.content')}
+                    </p>
+                  </div>
+                </div>
+                
+                <div className="mt-8 text-center">
+                  <div className="bg-gradient-to-r from-ey-yellow/10 to-orange-500/10 rounded-xl p-6 border border-ey-yellow/20 max-w-4xl mx-auto">
+                    <p className="text-ey-white/80 leading-relaxed text-lg md:text-xl">
+                      {t('efficiency.track1_closing')}
+                    </p>
+                  </div>
                 </div>
               </div>
             </motion.div>
-          ))}
+          </div>
         </motion.div>
+
         
-        {/* Final CTA */}
+        {/* 4. Mi aporte (4 Tracks) - TracksSection Premium */}
         <motion.div 
-          className="relative"
-          initial={{ opacity: 0, y: 40 }}
+          className="mb-20"
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
           viewport={{ once: true }}
         >
-          <div className="relative bg-gradient-to-br from-ey-dark via-ey-medium/40 to-ey-dark rounded-3xl p-16 border-2 border-ey-yellow/50 shadow-2xl backdrop-blur-sm overflow-hidden">
-            {/* Epic Background Effects */}
-            <div className="absolute inset-0 bg-gradient-to-br from-ey-yellow/15 via-ey-yellow/5 to-transparent rounded-3xl"></div>
-            <div className="absolute -inset-4 bg-gradient-to-r from-ey-yellow/10 via-transparent to-ey-yellow/10 rounded-3xl blur-2xl animate-pulse"></div>
-            
-            <div className="relative text-center">
+          <TracksSection compact={true} />
+        </motion.div>
+        
+        {/* 3. Cómo trabajamos (3 pasos) */}
+        <motion.div 
+          className="mb-16"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+          viewport={{ once: true }}
+        >
+          <div className="text-center mb-16">
+            <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-ey-white mb-6">{t('efficiency.how_we_work')}</h3>
+            <p className="text-lg md:text-xl text-ey-white/80 max-w-4xl mx-auto leading-relaxed">{t('efficiency.proven_process')}</p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {howWeWork.map((step, index) => (
               <motion.div 
-                className="mb-8"
+                key={index}
+                className="bg-ey-medium/20 backdrop-blur-sm rounded-xl p-8 shadow-lg border border-ey-yellow/20 relative"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <div className="mb-8">
-                  <h3 className="text-4xl md:text-5xl font-black text-ey-white text-center">
-                    {t('efficiency.unique_moment.title')} 
-                    <span className="text-ey-yellow block mt-2">{t('efficiency.unique_moment.title_highlight')}</span>
-                  </h3>
+                <div className="absolute -top-4 -left-4 w-10 h-10 bg-ey-yellow rounded-full flex items-center justify-center text-white font-bold text-base">
+                  {step.step}
                 </div>
+                <h4 className="text-xl md:text-2xl font-bold text-ey-white mb-3">{step.title}</h4>
+                <p className="text-base font-medium text-ey-yellow mb-4">{step.duration}</p>
+                <p className="text-base text-ey-white/80 leading-relaxed">{step.description}</p>
+                {index < howWeWork.length - 1 && (
+                  <div className="hidden md:block absolute -right-4 top-1/2 transform -translate-y-1/2">
+                    <ArrowRight className="w-6 h-6 text-ey-white/30" />
+                  </div>
+                )}
               </motion.div>
-              
-              <motion.div 
-                className="max-w-6xl mx-auto space-y-8"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.3 }}
-                viewport={{ once: true }}
-              >
-                <p className="text-xl md:text-2xl text-ey-white leading-relaxed">
-                  {t('efficiency.unique_moment.description')}
-                </p>
-                
-                {/* Cool Formula Section */}
+            ))}
+          </div>
+        </motion.div>
+        
+        {/* 4. Risk & Governance (mini-strip) */}
+        <motion.div 
+          className="mb-16"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          viewport={{ once: true }}
+        >
+          <div className="bg-ey-medium/20 backdrop-blur-sm rounded-xl p-10 border border-ey-yellow/20">
+            <h3 className="text-xl md:text-2xl font-bold text-ey-white mb-8 text-center">{t('efficiency.risk_governance')}</h3>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {riskGovernance.map((item, index) => (
                 <motion.div 
-                  className="relative"
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.8, delay: 0.5 }}
+                  key={index}
+                  className="flex items-start space-x-4"
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
                 >
-                  <div className="bg-gradient-to-r from-ey-yellow/10 via-ey-yellow/20 to-ey-yellow/10 rounded-3xl p-8 border-2 border-ey-yellow/30 backdrop-blur-sm">
-                    <div className="grid grid-cols-1 md:grid-cols-5 gap-4 items-center text-center">
-                      {/* Component 1 */}
-                      <motion.div 
-                        className="bg-ey-medium/50 rounded-2xl p-4 border border-ey-yellow/20"
-                        whileHover={{ scale: 1.05 }}
-                        transition={{ type: "spring", stiffness: 300 }}
-                      >
-                        <Users className="w-8 h-8 text-ey-yellow mx-auto mb-2" />
-                        <p className="text-ey-white font-bold text-sm leading-tight">
-                          {t('efficiency.formula.relationship')}
-                        </p>
-                      </motion.div>
-                      
-                      {/* Plus */}
-                      <div className="text-ey-yellow text-3xl font-black">+</div>
-                      
-                      {/* Component 2 */}
-                      <motion.div 
-                        className="bg-ey-medium/50 rounded-2xl p-4 border border-ey-yellow/20"
-                        whileHover={{ scale: 1.05 }}
-                        transition={{ type: "spring", stiffness: 300 }}
-                      >
-                        <Target className="w-8 h-8 text-ey-yellow mx-auto mb-2" />
-                        <p className="text-ey-white font-bold text-sm leading-tight">
-                          {t('efficiency.formula.understanding')}
-                        </p>
-                      </motion.div>
-                      
-                      {/* Plus */}
-                      <div className="text-ey-yellow text-3xl font-black">+</div>
-                      
-                      {/* Component 3 */}
-                      <motion.div 
-                        className="bg-ey-medium/50 rounded-2xl p-4 border border-ey-yellow/20"
-                        whileHover={{ scale: 1.05 }}
-                        transition={{ type: "spring", stiffness: 300 }}
-                      >
-                        <Zap className="w-8 h-8 text-ey-yellow mx-auto mb-2" />
-                        <p className="text-ey-white font-bold text-sm leading-tight">
-                          {t('efficiency.formula.delivery')}
-                        </p>
-                      </motion.div>
-                    </div>
-                    
-                    {/* Equals */}
-                    <div className="text-center my-6">
-                      <div className="text-ey-yellow text-4xl font-black">=</div>
-                    </div>
-                    
-                    {/* Result */}
-                    <motion.div 
-                      className="bg-gradient-to-r from-ey-yellow/20 to-orange-500/20 rounded-2xl p-6 border-2 border-ey-yellow/50 text-center"
-                      whileHover={{ scale: 1.02 }}
-                      transition={{ type: "spring", stiffness: 200 }}
-                    >
-                      <div className="flex items-center justify-center mb-3">
-                        <TrendingUp className="w-6 h-6 text-ey-yellow mr-2" />
-                        <p className="text-ey-yellow font-black text-xl">
-                          {t('efficiency.formula.result')}
-                        </p>
-                        <TrendingUp className="w-6 h-6 text-ey-yellow ml-2" />
-                      </div>
-                      <p className="text-ey-white font-semibold text-lg">
-                        {t('efficiency.formula.amplification')}
-                      </p>
-                    </motion.div>
+                  <div className="w-10 h-10 bg-ey-yellow/20 rounded-lg flex items-center justify-center shrink-0">
+                    <item.icon className="w-5 h-5 text-ey-yellow" />
+                  </div>
+                  <div>
+                    <h4 className="text-base md:text-lg font-bold text-ey-white mb-2">{item.title}</h4>
+                    <p className="text-sm md:text-base text-ey-white/80 leading-relaxed">{item.description}</p>
                   </div>
                 </motion.div>
-              </motion.div>
-              
-              {/* Statement Section */}
-              <motion.div 
-                className="mt-16"
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.6 }}
-                viewport={{ once: true }}
-              >
-                <div className="bg-gradient-to-br from-ey-medium/60 via-ey-dark/80 to-ey-medium/60 rounded-3xl p-8 border-2 border-ey-yellow/40 backdrop-blur-sm">
-                  <motion.h3 
-                    className="text-3xl md:text-4xl font-black text-ey-yellow mb-8 text-center"
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.8, delay: 0.2 }}
-                    viewport={{ once: true }}
-                  >
-                    {t('efficiency.statement.title')}
-                  </motion.h3>
-                  
-                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                    {/* Tengo */}
-                    <motion.div 
-                      className="bg-ey-white/5 rounded-2xl p-6 border border-ey-yellow/20"
-                      initial={{ opacity: 0, x: -30 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      transition={{ duration: 0.8, delay: 0.3 }}
-                      viewport={{ once: true }}
-                    >
-                      <h4 className="text-xl font-black text-ey-yellow mb-3 flex items-center">
-                        <Users className="w-6 h-6 mr-2" />
-                        {t('efficiency.statement.tengo.title')}
-                      </h4>
-                      <p className="text-ey-white/90 text-base leading-relaxed">
-                        {t('efficiency.statement.tengo.content')}
-                      </p>
-                    </motion.div>
-                    
-                    {/* Soy */}
-                    <motion.div 
-                      className="bg-ey-white/5 rounded-2xl p-6 border border-ey-yellow/20"
-                      initial={{ opacity: 0, x: 30 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      transition={{ duration: 0.8, delay: 0.4 }}
-                      viewport={{ once: true }}
-                    >
-                      <h4 className="text-xl font-black text-ey-yellow mb-3 flex items-center">
-                        <Star className="w-6 h-6 mr-2" />
-                        {t('efficiency.statement.soy.title')}
-                      </h4>
-                      <p className="text-ey-white/90 text-base leading-relaxed">
-                        {t('efficiency.statement.soy.content')}
-                      </p>
-                    </motion.div>
-                  </div>
-                  
-                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-8">
-                    {/* Quiero */}
-                    <motion.div 
-                      className="bg-ey-white/5 rounded-2xl p-6 border border-ey-yellow/20"
-                      initial={{ opacity: 0, x: -30 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      transition={{ duration: 0.8, delay: 0.5 }}
-                      viewport={{ once: true }}
-                    >
-                      <h4 className="text-xl font-black text-ey-yellow mb-3 flex items-center">
-                        <Target className="w-6 h-6 mr-2" />
-                        {t('efficiency.statement.quiero.title')}
-                      </h4>
-                      <p className="text-ey-white/90 text-base leading-relaxed">
-                        {t('efficiency.statement.quiero.content')}
-                      </p>
-                    </motion.div>
-                    
-                    {/* Puedo */}
-                    <motion.div 
-                      className="bg-ey-white/5 rounded-2xl p-6 border border-ey-yellow/20"
-                      initial={{ opacity: 0, x: 30 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      transition={{ duration: 0.8, delay: 0.6 }}
-                      viewport={{ once: true }}
-                    >
-                      <h4 className="text-xl font-black text-ey-yellow mb-3 flex items-center">
-                        <Zap className="w-6 h-6 mr-2" />
-                        {t('efficiency.statement.puedo.title')}
-                      </h4>
-                      <p className="text-ey-white/90 text-base leading-relaxed">
-                        {t('efficiency.statement.puedo.content')}
-                      </p>
-                    </motion.div>
-                  </div>
-                  
-                  {/* Espero - Full width at bottom */}
-                  <motion.div 
-                    className="bg-gradient-to-r from-ey-yellow/10 via-ey-yellow/20 to-ey-yellow/10 rounded-2xl p-6 border-2 border-ey-yellow/30 mt-8"
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.7 }}
-                    viewport={{ once: true }}
-                  >
-                    <h4 className="text-xl font-black text-ey-yellow mb-3 flex items-center justify-center">
-                      <Heart className="w-6 h-6 mr-2" />
-                      {t('efficiency.statement.espero.title')}
-                    </h4>
-                    <p className="text-ey-white/90 text-base leading-relaxed text-center">
-                      {t('efficiency.statement.espero.content')}
-                    </p>
-                  </motion.div>
-                </div>
-              </motion.div>
-              
-              <motion.div 
-                className="mt-16"
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.8, delay: 0.8 }}
-                viewport={{ once: true }}
-              >
-                <div className="inline-flex items-center space-x-4 bg-gradient-to-r from-ey-yellow to-orange-500 rounded-2xl px-12 py-6 shadow-2xl">
-                  <Rocket className="w-10 h-10 text-white" />
-                  <div className="text-center">
-                    <p className="text-white font-black text-2xl mb-1">
-                      {t('efficiency.final_cta')}
-                    </p>
-                    <div className="w-16 h-1 bg-white/30 mx-auto rounded-full"></div>
-                  </div>
-                  <CheckCircle className="w-10 h-10 text-white" />
-                </div>
-              </motion.div>
+              ))}
             </div>
           </div>
         </motion.div>
-      </div>
-      
-      {/* Modal for full image view */}
-      {selectedImage && (
+        
+        {/* 5. Cierre de sección */}
         <motion.div 
-          className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          onClick={() => setSelectedImage(null)}
+          className="text-center"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.5 }}
+          viewport={{ once: true }}
         >
-          <motion.div 
-            className="relative max-w-full max-h-full"
-            initial={{ scale: 0.8, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            exit={{ scale: 0.8, opacity: 0 }}
-            transition={{ type: "spring", damping: 25, stiffness: 300 }}
-            onClick={(e) => e.stopPropagation()}
-          >
-            <img 
-              src={selectedImage} 
-              alt="Perfiles profesionales que EY busca integrar" 
-              className="max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl"
-            />
-            <button
-              onClick={() => setSelectedImage(null)}
-              className="absolute top-4 right-4 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-colors duration-200"
-            >
-              <X className="w-6 h-6" />
-            </button>
-          </motion.div>
+          <div className="bg-gradient-to-r from-ey-yellow/10 to-orange-500/10 rounded-xl p-10 border border-ey-yellow/20">
+            <p className="text-lg md:text-xl font-medium text-ey-white leading-relaxed text-center">
+              {t('efficiency.final_statement')}
+            </p>
+          </div>
         </motion.div>
-      )}
+      </div>
     </section>
   );
 }
