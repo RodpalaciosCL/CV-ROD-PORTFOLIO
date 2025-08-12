@@ -112,7 +112,7 @@ export default function Navigation() {
                   {/* Desktop Contact Button */}
                   <motion.div
                     animate={{ 
-                      color: ['#000000', '#dc2626', '#000000'] 
+                      color: ['#ffffff', '#ffffff', '#ffffff'] 
                     }}
                     transition={{ 
                       duration: 3,
