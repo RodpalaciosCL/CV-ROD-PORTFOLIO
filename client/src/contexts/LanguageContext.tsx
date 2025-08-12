@@ -41,8 +41,8 @@ const translations = {
     // Solutions Section
     'solutions.title': 'Soluciones',
     'solutions.title_highlight': 'Altamente Demandadas por la Industria',
-    'solutions.description': 'En las cuales he estado trabajando con',
-    'solutions.description_highlight': 'líderes de la minería global',
+    'solutions.description': 'De las cuales tengo en su mayoría la',
+    'solutions.description_highlight': 'capacidad de vender e implementar en tiempo récord',
     'solutions.tab_operation': 'Operación',
     'solutions.tab_security': 'Seguridad',
     'solutions.tab_maintenance': 'Mantenimiento',
@@ -59,7 +59,7 @@ const translations = {
     'about.growth.description': 'La capacidad de tomar la oportunidad o transformar el problema y entregar TANGIBILIDAD, para generar la necesidade en el cliente desde el minuto cero.',
     
     // Projects Section  
-    'projects.title': 'Proyectos',
+    'projects.title': 'Proyectos de Mayor alcance',
     'projects.airontech.title': 'AIrontech',
     'projects.airontech.role': 'Managing Director & AI Leader',
     'projects.airontech.description': 'A cargo del PNL, los negocios estratégicos, el relacionamiento con clientes y la práctica de AI y Visión Computacional Minera',
