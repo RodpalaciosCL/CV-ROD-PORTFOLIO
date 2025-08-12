@@ -122,7 +122,7 @@ const translations = {
     
     // Active Pipeline
     'pipeline.title': 'Pipeline de Negocios Activo',
-    'pipeline.subtitle': 'en oportunidades mapeadas para asociación con Metso',
+    'pipeline.subtitle': 'en oportunidades mapeadas para explorar en conjunto',
     'pipeline.anglo.title': 'Anglo American',
     'pipeline.anglo.subtitle': 'Implementación Robots de Inspección',
     'pipeline.anglo.stage': 'Propuesta Final',
@@ -277,7 +277,7 @@ const translations = {
     // Value section (NEW)
     'value.title': 'Propuesta de Valor',
     'value.title_highlight': 'Única',
-    'value.subtitle': 'Ventajas competitivas que hacen esta asociación estratégicamente valiosa para Metso',
+    'value.subtitle': 'Ventajas competitivas que hacen mi perfil estratégicamente valioso para organizaciones líderes',
     'value.pipeline.title': 'Pipeline Pre Commit',
     'value.pipeline.description': 'Oportunidades activas con alto grado de cierre',
     'value.network.title': 'Red Establecida',
@@ -288,19 +288,19 @@ const translations = {
     'value.gateway.description': 'Para expansión regional',
 
     // Efficiency section (NEW)
-    'efficiency.main_title': '¿Por Qué Quiero Ser Parte de',
-    'efficiency.ey_highlight': 'Metso',
-    'efficiency.main_subtitle': 'Firma líder, Equipo de Liderazgo Excepcional, y el momento perfecto para desafiar la industria',
+    'efficiency.main_title': '¿Mi Enfoque de',
+    'efficiency.ey_highlight': 'Colaboración Estratégica?',
+    'efficiency.main_subtitle': 'Liderar transformación tecnológica y de negocio para las mineras más desafiantes del mundo',
     'efficiency.me_question': '¿Yo?',
     'efficiency.change_agent': 'Un Agente de cambio con hambre de comerse la industria, de verdad.',
     
     // Efficiency motivations
-    'efficiency.motivations.respect.title': 'Respeto por Metso',
-    'efficiency.motivations.respect.description': 'Track récord, perfiles, relacionamiento y presencia',
-    'efficiency.motivations.moment.title': 'Momento Espectacular',
-    'efficiency.motivations.moment.description': 'Desafiar la industria en uno de los momentos más transformadores de la historia',
-    'efficiency.motivations.challenge.title': 'Hora de desafiar',
-    'efficiency.motivations.challenge.description': 'Traer revenues no explorados sin descuidar el as-is que ha llevado a Metso al éxito',
+    'efficiency.motivations.respect.title': 'Mi Enfoque',
+    'efficiency.motivations.respect.description': 'Basado en track récord, relaciones sólidas y presencia estratégica en el mercado',
+    'efficiency.motivations.moment.title': 'Momento de Transformación',
+    'efficiency.motivations.moment.description': 'Liderar la industria en uno de los momentos más transformadores de su historia',
+    'efficiency.motivations.challenge.title': 'Crear Valor',
+    'efficiency.motivations.challenge.description': 'Identificar y desarrollar nuevas oportunidades de revenue manteniendo la excelencia operacional',
     
     // Value Props
     'efficiency.valueprops.optimization.title': 'Optimización de Búsquedas',
@@ -330,9 +330,9 @@ const translations = {
     'efficiency.statement.tengo.title': 'Tengo',
     'efficiency.statement.tengo.content': 'La capacidad de liderar equipos, visualizar talentos de manera temprana y potenciar el sentido de pertenencia y propósito, junto con hacer del trabajo un lugar cálido, desafiante y sumamente interesante, donde el ánimo por darlo sea una constante, y los beneficios por hacerlo sean el premio de esta colaboración en conjunto.',
     'efficiency.statement.soy.title': 'Soy',
-    'efficiency.statement.soy.content': 'Un fiel embajador de los beneficios y oportunidades de trabajar en una empresa líder global, y una compañía como Metso, que muchas veces quienes lo viven "desde siempre" no le toman el valor, pero la red, la documentación y cantidad de assets que se tiene al alcance y el nivel de aprendizaje y estímulos que se vienen a diario, son sólo comparables con estar cursando en MBA constante, y de la más alta calidad de contenido.',
+    'efficiency.statement.soy.content': 'Un embajador auténtico de los beneficios y oportunidades de trabajar con organizaciones líderes globales. La red, documentación y cantidad de recursos que estas empresas ponen al alcance, junto al nivel de aprendizaje y estímulos que se reciben a diario, son comparables con cursar un MBA constante de la más alta calidad.',
     'efficiency.statement.quiero.title': 'Quiero',
-    'efficiency.statement.quiero.content': 'Conectarme con un equipo con hambre y ganas de ser líderes, y a su vez referentes, pero de esos que hablan sobre sus logros, aportes y calidad de entregables. Quiero ser "Pioneer y no "Follower", y que la industria nos valide por nuestros actos, y no los compromisos o promesas sin cumplir, y por último, quiero aportar a que la firma sea el referente cuando alguien piense en buscar, llamar o seleccionar un partner para acompañarlos en momentos complejos, decisivos, trascendentales y decidores.',
+    'efficiency.statement.quiero.content': 'Conectarme con equipos con hambre de ser líderes y referentes, de esos que hablan con hechos sobre sus logros y la calidad de sus entregables. Quiero ser "Pioneer" y no "Follower", que la industria nos valide por nuestros actos y resultados. Mi objetivo es aportar a que las organizaciones con las que trabajo se conviertan en el referente cuando alguien necesite un partner para momentos complejos, decisivos y trascendentales.',
     'efficiency.statement.puedo.title': 'Puedo',
     'efficiency.statement.puedo.content': 'Aportar valor, frescura, una mirada altamente enfocada en el "negocio inteligente", como también una capacidad de articulación, seguimiento y cierre única, la cual debiese marcar un precedente en mediano plazo, junto con la forma en cómo abordar oportunidades, transformar problemáticas e identificar posibilidades no sólo para la práctica, sino también para el resto de la compañía, junto con ser un agente de cambio y evangelizador nato del trabajo en equipo, la colaboración como mantra y el respeto hacia lo que hacemos y el cómo lo ofrecemos.',
     'efficiency.statement.espero.title': 'Espero',
@@ -349,7 +349,7 @@ const translations = {
     'efficiency.respect.description': 'Track récord, perfiles excepcionales y presencia líder en el mercado',
     'efficiency.challenge.title': 'Hora de desafiar',
     'efficiency.challenge.description': 'Traer revenues no explorados manteniendo la excelencia del as-is',
-    'efficiency.how_we_work': 'Cómo trabajamos',
+    'efficiency.how_we_work': '¿Cómo trabajaríamos?',
     'efficiency.proven_process': 'Proceso probado para entregar valor desde el día uno',
     'efficiency.discovery.title': 'Descubrimiento dirigido',
     'efficiency.discovery.duration': '1–2 semanas', 
@@ -374,7 +374,7 @@ const translations = {
     
     // Tracks Section translations
     'tracks.title': 'Mi Aporte a',
-    'tracks.title_highlight': 'Metso',
+    'tracks.title_highlight': 'la empresa donde llegue!',
     'tracks.kpi_metrics': 'Métricas clave',
     'tracks.closing.title': 'Transformando la minería con',
     'tracks.closing.highlight': 'innovación responsable',
@@ -461,9 +461,9 @@ const translations = {
     'speaking.view_image': 'Ver imagen completa',
 
     // Contact section (NEW)
-    'contact.title_part1': '¿Listo para Acelerar la ',
-    'contact.title_part2': 'Práctica Minera de Metso?',
-    'contact.subtitle': 'Conversemos sobre cómo esta asociación estratégica puede desbloquear oportunidades de largo plazo, y establecer a Metso como el partner tecnológico minero líder en Latinoamérica.',
+    'contact.title_part1': '¿Listos para Acelerar la ',
+    'contact.title_part2': 'Práctica Minera??',
+    'contact.subtitle': 'Conversemos sobre cómo esta asociación estratégica puede desbloquear oportunidades de largo plazo, y establecernos como el partner tecnológico minero líder en Latinoamérica.',
     'contact.cta_button': 'Contactar',
     'contact.click_to_contact': 'Click para contactar',
 

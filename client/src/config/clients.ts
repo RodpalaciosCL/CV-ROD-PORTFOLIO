@@ -43,6 +43,17 @@ export const clientConfigs: Record<string, ClientConfig> = {
     industry: 'minería',
     whatsappMessage: 'Hola Rodrigo, me interesa conversar sobre la propuesta estratégica para Antofagasta Minerals'
   },
+  generic: {
+    name: 'Rodrigo Palacios',
+    logo: 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjgwIiB2aWV3Qm94PSIwIDAgMjAwIDgwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8dGV4dCB4PSIxMDAiIHk9IjU4IiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iNTQiIGZvbnQtd2VpZ2h0PSJib2xkIiBmaWxsPSIjRkZGRkZGIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5SUDwvdGV4dD4KPC9zdmc+Cg==',
+    logoFilters: '',
+    industry: 'múltiples industrias',
+    whatsappMessage: 'Hola Rodrigo, me interesa conversar sobre tus servicios de consultoría tecnológica',
+    colors: {
+      primary: '#FF6900',
+      dark: '#1B1B1B'
+    }
+  },
   default: {
     name: 'Cliente',
     logo: '/default-logo.png',
@@ -53,15 +64,15 @@ export const clientConfigs: Record<string, ClientConfig> = {
 };
 
 export const getClientConfig = (): ClientConfig => {
-  if (typeof window === 'undefined') return clientConfigs.metso;
+  if (typeof window === 'undefined') return clientConfigs.generic;
   
   const hostname = window.location.hostname;
   
-  // Para desarrollo local y URLs de Vercel, usar bhp como default para este proyecto
+  // Para desarrollo local y URLs de Vercel, usar generic como default
   if (hostname === 'localhost' || hostname === '127.0.0.1' || hostname.includes('vercel.app')) {
-    return clientConfigs.bhp;
+    return clientConfigs.generic;
   }
   
   const subdomain = hostname.split('.')[0];
-  return clientConfigs[subdomain] || clientConfigs.default;
+  return clientConfigs[subdomain] || clientConfigs.generic;
 };
