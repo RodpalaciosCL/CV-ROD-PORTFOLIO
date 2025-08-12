@@ -119,7 +119,7 @@ export default function Projects() {
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            {t('projects.title')} <span className="text-ey-yellow">{t('projects.title_highlight')}</span>
+            {t('major_projects.title')}
           </motion.h2>
           <motion.p 
             className="text-lg text-ey-white/80 max-w-4xl mx-auto leading-relaxed"
@@ -128,7 +128,7 @@ export default function Projects() {
             transition={{ duration: 0.8, delay: 0.4 }}
             viewport={{ once: true }}
           >
-            {t('projects.subtitle')}
+            {t('major_projects.subtitle')}
           </motion.p>
         </motion.div>
         

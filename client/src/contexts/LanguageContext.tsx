@@ -30,7 +30,7 @@ const translations = {
     // Hero Section
     'hero.title': 'Liderazgo Tecnológico,',
     'hero.subtitle': 'Estratégico y de Negocio',
-    'hero.description': 'Con un track récord trabajando para las mineras más grandes del mundo, mi background se extiende a industrias de Oil&Gas, Retail, Financial Services, Cementeras y Agro, contando con una experiencia horizontal y ampliamente enriquecida para tomar decisiones certeras de negocio.',
+    'hero.description': 'Con un amplio track récord trabajando para las mineras más grandes del mundo, mi background se extiende desde lo más funcional y estratégico, hasta lo más crucial y táctico del negocio, pudiendo aportar valor horizontal, con un senority de primer nivel y altamente enfocado en el revenue basado en relaciones de crecimiento mutuo.',
     'hero.cta': 'Ver Pipeline',
     'hero.metric1': 'Proyectos de la industria entregados',
     'hero.metric2': 'Clientes Mineros',
@@ -59,7 +59,8 @@ const translations = {
     'about.growth.description': 'La capacidad de tomar la oportunidad o transformar el problema y entregar TANGIBILIDAD, para generar la necesidade en el cliente desde el minuto cero.',
     
     // Projects Section  
-    'projects.title': 'Proyectos',
+    'projects.title': 'Mi Trayectoria Profesional',
+    'projects.subtitle': 'Aportando valor único a algunas de las empresas más importantes del Fortune 500',
     'projects.airontech.title': 'AIrontech',
     'projects.airontech.role': 'Managing Director & AI Leader',
     'projects.airontech.description': 'A cargo del PNL, los negocios estratégicos, el relacionamiento con clientes y la práctica de AI y Visión Computacional Minera',
@@ -92,8 +93,8 @@ const translations = {
     'value.transformation.title': 'Transformación Digital',
     
     // Major Projects
-    'major_projects.title': 'Proyectos de mayor alcance',
-    'major_projects.subtitle': 'Track record comprobado entregando soluciones tecnológicas complejas para empresas mineras Tier 1',
+    'major_projects.title': 'Mi Experiencia más reciente',
+    'major_projects.subtitle': 'Soluciones cruciales para la minería del futuro',
     'major_projects.goldfields.title': 'Goldfields',
     'major_projects.goldfields.subtitle': 'Puesta en Marcha Mina',
     'major_projects.goldfields.result': 'Re activación mina',
@@ -121,8 +122,8 @@ const translations = {
     'major_projects.total': 'En negocios en la industria minería, de energía y Oil&Gas, en los últimos 8 años...',
     
     // Active Pipeline
-    'pipeline.title': 'Pipeline de Negocios Activo',
-    'pipeline.subtitle': 'en oportunidades mapeadas para explorar en conjunto',
+    'pipeline.title': '¿En qué estoy?',
+    'pipeline.subtitle': 'Transformando la minería, optimizando el negocio y automatizando los procesos clave de la industria',
     'pipeline.anglo.title': 'Anglo American',
     'pipeline.anglo.subtitle': 'Implementación Robots de Inspección',
     'pipeline.anglo.stage': 'Propuesta Final',
@@ -149,8 +150,9 @@ const translations = {
     'pipeline.opportunities': 'Oportunidades Activas',
     'pipeline.avg_probability': 'Probabilidad Promedio',
     'pipeline.timeline': 'Timeline',
-    'pipeline.star_business': 'Y con un negocio de más de \n1.000 millones de dólares',
-    'pipeline.obsolete.title': 'Listo para ser operado y llevarlo al siguiente nivel',
+    'pipeline.star_business': '¿Y qué es lo que estoy poniendo en juego?',
+    'pipeline.obsolete.title': '¡Un negocio ya adjudicado y listo para operar, de más de 1 Billion!',
+    'pipeline.obsolete.subtitle_line2': 'donde ustedes son el partner perfecto para ello!',
     'pipeline.obsolete.subtitle': 'Información Detallada del Proyecto',
     'pipeline.obsolete.total_value': 'Valor Total',
     'pipeline.obsolete.sold': 'Vendido',
@@ -164,7 +166,6 @@ const translations = {
     'pipeline.obsolete.alliances_desc': 'Asociación con NCA (USA)',
     'pipeline.obsolete.logistics': 'Logística Integrada',
     'pipeline.obsolete.logistics_desc': 'Despliegue con Ferronor',
-    'pipeline.obsolete.advantage': 'Ventaja Competitiva: Track record on/off +24 meses haciendo remates',
     
     // Active Pipeline opportunities
     'pipeline.opportunities.0.company': 'Anglo American',
@@ -263,8 +264,6 @@ const translations = {
     'pipeline.average_probability': 'Probabilidad Promedio',
     
     // Projects section missing translations
-    'projects.title_highlight': 'de mayor alcance durante los últimos años',
-    'projects.subtitle': 'Track record comprobado entregando soluciones tecnológicas complejas para empresas mineras Tier 1',
     'projects.value': 'Valor',
     'projects.time': 'Tiempo',
     'projects.team': 'Equipo',
@@ -468,7 +467,7 @@ const translations = {
     'contact.click_to_contact': 'Click para contactar',
 
     // Footer section (NEW)
-    'footer.copyright': '© 2025 | Rodrigo Palacios Strategic Partnership | Propuesta confidencial para Metso.',
+    'footer.copyright': '© 2025 | Rodrigo Palacios Strategic Partnership | Propuesta confidencial.',
 
     // Competitive Advantages section (NEW)
     'competitive.title': 'Ventajas Competitivas',
@@ -547,9 +546,9 @@ const translations = {
     
 
     // What I've Been Doing section (NEW)
-    'doing.title': 'Acá un resumen de lo que he estado',
-    'doing.title_highlight': 'haciendo',
-    'doing.subtitle': 'estos últimos 6 meses en la industria mineria',
+    'doing.title': 'Acá un repaso de mis últimos 6 meses',
+    'doing.title_highlight': 'desafiando la operación minera',
+    'doing.subtitle': '',
     'doing.video_title': 'Proyectos en Acción - Últimos 6 meses',
     'doing.projects_title_part1': 'Proyectos en',
     'doing.projects_title_part2': 'Acción',
@@ -653,7 +652,7 @@ const translations = {
     // Hero Section
     'hero.title': 'Technological Leadership,',
     'hero.subtitle': 'Strategic & Business',
-    'hero.description': 'With a track record working for the world\'s largest mining companies, my background extends to Oil&Gas, Retail, Financial Services, Cement and Agro industries, with horizontal and broadly enriched experience to make accurate business decisions.',
+    'hero.description': 'With a broad track record working for the world\'s largest mining companies, my background extends from the most functional and strategic aspects, to the most crucial and tactical aspects of business, being able to contribute horizontal value, with first-level seniority and highly focused on revenue based on mutual growth relationships.',
     'hero.cta': 'View Pipeline',
     'hero.metric1': 'Industry projects delivered',
     'hero.metric2': 'Mining Clients',
@@ -673,7 +672,8 @@ const translations = {
     'about.growth.description': 'The ability to take the opportunity or transform the problem and deliver TANGIBILITY, to generate need in the client from minute zero.',
     
     // Projects Section  
-    'projects.title': 'Projects',
+    'projects.title': 'My Career',
+    'projects.subtitle': 'Generating transcendental value, for some of the most important Fortune 500 companies',
     'projects.airontech.title': 'AIrontech',
     'projects.airontech.role': 'Managing Director & AI Leader',
     'projects.airontech.description': 'In charge of NLP, strategic business, customer relationships and AI and Mining Computer Vision practice',
@@ -836,8 +836,6 @@ const translations = {
     'pipeline.obsolete.advantage': 'Competitive Advantage: Track record on/off +24 months doing auctions',
     
     // Projects section missing translations
-    'projects.title_highlight': 'of greater scope in recent years',
-    'projects.subtitle': 'Proven track record delivering complex technological solutions for Tier 1 mining companies',
     'projects.value': 'Value',
     'projects.time': 'Time',
     'projects.team': 'Team',
@@ -995,7 +993,7 @@ const translations = {
     'contact.click_to_contact': 'Click to contact',
 
     // Footer section (NEW)
-    'footer.copyright': '© 2025 | Rodrigo Palacios Strategic Partnership | Confidential proposal for Metso.',
+    'footer.copyright': '© 2025 | Rodrigo Palacios Strategic Partnership | Confidential proposal.',
 
     // Competitive Advantages section (NEW)
     'competitive.title': 'Competitive Advantages',
@@ -1039,9 +1037,9 @@ const translations = {
     'strategic.cta.subtitle': 'Download the Attack Framework',
 
     // What I've Been Doing section (NEW)
-    'doing.title': 'Here\'s a summary of what I\'ve been',
-    'doing.title_highlight': 'doing',
-    'doing.subtitle': 'these last 6 months in the mining industry',
+    'doing.title': 'Here\'s a review of my last 6 months',
+    'doing.title_highlight': 'challenging mining operations',
+    'doing.subtitle': '',
     'doing.video_title': 'Projects in Action - Last 6 months',
     'doing.projects_title_part1': 'Projects in',
     'doing.projects_title_part2': 'Action',

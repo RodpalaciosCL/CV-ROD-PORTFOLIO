@@ -1,0 +1,43 @@
+
+> rest-express@1.0.3 start
+> NODE_ENV=production node dist/index.js
+
+🔧 Direct API routes registered
+🚀 Registering routes...
+✅ Simple /api/visits endpoint registered
+✅ API routes registered
+📁 Setting up static file serving...
+5:03:02 PM [express] serving on port 3000
+📊 VISIT: 12-08-2025 5:03:10 p. m. | 127.0.0.1 | / | curl/8.7.1
+📊 VISIT: 12-08-2025 5:03:21 p. m. | 127.0.0.1 | / | Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) Ap
+5:03:21 PM [express] POST /api/visits 404 in 1ms
+📊 VISIT: 12-08-2025 5:03:22 p. m. | 127.0.0.1 | /favicon.ico | Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) Ap
+🔍 Analytics track request received: {
+  page: 'Home',
+  referrer: 'Direct',
+  userAgent: '🖥️ Chrome',
+  screenResolution: '1710x1107'
+}
+📊 Tracking visit: 127.0.0.1 -> Home {
+  ip: '127.0.0.1',
+  userAgent: '🖥️ Chrome',
+  referrer: 'Direct',
+  page: 'Home'
+}
+5:03:22 PM [express] POST /api/analytics/track 200 in 5ms :: {"success":true,"tracked":true}
+📊 VISIT: 12-08-2025 5:03:30 p. m. | 127.0.0.1 | / | Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) Ap
+5:03:30 PM [express] POST /api/visits 404 in 0ms
+📊 VISIT: 12-08-2025 5:03:31 p. m. | 127.0.0.1 | /favicon.ico | Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) Ap
+🔍 Analytics track request received: {
+  page: 'Home',
+  referrer: 'Direct',
+  userAgent: '🖥️ Chrome',
+  screenResolution: '1710x1107'
+}
+📊 Tracking visit: 127.0.0.1 -> Home {
+  ip: '127.0.0.1',
+  userAgent: '🖥️ Chrome',
+  referrer: 'Direct',
+  page: 'Home'
+}
+5:03:31 PM [express] POST /api/analytics/track 200 in 4ms :: {"success":true,"tracked":true}

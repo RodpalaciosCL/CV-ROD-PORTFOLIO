@@ -130,8 +130,7 @@ export default function About() {
               viewport={{ once: true }}
             >
               <h2 className="text-3xl lg:text-4xl font-black text-ey-white mb-6">
-                <span className="text-ey-yellow">{t('about.title')}</span>
-                <span className="block text-ey-white">{t('about.subtitle')}</span>
+                <span className="text-ey-yellow">{t('about.title')} <span className="text-ey-white">{t('about.subtitle')}</span></span>
               </h2>
             </motion.div>
             
@@ -184,10 +183,15 @@ export default function About() {
         >
           <div className="absolute inset-0 bg-gradient-to-br from-ey-yellow/10 to-transparent"></div>
           <div className="relative">
-            <h3 className="text-3xl md:text-4xl font-black text-ey-yellow mb-4 flex items-center justify-center">
-              <Award className="w-5 h-5 mr-2" />
-              {t('projects.title')}
-            </h3>
+            <div className="text-center mb-6">
+              <h3 className="text-3xl md:text-4xl font-black text-ey-yellow mb-2 flex items-center justify-center">
+                <Award className="w-5 h-5 mr-2" />
+                {t('projects.title')}
+              </h3>
+              <p className="text-lg text-ey-white/80 max-w-4xl mx-auto leading-relaxed">
+                {t('projects.subtitle')}
+              </p>
+            </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               {timeline.map((item, index) => (
                 <motion.div 

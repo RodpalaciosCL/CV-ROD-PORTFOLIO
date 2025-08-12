@@ -380,7 +380,7 @@ export default function ActivePipeline() {
               transition={{ duration: 0.8, delay: 0.2 }}
               viewport={{ once: true }}
             >
-              "{t('pipeline.obsolete.title')}"
+              {t('pipeline.obsolete.title')}
             </motion.p>
           </div>
 

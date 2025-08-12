@@ -59,17 +59,9 @@ export default function WhatIveBeenDoing() {
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            {t('doing.title')} <span className="text-ey-yellow">{t('doing.title_highlight')}</span>
+            {t('doing.title')}<br />
+            <span className="text-ey-yellow">{t('doing.title_highlight')}</span>
           </motion.h2>
-          <motion.p 
-            className="text-lg text-ey-yellow/80 max-w-4xl mx-auto font-light"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            viewport={{ once: true }}
-          >
-            {t('doing.subtitle')}
-          </motion.p>
         </motion.div>
 
         {/* Video Section */}
