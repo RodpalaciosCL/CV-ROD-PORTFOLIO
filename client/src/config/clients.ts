@@ -43,6 +43,17 @@ export const clientConfigs: Record<string, ClientConfig> = {
     industry: 'minería',
     whatsappMessage: 'Hola Rodrigo, me interesa conversar sobre la propuesta estratégica para Antofagasta Minerals'
   },
+  ey: {
+    name: 'EY',
+    logo: 'https://assets.ey.com/content/dam/ey-sites/ey-com/en_gl/generic/ey-logo.png',
+    logoFilters: 'brightness-0 invert',
+    industry: 'consulting',
+    whatsappMessage: 'Hola Rodrigo, me interesa conversar sobre la propuesta estratégica para EY',
+    colors: {
+      primary: '#FFE600',
+      dark: '#2E2E38'
+    }
+  },
   generic: {
     name: 'Rodrigo Palacios',
     logo: 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjgwIiB2aWV3Qm94PSIwIDAgMjAwIDgwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8dGV4dCB4PSIxMDAiIHk9IjU4IiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iNTQiIGZvbnQtd2VpZ2h0PSJib2xkIiBmaWxsPSIjRkZGRkZGIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5SUDwvdGV4dD4KPC9zdmc+Cg==',

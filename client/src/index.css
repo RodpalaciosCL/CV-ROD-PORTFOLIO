@@ -24,11 +24,11 @@
   --ring: hsl(19, 91%, 56%);
   --radius: 0.5rem;
 
-  /* BHP Official Colors */
-  --ey-dark: hsl(210, 14%, 18%);
-  --ey-medium: hsl(210, 14%, 25%);
-  --ey-light: hsl(210, 14%, 35%);
-  --ey-yellow: hsl(19, 91%, 56%);
+  /* EY Official Colors */
+  --ey-dark: hsl(240, 8%, 18%);
+  --ey-medium: hsl(240, 8%, 25%);
+  --ey-light: hsl(240, 8%, 35%);
+  --ey-yellow: hsl(60, 100%, 50%);
   --ey-white: hsl(0, 0%, 100%);
   --ey-black: hsl(0, 0%, 0%);
 }
