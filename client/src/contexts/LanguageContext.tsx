@@ -897,19 +897,19 @@ const translations = {
     'value.gateway.description': 'For regional expansion',
 
     // Efficiency section (NEW)
-    'efficiency.main_title': 'Why I Want to Be Part of',
-    'efficiency.ey_highlight': 'Metso',
-    'efficiency.main_subtitle': 'Leading firm, Exceptional Leadership Team, and the perfect moment to challenge the industry',
+    'efficiency.main_title': 'My Strategic',
+    'efficiency.ey_highlight': 'Collaboration Approach?',
+    'efficiency.main_subtitle': 'Leading technological and business transformation for the most challenging mining companies in the world',
     'efficiency.me_question': 'Me?',
     'efficiency.change_agent': 'A change agent hungry to disrupt the industry, for real.',
     
     // Efficiency motivations
-    'efficiency.motivations.respect.title': 'Respect for Metso',
-    'efficiency.motivations.respect.description': 'Track record, profiles, relationships and presence',
-    'efficiency.motivations.moment.title': 'Spectacular Moment',
-    'efficiency.motivations.moment.description': 'Challenging the industry in one of the most transformative moments in history',
-    'efficiency.motivations.challenge.title': 'Time to challenge',
-    'efficiency.motivations.challenge.description': 'Bring unexplored revenues without neglecting the as-is that has led Metso to success',
+    'efficiency.motivations.respect.title': 'My Approach',
+    'efficiency.motivations.respect.description': 'Based on track record, solid relationships and strategic market presence',
+    'efficiency.motivations.moment.title': 'Transformation Moment',
+    'efficiency.motivations.moment.description': 'Leading the industry in one of the most transformative moments in its history',
+    'efficiency.motivations.challenge.title': 'Create Value',
+    'efficiency.motivations.challenge.description': 'Identify and develop new revenue opportunities while maintaining operational excellence',
     
     // Value Props
     'efficiency.valueprops.optimization.title': 'Search Optimization',
@@ -1131,7 +1131,7 @@ const translations = {
     
     // Tracks Section translations
     'tracks.title': 'My Contribution to',
-    'tracks.title_highlight': 'Metso',
+    'tracks.title_highlight': 'the company I join!',
     'tracks.kpi_metrics': 'Key metrics',
     'tracks.closing.title': 'Transforming mining with',
     'tracks.closing.highlight': 'responsible innovation',
