@@ -13,22 +13,22 @@
   --card-foreground: hsl(0, 0%, 100%);
   --border: hsl(210, 14%, 30%);
   --input: hsl(210, 14%, 25%);
-  --primary: hsl(55, 100%, 50%);
+  --primary: hsl(19, 91%, 56%);
   --primary-foreground: hsl(0, 0%, 0%);
   --secondary: hsl(210, 14%, 25%);
   --secondary-foreground: hsl(0, 0%, 100%);
-  --accent: hsl(55, 100%, 50%);
+  --accent: hsl(19, 91%, 56%);
   --accent-foreground: hsl(0, 0%, 0%);
   --destructive: hsl(0, 84.2%, 60.2%);
   --destructive-foreground: hsl(0, 0%, 100%);
-  --ring: hsl(55, 100%, 50%);
+  --ring: hsl(19, 91%, 56%);
   --radius: 0.5rem;
 
-  /* EY Official Colors */
+  /* BHP Official Colors */
   --ey-dark: hsl(210, 14%, 18%);
   --ey-medium: hsl(210, 14%, 25%);
   --ey-light: hsl(210, 14%, 35%);
-  --ey-yellow: hsl(55, 100%, 50%);
+  --ey-yellow: hsl(19, 91%, 56%);
   --ey-white: hsl(0, 0%, 100%);
   --ey-black: hsl(0, 0%, 0%);
 }

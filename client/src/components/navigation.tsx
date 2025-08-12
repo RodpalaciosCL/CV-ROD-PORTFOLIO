@@ -122,7 +122,7 @@ export default function Navigation() {
                   >
                     <Button 
                       onClick={() => window.open(`https://wa.me/56971415496?text=${encodeURIComponent(clientConfig.whatsappMessage)}`, '_blank')}
-                      className="bg-ey-yellow hover:bg-yellow-400 font-bold text-xs rounded-lg border border-ey-yellow/20 px-2 py-1"
+                      className="bg-ey-yellow hover:bg-orange-400 font-bold text-xs rounded-lg border border-ey-yellow/20 px-2 py-1"
                       style={{ color: 'inherit', height: '32px', minWidth: '70px' }}
                     >
                       {t('nav.contactButton')}
@@ -199,7 +199,7 @@ export default function Navigation() {
                             window.open(`https://wa.me/56971415496?text=${encodeURIComponent(clientConfig.whatsappMessage)}`, '_blank');
                             setMobileMenuOpen(false);
                           }}
-                          className="w-full bg-ey-yellow hover:bg-yellow-400 text-black font-bold py-3"
+                          className="w-full bg-ey-yellow hover:bg-orange-400 text-black font-bold py-3"
                         >
                           📱 {t('nav.whatsappButton')}
                         </Button>
@@ -218,7 +218,7 @@ export default function Navigation() {
         {showScrollTop && (
           <motion.button
             onClick={scrollToTop}
-            className="fixed bottom-8 right-8 z-50 bg-ey-yellow text-ey-black p-3 rounded-full shadow-lg hover:bg-yellow-400 transition-colors duration-300"
+            className="fixed bottom-8 right-8 z-50 bg-ey-yellow text-ey-black p-3 rounded-full shadow-lg hover:bg-orange-400 transition-colors duration-300"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.8 }}

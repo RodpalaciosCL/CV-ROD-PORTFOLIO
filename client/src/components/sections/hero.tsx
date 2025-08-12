@@ -55,7 +55,7 @@ export default function Hero() {
                     element.scrollIntoView({ behavior: 'auto', block: 'start' });
                   }
                 }}
-                className="bg-ey-yellow text-ey-black px-12 py-6 text-lg font-bold rounded-lg shadow-lg hover:bg-yellow-400 transition-all duration-300 w-full sm:w-auto"
+                className="bg-ey-yellow text-ey-black px-12 py-6 text-lg font-bold rounded-lg shadow-lg hover:bg-orange-400 transition-all duration-300 w-full sm:w-auto"
               >
                 <span className="flex items-center justify-center">
                   {t('hero.cta')}
