@@ -606,5 +606,21 @@
       "org": "Local Development",
       "timezone": "Local"
     }
+  },
+  {
+    "id": 1754960348776.0105,
+    "timestamp": "2025-08-12T00:59:08.776Z",
+    "ip": "127.0.0.1",
+    "page": "Home",
+    "referrer": "Direct",
+    "userAgent": "🖥️ Chrome",
+    "screenResolution": "1710x1107",
+    "isOwner": true,
+    "geo": {
+      "country": "Local",
+      "city": "Local Dev",
+      "org": "Local Development",
+      "timezone": "Local"
+    }
   }
 ]
