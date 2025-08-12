@@ -462,7 +462,7 @@ const translations = {
 
     // Contact section (NEW)
     'contact.title_part1': '¿Listos para Acelerar la ',
-    'contact.title_part2': 'Práctica Minera??',
+    'contact.title_part2': 'Práctica Minera?',
     'contact.subtitle': 'Conversemos sobre cómo esta asociación estratégica puede desbloquear oportunidades de largo plazo, y establecernos como el partner tecnológico minero líder en Latinoamérica.',
     'contact.cta_button': 'Contactar',
     'contact.click_to_contact': 'Click para contactar',
@@ -988,8 +988,8 @@ const translations = {
     'speaking.view_image': 'View full image',
 
     // Contact section (NEW)
-    'contact.title_part1': 'Ready to Accelerate ',
-    'contact.title_part2': 'Metso\'s Mining Practice?',
+    'contact.title_part1': 'Ready to Accelerate the ',
+    'contact.title_part2': 'Mining Practice?',
     'contact.subtitle': 'Let\'s discuss how this strategic partnership can unlock long-term opportunities and establish Metso as the leading mining technology partner in Latin America.',
     'contact.cta_button': 'Contact',
     'contact.click_to_contact': 'Click to contact',

@@ -574,5 +574,37 @@
       "org": "Local Development",
       "timezone": "Local"
     }
+  },
+  {
+    "id": 1754959508516.5825,
+    "timestamp": "2025-08-12T00:45:08.517Z",
+    "ip": "127.0.0.1",
+    "page": "Home",
+    "referrer": "http://localhost:3000/",
+    "userAgent": "🖥️ Chrome",
+    "screenResolution": "1710x1107",
+    "isOwner": true,
+    "geo": {
+      "country": "Local",
+      "city": "Local Dev",
+      "org": "Local Development",
+      "timezone": "Local"
+    }
+  },
+  {
+    "id": 1754959517812.5972,
+    "timestamp": "2025-08-12T00:45:17.812Z",
+    "ip": "127.0.0.1",
+    "page": "Home",
+    "referrer": "http://localhost:3000/",
+    "userAgent": "🖥️ Chrome",
+    "screenResolution": "1710x1107",
+    "isOwner": true,
+    "geo": {
+      "country": "Local",
+      "city": "Local Dev",
+      "org": "Local Development",
+      "timezone": "Local"
+    }
   }
 ]
