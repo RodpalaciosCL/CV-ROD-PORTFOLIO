@@ -287,8 +287,8 @@ const translations = {
     'value.gateway.description': 'Para expansión regional',
 
     // Efficiency section (NEW)
-    'efficiency.main_title': '¿Mi Enfoque de',
-    'efficiency.ey_highlight': 'Colaboración Estratégica?',
+    'efficiency.main_title': '¿Mi Enfoque de Colaboración Estratégica',
+    'efficiency.ey_highlight': 'con la empresa?',
     'efficiency.main_subtitle': 'Liderar transformación tecnológica y de negocio para las mineras más desafiantes del mundo',
     'efficiency.me_question': '¿Yo?',
     'efficiency.change_agent': 'Un Agente de cambio con hambre de comerse la industria, de verdad.',
