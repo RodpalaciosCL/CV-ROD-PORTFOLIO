@@ -488,7 +488,7 @@ export default function ActivePipeline() {
             >
               <div className="inline-block bg-gradient-to-r from-ey-yellow/20 to-ey-yellow/10 border border-ey-yellow/30 rounded-xl px-8 py-4">
                 <p className="text-ey-white font-bold text-lg">
-                  <span className="text-ey-yellow">Ventaja Competitiva:</span> {t('pipeline.obsolete.advantage')}
+                  <span className="text-ey-yellow">{t('pipeline.obsolete.advantage_label')}</span> {t('pipeline.obsolete.advantage')}
                 </p>
               </div>
             </motion.div>
