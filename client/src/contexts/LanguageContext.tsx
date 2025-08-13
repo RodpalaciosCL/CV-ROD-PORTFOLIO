@@ -166,6 +166,8 @@ const translations = {
     'pipeline.obsolete.alliances_desc': 'Asociación con NCA (USA)',
     'pipeline.obsolete.logistics': 'Logística Integrada',
     'pipeline.obsolete.logistics_desc': 'Despliegue con Ferronor',
+    'pipeline.obsolete.advantage_label': 'Ventaja Competitiva:',
+    'pipeline.obsolete.advantage': '24 meses operando remates online para todo el mundo.',
     
     // Active Pipeline opportunities
     'pipeline.opportunities.0.company': 'Anglo American',
