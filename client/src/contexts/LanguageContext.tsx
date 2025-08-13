@@ -155,7 +155,7 @@ const translations = {
     'pipeline.obsolete.subtitle_line2': 'donde ustedes son el partner perfecto para ello!',
     'pipeline.obsolete.subtitle': 'Información Detallada del Proyecto',
     'pipeline.obsolete.total_value': 'Valor Total',
-    'pipeline.obsolete.sold': 'Vendido',
+    'pipeline.obsolete.sold': 'Vendidos en los últimos 12 meses',
     'pipeline.obsolete.contract': 'Contrato',
     'pipeline.obsolete.awarded': 'Adjudicado',
     'pipeline.obsolete.expertise': 'Expertise en Codelco',
@@ -822,7 +822,7 @@ const translations = {
     'pipeline.obsolete.title': 'A business already awarded and ready to operate, worth more than 1 Billion!',
     'pipeline.obsolete.subtitle': 'Detailed Project Information',
     'pipeline.obsolete.total_value': 'Total Value',
-    'pipeline.obsolete.sold': 'Sold',
+    'pipeline.obsolete.sold': 'Sold in the last 12 months',
     'pipeline.obsolete.contract': 'Contract',
     'pipeline.obsolete.awarded': 'Awarded',
     'pipeline.obsolete.expertise': 'Codelco Expertise',
@@ -833,7 +833,7 @@ const translations = {
     'pipeline.obsolete.alliances_desc': 'Partnership with NCA (USA)',
     'pipeline.obsolete.logistics': 'Integrated Logistics',
     'pipeline.obsolete.logistics_desc': 'Deployment with Ferronor',
-    'pipeline.obsolete.advantage': 'Competitive Advantage: Track record on/off +24 months doing auctions',
+    'pipeline.obsolete.advantage': '24 months operating online auctions worldwide.',
     
     // Projects section missing translations
     'projects.value': 'Value',
