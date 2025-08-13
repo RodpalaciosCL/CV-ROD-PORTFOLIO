@@ -833,8 +833,8 @@ const translations = {
     'pipeline.obsolete.alliances_desc': 'Partnership with NCA (USA)',
     'pipeline.obsolete.logistics': 'Integrated Logistics',
     'pipeline.obsolete.logistics_desc': 'Deployment with Ferronor',
-    'pipeline.obsolete.advantage_label': 'Ventaja Competitiva:',
-    'pipeline.obsolete.advantage': '24 meses operando remates online para todo el mundo.',
+    'pipeline.obsolete.advantage_label': 'Competitive Advantage:',
+    'pipeline.obsolete.advantage': '24 months operating online auctions worldwide.',
     
     // Projects section missing translations
     'projects.value': 'Value',
