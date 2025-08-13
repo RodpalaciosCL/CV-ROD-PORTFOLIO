@@ -110,24 +110,13 @@ export default function Navigation() {
                   <LanguageSelector />
                   
                   {/* Desktop Contact Button */}
-                  <motion.div
-                    animate={{ 
-                      color: ['#ffffff', '#ffffff', '#ffffff'] 
-                    }}
-                    transition={{ 
-                      duration: 3,
-                      repeat: Infinity,
-                      ease: "easeInOut"
-                    }}
+                  <Button 
+                    onClick={() => window.open(`https://wa.me/56971415496?text=${encodeURIComponent(clientConfig.whatsappMessage)}`, '_blank')}
+                    className="bg-ey-yellow hover:bg-orange-400 font-bold text-xs rounded-lg border border-ey-yellow/20 px-2 py-1 text-ey-dark"
+                    style={{ height: '32px', minWidth: '70px' }}
                   >
-                    <Button 
-                      onClick={() => window.open(`https://wa.me/56971415496?text=${encodeURIComponent(clientConfig.whatsappMessage)}`, '_blank')}
-                      className="bg-ey-yellow hover:bg-orange-400 font-bold text-xs rounded-lg border border-ey-yellow/20 px-2 py-1"
-                      style={{ color: 'inherit', height: '32px', minWidth: '70px' }}
-                    >
-                      {t('nav.contactButton')}
-                    </Button>
-                  </motion.div>
+                    {t('nav.contactButton')}
+                  </Button>
                 </div>
 
                 {/* Mobile Right Side - Language + Menu */}

@@ -93,8 +93,8 @@ const translations = {
     'value.transformation.title': 'Transformación Digital',
     
     // Major Projects
-    'major_projects.title': 'Mi Experiencia más reciente',
-    'major_projects.subtitle': 'Soluciones cruciales para la minería del futuro',
+    'major_projects.title': 'Logros destacados durante los últimos años',
+    'major_projects.subtitle': '',
     'major_projects.goldfields.title': 'Goldfields',
     'major_projects.goldfields.subtitle': 'Puesta en Marcha Mina',
     'major_projects.goldfields.result': 'Re activación mina',
@@ -122,7 +122,7 @@ const translations = {
     'major_projects.total': 'En negocios en la industria minería, de energía y Oil&Gas, en los últimos 8 años...',
     
     // Active Pipeline
-    'pipeline.title': '¿En qué estoy?',
+    'pipeline.title': '¿En qué estoy hoy?',
     'pipeline.subtitle': 'Transformando la minería, optimizando el negocio y automatizando los procesos clave de la industria',
     'pipeline.anglo.title': 'Anglo American',
     'pipeline.anglo.subtitle': 'Implementación Robots de Inspección',
@@ -287,8 +287,8 @@ const translations = {
     'value.gateway.description': 'Para expansión regional',
 
     // Efficiency section (NEW)
-    'efficiency.main_title': '¿Mi Enfoque de Colaboración Estratégica',
-    'efficiency.ey_highlight': 'con la empresa?',
+    'efficiency.main_title': '¿Mi Enfoque de Colaboración',
+    'efficiency.ey_highlight': 'Estratégica con la empresa?',
     'efficiency.main_subtitle': 'Liderar transformación tecnológica y de negocio para las mineras más desafiantes del mundo',
     'efficiency.me_question': '¿Yo?',
     'efficiency.change_agent': 'Un Agente de cambio con hambre de comerse la industria, de verdad.',
@@ -343,7 +343,7 @@ const translations = {
     // New Efficiency Section Translations
     'efficiency.operation.title': 'Operación inteligente que mueve el tonelaje hoy',
     'efficiency.operation.subtitle': 'AI, visión y IoT para seguridad, continuidad y menor costo por tonelada — enfoque en minería latinoamericana.',
-    'efficiency.tracks.title': 'Mi Aporte a Metso',
+    'efficiency.tracks.title': 'Mi aporte, algo más que disrupción: Negocio!',
     'efficiency.respect.title': 'Respeto por Metso',
     'efficiency.respect.description': 'Track récord, perfiles excepcionales y presencia líder en el mercado',
     'efficiency.challenge.title': 'Hora de desafiar',
@@ -372,8 +372,8 @@ const translations = {
     'efficiency.track1_closing': 'Visión de negocio, crecimiento y excelencia, en una de las prácticas más relevantes para la firma durante los próximos 20 años',
     
     // Tracks Section translations
-    'tracks.title': 'Mi Aporte a',
-    'tracks.title_highlight': 'la empresa donde llegue!',
+    'tracks.title': 'Mi aporte,',
+    'tracks.title_highlight': 'algo más que disrupción: Negocio!',
     'tracks.kpi_metrics': 'Métricas clave',
     'tracks.closing.title': 'Transformando la minería con',
     'tracks.closing.highlight': 'innovación responsable',
@@ -460,8 +460,8 @@ const translations = {
     'speaking.view_image': 'Ver imagen completa',
 
     // Contact section (NEW)
-    'contact.title_part1': '¿Listos para Acelerar la ',
-    'contact.title_part2': 'Práctica Minera?',
+    'contact.title_part1': '¿Listos para Acelerar',
+    'contact.title_part2': 'la Práctica Minera?',
     'contact.subtitle': 'Conversemos sobre cómo esta asociación estratégica puede desbloquear oportunidades de largo plazo, y establecernos como el partner tecnológico minero líder en Latinoamérica.',
     'contact.cta_button': 'Contactar',
     'contact.click_to_contact': 'Click para contactar',
@@ -672,8 +672,8 @@ const translations = {
     'about.growth.description': 'The ability to take the opportunity or transform the problem and deliver TANGIBILITY, to generate need in the client from minute zero.',
     
     // Projects Section  
-    'projects.title': 'My Career',
-    'projects.subtitle': 'Generating transcendental value, for some of the most important Fortune 500 companies',
+    'projects.title': 'My Professional Journey',
+    'projects.subtitle': 'Delivering unique value to some of the most important Fortune 500 companies',
     'projects.airontech.title': 'AIrontech',
     'projects.airontech.role': 'Managing Director & AI Leader',
     'projects.airontech.description': 'In charge of NLP, strategic business, customer relationships and AI and Mining Computer Vision practice',
@@ -706,8 +706,8 @@ const translations = {
     'value.transformation.title': 'Digital Transformation',
     
     // Major Projects
-    'major_projects.title': 'Major Project Achievements',
-    'major_projects.subtitle': 'Proven track record delivering complex technological solutions for Tier 1 mining companies',
+    'major_projects.title': 'Outstanding Achievements in Recent Years',
+    'major_projects.subtitle': '',
     'major_projects.goldfields.title': 'Goldfields',
     'major_projects.goldfields.subtitle': 'Mine Startup',
     'major_projects.goldfields.result': 'Mine reactivation',
@@ -783,9 +783,9 @@ const translations = {
     'security.cta.subtitle': 'The future of mining prevention',
 
     // Pipeline section (NEW)
-    'pipeline.title': 'Business Pipeline',
+    'pipeline.title': 'What am I working on today?',
     'pipeline.title_highlight': '',
-    'pipeline.subtitle': '$151.6M in mapped opportunities for Metso partnership',
+    'pipeline.subtitle': 'Transforming mining, optimizing business and automating key industry processes',
     'pipeline.probability': 'Probability',
     'pipeline.project_value': 'Project Value',
     'pipeline.active_opportunities': 'Active Opportunities',
@@ -895,8 +895,8 @@ const translations = {
     'value.gateway.description': 'For regional expansion',
 
     // Efficiency section (NEW)
-    'efficiency.main_title': 'My Strategic',
-    'efficiency.ey_highlight': 'Collaboration Approach?',
+    'efficiency.main_title': 'My Strategic Collaboration',
+    'efficiency.ey_highlight': 'Approach with the company?',
     'efficiency.main_subtitle': 'Leading technological and business transformation for the most challenging mining companies in the world',
     'efficiency.me_question': 'Me?',
     'efficiency.change_agent': 'A change agent hungry to disrupt the industry, for real.',
@@ -951,7 +951,7 @@ const translations = {
     // New Efficiency Section Translations (English)
     'efficiency.operation.title': 'Smart operation that moves tonnage today',
     'efficiency.operation.subtitle': 'AI, vision and IoT for safety, continuity and lower cost per ton — focus on Latin American mining.',
-    'efficiency.tracks.title': 'My Contribution to Metso',
+    'efficiency.tracks.title': 'My contribution, more than disruption: Business!',
     'efficiency.respect.title': 'Respect for Metso',
     'efficiency.respect.description': 'Track record, exceptional profiles and leading market presence',
     'efficiency.challenge.title': 'Time to challenge',
@@ -986,8 +986,8 @@ const translations = {
     'speaking.view_image': 'View full image',
 
     // Contact section (NEW)
-    'contact.title_part1': 'Ready to Accelerate the ',
-    'contact.title_part2': 'Mining Practice?',
+    'contact.title_part1': 'Ready to Accelerate',
+    'contact.title_part2': 'the Mining Practice?',
     'contact.subtitle': 'Let\'s discuss how this strategic partnership can unlock long-term opportunities and establish Metso as the leading mining technology partner in Latin America.',
     'contact.cta_button': 'Contact',
     'contact.click_to_contact': 'Click to contact',
@@ -1128,8 +1128,8 @@ const translations = {
     'pipeline_plus.strategic_consortium': 'Strategic Consortium',
     
     // Tracks Section translations
-    'tracks.title': 'My Contribution to',
-    'tracks.title_highlight': 'the company I join!',
+    'tracks.title': 'My contribution,',
+    'tracks.title_highlight': 'more than disruption: Business!',
     'tracks.kpi_metrics': 'Key metrics',
     'tracks.closing.title': 'Transforming mining with',
     'tracks.closing.highlight': 'responsible innovation',
@@ -1216,10 +1216,14 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
   const clientConfig = getClientConfig();
 
   useEffect(() => {
-    // Cargar idioma desde localStorage
+    // Cargar idioma desde localStorage, pero siempre comenzar en inglés por defecto
     const savedLanguage = localStorage.getItem('language') as Language;
     if (savedLanguage && (savedLanguage === 'es' || savedLanguage === 'en')) {
       setLanguage(savedLanguage);
+    } else {
+      // Si no hay idioma guardado, establecer inglés por defecto
+      setLanguage('en');
+      localStorage.setItem('language', 'en');
     }
   }, []);
 

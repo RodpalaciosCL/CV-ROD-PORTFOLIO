@@ -85,8 +85,8 @@ export default function Efficiency() {
               transition={{ duration: 0.8, delay: 0.6 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-ey-white mb-6">{t('efficiency.main_title')} <span className="text-ey-yellow">{t('efficiency.ey_highlight')}</span>?</h2>
-              <p className="text-lg md:text-xl text-ey-white/80 mb-12">{t('efficiency.main_subtitle')}</p>
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-ey-white mb-6 text-center leading-tight">{t('efficiency.main_title')}<br /><span className="text-ey-yellow">{t('efficiency.ey_highlight')}</span></h2>
+              <p className="text-xl md:text-2xl text-ey-yellow font-semibold max-w-5xl mx-auto text-center leading-relaxed mb-12">{t('efficiency.main_subtitle')}</p>
               
             </motion.div>
 

@@ -121,15 +121,7 @@ export default function Projects() {
           >
             {t('major_projects.title')}
           </motion.h2>
-          <motion.p 
-            className="text-lg text-ey-white/80 max-w-4xl mx-auto leading-relaxed"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            viewport={{ once: true }}
-          >
-            {t('major_projects.subtitle')}
-          </motion.p>
+
         </motion.div>
         
         {/* Projects Grid */}

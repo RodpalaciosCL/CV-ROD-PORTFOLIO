@@ -214,7 +214,7 @@ export default function ActivePipeline() {
           viewport={{ once: true }}
         >
           <motion.h2 
-            className="text-3xl md:text-4xl font-black text-ey-white mb-4"
+            className="text-4xl md:text-5xl lg:text-6xl font-black text-ey-white mb-6 text-center leading-tight"
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -223,7 +223,7 @@ export default function ActivePipeline() {
             {t('pipeline.title')}
           </motion.h2>
           <motion.p 
-            className="text-lg text-ey-yellow/80 max-w-4xl mx-auto font-light"
+            className="text-lg md:text-xl text-ey-yellow font-semibold max-w-5xl mx-auto text-center leading-relaxed"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
