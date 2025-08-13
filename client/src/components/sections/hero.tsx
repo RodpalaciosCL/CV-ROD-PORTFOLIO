@@ -96,14 +96,14 @@ export default function Hero() {
 
           {/* Right Content - Professional Image */}
           <motion.div
-            className="relative flex flex-col"
+            className="relative"
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
             <div className="relative">
               {/* Professional portrait placeholder */}
-              <div className="relative bg-ey-medium border border-ey-light rounded-lg p-8 mb-6">
+              <div className="relative bg-ey-medium border border-ey-light rounded-lg p-8">
                 <div className="aspect-square bg-ey-light rounded-lg overflow-hidden">
                   <img 
                     src="https://res.cloudinary.com/dhobnlg73/image/upload/v1753808500/IMG_5278_zkcpuy.jpg" 
@@ -113,25 +113,25 @@ export default function Hero() {
                 </div>
               </div>
               
-              {/* Professional credentials - Aligned with metrics */}
-              <motion.div 
-                className="space-y-3 mt-12"
-                initial={{ opacity: 0, y: 40 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 1 }}
-              >
-                <div className="bg-ey-yellow text-ey-black px-4 py-3 rounded text-center font-bold text-sm">
-                  {t('hero.expert_badge')}
-                </div>
-                
-                <div className="bg-ey-light text-ey-white px-4 py-3 rounded text-center font-semibold text-sm border border-ey-yellow/30">
-                  {t('hero.consulting_badge')}
-                </div>
-              </motion.div>
-            </div>
-              
               {/* Static accent elements */}
               <div className="absolute top-4 right-4 w-8 h-8 bg-ey-yellow rounded border-4 border-ey-dark"></div>
+            </div>
+            
+            {/* Professional credentials - Aligned with metrics */}
+            <motion.div 
+              className="space-y-3 mt-6"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 1.2 }}
+            >
+              <div className="bg-ey-yellow text-ey-black px-4 py-3 rounded text-center font-bold text-sm">
+                {t('hero.expert_badge')}
+              </div>
+              
+              <div className="bg-ey-light text-ey-white px-4 py-3 rounded text-center font-semibold text-sm border border-ey-yellow/30">
+                {t('hero.consulting_badge')}
+              </div>
+            </motion.div>
           </motion.div>
         </div>
       </div>
