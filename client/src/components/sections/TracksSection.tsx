@@ -76,7 +76,9 @@ export default function TracksSection({ id, className = "", compact }: TracksSec
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            {t('tracks.title')} <span className="text-ey-yellow">{t('tracks.title_highlight')}</span>
+            {t('tracks.title')} <span className="text-ey-yellow">
+              {t('tracks.title_highlight').split(': ')[0]}: <span className="animate-color-pulse">Negocio!</span>
+            </span>
           </motion.h2>
           
         </motion.div>

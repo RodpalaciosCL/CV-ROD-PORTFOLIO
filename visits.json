@@ -1758,5 +1758,69 @@
       "org": "Local Development",
       "timezone": "Local"
     }
+  },
+  {
+    "id": 1755188906117.3665,
+    "timestamp": "2025-08-14T16:28:26.117Z",
+    "ip": "127.0.0.1",
+    "page": "Home",
+    "referrer": "Direct",
+    "userAgent": "🖥️ Chrome",
+    "screenResolution": "1710x1107",
+    "isOwner": true,
+    "geo": {
+      "country": "Local",
+      "city": "Local Dev",
+      "org": "Local Development",
+      "timezone": "Local"
+    }
+  },
+  {
+    "id": 1755189028978.921,
+    "timestamp": "2025-08-14T16:30:28.978Z",
+    "ip": "127.0.0.1",
+    "page": "Home",
+    "referrer": "Direct",
+    "userAgent": "🖥️ Chrome",
+    "screenResolution": "1710x1107",
+    "isOwner": true,
+    "geo": {
+      "country": "Local",
+      "city": "Local Dev",
+      "org": "Local Development",
+      "timezone": "Local"
+    }
+  },
+  {
+    "id": 1755189035556.6008,
+    "timestamp": "2025-08-14T16:30:35.556Z",
+    "ip": "127.0.0.1",
+    "page": "Home",
+    "referrer": "Direct",
+    "userAgent": "🖥️ Chrome",
+    "screenResolution": "1710x1107",
+    "isOwner": true,
+    "geo": {
+      "country": "Local",
+      "city": "Local Dev",
+      "org": "Local Development",
+      "timezone": "Local"
+    }
+  },
+  {
+    "id": 1755189089305.7214,
+    "timestamp": "2025-08-14T16:31:29.305Z",
+    "ip": "127.0.0.1",
+    "page": "Home",
+    "referrer": "Direct",
+    "userAgent": "🖥️ Chrome",
+    "screenResolution": "1710x1107",
+    "isOwner": true,
+    "geo": {
+      "country": "Local",
+      "city": "Local Dev",
+      "org": "Local Development",
+      "timezone": "Local"
+    }
   }
 ]

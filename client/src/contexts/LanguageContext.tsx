@@ -167,7 +167,7 @@ const translations = {
     'pipeline.obsolete.logistics': 'Logística Integrada',
     'pipeline.obsolete.logistics_desc': 'Despliegue con Ferronor',
     'pipeline.obsolete.advantage_label': 'Ventaja Competitiva:',
-    'pipeline.obsolete.advantage': '24 meses operando remates online para todo el mundo.',
+    'pipeline.obsolete.advantage': 'Llevamos más de 24 meses operando remates online para todo el mundo.',
     
     // Active Pipeline opportunities
     'pipeline.opportunities.0.company': 'Anglo American',
@@ -836,7 +836,7 @@ const translations = {
     'pipeline.obsolete.logistics': 'Integrated Logistics',
     'pipeline.obsolete.logistics_desc': 'Deployment with Ferronor',
     'pipeline.obsolete.advantage_label': 'Competitive Advantage:',
-    'pipeline.obsolete.advantage': '24 months operating online auctions worldwide.',
+    'pipeline.obsolete.advantage': 'We have been operating online auctions worldwide for more than 24 months.',
     
     // Projects section missing translations
     'projects.value': 'Value',

@@ -354,16 +354,16 @@ export default function ActivePipeline() {
           </div>
         </motion.div>
         
-        {/* Negocio Estrella Section */}
+        {/* NEGOCIO ESTRATEGICO CODELCO - $2 BILLONES */}
         <motion.div 
-          className="relative group mt-20"
+          className="relative group mt-32"
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
           viewport={{ once: true }}
         >
-          {/* Header */}
-          <div className="text-center mb-16">
+          {/* Impact Header */}
+          <div className="text-center mb-20">
             <motion.h3 
               className="text-4xl md:text-5xl font-black text-ey-white mb-4"
               initial={{ opacity: 0, scale: 0.9 }}
@@ -371,127 +371,166 @@ export default function ActivePipeline() {
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              {t('pipeline.star_business')}
+              ¿Y qué es lo que estoy poniendo en juego?
             </motion.h3>
-            <motion.p 
-              className="text-2xl text-ey-yellow font-bold"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+            <motion.div 
+              className="inline-block rounded-2xl px-8 py-4"
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.2 }}
               viewport={{ once: true }}
             >
-              {t('pipeline.obsolete.title')}
-            </motion.p>
+              <h4 className="text-2xl md:text-3xl font-black text-ey-yellow">
+                ¡Un negocio ya adjudicado y listo para operar, de más de 1 Billion!
+              </h4>
+            </motion.div>
           </div>
 
-          {/* Codelco Project Details */}
-          <div className="relative bg-gradient-to-br from-ey-medium to-ey-dark border-2 border-ey-yellow rounded-3xl shadow-2xl overflow-hidden p-8">
-            {/* Header with gradient */}
-            <div className="bg-gradient-to-r from-ey-yellow to-ey-yellow/80 rounded-xl p-4 mb-6">
-              <div className="flex items-center space-x-3">
-                <div className="w-12 h-12 bg-red-600 rounded-lg flex items-center justify-center shadow-lg">
-                  <Building2 className="w-6 h-6 text-white" />
-                </div>
-                <div>
-                  <h4 className="text-2xl font-black text-white mb-1">
-                    {t('pipeline.obsolete.title')}
-                  </h4>
-                  <p className="text-ey-black/80 font-semibold text-sm">{t('pipeline.obsolete.subtitle')}</p>
-                </div>
-              </div>
+          {/* MEGA PROJECT CARD */}
+          <div className="relative bg-gradient-to-br from-red-900/20 via-ey-medium to-ey-dark border-4 border-ey-yellow rounded-3xl shadow-2xl overflow-hidden">
+            {/* Animated background elements */}
+            <div className="absolute top-0 left-0 w-full h-full">
+              <div className="absolute top-10 right-10 w-32 h-32 bg-ey-yellow/10 rounded-full blur-3xl animate-pulse"></div>
+              <div className="absolute bottom-10 left-10 w-24 h-24 bg-red-500/10 rounded-full blur-2xl animate-pulse delay-1000"></div>
             </div>
             
-            {/* Compact Key Metrics */}
-            <div className="grid grid-cols-3 gap-4 mb-6">
-              <div className="bg-ey-white/10 backdrop-blur-sm border border-ey-yellow/30 rounded-lg p-3 text-center">
-                <div className="text-2xl font-black text-ey-yellow mb-1">$2B</div>
-                <div className="text-ey-white/80 font-medium text-xs">{t('pipeline.obsolete.total_value')}</div>
+            <div className="relative p-8">
+                            {/* CODELCO HEADER */}
+              <div className="bg-gradient-to-r from-amber-700 to-amber-800 rounded-2xl p-6 mb-8 shadow-xl">
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center space-x-4">
+                    <div className="w-16 h-16 bg-white rounded-xl flex items-center justify-center shadow-lg">
+                      <Building2 className="w-8 h-8 text-amber-700" />
+                    </div>
+                    <div>
+                      <h4 className="text-3xl font-black text-white mb-2">
+                        CODELCO
+                      </h4>
+                      <p className="text-white/90 font-semibold text-lg">
+                        Contrato Estratégico de Gestión de Activos
+                      </p>
+                    </div>
+                  </div>
+                  <div className="text-right">
+                    <div className="text-4xl font-black text-white mb-1">$2B</div>
+                    <div className="text-white/80 font-bold text-sm">VALOR TOTAL</div>
+                  </div>
+                </div>
               </div>
               
-              <div className="bg-ey-white/10 backdrop-blur-sm border border-ey-yellow/30 rounded-lg p-3 text-center">
-                <div className="text-2xl font-black text-ey-yellow mb-1">$60M+</div>
-                <div className="text-ey-white/80 font-medium text-xs">{t('pipeline.obsolete.sold')}</div>
+              {/* IMPACT METRICS */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                <motion.div 
+                  className="bg-gradient-to-br from-ey-yellow/20 to-ey-yellow/10 border-2 border-ey-yellow rounded-xl p-6 text-center"
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                >
+                  <div className="text-4xl font-black text-ey-yellow mb-2">$2B+</div>
+                  <div className="text-ey-white font-bold text-lg mb-2">Equipos bajo control</div>
+                  <div className="text-ey-white/80 text-sm">Acceso completo a todas las faenas de Codelco</div>
+                </motion.div>
+                
+                                 <motion.div 
+                   className="bg-gradient-to-br from-green-500/20 to-green-500/10 border-2 border-green-500 rounded-xl p-6 text-center"
+                   whileHover={{ scale: 1.05 }}
+                   transition={{ type: "spring", stiffness: 300 }}
+                 >
+                   <div className="text-4xl font-black text-green-400 mb-2">USD 60 Millones</div>
+                   <div className="text-ey-white font-bold text-lg mb-2">Profit anual</div>
+                   <div className="text-ey-white/80 text-sm">Generado por el contrato anterior</div>
+                 </motion.div>
+                
+                <motion.div 
+                  className="bg-gradient-to-br from-blue-500/20 to-blue-500/10 border-2 border-blue-500 rounded-xl p-6 text-center"
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                >
+                  <div className="text-4xl font-black text-blue-400 mb-2">100%</div>
+                  <div className="text-ey-white font-bold text-lg mb-2">Trazabilidad</div>
+                  <div className="text-ey-white/80 text-sm">Compras, stock, abastecimiento</div>
+                </motion.div>
               </div>
               
-              <div className="bg-ey-white/10 backdrop-blur-sm border border-ey-yellow/30 rounded-lg p-3 text-center">
-                <div className="text-lg font-black text-ey-yellow mb-1">{t('pipeline.obsolete.contract')}</div>
-                <div className="text-ey-white/80 font-medium text-xs">{t('pipeline.obsolete.awarded')}</div>
-              </div>
+                             {/* STRATEGIC IMPACT */}
+               <div className="bg-ey-dark/60 rounded-2xl p-6 mb-8 border border-ey-yellow/30">
+                 <h5 className="text-2xl font-black text-ey-yellow mb-6 text-center">
+                   IMPACTO ESTRATÉGICO ÚNICO
+                 </h5>
+                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                   <div className="space-y-6">
+                     <div className="flex items-start space-x-4">
+                       <div className="w-8 h-8 bg-ey-yellow rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                         <span className="text-ey-black font-black text-sm">1</span>
+                       </div>
+                       <div>
+                         <div className="text-ey-white font-bold text-lg mb-2">Control Total de Activos</div>
+                         <div className="text-ey-white/80 text-base leading-relaxed">
+                           Gestión completa del inventario de equipos, incluyendo procesos de reposición estratégica, 
+                           reutilización inteligente de activos existentes, y venta optimizada de equipos obsoletos. 
+                           Control granular de cada activo en las operaciones de Codelco.
+                         </div>
+                       </div>
+                     </div>
+                     <div className="flex items-start space-x-4">
+                       <div className="w-8 h-8 bg-ey-yellow rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                         <span className="text-ey-black font-black text-sm">2</span>
+                       </div>
+                       <div>
+                         <div className="text-ey-white font-bold text-lg mb-2">Posición Crítica en Operaciones</div>
+                         <div className="text-ey-white/80 text-base leading-relaxed">
+                           Ubicación estratégica en una de las aristas más críticas y fundamentales de la operación 
+                           integral de Codelco. Acceso directo a decisiones operacionales clave y control de flujos 
+                           críticos del negocio minero.
+                         </div>
+                       </div>
+                     </div>
+                   </div>
+                   <div className="space-y-6">
+                     <div className="flex items-start space-x-4">
+                       <div className="w-8 h-8 bg-ey-yellow rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                         <span className="text-ey-black font-black text-sm">3</span>
+                       </div>
+                       <div>
+                         <div className="text-ey-white font-bold text-lg mb-2">Plataforma Integrada de Gestión</div>
+                         <div className="text-ey-white/80 text-base leading-relaxed">
+                           Sistema tecnológico avanzado que conecta y sincroniza todo el ecosistema de activos, 
+                           proporcionando visibilidad en tiempo real, trazabilidad completa y control centralizado 
+                           de todos los procesos relacionados con la gestión de equipos.
+                         </div>
+                       </div>
+                     </div>
+                     <div className="flex items-start space-x-4">
+                       <div className="w-8 h-8 bg-ey-yellow rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                         <span className="text-ey-black font-black text-sm">4</span>
+                       </div>
+                       <div>
+                         <div className="text-ey-white font-bold text-lg mb-2">Métricas Clave del Negocio</div>
+                         <div className="text-ey-white/80 text-base leading-relaxed">
+                           Control total y monitoreo avanzado de todas las métricas críticas del negocio del cliente, 
+                           incluyendo indicadores de rendimiento operacional, eficiencia de costos, y optimización 
+                           de recursos en tiempo real.
+                         </div>
+                       </div>
+                     </div>
+                   </div>
+                 </div>
+               </div>
+              
+              {/* COMPETITIVE ADVANTAGE */}
+              <motion.div 
+                className="text-center"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.5 }}
+                viewport={{ once: true }}
+              >
+                <div className="inline-block bg-gradient-to-r from-ey-yellow/20 to-ey-yellow/10 border-2 border-ey-yellow rounded-xl px-8 py-6">
+                  <p className="text-ey-white font-bold text-xl">
+                    <span className="text-ey-yellow font-black">{t('pipeline.obsolete.advantage_label')}</span> {t('pipeline.obsolete.advantage')}
+                  </p>
+                </div>
+              </motion.div>
             </div>
-            
-            {/* Compact Capabilities */}
-            <div className="grid grid-cols-2 gap-3 mb-6">
-              <div className="bg-ey-white/5 backdrop-blur-sm rounded-lg p-3 border border-ey-yellow/20">
-                <div className="flex items-start space-x-2">
-                  <div className="w-8 h-8 bg-ey-yellow rounded flex items-center justify-center flex-shrink-0">
-                    <Building2 className="w-4 h-4 text-ey-black" />
-                  </div>
-                  <div>
-                    <h5 className="text-sm font-bold text-ey-white mb-1">{t('pipeline.obsolete.expertise')}</h5>
-                    <p className="text-ey-white/80 text-xs leading-tight">
-                      {t('pipeline.obsolete.expertise_desc')}
-                    </p>
-                  </div>
-                </div>
-              </div>
-              
-              <div className="bg-ey-white/5 backdrop-blur-sm rounded-lg p-3 border border-ey-yellow/20">
-                <div className="flex items-start space-x-2">
-                  <div className="w-8 h-8 bg-ey-yellow rounded flex items-center justify-center flex-shrink-0">
-                    <Zap className="w-4 h-4 text-ey-black" />
-                  </div>
-                  <div>
-                    <h5 className="text-sm font-bold text-ey-white mb-1">{t('pipeline.obsolete.immediate')}</h5>
-                    <p className="text-ey-white/80 text-xs leading-tight">
-                      {t('pipeline.obsolete.immediate_desc')}
-                    </p>
-                  </div>
-                </div>
-              </div>
-              
-              <div className="bg-ey-white/5 backdrop-blur-sm rounded-lg p-3 border border-ey-yellow/20">
-                <div className="flex items-start space-x-2">
-                  <div className="w-8 h-8 bg-ey-yellow rounded flex items-center justify-center flex-shrink-0">
-                    <Handshake className="w-4 h-4 text-ey-black" />
-                  </div>
-                  <div>
-                    <h5 className="text-sm font-bold text-ey-white mb-1">{t('pipeline.obsolete.alliances')}</h5>
-                    <p className="text-ey-white/80 text-xs leading-tight">
-                      {t('pipeline.obsolete.alliances_desc')}
-                    </p>
-                  </div>
-                </div>
-              </div>
-              
-              <div className="bg-ey-white/5 backdrop-blur-sm rounded-lg p-3 border border-ey-yellow/20">
-                <div className="flex items-start space-x-2">
-                  <div className="w-8 h-8 bg-ey-yellow rounded flex items-center justify-center flex-shrink-0">
-                    <Truck className="w-4 h-4 text-ey-black" />
-                  </div>
-                  <div>
-                    <h5 className="text-sm font-bold text-ey-white mb-1">{t('pipeline.obsolete.logistics')}</h5>
-                    <p className="text-ey-white/80 text-xs leading-tight">
-                      {t('pipeline.obsolete.logistics_desc')}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            {/* Bottom CTA */}
-            <motion.div 
-              className="text-center"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.5 }}
-              viewport={{ once: true }}
-            >
-              <div className="inline-block bg-gradient-to-r from-ey-yellow/20 to-ey-yellow/10 border border-ey-yellow/30 rounded-xl px-8 py-4">
-                <p className="text-ey-white font-bold text-lg">
-                  <span className="text-ey-yellow">{t('pipeline.obsolete.advantage_label')}</span> {t('pipeline.obsolete.advantage')}
-                </p>
-              </div>
-            </motion.div>
           </div>
         </motion.div>
       </div>

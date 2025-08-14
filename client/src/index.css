@@ -143,3 +143,19 @@
 .progress-bar {
   transition: width 1.5s ease-out;
 }
+
+@keyframes color-pulse {
+  0%, 33% {
+    color: #ffffff; /* blanco */
+  }
+  34%, 66% {
+    color: #ffff00; /* amarillo */
+  }
+  67%, 100% {
+    color: #f97316; /* naranja (orange-500) */
+  }
+}
+
+.animate-color-pulse {
+  animation: color-pulse 2s infinite;
+}
