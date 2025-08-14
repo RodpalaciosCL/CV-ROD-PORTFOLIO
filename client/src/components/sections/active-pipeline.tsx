@@ -181,10 +181,19 @@ export default function ActivePipeline() {
       stage: t('pipeline.carola.stage'),
       timeline: "Q3 2025",
       color: "from-teal-500 to-teal-700"
+    },
+    {
+      company: "Komatsu",
+      project: "Computer Vision Inspección de carga",
+      value: "$500K",
+      probability: 70,
+      stage: "Definición",
+      timeline: "Q4 2025",
+      color: "from-gray-500 to-gray-700"
     }
   ];
 
-  const totalValue = 151.6;
+  const totalValue = 152.1;
   const totalOpportunities = opportunities.length;
   const averageProbability = Math.round(opportunities.reduce((sum, opp) => sum + opp.probability, 0) / opportunities.length);
 
@@ -371,7 +380,7 @@ export default function ActivePipeline() {
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              ¿Y qué es lo que estoy poniendo en juego?
+              {t('pipeline.star_business')}
             </motion.h3>
             <motion.div 
               className="inline-block rounded-2xl px-8 py-4"
@@ -380,9 +389,9 @@ export default function ActivePipeline() {
               transition={{ duration: 0.8, delay: 0.2 }}
               viewport={{ once: true }}
             >
-              <h4 className="text-2xl md:text-3xl font-black text-ey-yellow">
-                ¡Un negocio ya adjudicado y listo para operar, de más de 1 Billion!
-              </h4>
+                              <h4 className="text-2xl md:text-3xl font-black text-ey-yellow">
+                  {t('pipeline.obsolete.title')}
+                </h4>
             </motion.div>
           </div>
 
@@ -407,13 +416,13 @@ export default function ActivePipeline() {
                         CODELCO
                       </h4>
                       <p className="text-white/90 font-semibold text-lg">
-                        Contrato Estratégico de Gestión de Activos
+                        {t('pipeline.codelco.contract_title')}
                       </p>
                     </div>
                   </div>
                   <div className="text-right">
                     <div className="text-4xl font-black text-white mb-1">$2B</div>
-                    <div className="text-white/80 font-bold text-sm">VALOR TOTAL</div>
+                    <div className="text-white/80 font-bold text-sm">{t('pipeline.codelco.total_value')}</div>
                   </div>
                 </div>
               </div>
@@ -426,8 +435,8 @@ export default function ActivePipeline() {
                   transition={{ type: "spring", stiffness: 300 }}
                 >
                   <div className="text-4xl font-black text-ey-yellow mb-2">$2B+</div>
-                  <div className="text-ey-white font-bold text-lg mb-2">Equipos bajo control</div>
-                  <div className="text-ey-white/80 text-sm">Acceso completo a todas las faenas de Codelco</div>
+                  <div className="text-ey-white font-bold text-lg mb-2">{t('pipeline.codelco.equipment_control')}</div>
+                  <div className="text-ey-white/80 text-sm">{t('pipeline.codelco.equipment_desc')}</div>
                 </motion.div>
                 
                                  <motion.div 
@@ -436,8 +445,8 @@ export default function ActivePipeline() {
                    transition={{ type: "spring", stiffness: 300 }}
                  >
                    <div className="text-4xl font-black text-green-400 mb-2">USD 60 Millones</div>
-                   <div className="text-ey-white font-bold text-lg mb-2">Profit anual</div>
-                   <div className="text-ey-white/80 text-sm">Generado por el contrato anterior</div>
+                   <div className="text-ey-white font-bold text-lg mb-2">{t('pipeline.codelco.annual_profit')}</div>
+                   <div className="text-ey-white/80 text-sm">{t('pipeline.codelco.profit_desc')}</div>
                  </motion.div>
                 
                 <motion.div 
@@ -446,15 +455,15 @@ export default function ActivePipeline() {
                   transition={{ type: "spring", stiffness: 300 }}
                 >
                   <div className="text-4xl font-black text-blue-400 mb-2">100%</div>
-                  <div className="text-ey-white font-bold text-lg mb-2">Trazabilidad</div>
-                  <div className="text-ey-white/80 text-sm">Compras, stock, abastecimiento</div>
+                  <div className="text-ey-white font-bold text-lg mb-2">{t('pipeline.codelco.traceability')}</div>
+                  <div className="text-ey-white/80 text-sm">{t('pipeline.codelco.traceability_desc')}</div>
                 </motion.div>
               </div>
               
                              {/* STRATEGIC IMPACT */}
                <div className="bg-ey-dark/60 rounded-2xl p-6 mb-8 border border-ey-yellow/30">
                  <h5 className="text-2xl font-black text-ey-yellow mb-6 text-center">
-                   IMPACTO ESTRATÉGICO ÚNICO
+                   {t('pipeline.codelco.strategic_impact')}
                  </h5>
                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                    <div className="space-y-6">
@@ -463,11 +472,9 @@ export default function ActivePipeline() {
                          <span className="text-ey-black font-black text-sm">1</span>
                        </div>
                        <div>
-                         <div className="text-ey-white font-bold text-lg mb-2">Control Total de Activos</div>
+                         <div className="text-ey-white font-bold text-lg mb-2">{t('pipeline.codelco.asset_control.title')}</div>
                          <div className="text-ey-white/80 text-base leading-relaxed">
-                           Gestión completa del inventario de equipos, incluyendo procesos de reposición estratégica, 
-                           reutilización inteligente de activos existentes, y venta optimizada de equipos obsoletos. 
-                           Control granular de cada activo en las operaciones de Codelco.
+                           {t('pipeline.codelco.asset_control.desc')}
                          </div>
                        </div>
                      </div>
@@ -476,11 +483,9 @@ export default function ActivePipeline() {
                          <span className="text-ey-black font-black text-sm">2</span>
                        </div>
                        <div>
-                         <div className="text-ey-white font-bold text-lg mb-2">Posición Crítica en Operaciones</div>
+                         <div className="text-ey-white font-bold text-lg mb-2">{t('pipeline.codelco.critical_position.title')}</div>
                          <div className="text-ey-white/80 text-base leading-relaxed">
-                           Ubicación estratégica en una de las aristas más críticas y fundamentales de la operación 
-                           integral de Codelco. Acceso directo a decisiones operacionales clave y control de flujos 
-                           críticos del negocio minero.
+                           {t('pipeline.codelco.critical_position.desc')}
                          </div>
                        </div>
                      </div>
@@ -491,11 +496,9 @@ export default function ActivePipeline() {
                          <span className="text-ey-black font-black text-sm">3</span>
                        </div>
                        <div>
-                         <div className="text-ey-white font-bold text-lg mb-2">Plataforma Integrada de Gestión</div>
+                         <div className="text-ey-white font-bold text-lg mb-2">{t('pipeline.codelco.integrated_platform.title')}</div>
                          <div className="text-ey-white/80 text-base leading-relaxed">
-                           Sistema tecnológico avanzado que conecta y sincroniza todo el ecosistema de activos, 
-                           proporcionando visibilidad en tiempo real, trazabilidad completa y control centralizado 
-                           de todos los procesos relacionados con la gestión de equipos.
+                           {t('pipeline.codelco.integrated_platform.desc')}
                          </div>
                        </div>
                      </div>
@@ -504,11 +507,9 @@ export default function ActivePipeline() {
                          <span className="text-ey-black font-black text-sm">4</span>
                        </div>
                        <div>
-                         <div className="text-ey-white font-bold text-lg mb-2">Métricas Clave del Negocio</div>
+                         <div className="text-ey-white font-bold text-lg mb-2">{t('pipeline.codelco.business_metrics.title')}</div>
                          <div className="text-ey-white/80 text-base leading-relaxed">
-                           Control total y monitoreo avanzado de todas las métricas críticas del negocio del cliente, 
-                           incluyendo indicadores de rendimiento operacional, eficiencia de costos, y optimización 
-                           de recursos en tiempo real.
+                           {t('pipeline.codelco.business_metrics.desc')}
                          </div>
                        </div>
                      </div>
