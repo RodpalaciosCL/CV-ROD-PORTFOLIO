@@ -89,6 +89,8 @@ const ImprovedAnalytics = () => {
         }
 
         // Enviar a sistema propio (inspirado en tu INVESTMENT-DECK exitoso)
+        // TEMPORALMENTE DESHABILITADO - Solo Google Analytics
+        /*
         try {
           const response = await fetch('/api/analytics/track', {
             method: 'POST',
@@ -112,6 +114,7 @@ const ImprovedAnalytics = () => {
         } catch (trackError) {
           console.debug('[Analytics] Error registrando visita:', trackError);
         }
+        */
         
         // También guardar localmente como respaldo
         if (!localStorage.getItem('analytics-visits')) {
