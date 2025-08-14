@@ -7,6 +7,7 @@ import NotFound from "@/pages/not-found";
 import Home from "@/pages/home";
 import Analytics from "@/pages/Analytics";
 import ImprovedAnalytics from "@/components/ImprovedAnalytics";
+import GoogleAnalytics from "@/components/GoogleAnalytics";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import { useVisitTracker } from "@/hooks/useVisitTracker";
 
@@ -29,6 +30,7 @@ function App() {
       <QueryClientProvider client={queryClient}>
         <TooltipProvider>
           <Toaster />
+          <GoogleAnalytics />
           <ImprovedAnalytics />
           <Router />
         </TooltipProvider>
