@@ -13,6 +13,8 @@ const AnalyticsTracker = () => {
           timestamp: new Date().toISOString()
         };
 
+        // TEMPORALMENTE DESHABILITADO - Solo Google Analytics
+        /*
         await fetch('/api/analytics/track', {
           method: 'POST',
           headers: {
@@ -20,6 +22,7 @@ const AnalyticsTracker = () => {
           },
           body: JSON.stringify(visitData)
         });
+        */
       } catch (error) {
         // Fail silently - no queremos que errores de tracking afecten la UX
         console.debug('Analytics tracking failed:', error);
@@ -54,7 +57,8 @@ const AnalyticsTracker = () => {
           isExit: true
         };
         
-        navigator.sendBeacon('/api/analytics/track', JSON.stringify(visitData));
+        // TEMPORALMENTE DESHABILITADO - Solo Google Analytics
+        // navigator.sendBeacon('/api/analytics/track', JSON.stringify(visitData));
       }
     };
 

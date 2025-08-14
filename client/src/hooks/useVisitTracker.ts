@@ -3,6 +3,8 @@ import { useEffect } from 'react';
 export const useVisitTracker = () => {
   useEffect(() => {
     // Track visit on page load
+    // TEMPORALMENTE DESHABILITADO - Solo Google Analytics
+    /*
     const trackVisit = async () => {
       try {
         const response = await fetch('/api/visits', {
@@ -26,5 +28,6 @@ export const useVisitTracker = () => {
     };
 
     trackVisit();
+    */
   }, []);
 };
