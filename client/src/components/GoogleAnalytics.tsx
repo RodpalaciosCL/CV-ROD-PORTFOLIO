@@ -10,6 +10,8 @@ declare global {
 
 const GoogleAnalytics = () => {
   useEffect(() => {
+    console.log('🔍 GoogleAnalytics component loaded - ID:', analyticsConfig.gaTrackingId);
+    
     // Only initialize if analytics is enabled and we have a valid tracking ID
     if (!analyticsConfig.enabled || analyticsConfig.gaTrackingId === 'G-XXXXXXXXXX') {
       console.log('Google Analytics disabled - no valid tracking ID provided');
