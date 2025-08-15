@@ -10,6 +10,7 @@ import ImprovedAnalytics from "@/components/ImprovedAnalytics";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import { useVisitTracker } from "@/hooks/useVisitTracker";
+import { useAnalyticsEvents } from "@/hooks/useAnalyticsEvents";
 
 function Router() {
   return (
@@ -24,6 +25,8 @@ function Router() {
 function App() {
   // Track visits automatically
   useVisitTracker();
+  // Track advanced analytics events
+  useAnalyticsEvents();
   
   return (
     <LanguageProvider>

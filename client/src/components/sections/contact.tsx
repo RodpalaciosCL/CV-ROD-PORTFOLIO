@@ -47,7 +47,12 @@ export default function Contact() {
       value: "rodrigo@airontechs.com",
       description: "",
       gradient: "from-blue-500 to-blue-700",
-      action: () => window.location.href = 'mailto:rodrigo@airontechs.com'
+      action: () => {
+        if ((window as any).trackContactClick) {
+          (window as any).trackContactClick('email');
+        }
+        window.location.href = 'mailto:rodrigo@airontechs.com';
+      }
     },
     {
       icon: Phone,
@@ -55,7 +60,12 @@ export default function Contact() {
       value: "+56971415496",
       description: "",
       gradient: "from-green-500 to-green-700",
-      action: () => window.open('https://wa.me/56971415496', '_blank')
+      action: () => {
+        if ((window as any).trackContactClick) {
+          (window as any).trackContactClick('whatsapp');
+        }
+        window.open('https://wa.me/56971415496', '_blank');
+      }
     },
     {
       icon: User,
@@ -63,7 +73,12 @@ export default function Contact() {
       value: "linkedin.com/in/rodpalacios",
       description: "",
       gradient: "from-purple-500 to-purple-700",
-      action: () => window.open('https://linkedin.com/in/rodpalacios', '_blank')
+      action: () => {
+        if ((window as any).trackContactClick) {
+          (window as any).trackContactClick('linkedin');
+        }
+        window.open('https://linkedin.com/in/rodpalacios', '_blank');
+      }
     }
   ];
 

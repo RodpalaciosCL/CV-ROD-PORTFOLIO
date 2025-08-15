@@ -53,6 +53,12 @@ export default function Navigation() {
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
     e.preventDefault();
+    
+    // Track menu click
+    if ((window as any).trackMenuClick) {
+      (window as any).trackMenuClick(targetId);
+    }
+    
     const element = document.getElementById(targetId);
     if (element) {
       element.scrollIntoView({ behavior: 'auto', block: 'start' });
