@@ -1,12 +1,16 @@
 import express, { type Request, Response, NextFunction } from "express";
 import { registerRoutes } from "./routes";
 import { setupVite, serveStatic, log } from "./vite";
+import { domainRedirects } from "./middleware/redirects";
 
 const app = express();
 // Configurar para obtener IP real del cliente
 app.set('trust proxy', true);
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+
+// Domain redirects middleware - MUST be first
+app.use(domainRedirects);
 
 // Simple visit tracking
 const logVisit = async (req: any) => {
