@@ -3,7 +3,7 @@ import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import { promises as fs } from "fs";
 import path from "path";
-import ollamaRoutes from "./routes/ollama.js";
+
 
 const analyticsFile = path.join(process.cwd(), 'visits.json');
 
@@ -168,9 +168,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
   
-  // Registrar rutas de Ollama
-  app.use('/api/ollama', ollamaRoutes);
-  console.log('✅ Ollama routes registered at /api/ollama');
+
 
   const httpServer = createServer(app);
 

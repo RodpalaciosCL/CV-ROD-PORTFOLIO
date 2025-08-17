@@ -6,7 +6,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/not-found";
 import Home from "@/pages/home";
 import Analytics from "@/pages/Analytics";
-import OllamaPage from "@/pages/ollama";
+
 import ImprovedAnalytics from "@/components/ImprovedAnalytics";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 import { LanguageProvider } from "@/contexts/LanguageContext";
@@ -18,7 +18,7 @@ function Router() {
     <Switch>
       <Route path="/" component={Home} />
       <Route path="/analytics" component={Analytics} />
-      <Route path="/ollama" component={OllamaPage} />
+
       <Route component={NotFound} />
     </Switch>
   );
