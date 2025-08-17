@@ -4,7 +4,7 @@ export function domainRedirects(req: Request, res: Response, next: NextFunction)
   const host = req.get('host');
   
   // Check if the request is coming from one of the domains we want to redirect
-  if (host === 'metso.mineria.digital' || host === 'ey.mineria.digital') {
+  if (host === 'metso.mineria.digital' || host === 'ey.mineria.digital' || host === 'bhp.mineria.digital') {
     // Get the current path and query string
     const path = req.path;
     const query = req.url.includes('?') ? req.url.substring(req.url.indexOf('?')) : '';
