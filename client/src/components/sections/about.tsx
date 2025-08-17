@@ -223,7 +223,7 @@ export default function About() {
               </motion.div>
 
               <motion.h1 
-                className="text-xl lg:text-2xl font-black text-ey-white mb-6 leading-tight"
+                className="text-lg sm:text-xl lg:text-2xl font-black text-ey-white mb-6 leading-tight"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
@@ -239,7 +239,7 @@ export default function About() {
                 </div>
               </motion.h1>
               <motion.p 
-                className="text-lg text-ey-white/80 mb-8 leading-relaxed"
+                className="text-base sm:text-lg text-ey-white/80 mb-8 leading-relaxed"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
@@ -251,7 +251,7 @@ export default function About() {
 
             {/* Stats Row - Inspired by Maruko Labs */}
             <motion.div 
-              className="grid grid-cols-3 gap-6"
+              className="grid grid-cols-3 gap-3 sm:gap-6"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.7 }}
@@ -289,7 +289,7 @@ export default function About() {
             <div className="absolute inset-0 bg-gradient-to-br from-ey-yellow/5 via-transparent to-ey-yellow/5 rounded-3xl blur-3xl"></div>
             
             {/* Main Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 relative z-10">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 relative z-10">
               {coreValues.map((value, index) => (
                 <motion.div
                   key={index}

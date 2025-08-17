@@ -3,6 +3,7 @@ import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import { promises as fs } from "fs";
 import path from "path";
+import { getAnalyticsData, getRealTimeData, getDetailedAnalyticsData, getLocationData } from "./analytics-client.js";
 
 
 const analyticsFile = path.join(process.cwd(), 'visits.json');
@@ -71,6 +72,84 @@ export async function registerRoutes(app: Express): Promise<Server> {
   });
   
   console.log('✅ Simple /api/visits endpoint registered');
+  
+  // Google Analytics endpoints
+  app.get('/api/analytics/ga', async (req, res) => {
+    try {
+      const days = parseInt(req.query.days as string) || 30;
+      const data = await getAnalyticsData(days);
+      res.json({
+        success: true,
+        data,
+        timestamp: new Date().toISOString()
+      });
+    } catch (error) {
+      console.error('Error fetching GA data:', error);
+      res.status(500).json({ 
+        success: false, 
+        error: 'Failed to fetch analytics data',
+        details: error instanceof Error ? error.message : 'Unknown error'
+      });
+    }
+  });
+  
+  app.get('/api/analytics/realtime', async (req, res) => {
+    try {
+      const data = await getRealTimeData();
+      res.json({
+        success: true,
+        data,
+        timestamp: new Date().toISOString()
+      });
+    } catch (error) {
+      console.error('Error fetching real-time data:', error);
+      res.status(500).json({ 
+        success: false, 
+        error: 'Failed to fetch real-time data',
+        details: error instanceof Error ? error.message : 'Unknown error'
+      });
+    }
+  });
+  
+  app.get('/api/analytics/locations', async (req, res) => {
+    try {
+      const days = parseInt(req.query.days as string) || 30;
+      const data = await getLocationData(days);
+      res.json({
+        success: true,
+        data,
+        timestamp: new Date().toISOString()
+      });
+    } catch (error) {
+      console.error('Error fetching location data:', error);
+      res.status(500).json({ 
+        success: false, 
+        error: 'Failed to fetch location data',
+        details: error instanceof Error ? error.message : 'Unknown error'
+      });
+    }
+  });
+  
+  console.log('✅ Google Analytics endpoints registered');
+  
+  app.get('/api/analytics/detailed', async (req, res) => {
+    try {
+      const days = parseInt(req.query.days as string) || 30;
+      const data = await getDetailedAnalyticsData(days);
+      res.json({
+        success: true,
+        data,
+        timestamp: new Date().toISOString()
+      });
+    } catch (error) {
+      console.error('Error fetching detailed GA data:', error);
+      res.status(500).json({ 
+        success: false, 
+        error: 'Failed to fetch detailed analytics data',
+        details: error instanceof Error ? error.message : 'Unknown error'
+      });
+    }
+  });
   
   // Track visits
   app.post('/api/analytics/track', async (req, res) => {

@@ -2,6 +2,7 @@ import express, { type Request, type Response } from 'express';
 import { promises as fs } from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { BetaAnalyticsDataClient } from '@google-analytics/data';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -291,5 +292,134 @@ router.delete('/cleanup', async (req, res) => {
     res.status(500).json({ error: 'Failed to cleanup data' });
   }
 });
+
+const CREDENTIALS_PATH = path.join(process.cwd(), 'server', 'analytics-credentials.json');
+const PROPERTY_ID = '501346434';
+
+// Inicializar cliente de Analytics
+const analyticsDataClient = new BetaAnalyticsDataClient({
+  keyFilename: CREDENTIALS_PATH,
+});
+
+export interface AnalyticsData {
+  totalUsers: number;
+  totalSessions: number;
+  totalPageViews: number;
+  averageSessionDuration: number;
+  topPages: Array<{ page: string; views: number }>;
+  topSources: Array<{ source: string; sessions: number }>;
+  deviceCategories: Array<{ device: string; users: number }>;
+  recentVisits: Array<{ date: string; users: number }>;
+}
+
+export async function getAnalyticsData(days: number = 30): Promise<AnalyticsData> {
+  try {
+    const [response] = await analyticsDataClient.runReport({
+      property: `properties/${PROPERTY_ID}`,
+      dateRanges: [
+        {
+          startDate: `${days}daysAgo`,
+          endDate: 'today',
+        },
+      ],
+      metrics: [
+        { name: 'totalUsers' },
+        { name: 'sessions' },
+        { name: 'screenPageViews' },
+        { name: 'averageSessionDuration' },
+      ],
+      dimensions: [
+        { name: 'date' },
+        { name: 'pagePath' },
+        { name: 'sessionSource' },
+        { name: 'deviceCategory' },
+      ],
+      limit: 1000,
+    });
+
+    // Procesar datos
+    const totalUsers = parseInt(response.rows?.[0]?.metricValues?.[0]?.value || '0');
+    const totalSessions = parseInt(response.rows?.[0]?.metricValues?.[1]?.value || '0');
+    const totalPageViews = parseInt(response.rows?.[0]?.metricValues?.[2]?.value || '0');
+    const averageSessionDuration = parseFloat(response.rows?.[0]?.metricValues?.[3]?.value || '0');
+
+    // Procesar páginas más vistas
+    const pageViews = new Map<string, number>();
+    const sources = new Map<string, number>();
+    const devices = new Map<string, number>();
+    const dailyVisits = new Map<string, number>();
+
+    response.rows?.forEach((row) => {
+      const page = row.dimensionValues?.[1]?.value || '';
+      const source = row.dimensionValues?.[2]?.value || '';
+      const device = row.dimensionValues?.[3]?.value || '';
+      const date = row.dimensionValues?.[0]?.value || '';
+      const views = parseInt(row.metricValues?.[2]?.value || '0');
+      const users = parseInt(row.metricValues?.[0]?.value || '0');
+
+      if (page) {
+        pageViews.set(page, (pageViews.get(page) || 0) + views);
+      }
+      if (source) {
+        sources.set(source, (sources.get(source) || 0) + users);
+      }
+      if (device) {
+        devices.set(device, (devices.get(device) || 0) + users);
+      }
+      if (date) {
+        dailyVisits.set(date, (dailyVisits.get(date) || 0) + users);
+      }
+    });
+
+    // Convertir a arrays ordenados
+    const topPages = Array.from(pageViews.entries())
+      .map(([page, views]) => ({ page, views }))
+      .sort((a, b) => b.views - a.views)
+      .slice(0, 10);
+
+    const topSources = Array.from(sources.entries())
+      .map(([source, sessions]) => ({ source, sessions }))
+      .sort((a, b) => b.sessions - a.sessions)
+      .slice(0, 10);
+
+    const deviceCategories = Array.from(devices.entries())
+      .map(([device, users]) => ({ device, users }))
+      .sort((a, b) => b.users - a.users);
+
+    const recentVisits = Array.from(dailyVisits.entries())
+      .map(([date, users]) => ({ date, users }))
+      .sort((a, b) => a.date.localeCompare(b.date))
+      .slice(-7); // Últimos 7 días
+
+    return {
+      totalUsers,
+      totalSessions,
+      totalPageViews,
+      averageSessionDuration,
+      topPages,
+      topSources,
+      deviceCategories,
+      recentVisits,
+    };
+  } catch (error) {
+    console.error('Error fetching analytics data:', error);
+    throw error;
+  }
+}
+
+export async function getRealTimeData(): Promise<{ activeUsers: number }> {
+  try {
+    const [response] = await analyticsDataClient.runRealtimeReport({
+      property: `properties/${PROPERTY_ID}`,
+      metrics: [{ name: 'activeUsers' }],
+    });
+
+    const activeUsers = parseInt(response.rows?.[0]?.metricValues?.[0]?.value || '0');
+    return { activeUsers };
+  } catch (error) {
+    console.error('Error fetching real-time data:', error);
+    return { activeUsers: 0 };
+  }
+}
 
 export default router;
