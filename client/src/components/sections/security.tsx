@@ -148,17 +148,55 @@ export default function Security() {
 
           {/* Bottom CTA Card*/}
           <motion.div 
-            className="relative bg-gradient-to-br from-ey-dark via-ey-medium/30 to-ey-dark rounded-3xl p-8 border-2 border-ey-yellow/40 shadow-2xl flex items-center justify-center"
+            className="relative bg-gradient-to-br from-ey-dark via-ey-medium/30 to-ey-dark rounded-3xl p-8 border-2 border-ey-yellow/40 shadow-2xl"
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
             viewport={{ once: true }}
           >
              <div className="absolute inset-0 bg-ey-yellow/10 rounded-3xl blur-2xl animate-pulse"></div>
-            <div className="text-center relative">
-              <Shield className="w-16 h-16 text-ey-yellow mx-auto mb-6" />
-              <p className="text-3xl text-ey-yellow font-black mb-2">Seguridad Inteligente</p>
-              <p className="text-lg text-ey-white/80 font-medium">El futuro de la prevención minera</p>
+            <div className="relative">
+              {/* Header */}
+              <div className="flex items-center space-x-4 mb-6">
+                <div className="w-16 h-16 bg-gradient-to-br from-red-500 to-red-700 rounded-xl flex items-center justify-center shadow-lg text-white">
+                  <Shield className="w-8 h-8" />
+                </div>
+                <div>
+                  <h3 className="text-2xl font-black text-ey-white">{t('security.ot.title')}</h3>
+                  <p className="text-ey-yellow/80 font-medium">{t('security.ot.subtitle')}</p>
+                </div>
+              </div>
+
+              {/* Image */}
+              <div className="mb-6 aspect-video rounded-xl overflow-hidden bg-ey-medium border border-ey-yellow/20">
+                <img
+                  src="https://metalbit.io/_next/static/media/signalshield_prototype_screenshot.7422500f.png"
+                  alt="SignalShield Prototype - Seguridad OT"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+
+              {/* Bullets */}
+              <div className="space-y-3">
+                {[
+                  t('security.ot.bullet1'),
+                  t('security.ot.bullet2'), 
+                  t('security.ot.bullet3'),
+                  t('security.ot.bullet4')
+                ].map((bullet, bulletIndex) => (
+                  <motion.div
+                    key={bulletIndex}
+                    className="flex items-start space-x-3"
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.6, delay: 0.1 * bulletIndex }}
+                    viewport={{ once: true }}
+                  >
+                    <div className="w-2 h-2 bg-ey-yellow rounded-full mt-2 flex-shrink-0"></div>
+                    <p className="text-ey-white/90 font-medium leading-relaxed">{bullet}</p>
+                  </motion.div>
+                ))}
+              </div>
             </div>
           </motion.div>
         </div>

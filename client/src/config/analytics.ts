@@ -1,5 +1,5 @@
 // Google Analytics Configuration
-export const GA_TRACKING_ID = process.env.VITE_GA_TRACKING_ID || 'G-NR50HSBV5V';
+export const GA_TRACKING_ID = import.meta.env.VITE_GA_TRACKING_ID || 'G-NR50HSBV5V';
 
 // Analytics configuration
 export const analyticsConfig = {

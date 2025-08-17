@@ -1,0 +1,14 @@
+{
+  "ai.provider": "ollama",
+  "ai.endpoint": "http://localhost:11434/api/generate",
+  "ai.model": "dolphin-mixtral:latest",
+  "ai.temperature": 0.7,
+  "ai.maxTokens": 1000,
+  "ai.stream": true,
+  "ai.offline": true,
+  "ai.localModels": {
+    "general": "dolphin-mixtral:latest",
+    "coding": "deepseek-coder:6.7b-instruct",
+    "fast": "zephyr:latest"
+  }
+}

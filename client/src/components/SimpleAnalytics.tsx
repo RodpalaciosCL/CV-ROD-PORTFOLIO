@@ -58,8 +58,8 @@ const SimpleAnalytics = () => {
         localStorage.setItem('analytics-visits', JSON.stringify(existingVisits));
         
         // Enviar a webhook externo si existe
-        if (process.env.REACT_APP_ANALYTICS_WEBHOOK) {
-          fetch(process.env.REACT_APP_ANALYTICS_WEBHOOK, {
+        if (import.meta.env.VITE_ANALYTICS_WEBHOOK) {
+          fetch(import.meta.env.VITE_ANALYTICS_WEBHOOK, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(visitData)

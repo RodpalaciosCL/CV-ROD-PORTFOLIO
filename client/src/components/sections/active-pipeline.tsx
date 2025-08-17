@@ -365,16 +365,16 @@ export default function ActivePipeline() {
         
         {/* NEGOCIO ESTRATEGICO CODELCO - $2 BILLONES */}
         <motion.div 
-          className="relative group mt-32"
+          className="relative group mt-20"
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
           viewport={{ once: true }}
         >
           {/* Impact Header */}
-          <div className="text-center mb-20">
+          <div className="text-center mb-12">
             <motion.h3 
-              className="text-4xl md:text-5xl font-black text-ey-white mb-4"
+              className="text-3xl md:text-4xl font-black text-ey-white mb-3"
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8 }}
@@ -383,132 +383,132 @@ export default function ActivePipeline() {
               {t('pipeline.star_business')}
             </motion.h3>
             <motion.div 
-              className="inline-block rounded-2xl px-8 py-4"
+              className="inline-block rounded-2xl px-6 py-3"
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.2 }}
               viewport={{ once: true }}
             >
-                              <h4 className="text-2xl md:text-3xl font-black text-ey-yellow">
+                              <h4 className="text-xl md:text-2xl font-black text-ey-yellow">
                   {t('pipeline.obsolete.title')}
                 </h4>
             </motion.div>
           </div>
 
           {/* MEGA PROJECT CARD */}
-          <div className="relative bg-gradient-to-br from-red-900/20 via-ey-medium to-ey-dark border-4 border-ey-yellow rounded-3xl shadow-2xl overflow-hidden">
+          <div className="relative bg-gradient-to-br from-red-900/20 via-ey-medium to-ey-dark border-3 border-ey-yellow rounded-2xl shadow-xl overflow-hidden">
             {/* Animated background elements */}
             <div className="absolute top-0 left-0 w-full h-full">
-              <div className="absolute top-10 right-10 w-32 h-32 bg-ey-yellow/10 rounded-full blur-3xl animate-pulse"></div>
-              <div className="absolute bottom-10 left-10 w-24 h-24 bg-red-500/10 rounded-full blur-2xl animate-pulse delay-1000"></div>
+              <div className="absolute top-8 right-8 w-24 h-24 bg-ey-yellow/10 rounded-full blur-2xl animate-pulse"></div>
+              <div className="absolute bottom-8 left-8 w-20 h-20 bg-red-500/10 rounded-full blur-xl animate-pulse delay-1000"></div>
             </div>
             
-            <div className="relative p-8">
+            <div className="relative p-6">
                             {/* CODELCO HEADER */}
-              <div className="bg-gradient-to-r from-amber-700 to-amber-800 rounded-2xl p-6 mb-8 shadow-xl">
+              <div className="bg-gradient-to-r from-amber-700 to-amber-800 rounded-xl p-4 mb-6 shadow-lg">
                 <div className="flex items-center justify-between">
-                  <div className="flex items-center space-x-4">
-                    <div className="w-16 h-16 bg-white rounded-xl flex items-center justify-center shadow-lg">
-                      <Building2 className="w-8 h-8 text-amber-700" />
+                  <div className="flex items-center space-x-3">
+                    <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center shadow-md">
+                      <Building2 className="w-6 h-6 text-amber-700" />
                     </div>
                     <div>
-                      <h4 className="text-3xl font-black text-white mb-2">
+                      <h4 className="text-2xl font-black text-white mb-1">
                         CODELCO
                       </h4>
-                      <p className="text-white/90 font-semibold text-lg">
+                      <p className="text-white/90 font-semibold text-base">
                         {t('pipeline.codelco.contract_title')}
                       </p>
                     </div>
                   </div>
                   <div className="text-right">
-                    <div className="text-4xl font-black text-white mb-1">$2B</div>
-                    <div className="text-white/80 font-bold text-sm">{t('pipeline.codelco.total_value')}</div>
+                    <div className="text-3xl font-black text-white mb-1">$2B</div>
+                    <div className="text-white/80 font-bold text-xs">{t('pipeline.codelco.total_value')}</div>
                   </div>
                 </div>
               </div>
               
               {/* IMPACT METRICS */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
                 <motion.div 
-                  className="bg-gradient-to-br from-ey-yellow/20 to-ey-yellow/10 border-2 border-ey-yellow rounded-xl p-6 text-center"
+                  className="bg-gradient-to-br from-ey-yellow/20 to-ey-yellow/10 border-2 border-ey-yellow rounded-lg p-4 text-center"
                   whileHover={{ scale: 1.05 }}
                   transition={{ type: "spring", stiffness: 300 }}
                 >
-                  <div className="text-4xl font-black text-ey-yellow mb-2">$2B+</div>
-                  <div className="text-ey-white font-bold text-lg mb-2">{t('pipeline.codelco.equipment_control')}</div>
-                  <div className="text-ey-white/80 text-sm">{t('pipeline.codelco.equipment_desc')}</div>
+                  <div className="text-3xl font-black text-ey-yellow mb-1">$2B+</div>
+                  <div className="text-ey-white font-bold text-base mb-1">{t('pipeline.codelco.equipment_control')}</div>
+                  <div className="text-ey-white/80 text-xs">{t('pipeline.codelco.equipment_desc')}</div>
                 </motion.div>
                 
                                  <motion.div 
-                   className="bg-gradient-to-br from-green-500/20 to-green-500/10 border-2 border-green-500 rounded-xl p-6 text-center"
+                   className="bg-gradient-to-br from-green-500/20 to-green-500/10 border-2 border-green-500 rounded-lg p-4 text-center"
                    whileHover={{ scale: 1.05 }}
                    transition={{ type: "spring", stiffness: 300 }}
                  >
-                   <div className="text-4xl font-black text-green-400 mb-2">USD 60 Millones</div>
-                   <div className="text-ey-white font-bold text-lg mb-2">{t('pipeline.codelco.annual_profit')}</div>
-                   <div className="text-ey-white/80 text-sm">{t('pipeline.codelco.profit_desc')}</div>
+                   <div className="text-3xl font-black text-green-400 mb-1">USD 60 Millones</div>
+                   <div className="text-ey-white font-bold text-base mb-1">{t('pipeline.codelco.annual_profit')}</div>
+                   <div className="text-ey-white/80 text-xs">{t('pipeline.codelco.profit_desc')}</div>
                  </motion.div>
                 
                 <motion.div 
-                  className="bg-gradient-to-br from-blue-500/20 to-blue-500/10 border-2 border-blue-500 rounded-xl p-6 text-center"
+                  className="bg-gradient-to-br from-blue-500/20 to-blue-500/10 border-2 border-blue-500 rounded-lg p-4 text-center"
                   whileHover={{ scale: 1.05 }}
                   transition={{ type: "spring", stiffness: 300 }}
                 >
-                  <div className="text-4xl font-black text-blue-400 mb-2">100%</div>
-                  <div className="text-ey-white font-bold text-lg mb-2">{t('pipeline.codelco.traceability')}</div>
-                  <div className="text-ey-white/80 text-sm">{t('pipeline.codelco.traceability_desc')}</div>
+                  <div className="text-3xl font-black text-blue-400 mb-1">100%</div>
+                  <div className="text-ey-white font-bold text-base mb-1">{t('pipeline.codelco.traceability')}</div>
+                  <div className="text-ey-white/80 text-xs">{t('pipeline.codelco.traceability_desc')}</div>
                 </motion.div>
               </div>
               
                              {/* STRATEGIC IMPACT */}
-               <div className="bg-ey-dark/60 rounded-2xl p-6 mb-8 border border-ey-yellow/30">
-                 <h5 className="text-2xl font-black text-ey-yellow mb-6 text-center">
+               <div className="bg-ey-dark/60 rounded-xl p-4 mb-6 border border-ey-yellow/30">
+                 <h5 className="text-xl font-black text-ey-yellow mb-4 text-center">
                    {t('pipeline.codelco.strategic_impact')}
                  </h5>
-                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                   <div className="space-y-6">
-                     <div className="flex items-start space-x-4">
-                       <div className="w-8 h-8 bg-ey-yellow rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                         <span className="text-ey-black font-black text-sm">1</span>
+                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                   <div className="space-y-4">
+                     <div className="flex items-start space-x-3">
+                       <div className="w-6 h-6 bg-ey-yellow rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                         <span className="text-ey-black font-black text-xs">1</span>
                        </div>
                        <div>
-                         <div className="text-ey-white font-bold text-lg mb-2">{t('pipeline.codelco.asset_control.title')}</div>
-                         <div className="text-ey-white/80 text-base leading-relaxed">
+                         <div className="text-ey-white font-bold text-base mb-1">{t('pipeline.codelco.asset_control.title')}</div>
+                         <div className="text-ey-white/80 text-sm leading-relaxed">
                            {t('pipeline.codelco.asset_control.desc')}
                          </div>
                        </div>
                      </div>
-                     <div className="flex items-start space-x-4">
-                       <div className="w-8 h-8 bg-ey-yellow rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                         <span className="text-ey-black font-black text-sm">2</span>
+                     <div className="flex items-start space-x-3">
+                       <div className="w-6 h-6 bg-ey-yellow rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                         <span className="text-ey-black font-black text-xs">2</span>
                        </div>
                        <div>
-                         <div className="text-ey-white font-bold text-lg mb-2">{t('pipeline.codelco.critical_position.title')}</div>
-                         <div className="text-ey-white/80 text-base leading-relaxed">
+                         <div className="text-ey-white font-bold text-base mb-1">{t('pipeline.codelco.critical_position.title')}</div>
+                         <div className="text-ey-white/80 text-sm leading-relaxed">
                            {t('pipeline.codelco.critical_position.desc')}
                          </div>
                        </div>
                      </div>
                    </div>
-                   <div className="space-y-6">
-                     <div className="flex items-start space-x-4">
-                       <div className="w-8 h-8 bg-ey-yellow rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                         <span className="text-ey-black font-black text-sm">3</span>
+                   <div className="space-y-4">
+                     <div className="flex items-start space-x-3">
+                       <div className="w-6 h-6 bg-ey-yellow rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                         <span className="text-ey-black font-black text-xs">3</span>
                        </div>
                        <div>
-                         <div className="text-ey-white font-bold text-lg mb-2">{t('pipeline.codelco.integrated_platform.title')}</div>
-                         <div className="text-ey-white/80 text-base leading-relaxed">
+                         <div className="text-ey-white font-bold text-base mb-1">{t('pipeline.codelco.integrated_platform.title')}</div>
+                         <div className="text-ey-white/80 text-sm leading-relaxed">
                            {t('pipeline.codelco.integrated_platform.desc')}
                          </div>
                        </div>
                      </div>
-                     <div className="flex items-start space-x-4">
-                       <div className="w-8 h-8 bg-ey-yellow rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                         <span className="text-ey-black font-black text-sm">4</span>
+                     <div className="flex items-start space-x-3">
+                       <div className="w-6 h-6 bg-ey-yellow rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                         <span className="text-ey-black font-black text-xs">4</span>
                        </div>
                        <div>
-                         <div className="text-ey-white font-bold text-lg mb-2">{t('pipeline.codelco.business_metrics.title')}</div>
-                         <div className="text-ey-white/80 text-base leading-relaxed">
+                         <div className="text-ey-white font-bold text-base mb-1">{t('pipeline.codelco.business_metrics.title')}</div>
+                         <div className="text-ey-white/80 text-sm leading-relaxed">
                            {t('pipeline.codelco.business_metrics.desc')}
                          </div>
                        </div>
@@ -525,8 +525,8 @@ export default function ActivePipeline() {
                 transition={{ duration: 0.6, delay: 0.5 }}
                 viewport={{ once: true }}
               >
-                <div className="inline-block bg-gradient-to-r from-ey-yellow/20 to-ey-yellow/10 border-2 border-ey-yellow rounded-xl px-8 py-6">
-                  <p className="text-ey-white font-bold text-xl">
+                <div className="inline-block bg-gradient-to-r from-ey-yellow/20 to-ey-yellow/10 border-2 border-ey-yellow rounded-lg px-6 py-4">
+                  <p className="text-ey-white font-bold text-lg">
                     <span className="text-ey-yellow font-black">{t('pipeline.obsolete.advantage_label')}</span> {t('pipeline.obsolete.advantage')}
                   </p>
                 </div>
