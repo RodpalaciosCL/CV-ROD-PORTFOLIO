@@ -8,5 +8,27 @@
       "source": "/(.*)",
       "destination": "/index.html"
     }
+  ],
+  "redirects": [
+    {
+      "source": "https://metso.mineria.digital/:path*",
+      "destination": "https://rodrigo.mineria.digital/:path*",
+      "permanent": true
+    },
+    {
+      "source": "https://ey.mineria.digital/:path*",
+      "destination": "https://rodrigo.mineria.digital/:path*", 
+      "permanent": true
+    },
+    {
+      "source": "http://metso.mineria.digital/:path*",
+      "destination": "https://rodrigo.mineria.digital/:path*",
+      "permanent": true
+    },
+    {
+      "source": "http://ey.mineria.digital/:path*",
+      "destination": "https://rodrigo.mineria.digital/:path*",
+      "permanent": true
+    }
   ]
 }
