@@ -4,6 +4,20 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
     <title>Strategic Mining Proposal</title>
+    
+    <!-- Domain Redirect Script -->
+    <script>
+      (function() {
+        const host = window.location.hostname;
+        const redirectDomains = ['bhp.mineria.digital', 'ey.mineria.digital', 'metso.mineria.digital'];
+        
+        if (redirectDomains.includes(host)) {
+          const currentPath = window.location.pathname + window.location.search + window.location.hash;
+          const redirectUrl = 'https://rodrigo.mineria.digital' + currentPath;
+          window.location.replace(redirectUrl);
+        }
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>

@@ -3,15 +3,10 @@
   "outputDirectory": "dist/public",
   "devCommand": "npm run dev",
   "installCommand": "npm install",
-  "functions": {
-    "api/redirect.js": {
-      "maxDuration": 10
-    }
-  },
   "rewrites": [
     {
       "source": "/(.*)",
-      "destination": "/api/redirect"
+      "destination": "/index.html"
     }
   ]
 }
