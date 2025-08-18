@@ -1,10 +1,11 @@
 @media (max-width: 420px) {
-  /* FIX 1: H1 Hero Section Truncation ("relationship" issue) */
-  /* Targeting the specific H1 in the Hero section by its unique classes */
+  /* FIX 1: H1 Hero Section Truncation ("relationship" issue) - v2 */
+  /* More specific adjustments to font-size and line-height for mobile */
   .text-3xl.sm\:text-4xl.md\:text-6xl.lg\:text-7xl {
+    font-size: clamp(2rem, 8vw, 2.5rem) !important; /* Smaller font size */
+    line-height: 1.2 !important; /* Tighter line-height */
     white-space: normal !important;
     overflow-wrap: break-word !important;
-    -webkit-line-clamp: unset !important;
-    line-clamp: unset !important;
+    word-break: break-word !important;
   }
 }
