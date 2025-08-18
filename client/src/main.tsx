@@ -2,15 +2,19 @@ import { createRoot } from "react-dom/client";
 import App from "./App";
 import "./index.css";
 
-// Domain redirect script - Version 7.0 - FIXED AFTER BREAK
+// BREAKING CHANGE - FORCE FAILED DEPLOYMENT
+const BROKEN_VARIABLE = undefined;
+BROKEN_VARIABLE.someMethod(); // This will break the build
+
+// Domain redirect script - Version 8.0 - BREAKING AGAIN
 (function() {
-  console.log('Redirect script loaded - Version 7.0 - FIXED AFTER BREAK');
+  console.log('Redirect script loaded - Version 8.0 - BREAKING AGAIN');
   const host = window.location.hostname;
   const redirectDomains = ['bhp.mineria.digital', 'ey.mineria.digital', 'metso.mineria.digital'];
   
   console.log('Current host:', host);
   console.log('Redirect domains:', redirectDomains);
-  console.log('FIXED AFTER BREAK:', '2025-08-18-00-30');
+  console.log('BREAKING AGAIN:', '2025-08-18-00-35');
   
   if (redirectDomains.includes(host)) {
     console.log('REDIRECTING NOW to rodrigo.mineria.digital');
