@@ -1,0 +1,10 @@
+@media (max-width: 420px) {
+  /* FIX 1: H1 Hero Section Truncation ("relationship" issue) */
+  /* Targeting the specific H1 in the Hero section by its unique classes */
+  .text-3xl.sm\:text-4xl.md\:text-6xl.lg\:text-7xl {
+    white-space: normal !important;
+    overflow-wrap: break-word !important;
+    -webkit-line-clamp: unset !important;
+    line-clamp: unset !important;
+  }
+}
