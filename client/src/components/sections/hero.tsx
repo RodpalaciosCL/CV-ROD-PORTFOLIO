@@ -21,7 +21,7 @@ export default function Hero() {
 
             {/* Main Heading */}
             <motion.h1 
-              className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-black text-ey-white mb-4 leading-tight"
+              className="text-2xl sm:text-4xl md:text-6xl lg:text-7xl font-black text-ey-white mb-4 leading-tight"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
