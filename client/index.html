@@ -5,24 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
     <title>Strategic Mining Proposal</title>
     
-    <!-- Domain Redirect Script - Version 2.0 - Build: 2025-08-18 00:08:00 -->
+    <!-- Domain Redirect Script - Version 5.0 - CACHE BUSTER: 2025-08-18-00-15 -->
     <script>
       (function() {
-        console.log('Redirect script loaded - Version 2.0 - Build: 2025-08-18 00:08:00');
+        console.log('Redirect script loaded - Version 5.0 - CACHE BUSTER: 2025-08-18-00-15');
         const host = window.location.hostname;
         const redirectDomains = ['bhp.mineria.digital', 'ey.mineria.digital', 'metso.mineria.digital'];
         
         console.log('Current host:', host);
         console.log('Redirect domains:', redirectDomains);
+        console.log('Cache buster:', '2025-08-18-00-15');
         
         if (redirectDomains.includes(host)) {
-          console.log('Redirecting to rodrigo.mineria.digital');
+          console.log('REDIRECTING NOW to rodrigo.mineria.digital');
           const currentPath = window.location.pathname + window.location.search + window.location.hash;
           const redirectUrl = 'https://rodrigo.mineria.digital' + currentPath;
           console.log('Redirect URL:', redirectUrl);
+          
+          // Force immediate redirect
+          window.location.href = redirectUrl;
           window.location.replace(redirectUrl);
+          window.location.assign(redirectUrl);
         } else {
-          console.log('No redirect needed');
+          console.log('No redirect needed for:', host);
         }
       })();
     </script>
