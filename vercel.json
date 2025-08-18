@@ -3,45 +3,15 @@
   "outputDirectory": "dist/public",
   "devCommand": "npm run dev",
   "installCommand": "npm install",
+  "functions": {
+    "api/redirect.js": {
+      "maxDuration": 10
+    }
+  },
   "rewrites": [
     {
       "source": "/(.*)",
-      "destination": "/index.html"
-    }
-  ],
-  "redirects": [
-    {
-      "source": "/:path*",
-      "has": [
-        {
-          "type": "host",
-          "value": "metso.mineria.digital"
-        }
-      ],
-      "destination": "https://rodrigo.mineria.digital/:path*",
-      "permanent": true
-    },
-    {
-      "source": "/:path*",
-      "has": [
-        {
-          "type": "host",
-          "value": "ey.mineria.digital"
-        }
-      ],
-      "destination": "https://rodrigo.mineria.digital/:path*",
-      "permanent": true
-    },
-    {
-      "source": "/:path*",
-      "has": [
-        {
-          "type": "host",
-          "value": "bhp.mineria.digital"
-        }
-      ],
-      "destination": "https://rodrigo.mineria.digital/:path*",
-      "permanent": true
+      "destination": "/api/redirect"
     }
   ]
 }
