@@ -521,7 +521,7 @@ export default function About() {
           </div>
         </motion.div>
 
-        {/* Mining Process Timeline - Professional Roadmap */}
+        {/* Mining Process Pipeline - Connected Flow */}
         <motion.div 
           className="mb-16"
           initial={{ opacity: 0, y: 20 }}
@@ -530,7 +530,7 @@ export default function About() {
           viewport={{ once: true }}
         >
           <div className="max-w-7xl mx-auto">
-            {/* Professional Header */}
+            {/* Header with Flow Concept */}
             <div className="text-center mb-12">
               <motion.h2 
                 className="text-3xl md:text-4xl font-bold text-ey-white mb-4"
@@ -548,59 +548,87 @@ export default function About() {
                 transition={{ duration: 0.5, delay: 0.3 }}
                 viewport={{ once: true }}
               >
-                Tecnología inteligente aplicada transversalmente en cada etapa del proceso
+                Flujo continuo de tecnología inteligente a través de todo el proceso
               </motion.p>
             </div>
 
-            {/* Professional Roadmap */}
+            {/* Connected Pipeline Flow */}
             <div className="relative">
-              {/* Main Timeline Line */}
-              <div className="absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-ey-yellow/20 via-ey-yellow/40 to-ey-yellow/20 transform -translate-y-1/2 rounded-full"></div>
+              {/* Animated Flow Line */}
+              <div className="absolute top-1/2 left-0 right-0 h-2 bg-gradient-to-r from-ey-yellow/10 via-ey-yellow/30 to-ey-yellow/10 transform -translate-y-1/2 rounded-full overflow-hidden">
+                <motion.div 
+                  className="h-full bg-gradient-to-r from-transparent via-ey-yellow/50 to-transparent"
+                  animate={{ x: ["-100%", "100%"] }}
+                  transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
+                />
+              </div>
               
-              {/* Timeline Items */}
-              <div className="grid grid-cols-9 gap-4 relative">
+              {/* Pipeline Stages */}
+              <div className="flex justify-between items-center relative px-4">
                 {miningProcess.map((step, index) => (
                   <motion.div
                     key={step.id}
-                    className="flex flex-col items-center group"
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.4, delay: index * 0.1 }}
+                    className="flex flex-col items-center group relative"
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
                     viewport={{ once: true }}
                   >
-                    {/* Step Number with Glow */}
-                    <div className="relative mb-4">
-                      <div className="w-12 h-12 bg-ey-yellow rounded-full flex items-center justify-center shadow-xl z-10 relative">
-                        <span className="text-ey-black font-bold text-sm">{index + 1}</span>
+                    {/* Connection Lines */}
+                    {index < miningProcess.length - 1 && (
+                      <div className="absolute top-6 left-1/2 w-full h-0.5 bg-ey-yellow/20 transform translate-x-1/2"></div>
+                    )}
+                    
+                    {/* Stage Node */}
+                    <div className="relative mb-6">
+                      {/* Outer Ring */}
+                      <div className="w-16 h-16 bg-ey-dark border-2 border-ey-yellow/30 rounded-full flex items-center justify-center relative group-hover:border-ey-yellow/60 transition-all duration-300">
+                        <span className="text-ey-yellow font-bold text-lg">{index + 1}</span>
                       </div>
-                      <div className="absolute inset-0 w-12 h-12 bg-ey-yellow/30 rounded-full blur-md animate-pulse"></div>
+                      {/* Inner Glow */}
+                      <div className="absolute inset-0 w-16 h-16 bg-ey-yellow/20 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                      {/* Pulse Effect */}
+                      <motion.div 
+                        className="absolute inset-0 w-16 h-16 border-2 border-ey-yellow/40 rounded-full"
+                        animate={{ scale: [1, 1.2, 1], opacity: [0.5, 0, 0.5] }}
+                        transition={{ duration: 2, repeat: Infinity, delay: index * 0.2 }}
+                      />
                     </div>
                     
-                    {/* Title with Better Typography */}
-                    <div className="text-center px-2">
-                      <h3 className="text-sm font-semibold text-ey-white group-hover:text-ey-yellow transition-colors duration-300 leading-tight mb-2">
+                    {/* Stage Title */}
+                    <div className="text-center max-w-28">
+                      <h3 className="text-sm font-medium text-ey-white group-hover:text-ey-yellow transition-colors duration-300 leading-tight">
                         {step.title}
                       </h3>
-                      {/* Subtle Progress Indicator */}
-                      <div className="w-8 h-0.5 bg-ey-yellow/30 rounded-full mx-auto group-hover:bg-ey-yellow/60 transition-colors duration-300"></div>
                     </div>
+                    
+                    {/* Flow Indicator */}
+                    <motion.div 
+                      className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-1 h-4 bg-ey-yellow/30 rounded-full"
+                      animate={{ height: [16, 24, 16] }}
+                      transition={{ duration: 1.5, repeat: Infinity, delay: index * 0.3 }}
+                    />
                   </motion.div>
                 ))}
               </div>
             </div>
 
-            {/* Bottom Summary */}
+            {/* Flow Summary */}
             <motion.div 
-              className="mt-12 text-center"
+              className="mt-16 text-center"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.8 }}
               viewport={{ once: true }}
             >
-              <div className="inline-flex items-center bg-ey-dark/40 backdrop-blur-sm rounded-full px-6 py-3 border border-ey-yellow/20">
-                <div className="w-2 h-2 bg-ey-yellow rounded-full mr-3 animate-pulse"></div>
-                <span className="text-sm text-ey-white/80 font-medium">
-                  Proceso integral optimizado con tecnología de vanguardia
+              <div className="inline-flex items-center bg-gradient-to-r from-ey-dark/60 to-ey-medium/20 backdrop-blur-sm rounded-2xl px-8 py-4 border border-ey-yellow/20">
+                <motion.div 
+                  className="w-3 h-3 bg-ey-yellow rounded-full mr-4"
+                  animate={{ scale: [1, 1.2, 1] }}
+                  transition={{ duration: 2, repeat: Infinity }}
+                />
+                <span className="text-base text-ey-white/90 font-medium">
+                  Flujo continuo de tecnología inteligente optimizando cada etapa
                 </span>
               </div>
             </motion.div>
