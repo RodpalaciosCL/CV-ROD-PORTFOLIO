@@ -5,13 +5,12 @@ import {
   Eye, Heart, Brain, Globe, Clock, BarChart3, ChevronRight, 
   Play, Pause, ArrowUpRight, Minus, Zap, TrendingUp, Lightbulb, 
   Briefcase, Award, MapPin, Calendar, Building2, Cpu, Database,
-  Network, Lock, Settings, Wrench, Code, Terminal
+  Network, Lock, Settings, Wrench, Code, Terminal, RefreshCw
 } from 'lucide-react';
 import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function About() {
   const { t } = useLanguage();
-  const [activeSection, setActiveSection] = useState(0);
   
   const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -55,24 +54,34 @@ export default function About() {
     }
   ];
 
-  const approachSections = [
+  const strategicPillars = [
     {
-      id: 0,
-      title: t('about.tabs.focus.title'),
-      content: t('about.tabs.focus.content'),
-      icon: Target
+      id: 'visualization',
+      title: t('about.pillars.visualization.title'),
+      content: t('about.pillars.visualization.content'),
+      icon: Eye,
+      color: 'from-blue-500 to-blue-700'
     },
     {
-      id: 1,
-      title: t('about.tabs.approach.title'),
-      content: t('about.tabs.approach.content'),
-      icon: Rocket
+      id: 'design',
+      title: t('about.pillars.design.title'),
+      content: t('about.pillars.design.content'),
+      icon: Target,
+      color: 'from-green-500 to-green-700'
     },
     {
-      id: 2,
-      title: t('about.tabs.results.title'),
-      content: t('about.tabs.results.content'),
-      icon: Star
+      id: 'iteration',
+      title: t('about.pillars.iteration.title'),
+      content: t('about.pillars.iteration.content'),
+      icon: RefreshCw,
+      color: 'from-purple-500 to-purple-700'
+    },
+    {
+      id: 'deployment',
+      title: t('about.pillars.deployment.title'),
+      content: t('about.pillars.deployment.content'),
+      icon: Rocket,
+      color: 'from-orange-500 to-orange-700'
     }
   ];
 
@@ -384,50 +393,44 @@ export default function About() {
             </motion.p>
           </div>
 
-          {/* Interactive Tabs - Clean Design */}
-          <div className="max-w-4xl mx-auto">
-            {/* Tab Navigation */}
-            <div className="flex flex-wrap justify-center gap-4 mb-8">
-              {approachSections.map((section, index) => (
-                <motion.button
-                  key={section.id}
-                  onClick={() => setActiveSection(section.id)}
-                  className={`flex items-center space-x-3 px-6 py-4 rounded-xl font-bold transition-all duration-500 border-2 ${
-                    activeSection === section.id
-                      ? 'bg-ey-yellow text-ey-black border-ey-yellow shadow-xl scale-105'
-                      : 'bg-transparent text-ey-white/80 border-ey-light/20 hover:border-ey-yellow/50 hover:text-ey-white hover:bg-ey-yellow/5'
-                  }`}
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
+          {/* 4 Strategic Pillars - Power Design */}
+          <div className="max-w-7xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {strategicPillars.map((pillar, index) => (
+                <motion.div
+                  key={pillar.id}
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="group relative"
+                  whileHover={{ y: -8 }}
                 >
-                  <section.icon className="w-5 h-5" />
-                  <span className="text-base">{section.title}</span>
-                </motion.button>
+                  {/* Background glow */}
+                  <div className={`absolute inset-0 bg-gradient-to-r ${pillar.color} rounded-3xl blur-xl opacity-0 group-hover:opacity-20 transition-opacity duration-500`}></div>
+                  
+                  <div className="relative bg-ey-medium/20 backdrop-blur-xl rounded-3xl p-8 border border-ey-light/20 hover:border-ey-yellow/40 transition-all duration-300 h-full">
+                    {/* Header with icon */}
+                    <div className="flex items-center mb-6">
+                      <div className={`w-16 h-16 bg-gradient-to-br ${pillar.color} rounded-2xl flex items-center justify-center mr-4 shadow-lg`}>
+                        <pillar.icon className="w-8 h-8 text-white" />
+                      </div>
+                      <h3 className="text-2xl font-black text-ey-white group-hover:text-ey-yellow transition-colors">
+                        {pillar.title}
+                      </h3>
+                    </div>
+                    
+                    {/* Content */}
+                    <p className="text-ey-white/90 leading-relaxed text-lg">
+                      {pillar.content}
+                    </p>
+                    
+                    {/* Bottom accent */}
+                    <div className={`mt-6 w-16 h-1 bg-gradient-to-r ${pillar.color} rounded-full`}></div>
+                  </div>
+                </motion.div>
               ))}
             </div>
-
-            {/* Tab Content */}
-            <motion.div
-              key={activeSection}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="relative"
-            >
-              <div className="bg-ey-medium/20 rounded-2xl p-12 border border-ey-light/10 backdrop-blur-sm">
-                <div className="text-center">
-                  <div className="w-16 h-16 bg-ey-yellow rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-xl">
-                    {(() => {
-                      const IconComponent = approachSections[activeSection].icon;
-                      return <IconComponent className="w-8 h-8 text-ey-black" />;
-                    })()}
-                  </div>
-                  <p className="text-lg text-ey-white/90 leading-relaxed max-w-4xl mx-auto">
-                    {approachSections[activeSection].content}
-                  </p>
-                </div>
-              </div>
-            </motion.div>
           </div>
         </motion.div>
 
