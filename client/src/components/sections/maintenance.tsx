@@ -94,7 +94,7 @@ export default function Maintenance() {
                   <h3 className="text-lg font-bold text-ey-white group-hover:text-ey-yellow transition-colors">
                     {tech.title}
                   </h3>
-                  <p className="p className="text-xs text-gray-400">{tech.subtitle}</p>
+                  <p className="text-xs text-gray-400">{tech.subtitle}</p>
                 </div>
               </div>
 
