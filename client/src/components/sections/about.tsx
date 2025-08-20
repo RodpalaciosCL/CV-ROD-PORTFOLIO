@@ -547,92 +547,116 @@ export default function About() {
               </motion.div>
             </div>
 
-            {/* Framed Process Timeline with Spheres */}
+            {/* Circular Process Flow */}
             <div className="relative">
-              {/* Main Frame */}
-              <div className="border-2 border-ey-yellow/30 rounded-2xl p-8 bg-gradient-to-br from-ey-dark/50 to-ey-medium/20 backdrop-blur-sm">
-                {/* Frame Header */}
-                <div className="text-center mb-8">
-                  <div className="inline-flex items-center gap-3 px-6 py-2 bg-ey-yellow/10 rounded-full border border-ey-yellow/20">
-                    <div className="w-2 h-2 bg-ey-yellow rounded-full animate-pulse"></div>
-                    <span className="text-ey-yellow text-sm font-medium">Proceso Tecnológico</span>
-                    <div className="w-2 h-2 bg-ey-yellow rounded-full animate-pulse"></div>
+              {/* Central Hub */}
+              <div className="flex justify-center mb-12">
+                <motion.div 
+                  className="w-24 h-24 bg-gradient-to-br from-ey-yellow to-orange-500 rounded-full flex items-center justify-center shadow-2xl border-4 border-ey-yellow/30 relative"
+                  initial={{ scale: 0, rotate: -180 }}
+                  whileInView={{ scale: 1, rotate: 0 }}
+                  transition={{ duration: 1, type: "spring" }}
+                  viewport={{ once: true }}
+                  whileHover={{ 
+                    scale: 1.1,
+                    rotate: 360,
+                    transition: { duration: 0.8 }
+                  }}
+                >
+                  <div className="text-center">
+                    <div className="text-white font-bold text-lg">TECH</div>
+                    <div className="text-white/80 text-xs">FLOW</div>
                   </div>
-                </div>
-                
-                {/* Process Steps */}
-                <div className="flex justify-between items-start relative">
-                  {/* Connection Line */}
-                  <div className="absolute top-8 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-ey-yellow/40 to-transparent"></div>
-                  
-                  {miningProcess.map((step, index) => (
-                    <motion.div
-                      key={step.id}
-                      className="flex flex-col items-center relative z-10"
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.5, delay: index * 0.1 }}
-                      viewport={{ once: true }}
-                      whileHover={{ 
-                        scale: 1.05,
-                        transition: { duration: 0.2 }
-                      }}
-                    >
-                      {/* Number Sphere */}
-                      <div className="relative mb-4">
-                        {/* Outer Glow */}
-                        <div className="absolute inset-0 w-16 h-16 bg-ey-yellow/20 rounded-full blur-md animate-pulse"></div>
-                        
-                        {/* Main Sphere */}
+                  {/* Rotating Ring */}
+                  <motion.div 
+                    className="absolute inset-0 border-2 border-ey-yellow/40 rounded-full"
+                    animate={{ rotate: 360 }}
+                    transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
+                  />
+                </motion.div>
+              </div>
+              
+              {/* Process Steps in Circular Layout */}
+              <div className="grid grid-cols-3 gap-8 max-w-4xl mx-auto">
+                {miningProcess.map((step, index) => (
+                  <motion.div
+                    key={step.id}
+                    className="group relative"
+                    initial={{ opacity: 0, scale: 0.5, y: 50 }}
+                    whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: index * 0.1 }}
+                    viewport={{ once: true }}
+                    whileHover={{ 
+                      scale: 1.05,
+                      transition: { duration: 0.3 }
+                    }}
+                  >
+                    {/* Step Card */}
+                    <div className="bg-gradient-to-br from-ey-dark/80 to-ey-medium/20 rounded-xl p-4 border border-ey-yellow/20 hover:border-ey-yellow/40 transition-all duration-300 h-full">
+                      {/* Step Number Badge */}
+                      <div className="flex justify-center mb-3">
                         <motion.div 
-                          className="w-16 h-16 bg-gradient-to-br from-ey-yellow to-orange-500 rounded-full flex items-center justify-center shadow-xl border-2 border-ey-yellow/30 relative"
+                          className="w-10 h-10 bg-gradient-to-br from-ey-yellow to-orange-500 rounded-full flex items-center justify-center shadow-lg"
                           whileHover={{ 
-                            scale: 1.1,
-                            boxShadow: "0 0 30px rgba(255, 255, 0, 0.5)"
+                            scale: 1.2,
+                            rotate: 180,
+                            transition: { duration: 0.4 }
                           }}
                         >
-                          <span className="text-white font-bold text-lg drop-shadow-lg">{index + 1}</span>
+                          <span className="text-white font-bold text-sm">{index + 1}</span>
                         </motion.div>
-                        
-                        {/* Inner Highlight */}
-                        <div className="absolute top-2 left-2 w-4 h-4 bg-white/30 rounded-full blur-sm"></div>
                       </div>
                       
                       {/* Step Title */}
-                      <div className="text-center max-w-24">
-                        <motion.h3 
-                          className="text-xs font-semibold text-ey-white leading-tight px-2"
-                          whileHover={{ 
-                            color: "#fbbf24",
-                            textShadow: "0 0 8px rgba(251, 191, 36, 0.5)"
-                          }}
-                        >
-                          {step.title}
-                        </motion.h3>
-                      </div>
+                      <h3 className="text-sm font-semibold text-ey-white text-center mb-2 group-hover:text-ey-yellow transition-colors duration-300">
+                        {step.title}
+                      </h3>
                       
-                      {/* Connection Arrow */}
-                      {index < miningProcess.length - 1 && (
-                        <motion.div 
-                          className="absolute top-8 left-full w-full h-0.5 bg-gradient-to-r from-ey-yellow/60 to-transparent"
-                          initial={{ scaleX: 0 }}
-                          whileInView={{ scaleX: 1 }}
-                          transition={{ duration: 0.4, delay: index * 0.1 }}
-                          viewport={{ once: true }}
-                        />
-                      )}
-                    </motion.div>
-                  ))}
-                </div>
-                
-                {/* Frame Footer */}
-                <div className="text-center mt-8">
-                  <div className="inline-flex items-center gap-2 text-ey-white/60 text-xs">
-                    <div className="w-1 h-1 bg-ey-yellow/60 rounded-full"></div>
-                    <span>Flujo continuo de tecnología inteligente</span>
-                    <div className="w-1 h-1 bg-ey-yellow/60 rounded-full"></div>
-                  </div>
-                </div>
+                      {/* Step Content Preview */}
+                      <p className="text-xs text-ey-white/70 text-center leading-tight">
+                        {step.content.split('.')[0]}...
+                      </p>
+                    </div>
+                    
+                    {/* Connection Lines to Center */}
+                    <motion.div 
+                      className="absolute top-1/2 left-1/2 w-0.5 h-16 bg-gradient-to-b from-ey-yellow/40 to-transparent -translate-x-1/2 -translate-y-full pointer-events-none"
+                      initial={{ scaleY: 0 }}
+                      whileInView={{ scaleY: 1 }}
+                      transition={{ duration: 0.8, delay: index * 0.2 }}
+                      viewport={{ once: true }}
+                    />
+                    
+                    {/* Floating Particles */}
+                    <motion.div
+                      className="absolute -top-2 -right-2 w-2 h-2 bg-ey-yellow/60 rounded-full"
+                      animate={{ 
+                        y: [0, -8, 0],
+                        opacity: [0.6, 1, 0.6]
+                      }}
+                      transition={{ 
+                        duration: 2, 
+                        repeat: Infinity, 
+                        delay: index * 0.3 
+                      }}
+                    />
+                  </motion.div>
+                ))}
+              </div>
+              
+              {/* Bottom Summary */}
+              <div className="text-center mt-12">
+                <motion.div 
+                  className="inline-flex items-center gap-4 px-8 py-4 bg-gradient-to-r from-ey-yellow/10 to-orange-500/10 rounded-full border border-ey-yellow/20"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.5 }}
+                  viewport={{ once: true }}
+                >
+                  <div className="w-2 h-2 bg-ey-yellow rounded-full animate-pulse"></div>
+                  <span className="text-ey-white font-medium">Tecnología transversal en cada etapa</span>
+                  <div className="w-2 h-2 bg-ey-yellow rounded-full animate-pulse"></div>
+                </motion.div>
               </div>
             </div>
 
