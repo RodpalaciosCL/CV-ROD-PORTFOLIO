@@ -60,28 +60,28 @@ export default function About() {
       title: t('about.pillars.visualization.title'),
       content: t('about.pillars.visualization.content'),
       icon: Eye,
-      color: 'from-blue-500 to-blue-700'
+      color: 'from-gray-600 to-gray-800'
     },
     {
       id: 'design',
       title: t('about.pillars.design.title'),
       content: t('about.pillars.design.content'),
       icon: Target,
-      color: 'from-green-500 to-green-700'
+      color: 'from-gray-600 to-gray-800'
     },
     {
       id: 'iteration',
       title: t('about.pillars.iteration.title'),
       content: t('about.pillars.iteration.content'),
       icon: RefreshCw,
-      color: 'from-purple-500 to-purple-700'
+      color: 'from-gray-600 to-gray-800'
     },
     {
       id: 'deployment',
       title: t('about.pillars.deployment.title'),
       content: t('about.pillars.deployment.content'),
       icon: Rocket,
-      color: 'from-orange-500 to-orange-700'
+      color: 'from-gray-600 to-gray-800'
     }
   ];
 
@@ -393,103 +393,68 @@ export default function About() {
             </motion.p>
           </div>
 
-          {/* 4 Strategic Pillars - Power Design */}
-          <div className="max-w-7xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {strategicPillars.map((pillar, index) => (
-                <motion.div
-                  key={pillar.id}
-                  initial={{ opacity: 0, y: 50 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className="group relative"
-                  whileHover={{ y: -8 }}
-                >
-                  {/* Background glow */}
-                  <div className={`absolute inset-0 bg-gradient-to-r ${pillar.color} rounded-3xl blur-xl opacity-0 group-hover:opacity-20 transition-opacity duration-500`}></div>
-                  
-                  <div className="relative bg-ey-medium/20 backdrop-blur-xl rounded-3xl p-8 border border-ey-light/20 hover:border-ey-yellow/40 transition-all duration-300 h-full">
-                    {/* Header with icon */}
-                    <div className="flex items-center mb-6">
-                      <div className={`w-16 h-16 bg-gradient-to-br ${pillar.color} rounded-2xl flex items-center justify-center mr-4 shadow-lg`}>
-                        <pillar.icon className="w-8 h-8 text-white" />
+          {/* 4 Strategic Pillars - Dynamic Process Flow */}
+          <div className="max-w-6xl mx-auto">
+            <div className="relative">
+              {/* Connecting line */}
+              <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 via-green-500 via-purple-500 to-orange-500 transform -translate-y-1/2 rounded-full opacity-30"></div>
+              
+              <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 lg:gap-4">
+                {strategicPillars.map((pillar, index) => (
+                  <motion.div
+                    key={pillar.id}
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.6, delay: index * 0.2 }}
+                    viewport={{ once: true }}
+                    className="relative group"
+                  >
+                    {/* Step number */}
+                    <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 z-10">
+                      <div className={`w-8 h-8 bg-gradient-to-br ${pillar.color} rounded-full flex items-center justify-center shadow-lg border-2 border-ey-dark`}>
+                        <span className="text-white font-bold text-sm">{index + 1}</span>
                       </div>
-                      <h3 className="text-2xl font-black text-ey-white group-hover:text-ey-yellow transition-colors">
-                        {pillar.title}
-                      </h3>
                     </div>
                     
-                    {/* Content */}
-                    <p className="text-ey-white/90 leading-relaxed text-lg">
-                      {pillar.content}
-                    </p>
+                    {/* Main content */}
+                    <div className="relative bg-ey-dark/80 backdrop-blur-xl rounded-2xl p-6 border border-ey-light/10 hover:border-ey-yellow/30 transition-all duration-300 text-center h-full flex flex-col">
+                      {/* Icon with animated background */}
+                      <div className="relative mb-4">
+                        <div className={`w-16 h-16 bg-gradient-to-br ${pillar.color} rounded-full flex items-center justify-center mx-auto shadow-lg group-hover:scale-105 transition-transform duration-300`}>
+                          <pillar.icon className="w-8 h-8 text-white" />
+                        </div>
+                      </div>
+                      
+                      {/* Title */}
+                      <h3 className="text-lg font-bold text-ey-white mb-3 group-hover:text-ey-yellow transition-colors">
+                        {pillar.title}
+                      </h3>
+                      
+                      {/* Content */}
+                      <p className="text-ey-white/80 text-sm leading-relaxed flex-grow">
+                        {pillar.content}
+                      </p>
+                      
+                      {/* Progress indicator */}
+                      <div className="mt-4 flex justify-center">
+                        <div className={`w-8 h-0.5 bg-gradient-to-r ${pillar.color} rounded-full`}></div>
+                      </div>
+                    </div>
                     
-                    {/* Bottom accent */}
-                    <div className={`mt-6 w-16 h-1 bg-gradient-to-r ${pillar.color} rounded-full`}></div>
-                  </div>
-                </motion.div>
-              ))}
+                    {/* Arrow connector (desktop only) */}
+                    {index < strategicPillars.length - 1 && (
+                      <div className="hidden lg:block absolute top-1/2 -right-2 transform -translate-y-1/2 z-5">
+                        <div className={`w-4 h-4 bg-gradient-to-br ${pillar.color} rotate-45`}></div>
+                      </div>
+                    )}
+                  </motion.div>
+                ))}
+              </div>
             </div>
           </div>
         </motion.div>
 
-        {/* Challenges Section - Split Layout with Frames */}
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.6 }}
-          viewport={{ once: true }}
-          className="mb-24"
-        >
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {/* Challenge */}
-            <motion.div
-              className="relative group"
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 1, delay: 0.1 }}
-              viewport={{ once: true }}
-              whileHover={{ y: -8 }}
-            >
-              <div className="relative bg-ey-medium/20 rounded-2xl p-8 border border-ey-light/10 backdrop-blur-sm h-full">
-                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-ey-yellow to-transparent rounded-t-2xl"></div>
-                <div className="flex items-center mb-6">
-                  <div className="w-12 h-12 bg-ey-yellow rounded-xl flex items-center justify-center mr-4 shadow-lg">
-                    <BarChart3 className="w-6 h-6 text-ey-black" />
-                  </div>
-                  <h3 className="text-2xl font-black text-ey-white">{t('about.challenge.title')}</h3>
-                </div>
-                <p className="text-lg text-ey-white/90 leading-relaxed">
-                  {t('about.challenge.content')}
-                </p>
-              </div>
-            </motion.div>
 
-            {/* Path */}
-            <motion.div
-              className="relative group"
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 1, delay: 0.2 }}
-              viewport={{ once: true }}
-              whileHover={{ y: -8 }}
-            >
-              <div className="relative bg-ey-medium/20 rounded-2xl p-8 border border-ey-light/10 backdrop-blur-sm h-full">
-                <div className="absolute top-0 right-0 w-full h-1 bg-gradient-to-l from-ey-yellow to-transparent rounded-t-2xl"></div>
-                <div className="flex items-center mb-6">
-                  <div className="w-12 h-12 bg-ey-yellow rounded-xl flex items-center justify-center mr-4 shadow-lg">
-                    <ArrowRight className="w-6 h-6 text-ey-black" />
-                  </div>
-                  <h3 className="text-2xl font-black text-ey-white">{t('about.path.title')}</h3>
-                </div>
-                <p className="text-lg text-ey-white/90 leading-relaxed">
-                  {t('about.path.content')}
-                </p>
-              </div>
-            </motion.div>
-          </div>
-        </motion.div>
 
         {/* Career Timeline - Full width section */}
         <motion.div 

@@ -66,7 +66,7 @@ export default function WhatIveBeenDoing() {
 
         {/* Video Section */}
         <motion.div 
-          className="relative group max-w-3xl mx-auto"
+          className="relative group max-w-5xl mx-auto"
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.6 }}
@@ -78,7 +78,7 @@ export default function WhatIveBeenDoing() {
           
           <div className="relative bg-gradient-to-br from-ey-dark via-ey-medium/50 to-ey-dark rounded-3xl p-6 border-2 border-ey-yellow/40 shadow-2xl backdrop-blur-sm">
             {/* Video Container */}
-            <div className="relative aspect-video rounded-xl overflow-hidden bg-black shadow-xl">
+            <div className="relative aspect-[16/9] rounded-xl overflow-hidden bg-black shadow-xl">
               <video
                 ref={videoRef}
                 className="w-full h-full object-cover"
@@ -141,7 +141,7 @@ export default function WhatIveBeenDoing() {
               <h3 className="text-xl font-black text-ey-white mb-2">
                 {t('doing.projects_title_part1')} <span className="text-ey-yellow">{t('doing.projects_title_part2')}</span>
               </h3>
-              <p className="text-base text-ey-white/80 leading-relaxed max-w-3xl mx-auto">
+              <p className="text-base text-ey-white/80 leading-relaxed max-w-4xl mx-auto">
                 {t('doing.projects_description')}
               </p>
             </motion.div>
