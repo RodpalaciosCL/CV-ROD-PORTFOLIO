@@ -16,42 +16,45 @@ export default function Solutions() {
   ];
 
   return (
-    <section id="solutions" className="py-16">
-      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="solutions" className="py-12 bg-gradient-to-br from-ey-dark via-ey-medium/20 to-black">
+      <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Header - Compact and Modern */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-12"
+          className="text-center mb-8"
         >
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-ey-yellow mb-4">
-            {t('solutions.title')}
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-ey-white mb-3">
+            {t('solutions.title')} <span className="text-ey-yellow">{t('solutions.title_highlight')}</span>
           </h2>
-          <p className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-base text-gray-400 max-w-2xl mx-auto">
             {t('solutions.subtitle')}
           </p>
         </motion.div>
 
-        {/* Tab Selector */}
+        {/* Modern Tab Selector */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="flex flex-wrap justify-center gap-2 mb-12"
+          className="flex justify-center mb-8"
         >
-          {tabs.map((tab) => (
-            <button
-              key={tab.id}
-              onClick={() => setActiveTab(tab.id)}
-              className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
-                activeTab === tab.id
-                  ? 'bg-ey-yellow text-black shadow-lg shadow-ey-yellow/25'
-                  : 'bg-gray-800 text-gray-300 hover:bg-gray-700 hover:text-white'
-              }`}
-            >
-              {t(tab.labelKey)}
-            </button>
-          ))}
+          <div className="bg-ey-medium/30 backdrop-blur-sm rounded-2xl p-1 border border-ey-light/20">
+            {tabs.map((tab, index) => (
+              <button
+                key={tab.id}
+                onClick={() => setActiveTab(tab.id)}
+                className={`px-6 py-2.5 rounded-xl font-semibold text-sm transition-all duration-300 ${
+                  activeTab === tab.id
+                    ? 'bg-ey-yellow text-ey-dark shadow-lg'
+                    : 'text-gray-300 hover:text-white hover:bg-ey-light/10'
+                }`}
+              >
+                {t(tab.labelKey)}
+              </button>
+            ))}
+          </div>
         </motion.div>
 
         {/* Tab Content */}

@@ -120,7 +120,7 @@ export default function Operation() {
   return (
     <div className="w-full">
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-stretch justify-items-center"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 items-stretch"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -129,74 +129,74 @@ export default function Operation() {
             {solutions.map((solution, index) => (
               <motion.div
                 key={solution.name}
-                className="group relative h-full w-full max-w-md"
-                initial={{ opacity: 0, y: 40 }}
+                className="group relative bg-ey-medium/20 backdrop-blur-sm rounded-xl border border-ey-light/20 hover:border-ey-yellow/30 transition-all duration-300 overflow-hidden"
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{
                   delay: 0.1 * index,
-                  duration: 0.6,
+                  duration: 0.5,
                   ease: "easeOut"
                 }}
                 viewport={{ once: true }}
+                whileHover={{ y: -4 }}
               >
-                {/* Background glow */}
-                <div className="absolute inset-0 bg-gradient-to-r from-ey-yellow/10 to-ey-yellow/20 rounded-3xl blur-lg group-hover:blur-xl transition-all duration-300"></div>
-                
-                <div className="relative bg-ey-white/10 backdrop-blur-xl rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 border border-ey-yellow/20 hover:border-ey-yellow/40 transition-all duration-300 h-full flex flex-col">
+                {/* Media - Top */}
+                <div className="aspect-[4/3] overflow-hidden">
+                  {solution.type === "image" ? (
+                    <img
+                      src={solution.media}
+                      alt={solution.name}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                  ) : solution.type === "video" ? (
+                    <video
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    >
+                      <source src={solution.media} type="video/mp4" />
+                    </video>
+                  ) : (
+                    <iframe
+                      src={solution.media}
+                      className="w-full h-full"
+                      frameBorder="0"
+                      allow="autoplay; encrypted-media"
+                      allowFullScreen
+                    ></iframe>
+                  )}
+                </div>
+
+                {/* Content - Bottom */}
+                <div className="p-4">
                   {/* Header */}
-                  <div className="flex items-center space-x-4 mb-6">
-                    <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-700 rounded-xl flex items-center justify-center shadow-lg text-white">
-                      <solution.icon className="w-8 h-8" />
+                  <div className="flex items-center mb-3">
+                    <div className="w-8 h-8 bg-ey-yellow/20 rounded-lg flex items-center justify-center mr-3">
+                      <solution.icon className="w-4 h-4 text-ey-yellow" />
                     </div>
                     <div>
-                      <h3 className="text-2xl font-black text-ey-white group-hover:text-ey-yellow transition-colors">
+                      <h3 className="text-lg font-bold text-ey-white group-hover:text-ey-yellow transition-colors">
                         {solution.name}
                       </h3>
-                      <p className="text-ey-yellow/80 font-medium">{solution.tagline}</p>
+                      <p className="text-xs text-gray-400">{solution.tagline}</p>
                     </div>
-                  </div>
-
-                  {/* Media (Video or Image) */}
-                  <div className="mb-4 aspect-[3/2] rounded-lg overflow-hidden bg-ey-medium border border-ey-yellow/20">
-                      {solution.type === "image" ? (
-                        <img
-                          src={solution.media}
-                          alt={solution.name}
-                          className="w-full h-full object-cover"
-                        />
-                      ) : solution.type === "video" ? (
-                        <video
-                          autoPlay
-                          loop
-                          muted
-                          playsInline
-                          className="w-full h-full object-cover"
-                        >
-                          <source src={solution.media} type="video/mp4" />
-                        </video>
-                      ) : (
-                        <iframe
-                          src={solution.media}
-                          className="w-full h-full"
-                          frameBorder="0"
-                          allow="autoplay; encrypted-media"
-                          allowFullScreen
-                        ></iframe>
-                      )}
                   </div>
 
                   {/* Description */}
-                  <div className="mt-4">
-                    <p className="text-ey-white/80 leading-relaxed text-sm">
-                      {solution.description}
-                    </p>
-                  </div>
+                  <p className="text-sm text-gray-300 leading-relaxed mb-3 line-clamp-2">
+                    {solution.description}
+                  </p>
 
                   {/* Ready to deploy badge */}
-                  <div className="mt-auto pt-4">
-                    <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-ey-yellow/20 to-ey-yellow/10 border border-ey-yellow/30 rounded-full px-4 py-2 shadow-sm hover:shadow-md transition-all duration-300">
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center space-x-2">
                       <div className="w-2 h-2 bg-ey-yellow rounded-full animate-pulse"></div>
-                      <span className="text-ey-yellow font-bold text-sm">{t('solutions.ready_to_deploy')}</span>
+                      <span className="text-xs text-ey-yellow font-medium">{t('solutions.ready_to_deploy')}</span>
+                    </div>
+                    <div className="w-6 h-6 bg-ey-yellow/20 rounded-full flex items-center justify-center">
+                      <div className="w-2 h-2 bg-ey-yellow rounded-full"></div>
                     </div>
                   </div>
                 </div>

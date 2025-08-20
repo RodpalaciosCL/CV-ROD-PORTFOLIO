@@ -50,70 +50,73 @@ export default function Maintenance() {
   return (
     <div className="w-full">
       {/* Maintenance Technologies Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-stretch justify-items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 items-stretch">
         {maintenanceTechnologies.map((tech, index) => (
                       <motion.div
               key={index}
-              className="group relative h-full w-full max-w-md"
-            initial={{ opacity: 0, y: 40 }}
+              className="group relative bg-ey-medium/20 backdrop-blur-sm rounded-xl border border-ey-light/20 hover:border-ey-yellow/30 transition-all duration-300 overflow-hidden"
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.1 * index }}
+            transition={{ duration: 0.5, delay: 0.1 * index }}
             viewport={{ once: true }}
+            whileHover={{ y: -4 }}
           >
-            {/* Background glow */}
-            <div className="absolute inset-0 bg-gradient-to-r from-ey-yellow/10 to-ey-yellow/20 rounded-3xl blur-lg group-hover:blur-xl transition-all duration-300"></div>
-            
-            <div className="relative bg-ey-white/10 backdrop-blur-xl rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 border border-ey-yellow/20 hover:border-ey-yellow/40 transition-all duration-300 h-full flex flex-col">
+            {/* Media - Top */}
+            <div className="aspect-[4/3] overflow-hidden">
+              {tech.media.includes('.mp4') || tech.media.includes('.mov') ? (
+                <video 
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                >
+                  <source src={tech.media} type="video/mp4" />
+                  Tu navegador no soporta el elemento de video.
+                </video>
+              ) : (
+                <img
+                  src={tech.media}
+                  alt={tech.title}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+              )}
+            </div>
+
+            {/* Content - Bottom */}
+            <div className="p-4">
               {/* Header */}
-              <div className="flex items-center space-x-4 mb-6">
-                <div className={`w-16 h-16 bg-gradient-to-br ${tech.color} rounded-xl flex items-center justify-center shadow-lg text-white`}>
+              <div className="flex items-center mb-3">
+                <div className={`w-8 h-8 bg-gradient-to-br ${tech.color} rounded-lg flex items-center justify-center mr-3`}>
                   {tech.icon}
                 </div>
                 <div>
-                  <h3 className="text-2xl font-black text-ey-white group-hover:text-ey-yellow transition-colors">
+                  <h3 className="text-lg font-bold text-ey-white group-hover:text-ey-yellow transition-colors">
                     {tech.title}
                   </h3>
-                  <p className="text-ey-yellow/80 font-medium">{tech.subtitle}</p>
+                  <p className="text-xs text-gray-400">{tech.subtitle}</p>
                 </div>
               </div>
 
-              {/* Media (Video or Image) */}
-              <div className="mb-4 aspect-[3/2] rounded-lg overflow-hidden bg-ey-medium border border-ey-yellow/20">
-                {tech.media.includes('.mp4') || tech.media.includes('.mov') ? (
-                  <video 
-                    className="w-full h-full object-cover"
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                  >
-                    <source src={tech.media} type="video/mp4" />
-                    Tu navegador no soporta el elemento de video.
-                  </video>
-                ) : (
-                  <img
-                    src={tech.media}
-                    alt={tech.title}
-                    className="w-full h-full object-cover"
-                  />
-                )}
+              {/* Bullets */}
+              <div className="space-y-2 mb-3">
+                {tech.bullets.slice(0, 2).map((bullet, bulletIndex) => (
+                  <div key={bulletIndex} className="flex items-start space-x-2">
+                    <div className="w-1.5 h-1.5 bg-ey-yellow rounded-full mt-1.5 flex-shrink-0"></div>
+                    <p className="text-xs text-gray-300 leading-relaxed">{bullet}</p>
+                  </div>
+                ))}
               </div>
 
-              {/* Bullets */}
-              <div className="space-y-3 mt-auto">
-                {tech.bullets.map((bullet, bulletIndex) => (
-                  <motion.div
-                    key={bulletIndex}
-                    className="flex items-start space-x-3"
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.6, delay: 0.1 * bulletIndex }}
-                    viewport={{ once: true }}
-                  >
-                    <div className="w-2 h-2 bg-ey-yellow rounded-full mt-2 flex-shrink-0"></div>
-                    <p className="text-ey-white/90 font-medium leading-relaxed">{bullet}</p>
-                  </motion.div>
-                ))}
+              {/* Ready to deploy badge */}
+              <div className="flex items-center justify-between">
+                <div className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-ey-yellow rounded-full animate-pulse"></div>
+                  <span className="text-xs text-ey-yellow font-medium">Ready to Deploy</span>
+                </div>
+                <div className="w-6 h-6 bg-ey-yellow/20 rounded-full flex items-center justify-center">
+                  <div className="w-2 h-2 bg-ey-yellow rounded-full"></div>
+                </div>
               </div>
             </div>
           </motion.div>
