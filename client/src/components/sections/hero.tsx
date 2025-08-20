@@ -10,14 +10,8 @@ export default function Hero() {
 
   return (
     <section id="hero" className="min-h-screen bg-ey-dark pt-20 md:pt-24 flex items-center">
-      <div className="w-full px-4" style={{ 
-        width: '100%', 
-        maxWidth: '100%', 
-        paddingLeft: '16px', 
-        paddingRight: '16px',
-        boxSizing: 'border-box'
-      }}>
-                  <div className="grid grid-cols-1 gap-16 items-center">
+      <div className="max-w-7xl mx-auto px-4">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left Content */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -28,18 +22,7 @@ export default function Hero() {
 
             {/* Main Heading */}
             <motion.h1 
-              className="text-lg sm:text-3xl md:text-5xl lg:text-6xl font-black text-ey-white mb-4 leading-tight break-words"
-              style={{ 
-                wordBreak: 'break-word', 
-                whiteSpace: 'normal',
-                overflowWrap: 'break-word',
-                hyphens: 'auto',
-                overflow: 'visible',
-                textOverflow: 'clip',
-                maxHeight: 'none',
-                width: '100%',
-                display: 'block'
-              }}
+              className="text-lg sm:text-3xl md:text-5xl lg:text-6xl font-black text-ey-white mb-4 leading-tight"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
@@ -51,16 +34,7 @@ export default function Hero() {
 
             {/* Description */}
             <motion.p 
-              className="text-xl text-ey-white/80 mb-8 leading-relaxed w-full"
-              style={{ 
-                overflowWrap: 'break-word',
-                wordBreak: 'break-word',
-                hyphens: 'auto',
-                overflow: 'visible',
-                textOverflow: 'clip',
-                maxHeight: 'none',
-                whiteSpace: 'normal'
-              }}
+              className="text-xl text-ey-white/80 mb-8 leading-relaxed max-w-2xl"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}

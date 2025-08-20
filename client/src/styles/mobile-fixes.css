@@ -1,14 +1,16 @@
 /* Mobile Fixes for CV-ROD-PORTFOLIO */
 
-/* Fix global para todo el sitio */
-* {
-  box-sizing: border-box !important;
-}
+/* Fix global para todo el sitio - SOLO móvil */
+@media (max-width: 768px) {
+  * {
+    box-sizing: border-box !important;
+  }
 
-body, html {
-  width: 100% !important;
-  max-width: 100% !important;
-  overflow-x: hidden !important;
+  body, html {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+  }
 }
 
 @media (max-width: 420px) {
