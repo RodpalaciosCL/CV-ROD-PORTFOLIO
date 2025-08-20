@@ -547,36 +547,27 @@ export default function About() {
               </motion.div>
             </div>
 
-            {/* Professional Workflow */}
-            <div className="flex items-center justify-center max-w-6xl mx-auto">
+            {/* Simple Workflow */}
+            <div className="flex justify-between items-center max-w-6xl mx-auto gap-4">
               {miningProcess.map((step, index) => (
                 <motion.div
                   key={step.id}
-                  className="flex items-center"
+                  className="flex flex-col items-center text-center"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.4, delay: index * 0.1 }}
                   viewport={{ once: true }}
                 >
-                  {/* Step Node */}
-                  <div className="flex flex-col items-center">
-                    {/* Number Circle */}
-                    <div className="w-12 h-12 bg-ey-yellow rounded-full flex items-center justify-center mb-2 shadow-lg">
-                      <span className="text-black font-bold text-sm">{index + 1}</span>
-                    </div>
+                  {/* Step Box */}
+                  <div className="w-28 h-20 bg-gray-700 rounded-lg border border-gray-500 flex flex-col items-center justify-center">
+                    {/* Step Number */}
+                    <span className="text-yellow-400 font-bold text-lg mb-1">{index + 1}</span>
                     
                     {/* Step Title */}
-                    <div className="bg-ey-dark/60 rounded-lg px-3 py-2 border border-ey-yellow/20 max-w-24 text-center">
-                      <h3 className="text-xs font-medium text-ey-white leading-tight">
-                        {step.title}
-                      </h3>
-                    </div>
+                    <h3 className="text-xs font-medium text-white leading-tight px-2">
+                      {step.title}
+                    </h3>
                   </div>
-                  
-                  {/* Connection Line */}
-                  {index < miningProcess.length - 1 && (
-                    <div className="w-16 h-0.5 bg-ey-yellow/40 mx-4"></div>
-                  )}
                 </motion.div>
               ))}
             </div>
