@@ -554,6 +554,7 @@ const translations = {
 
     // Competitive Advantages section (NEW)
     'competitive.title': 'Ventajas Competitivas',
+    'competitive.title_highlight': 'que Marcan la Diferencia',
     'competitive.subtitle': 'Capacidad de desarrollar y escalar negocios',
     'competitive.advantage1': 'Capacidad de desarrollar y escalar negocios y relacionamiento activo',
     'competitive.advantage2': 'Experiencia minera en terreno y para assets críticos de la operación',
@@ -1162,6 +1163,7 @@ const translations = {
 
     // Competitive Advantages section (NEW)
     'competitive.title': 'Competitive Advantages',
+    'competitive.title_highlight': 'that Make the Difference',
     'competitive.subtitle': 'Ability to develop and scale business',
     'competitive.advantage1': 'Ability to develop and scale business and active relationship building',
     'competitive.advantage2': 'Mining field experience for critical operational assets',

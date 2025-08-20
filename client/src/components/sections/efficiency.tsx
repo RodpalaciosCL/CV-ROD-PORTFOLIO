@@ -158,54 +158,110 @@ export default function Efficiency() {
             </motion.div>
 
 
-            {/* Statement Section */}
+            {/* Statement Section - Professional Redesign */}
             <motion.div 
-              className="mb-16"
+              className="mb-20"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 1.4 }}
               viewport={{ once: true }}
             >
-              <div className="max-w-6xl mx-auto">
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-ey-yellow text-center mb-12">{t('efficiency.statement.title')}</h2>
-                
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                  <div className="bg-ey-medium/20 backdrop-blur-sm rounded-xl p-6 border border-ey-yellow/20">
-                    <h3 className="text-xl font-bold text-ey-yellow mb-4">{t('efficiency.statement.tengo.title')}</h3>
-                    <p className="text-ey-white/80 leading-relaxed">
-                      {t('efficiency.statement.tengo.content')}
-                    </p>
-                  </div>
-                  
-                  <div className="bg-ey-medium/20 backdrop-blur-sm rounded-xl p-6 border border-ey-yellow/20">
-                    <h3 className="text-xl font-bold text-ey-yellow mb-4">{t('efficiency.statement.soy.title')}</h3>
-                    <p className="text-ey-white/80 leading-relaxed">
-                      {t('efficiency.statement.soy.content')}
-                    </p>
-                  </div>
-                  
-                  <div className="bg-ey-medium/20 backdrop-blur-sm rounded-xl p-6 border border-ey-yellow/20">
-                    <h3 className="text-xl font-bold text-ey-yellow mb-4">{t('efficiency.statement.quiero.title')}</h3>
-                    <p className="text-ey-white/80 leading-relaxed">
-                      {t('efficiency.statement.quiero.content')}
-                    </p>
-                  </div>
-                  
-                  <div className="bg-ey-medium/20 backdrop-blur-sm rounded-xl p-6 border border-ey-yellow/20">
-                    <h3 className="text-xl font-bold text-ey-yellow mb-4">{t('efficiency.statement.puedo.title')}</h3>
-                    <p className="text-ey-white/80 leading-relaxed">
-                      {t('efficiency.statement.puedo.content')}
-                    </p>
-                  </div>
+              <div className="max-w-7xl mx-auto">
+                {/* Professional Header */}
+                <div className="text-center mb-16">
+                  <motion.div 
+                    className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-ey-yellow to-orange-500 rounded-2xl mb-6 shadow-xl"
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.6, delay: 0.2 }}
+                    viewport={{ once: true }}
+                  >
+                    <Target className="w-8 h-8 text-white" />
+                  </motion.div>
+                  <motion.h2 
+                    className="text-4xl md:text-5xl lg:text-6xl font-black text-ey-white mb-6"
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, delay: 0.4 }}
+                    viewport={{ once: true }}
+                  >
+                    <span className="bg-gradient-to-r from-ey-yellow via-orange-400 to-ey-yellow bg-clip-text text-transparent">
+                      {t('efficiency.statement.title')}
+                    </span>
+                  </motion.h2>
+                  <motion.p 
+                    className="text-lg md:text-xl text-ey-white/70 max-w-3xl mx-auto leading-relaxed"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, delay: 0.6 }}
+                    viewport={{ once: true }}
+                  >
+                    Declaración de propósito y compromiso estratégico
+                  </motion.p>
                 </div>
                 
-                <div className="mt-8 text-center">
-                  <div className="bg-gradient-to-r from-ey-yellow/10 to-orange-500/10 rounded-xl p-6 border border-ey-yellow/20 max-w-4xl mx-auto">
-                    <p className="text-ey-white/80 leading-relaxed text-lg md:text-xl">
+                {/* Professional Cards Grid */}
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+                  {[
+                    { title: t('efficiency.statement.tengo.title'), content: t('efficiency.statement.tengo.content'), icon: CheckCircle, color: 'from-blue-500 to-blue-600' },
+                    { title: t('efficiency.statement.soy.title'), content: t('efficiency.statement.soy.content'), icon: Star, color: 'from-purple-500 to-purple-600' },
+                    { title: t('efficiency.statement.quiero.title'), content: t('efficiency.statement.quiero.content'), icon: Target, color: 'from-green-500 to-green-600' },
+                    { title: t('efficiency.statement.puedo.title'), content: t('efficiency.statement.puedo.content'), icon: Zap, color: 'from-orange-500 to-orange-600' }
+                  ].map((item, index) => (
+                    <motion.div 
+                      key={index}
+                      className="group relative bg-gradient-to-br from-ey-dark/80 to-ey-medium/20 backdrop-blur-xl rounded-2xl p-8 border border-ey-light/10 hover:border-ey-yellow/40 transition-all duration-500 shadow-xl hover:shadow-2xl hover:-translate-y-2"
+                      initial={{ opacity: 0, y: 30 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.6, delay: 0.8 + index * 0.1 }}
+                      viewport={{ once: true }}
+                    >
+                      {/* Animated Background */}
+                      <div className="absolute inset-0 bg-gradient-to-br from-ey-yellow/5 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                      
+                      {/* Icon */}
+                      <div className="relative mb-6">
+                        <div className={`w-14 h-14 bg-gradient-to-br ${item.color} rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+                          <item.icon className="w-7 h-7 text-white" />
+                        </div>
+                      </div>
+                      
+                      {/* Content */}
+                      <div className="relative">
+                        <h3 className="text-2xl font-bold text-ey-white mb-4 group-hover:text-ey-yellow transition-colors duration-300">
+                          {item.title}
+                        </h3>
+                        <p className="text-ey-white/80 leading-relaxed text-base">
+                          {item.content}
+                        </p>
+                      </div>
+                      
+                      {/* Decorative Element */}
+                      <div className="absolute top-4 right-4 w-2 h-2 bg-ey-yellow rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    </motion.div>
+                  ))}
+                </div>
+                
+                {/* Professional Closing Statement */}
+                <motion.div 
+                  className="text-center"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 1.2 }}
+                  viewport={{ once: true }}
+                >
+                  <div className="bg-gradient-to-r from-ey-yellow/10 via-orange-500/10 to-ey-yellow/10 rounded-2xl p-8 border border-ey-yellow/20 max-w-5xl mx-auto backdrop-blur-sm">
+                    <div className="flex items-center justify-center mb-4">
+                      <div className="w-8 h-8 bg-ey-yellow rounded-full flex items-center justify-center mr-3">
+                        <CheckCircle className="w-5 h-5 text-ey-black" />
+                      </div>
+                      <h3 className="text-xl font-bold text-ey-yellow">Compromiso Estratégico</h3>
+                    </div>
+                    <p className="text-ey-white/90 leading-relaxed text-lg md:text-xl font-medium">
                       {t('efficiency.track1_closing')}
                     </p>
                   </div>
-                </div>
+                </motion.div>
               </div>
             </motion.div>
           </div>
