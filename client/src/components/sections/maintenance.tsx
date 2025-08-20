@@ -84,7 +84,7 @@ export default function Maintenance() {
             </div>
 
             {/* Content - Bottom */}
-            <div className="p-4">
+            <div className="p-4 flex flex-col h-full">
               {/* Header */}
               <div className="flex items-center mb-3">
                 <div className={`w-8 h-8 bg-gradient-to-br ${tech.color} rounded-lg flex items-center justify-center mr-3`}>
@@ -94,12 +94,12 @@ export default function Maintenance() {
                   <h3 className="text-lg font-bold text-ey-white group-hover:text-ey-yellow transition-colors">
                     {tech.title}
                   </h3>
-                  <p className="text-xs text-gray-400">{tech.subtitle}</p>
+                  <p className="p className="text-xs text-gray-400">{tech.subtitle}</p>
                 </div>
               </div>
 
               {/* Bullets */}
-              <div className="space-y-2 mb-3">
+              <div className="space-y-2 mb-3 flex-grow">
                 {tech.bullets.slice(0, 2).map((bullet, bulletIndex) => (
                   <div key={bulletIndex} className="flex items-start space-x-2">
                     <div className="w-1.5 h-1.5 bg-ey-yellow rounded-full mt-1.5 flex-shrink-0"></div>
@@ -108,8 +108,8 @@ export default function Maintenance() {
                 ))}
               </div>
 
-              {/* Ready to deploy badge */}
-              <div className="flex items-center justify-between">
+              {/* Ready to deploy badge - Fixed at bottom */}
+              <div className="flex items-center justify-between mt-auto">
                 <div className="flex items-center space-x-2">
                   <div className="w-2 h-2 bg-ey-yellow rounded-full animate-pulse"></div>
                   <span className="text-xs text-ey-yellow font-medium">Ready to Deploy</span>

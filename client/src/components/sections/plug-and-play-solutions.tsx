@@ -170,7 +170,7 @@ export default function Operation() {
                 </div>
 
                 {/* Content - Bottom */}
-                <div className="p-4">
+                <div className="p-4 flex flex-col h-full">
                   {/* Header */}
                   <div className="flex items-center mb-3">
                     <div className="w-8 h-8 bg-ey-yellow/20 rounded-lg flex items-center justify-center mr-3">
@@ -185,12 +185,12 @@ export default function Operation() {
                   </div>
 
                   {/* Description */}
-                  <p className="text-sm text-gray-300 leading-relaxed mb-3 line-clamp-2">
+                  <p className="text-sm text-gray-300 leading-relaxed mb-3 line-clamp-2 flex-grow">
                     {solution.description}
                   </p>
 
-                  {/* Ready to deploy badge */}
-                  <div className="flex items-center justify-between">
+                  {/* Ready to deploy badge - Fixed at bottom */}
+                  <div className="flex items-center justify-between mt-auto">
                     <div className="flex items-center space-x-2">
                       <div className="w-2 h-2 bg-ey-yellow rounded-full animate-pulse"></div>
                       <span className="text-xs text-ey-yellow font-medium">{t('solutions.ready_to_deploy')}</span>
