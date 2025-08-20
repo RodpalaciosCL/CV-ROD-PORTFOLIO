@@ -13,7 +13,7 @@ export default function CompetitiveAdvantages() {
   ];
 
   return (
-    <section id="competitive-advantages" className="h-screen py-8 bg-ey-dark relative overflow-hidden flex items-center">
+    <section id="competitive-advantages" className="min-h-screen py-8 bg-ey-dark relative overflow-visible">
       {/* Animated background elements */}
       <div className="absolute inset-0">
         <motion.div 
@@ -28,7 +28,7 @@ export default function CompetitiveAdvantages() {
         />
       </div>
 
-      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <div className="w-full px-4 sm:px-6 lg:px-8 relative py-8">
         <motion.div 
           className="relative group"
           initial={{ opacity: 0, y: 50 }}
@@ -40,7 +40,7 @@ export default function CompetitiveAdvantages() {
           <div className="absolute inset-0 bg-gradient-to-br from-ey-yellow/20 via-ey-yellow/10 to-transparent rounded-3xl blur-3xl"></div>
           <div className="absolute -inset-4 bg-gradient-to-r from-ey-yellow/5 via-transparent to-ey-yellow/5 rounded-3xl blur-2xl animate-pulse"></div>
           
-          <div className="relative bg-gradient-to-br from-ey-dark via-ey-medium/30 to-ey-dark rounded-3xl p-8 border-2 border-ey-yellow/40 shadow-2xl backdrop-blur-sm overflow-hidden">
+          <div className="relative bg-gradient-to-br from-ey-dark via-ey-medium/30 to-ey-dark rounded-3xl p-8 border-2 border-ey-yellow/40 shadow-2xl backdrop-blur-sm overflow-visible">
             
             {/* Header */}
             <motion.div 

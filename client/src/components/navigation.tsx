@@ -89,11 +89,16 @@ export default function Navigation() {
               <div className="flex justify-between items-center py-4">
                 {/* Client Logo */}
                 <div className="flex items-center -ml-6">
-                  <img 
-                    src={clientConfig.logo} 
-                    alt={`${clientConfig.name} Logo`} 
-                    className={`h-10 w-auto ${clientConfig.logoFilters || ''}`}
-                  />
+                  <button 
+                    onClick={scrollToTop}
+                    className="hover:opacity-80 transition-opacity cursor-pointer"
+                  >
+                    <img 
+                      src={clientConfig.logo} 
+                      alt={`${clientConfig.name} Logo`} 
+                      className={`h-10 w-auto ${clientConfig.logoFilters || ''}`}
+                    />
+                  </button>
                 </div>
                 
                 {/* Desktop Menu - Centrado */}

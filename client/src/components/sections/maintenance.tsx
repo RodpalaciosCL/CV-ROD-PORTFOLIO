@@ -50,7 +50,7 @@ export default function Maintenance() {
   return (
     <div>
       {/* Maintenance Technologies Grid */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
         {maintenanceTechnologies.map((tech, index) => (
           <motion.div
             key={index}

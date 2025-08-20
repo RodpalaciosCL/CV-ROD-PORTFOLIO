@@ -154,7 +154,7 @@ export default function SpeakingEvents() {
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
           >
-<span className="whitespace-nowrap">{t('speaking.title')} <span className="text-ey-yellow">{t('speaking.title_highlight')}</span></span>
+            {t('speaking.title')} <span className="text-ey-yellow">{t('speaking.title_highlight')}</span>
           </motion.h2>
           <motion.p 
             className="text-xl text-ey-white/80 max-w-4xl mx-auto leading-relaxed"

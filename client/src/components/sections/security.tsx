@@ -79,14 +79,14 @@ export default function Security() {
         {/* Security Technologies Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-stretch">
           {securityTechnologies.map((tech, index) => (
-            <motion.div
-              key={index}
-              className="group relative h-full"
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.1 * index }}
-              viewport={{ once: true }}
-            >
+                          <motion.div
+                key={index}
+                className="group relative h-full w-full md:w-[calc(50%-1.5rem)] max-w-md"
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.1 * index }}
+                viewport={{ once: true }}
+              >
               {/* Background glow */}
               <div className="absolute inset-0 bg-gradient-to-r from-ey-yellow/10 to-ey-yellow/20 rounded-3xl blur-lg group-hover:blur-xl transition-all duration-300"></div>
               

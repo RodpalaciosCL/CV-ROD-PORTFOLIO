@@ -246,7 +246,7 @@ export default function Efficiency() {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <div className="absolute -top-4 -left-4 w-10 h-10 bg-ey-yellow rounded-full flex items-center justify-center text-white font-bold text-base">
+                <div className="absolute -top-3 -left-3 w-8 h-8 bg-ey-yellow rounded-full flex items-center justify-center text-white font-bold text-sm">
                   {step.step}
                 </div>
                 <h4 className="text-xl md:text-2xl font-bold text-ey-white mb-3">{step.title}</h4>
@@ -282,8 +282,8 @@ export default function Efficiency() {
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
                 >
-                  <div className="w-10 h-10 bg-ey-yellow/20 rounded-lg flex items-center justify-center shrink-0">
-                    <item.icon className="w-5 h-5 text-ey-yellow" />
+                  <div className="w-8 h-8 bg-ey-yellow/20 rounded-lg flex items-center justify-center shrink-0">
+                    <item.icon className="w-4 h-4 text-ey-yellow" />
                   </div>
                   <div>
                     <h4 className="text-base md:text-lg font-bold text-ey-white mb-2">{item.title}</h4>

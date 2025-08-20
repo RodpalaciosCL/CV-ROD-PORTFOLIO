@@ -444,7 +444,7 @@ export default function ActivePipeline() {
                    whileHover={{ scale: 1.05 }}
                    transition={{ type: "spring", stiffness: 300 }}
                  >
-                   <div className="text-3xl font-black text-green-400 mb-1">USD 60 Millones</div>
+                   <div className="text-3xl font-black text-green-400 mb-1">{t('pipeline.codelco.amount')}</div>
                    <div className="text-ey-white font-bold text-base mb-1">{t('pipeline.codelco.annual_profit')}</div>
                    <div className="text-ey-white/80 text-xs">{t('pipeline.codelco.profit_desc')}</div>
                  </motion.div>

@@ -120,7 +120,7 @@ export default function Operation() {
   return (
     <div>
         <motion.div
-          className="grid md:grid-cols-2 gap-12 mb-16"
+          className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 mb-16"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}

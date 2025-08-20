@@ -1,0 +1,313 @@
+/* Mobile Fixes for CV-ROD-PORTFOLIO */
+
+/* Fix global para todo el sitio */
+* {
+  box-sizing: border-box !important;
+}
+
+body, html {
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow-x: hidden !important;
+}
+
+@media (max-width: 420px) {
+  /* 1. H1 cortado - Hero Section */
+  .hero h1, 
+  .hero .heading, 
+  [data-hero="title"],
+  #hero h1,
+  h1 {
+    white-space: normal !important;
+    overflow: visible !important;
+    text-overflow: clip !important;
+    -webkit-line-clamp: unset !important;
+    line-clamp: unset !important;
+    max-height: none !important;
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
+    font-size: clamp(18px, 5vw, 28px) !important;
+    line-height: 1.2 !important;
+    margin-bottom: 12px !important;
+    padding-right: 0 !important;
+    width: 100% !important;
+    display: block !important;
+    position: relative !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+  }
+
+  /* 2. Texto descriptivo cortado */
+  .hero p,
+  #hero p,
+  .hero .description,
+  p {
+    overflow: visible !important;
+    text-overflow: clip !important;
+    -webkit-line-clamp: unset !important;
+    line-clamp: unset !important;
+    max-height: none !important;
+    white-space: normal !important;
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
+    font-size: 16px !important;
+    line-height: 1.4 !important;
+  }
+
+  /* 3. Recuadros cortados - Tabs */
+  .tabs, 
+  .tabs-wrapper {
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    white-space: nowrap !important;
+    padding: 0 16px !important;
+  }
+
+  .frame, 
+  .card, 
+  .panel, 
+  .sectionFrame, 
+  .feature {
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    overflow: visible !important;
+    clip-path: none !important;
+    width: 100% !important;
+  }
+
+  .frame .content, 
+  .card .content {
+    height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+  }
+
+  .frame, 
+  .card {
+    transform: none !important;
+  }
+
+  /* 4. Bloque "Result" cortado */
+  .result-block, 
+  .result-block .body {
+    height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+  }
+  
+  .result-block { 
+    margin-bottom: 16px !important; 
+  }
+
+  /* 5. "LATAM Gateway 4+" - título oculto */
+  .section-title, 
+  .card .title {
+    position: static !important;
+    margin-bottom: 10px !important;
+    z-index: 1 !important;
+  }
+  
+  :where(h2, h3)[id] { 
+    scroll-margin-top: 84px !important; 
+  }
+
+  /* 6. "Let's do it together" cortado */
+  .cta-title, 
+  .together-title {
+    overflow: visible !important;
+    text-overflow: clip !important;
+    -webkit-line-clamp: unset !important;
+    line-clamp: unset !important;
+    max-height: none !important;
+    line-height: 1.15 !important;
+    white-space: normal !important;
+    word-break: normal !important;
+  }
+
+  /* 7. Contenedores generales */
+  .container,
+  .max-w-7xl,
+  .max-w-6xl,
+  .max-w-5xl,
+  section,
+  div {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* 8. Fix específico para el hero */
+  #hero,
+  #hero *,
+  .hero,
+  .hero * {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    overflow: visible !important;
+    overflow-x: visible !important;
+  }
+
+  /* 9. Fix específico para la sección about */
+  #about,
+  #about *,
+  .about,
+  .about * {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    overflow: visible !important;
+    overflow-x: visible !important;
+  }
+
+  /* 10. Fix específico para la sección solutions */
+  #solutions,
+  #solutions *,
+  .solutions,
+  .solutions * {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    overflow: visible !important;
+    overflow-x: visible !important;
+  }
+
+  /* 11. Fix para los frames de soluciones */
+  .aspect-video,
+  iframe,
+  video,
+  img {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    object-fit: cover !important;
+  }
+
+  /* 12. Fix para títulos y textos que se cortan */
+  h1, h2, h3, h4, h5, h6,
+  .text-3xl, .text-4xl, .text-5xl, .text-6xl {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow: visible !important;
+    text-overflow: clip !important;
+    white-space: normal !important;
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
+    font-size: clamp(18px, 5vw, 32px) !important;
+    line-height: 1.2 !important;
+  }
+
+  /* 13. Fix específico para la sección competitive-advantages */
+  #competitive-advantages,
+  #competitive-advantages * {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    overflow: visible !important;
+    overflow-x: visible !important;
+    overflow-y: visible !important;
+  }
+
+  /* 14. Fix para asegurar que todo el contenido sea visible */
+  #competitive-advantages {
+    min-height: auto !important;
+    height: auto !important;
+    display: block !important;
+    position: relative !important;
+  }
+
+  /* 15. Fix para el contenedor principal */
+  #competitive-advantages > div {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 16px !important;
+    box-sizing: border-box !important;
+  }
+
+  /* 16. Fix para los puntos numerados */
+  .absolute.-top-3.-left-3,
+  .absolute.-top-4.-left-4 {
+    width: 32px !important;
+    height: 32px !important;
+    top: -12px !important;
+    left: -12px !important;
+    font-size: 14px !important;
+    z-index: 10 !important;
+  }
+
+  /* 17. Fix para los iconos en las cards */
+  .w-8.h-8 {
+    width: 32px !important;
+    height: 32px !important;
+    min-width: 32px !important;
+  }
+
+  .w-8.h-8 .w-4.h-4 {
+    width: 16px !important;
+    height: 16px !important;
+  }
+
+  /* 18. Fix para la sección speaking-events */
+  #speaking-events,
+  #speaking-events * {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    overflow: visible !important;
+    overflow-x: visible !important;
+  }
+
+  /* 19. Fix específico para el título de speaking */
+  #speaking-events h2,
+  #speaking-events .text-5xl,
+  #speaking-events .text-6xl {
+    font-size: clamp(24px, 6vw, 48px) !important;
+    line-height: 1.1 !important;
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
+    white-space: normal !important;
+  }
+
+  /* 8. Grid y flex containers */
+  .grid {
+    gap: 16px !important;
+  }
+
+  .grid-cols-1 {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* 9. Texto general */
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: anywhere !important;
+    word-break: normal !important;
+    hyphens: auto !important;
+  }
+
+  /* 10. Botones y elementos interactivos */
+  button, 
+  .btn,
+  .button {
+    white-space: normal !important;
+    word-break: normal !important;
+    overflow-wrap: anywhere !important;
+  }
+}
+
+/* Fixes adicionales para pantallas muy pequeñas */
+@media (max-width: 375px) {
+  .hero h1,
+  #hero h1 {
+    font-size: 20px !important;
+    line-height: 1.2 !important;
+  }
+  
+  .hero p,
+  #hero p {
+    font-size: 16px !important;
+    line-height: 1.4 !important;
+  }
+}

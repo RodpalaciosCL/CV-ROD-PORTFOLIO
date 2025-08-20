@@ -230,12 +230,17 @@ export default function About() {
                 viewport={{ once: true }}
               >
                 <div className="space-y-2">
-                  <div className="whitespace-nowrap">
-                    <span className="text-ey-yellow">{t('about.title')}</span>
+                  <div>
+                    <span className="text-ey-yellow">
+              {t('about.title').split('\n').map((line, index) => (
+                <React.Fragment key={index}>
+                  {line}
+                  {index < t('about.title').split('\n').length - 1 && <br />}
+                </React.Fragment>
+              ))}
+            </span>
                   </div>
-                  <div className="whitespace-nowrap">
-                    <span className="text-ey-white">{t('about.subtitle')}</span>
-                  </div>
+
                 </div>
               </motion.h1>
               <motion.p 
@@ -638,15 +643,15 @@ export default function About() {
             >
               <div className="flex items-center text-ey-yellow font-bold text-lg">
                 <CheckCircle className="w-6 h-6 mr-3" />
-                <span>Resultados Medibles</span>
+                <span>{t('about.bullets.measurable_results')}</span>
               </div>
               <div className="flex items-center text-ey-yellow font-bold text-lg">
                 <Eye className="w-6 h-6 mr-3" />
-                <span>Visión Estratégica</span>
+                <span>{t('about.bullets.strategic_vision')}</span>
               </div>
               <div className="flex items-center text-ey-yellow font-bold text-lg">
                 <Heart className="w-6 h-6 mr-3" />
-                <span>Compromiso Total</span>
+                <span>{t('about.bullets.total_commitment')}</span>
               </div>
             </motion.div>
           </div>
