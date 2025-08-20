@@ -530,35 +530,21 @@ export default function About() {
           viewport={{ once: true }}
         >
           <div className="max-w-7xl mx-auto">
-            {/* Header with Flow Concept */}
+            {/* Clean Header */}
             <div className="text-center mb-12">
-              <motion.h2 
-                className="text-3xl md:text-4xl font-bold text-ey-white mb-2"
+              <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.2 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
                 viewport={{ once: true }}
               >
-                <span className="text-ey-yellow">{t('mining_process.title')}</span>
-              </motion.h2>
-              <motion.h3 
-                className="text-xl md:text-2xl font-semibold text-ey-white/80 mb-4"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.3 }}
-                viewport={{ once: true }}
-              >
-                {t('mining_process.subtitle')}
-              </motion.h3>
-              <motion.p 
-                className="text-lg text-ey-white/70 max-w-3xl mx-auto"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.4 }}
-                viewport={{ once: true }}
-              >
-                Flujo continuo de tecnología inteligente a través de todo el proceso
-              </motion.p>
+                <h2 className="text-3xl md:text-4xl font-bold text-ey-yellow mb-2">
+                  {t('mining_process.title')}
+                </h2>
+                <h3 className="text-xl md:text-2xl font-medium text-ey-white/90">
+                  {t('mining_process.subtitle')}
+                </h3>
+              </motion.div>
             </div>
 
             {/* Simple Progress Timeline */}
