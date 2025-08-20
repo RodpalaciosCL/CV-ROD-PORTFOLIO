@@ -26,7 +26,7 @@ export default function Solutions() {
           className="text-center mb-8"
         >
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-ey-white mb-3">
-            {t('solutions.title')} <span className="text-ey-yellow">{t('solutions.title_highlight')}</span>
+            {t('solutions.highly_demanded_title')}
           </h2>
           <p className="text-base text-gray-400 max-w-2xl mx-auto">
             {t('solutions.subtitle')}

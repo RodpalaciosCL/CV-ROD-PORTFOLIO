@@ -1,74 +1,40 @@
 import { motion } from "framer-motion";
-import { Shield, ArrowRight, CheckCircle, Timer, Activity, Droplets, TrendingUp, Briefcase, Sparkles, Cpu, Users, Star, Target, Heart, Zap, Rocket } from "lucide-react";
+import { Shield, ArrowRight, CheckCircle, Timer, Activity, Droplets, TrendingUp, Briefcase, Sparkles, Cpu, Users, Star, Target, Heart, Zap, Rocket, Lightbulb } from "lucide-react";
 import TracksSection from "./TracksSection";
 import { useLanguage } from "@/contexts/LanguageContext";
 
-export default function Efficiency() {
+const EfficiencySection = () => {
   const { t } = useLanguage();
-  
-  // Client logos para prueba social
-  const clients = [
-    { name: "Anglo American", logo: "/logos/anglo.svg" },
-    { name: "Antofagasta Minerals", logo: "/logos/antofagasta.svg" },
-    { name: "Codelco", logo: "/logos/codelco.svg" },
-    { name: "BHP", logo: "/logos/bhp.svg" },
-    { name: "Teck", logo: "/logos/teck.svg" },
-    { name: "Otros", logo: "/logos/otros.svg" }
-  ];
-  
-  
-  // Datos para "Cómo trabajamos" (3 pasos)
-  const howWeWork = [
+
+  const statements = [
     {
-      step: "1",
-      title: t('efficiency.discovery.title'),
-      duration: t('efficiency.discovery.duration'),
-      description: t('efficiency.discovery.description')
+      icon: <Target className="w-10 h-10 text-ey-yellow" />,
+      titleKey: "statement.vision.title",
+      descriptionKey: "statement.vision.description",
     },
     {
-      step: "2",
-      title: t('efficiency.mvp.title'),
-      duration: t('efficiency.mvp.duration'),
-      description: t('efficiency.mvp.description')
+      icon: <Users className="w-10 h-10 text-ey-yellow" />,
+      titleKey: "statement.design.title",
+      descriptionKey: "statement.design.description",
     },
     {
-      step: "3",
-      title: t('efficiency.scale.title'),
-      duration: t('efficiency.scale.duration'),
-      description: t('efficiency.scale.description')
-    }
-  ];
-  
-  // Risk & Governance items
-  const riskGovernance = [
-    {
-      icon: Shield,
-      title: t('efficiency.security_data.title'),
-      description: t('efficiency.security_data.description')
+      icon: <Lightbulb className="w-10 h-10 text-ey-yellow" />,
+      titleKey: "statement.iteration.title",
+      descriptionKey: "statement.iteration.description",
     },
     {
-      icon: CheckCircle,
-      title: t('efficiency.guaranteed_delivery.title'),
-      description: t('efficiency.guaranteed_delivery.description')
+      icon: <CheckCircle className="w-10 h-10 text-ey-yellow" />,
+      titleKey: "statement.deployment.title",
+      descriptionKey: "statement.deployment.description",
     },
-    {
-      icon: Users,
-      title: t('efficiency.continuity.title'),
-      description: t('efficiency.continuity.description')
-    }
   ];
 
   return (
-    <section id="efficiency" className="py-16 md:py-24 bg-ey-dark relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* 1. Hero Section - Premium Executive Design */}
-        <motion.div 
-          className="relative mb-24"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 1 }}
-          viewport={{ once: true }}
-        >
+    <section id="efficiency" className="py-20 sm:py-28">
+      <div className="container mx-auto px-4">
+        
+        {/* Efficiency Section - Kept as is */}
+        <div className="relative">
           {/* Background Effects */}
           <div className="absolute inset-0 opacity-10">
             <div className="absolute top-0 left-1/4 w-72 h-72 bg-ey-yellow rounded-full blur-3xl"></div>
@@ -158,114 +124,102 @@ export default function Efficiency() {
             </motion.div>
 
 
-            {/* Statement Section - Professional Redesign */}
+            {/* Simple Statement Section */}
             <motion.div 
-              className="mb-20"
+              className="mb-16"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 1.4 }}
               viewport={{ once: true }}
             >
-              <div className="max-w-7xl mx-auto">
-                {/* Professional Header */}
-                <div className="text-center mb-16">
-                  <motion.div 
-                    className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-ey-yellow to-orange-500 rounded-2xl mb-6 shadow-xl"
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.6, delay: 0.2 }}
-                    viewport={{ once: true }}
-                  >
-                    <Target className="w-8 h-8 text-white" />
-                  </motion.div>
-                  <motion.h2 
-                    className="text-4xl md:text-5xl lg:text-6xl font-black text-ey-white mb-6"
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.4 }}
-                    viewport={{ once: true }}
-                  >
-                    <span className="bg-gradient-to-r from-ey-yellow via-orange-400 to-ey-yellow bg-clip-text text-transparent">
-                      {t('efficiency.statement.title')}
-                    </span>
-                  </motion.h2>
-                  <motion.p 
-                    className="text-lg md:text-xl text-ey-white/70 max-w-3xl mx-auto leading-relaxed"
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.6 }}
-                    viewport={{ once: true }}
-                  >
-                    Declaración de propósito y compromiso estratégico
-                  </motion.p>
+              <div className="max-w-6xl mx-auto">
+                {/* Simple Header */}
+                <div className="text-center mb-12">
+                  <h2 className="text-2xl md:text-3xl font-bold text-ey-yellow mb-2">
+                    {t('statement.title')}
+                  </h2>
+                  <p className="text-base md:text-lg text-ey-white/80 max-w-3xl mx-auto">
+                    {t('statement.subtitle')}
+                  </p>
                 </div>
                 
-                {/* Professional Cards Grid */}
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
-                  {[
-                    { title: t('efficiency.statement.tengo.title'), content: t('efficiency.statement.tengo.content'), icon: CheckCircle, color: 'from-blue-500 to-blue-600' },
-                    { title: t('efficiency.statement.soy.title'), content: t('efficiency.statement.soy.content'), icon: Star, color: 'from-purple-500 to-purple-600' },
-                    { title: t('efficiency.statement.quiero.title'), content: t('efficiency.statement.quiero.content'), icon: Target, color: 'from-green-500 to-green-600' },
-                    { title: t('efficiency.statement.puedo.title'), content: t('efficiency.statement.puedo.content'), icon: Zap, color: 'from-orange-500 to-orange-600' }
-                  ].map((item, index) => (
-                    <motion.div 
+                {/* Simple Cards Grid */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                  {statements.map((statement, index) => (
+                    <motion.div
                       key={index}
-                      className="group relative bg-gradient-to-br from-ey-dark/80 to-ey-medium/20 backdrop-blur-xl rounded-2xl p-8 border border-ey-light/10 hover:border-ey-yellow/40 transition-all duration-500 shadow-xl hover:shadow-2xl hover:-translate-y-2"
+                      className="group relative bg-ey-dark/30 backdrop-blur-lg rounded-xl p-6 border border-ey-light/10 h-full flex flex-col text-center"
                       initial={{ opacity: 0, y: 30 }}
                       whileInView={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.6, delay: 0.8 + index * 0.1 }}
+                      transition={{ duration: 0.5, delay: index * 0.1 }}
                       viewport={{ once: true }}
                     >
-                      {/* Animated Background */}
-                      <div className="absolute inset-0 bg-gradient-to-br from-ey-yellow/5 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                      
-                      {/* Icon */}
-                      <div className="relative mb-6">
-                        <div className={`w-14 h-14 bg-gradient-to-br ${item.color} rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300`}>
-                          <item.icon className="w-7 h-7 text-white" />
+                      <div className="flex justify-center mb-4">
+                        {statement.icon}
+                      </div>
+                      <h3 className="text-lg font-semibold text-ey-white mb-2">{t(statement.titleKey)}</h3>
+                      <p className="text-sm text-ey-white/70 flex-grow">{t(statement.descriptionKey)}</p>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Personal Statement Section */}
+            <motion.div 
+              className="mb-16"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 1.6 }}
+              viewport={{ once: true }}
+            >
+              <div className="max-w-6xl mx-auto">
+                {/* Personal Statement Cards */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  {[
+                    { titleKey: 'personal_statement.have.title', descriptionKey: 'personal_statement.have.description', icon: <Users className="w-8 h-8 text-ey-yellow" /> },
+                    { titleKey: 'personal_statement.am.title', descriptionKey: 'personal_statement.am.description', icon: <Star className="w-8 h-8 text-ey-yellow" /> },
+                    { titleKey: 'personal_statement.want.title', descriptionKey: 'personal_statement.want.description', icon: <Target className="w-8 h-8 text-ey-yellow" /> },
+                    { titleKey: 'personal_statement.can.title', descriptionKey: 'personal_statement.can.description', icon: <Zap className="w-8 h-8 text-ey-yellow" /> }
+                  ].map((item, index) => (
+                    <motion.div
+                      key={index}
+                      className="group relative bg-ey-dark/30 backdrop-blur-lg rounded-xl p-6 border border-ey-light/10 h-full flex flex-col"
+                      initial={{ opacity: 0, y: 30 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.5, delay: index * 0.1 }}
+                      viewport={{ once: true }}
+                    >
+                      <div className="flex items-center mb-4">
+                        <div className="flex-shrink-0 mr-3">
+                          {item.icon}
                         </div>
+                        <h3 className="text-lg font-semibold text-ey-white">{t(item.titleKey)}</h3>
                       </div>
-                      
-                      {/* Content */}
-                      <div className="relative">
-                        <h3 className="text-2xl font-bold text-ey-white mb-4 group-hover:text-ey-yellow transition-colors duration-300">
-                          {item.title}
-                        </h3>
-                        <p className="text-ey-white/80 leading-relaxed text-base">
-                          {item.content}
-                        </p>
-                      </div>
-                      
-                      {/* Decorative Element */}
-                      <div className="absolute top-4 right-4 w-2 h-2 bg-ey-yellow rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                      <p className="text-sm text-ey-white/70 flex-grow leading-relaxed">{t(item.descriptionKey)}</p>
                     </motion.div>
                   ))}
                 </div>
                 
-                {/* Professional Closing Statement */}
+                {/* Closing Statement */}
                 <motion.div 
-                  className="text-center"
+                  className="text-center mt-8"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 1.2 }}
+                  transition={{ duration: 0.8, delay: 1.0 }}
                   viewport={{ once: true }}
                 >
-                  <div className="bg-gradient-to-r from-ey-yellow/10 via-orange-500/10 to-ey-yellow/10 rounded-2xl p-8 border border-ey-yellow/20 max-w-5xl mx-auto backdrop-blur-sm">
-                    <div className="flex items-center justify-center mb-4">
-                      <div className="w-8 h-8 bg-ey-yellow rounded-full flex items-center justify-center mr-3">
-                        <CheckCircle className="w-5 h-5 text-ey-black" />
-                      </div>
-                      <h3 className="text-xl font-bold text-ey-yellow">Compromiso Estratégico</h3>
-                    </div>
-                    <p className="text-ey-white/90 leading-relaxed text-lg md:text-xl font-medium">
-                      {t('efficiency.track1_closing')}
+                  <div className="bg-gradient-to-r from-ey-yellow/10 to-orange-500/10 rounded-xl p-6 border border-ey-yellow/20 max-w-4xl mx-auto">
+                    <p className="text-lg text-ey-white/90 leading-relaxed font-medium">
+                      {t('personal_statement.closing')}
                     </p>
                   </div>
                 </motion.div>
               </div>
             </motion.div>
           </div>
-        </motion.div>
+        </div>
+
 
         
         {/* 4. Mi aporte (4 Tracks) - TracksSection Premium */}
@@ -293,7 +247,29 @@ export default function Efficiency() {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {howWeWork.map((step, index) => (
+            {[
+              {
+                step: '1',
+                title: t('efficiency.discovery.title'),
+                duration: t('efficiency.discovery.duration'),
+                description: t('efficiency.discovery.description'),
+                icon: <Target className="w-6 h-6 text-white" />
+              },
+              {
+                step: '2',
+                title: t('efficiency.mvp.title'),
+                duration: t('efficiency.mvp.duration'),
+                description: t('efficiency.mvp.description'),
+                icon: <Users className="w-6 h-6 text-white" />
+              },
+              {
+                step: '3',
+                title: t('efficiency.scale.title'),
+                duration: t('efficiency.scale.duration'),
+                description: t('efficiency.scale.description'),
+                icon: <CheckCircle className="w-6 h-6 text-white" />
+              }
+            ].map((step, index) => (
               <motion.div 
                 key={index}
                 className="bg-ey-medium/20 backdrop-blur-sm rounded-xl p-8 shadow-lg border border-ey-yellow/20 relative"
@@ -303,12 +279,12 @@ export default function Efficiency() {
                 viewport={{ once: true }}
               >
                 <div className="absolute -top-3 -left-3 w-8 h-8 bg-ey-yellow rounded-full flex items-center justify-center text-white font-bold text-sm">
-                  {step.step}
+                  {step.icon}
                 </div>
                 <h4 className="text-xl md:text-2xl font-bold text-ey-white mb-3">{step.title}</h4>
                 <p className="text-base font-medium text-ey-yellow mb-4">{step.duration}</p>
                 <p className="text-base text-ey-white/80 leading-relaxed">{step.description}</p>
-                {index < howWeWork.length - 1 && (
+                {index < 2 && (
                   <div className="hidden md:block absolute -right-4 top-1/2 transform -translate-y-1/2">
                     <ArrowRight className="w-6 h-6 text-ey-white/30" />
                   </div>
@@ -318,38 +294,7 @@ export default function Efficiency() {
           </div>
         </motion.div>
         
-        {/* 4. Risk & Governance (mini-strip) */}
-        <motion.div 
-          className="mb-16"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          viewport={{ once: true }}
-        >
-          <div className="bg-ey-medium/20 backdrop-blur-sm rounded-xl p-10 border border-ey-yellow/20">
-            <h3 className="text-xl md:text-2xl font-bold text-ey-white mb-8 text-center">{t('efficiency.risk_governance')}</h3>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {riskGovernance.map((item, index) => (
-                <motion.div 
-                  key={index}
-                  className="flex items-start space-x-4"
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                >
-                  <div className="w-8 h-8 bg-ey-yellow/20 rounded-lg flex items-center justify-center shrink-0">
-                    <item.icon className="w-4 h-4 text-ey-yellow" />
-                  </div>
-                  <div>
-                    <h4 className="text-base md:text-lg font-bold text-ey-white mb-2">{item.title}</h4>
-                    <p className="text-sm md:text-base text-ey-white/80 leading-relaxed">{item.description}</p>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </motion.div>
+
         
         {/* 5. Cierre de sección */}
         <motion.div 
@@ -368,4 +313,6 @@ export default function Efficiency() {
       </div>
     </section>
   );
-}
+};
+
+export default EfficiencySection;

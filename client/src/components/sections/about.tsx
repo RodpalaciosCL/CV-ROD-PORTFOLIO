@@ -6,7 +6,8 @@ import {
   Play, Pause, ArrowUpRight, Minus, Zap, TrendingUp, Lightbulb, 
   Briefcase, Award, MapPin, Calendar, Building2, Cpu, Database,
   Network, Lock, Settings, Wrench, Code, Terminal, RefreshCw,
-  Search, Truck, Hammer, TestTube, Droplets, Factory, Package
+  Search, Truck, Hammer, TestTube, Droplets, Factory, Package,
+  FlaskConical
 } from 'lucide-react';
 import { useLanguage } from "@/contexts/LanguageContext";
 
@@ -133,68 +134,60 @@ export default function About() {
 
   const miningProcess = [
     {
-      id: 'exploration',
+      id: 1,
       title: t('mining_process.exploration.title'),
-      content: t('mining_process.exploration.content'),
-      icon: Search,
-      color: 'from-blue-500 to-blue-700'
+      icon: <Search className="w-8 h-8 text-ey-yellow" />,
     },
     {
-      id: 'extraction',
+      id: 2,
       title: t('mining_process.extraction.title'),
-      content: t('mining_process.extraction.content'),
-      icon: Truck,
-      color: 'from-green-500 to-green-700'
+      icon: <Truck className="w-8 h-8 text-ey-yellow" />,
     },
     {
-      id: 'crushing',
+      id: 3,
       title: t('mining_process.crushing.title'),
-      content: t('mining_process.crushing.content'),
-      icon: Hammer,
-      color: 'from-orange-500 to-orange-700'
+      icon: <Hammer className="w-8 h-8 text-ey-yellow" />,
     },
     {
-      id: 'concentration',
+      id: 4,
       title: t('mining_process.concentration.title'),
-      content: t('mining_process.concentration.content'),
-      icon: TestTube,
-      color: 'from-purple-500 to-purple-700'
+      icon: <FlaskConical className="w-8 h-8 text-ey-yellow" />,
     },
     {
-      id: 'leaching',
+      id: 5,
       title: t('mining_process.leaching.title'),
-      content: t('mining_process.leaching.content'),
-      icon: Droplets,
-      color: 'from-cyan-500 to-cyan-700'
+      icon: <Droplets className="w-8 h-8 text-ey-yellow" />,
     },
     {
-      id: 'solvent',
-      title: t('mining_process.solvent.title'),
-      content: t('mining_process.solvent.content'),
-      icon: Zap,
-      color: 'from-yellow-500 to-yellow-700'
+      id: 6,
+      title: t('mining_process.solvent_extraction.title'),
+      icon: <TestTube className="w-8 h-8 text-ey-yellow" />,
     },
     {
-      id: 'electro',
-      title: t('mining_process.electro.title'),
-      content: t('mining_process.electro.content'),
-      icon: Settings,
-      color: 'from-red-500 to-red-700'
+      id: 7,
+      title: t('mining_process.electrowinning.title'),
+      icon: <Zap className="w-8 h-8 text-ey-yellow" />,
     },
     {
-      id: 'smelting',
+      id: 8,
       title: t('mining_process.smelting.title'),
-      content: t('mining_process.smelting.content'),
-      icon: Factory,
-      color: 'from-indigo-500 to-indigo-700'
+      icon: <Factory className="w-8 h-8 text-ey-yellow" />,
     },
     {
-      id: 'final',
-      title: t('mining_process.final.title'),
-      content: t('mining_process.final.content'),
-      icon: Package,
-      color: 'from-emerald-500 to-emerald-700'
-    }
+      id: 9,
+      title: t('mining_process.final_product.title'),
+      icon: <Package className="w-8 h-8 text-ey-yellow" />,
+    },
+  ];
+
+  const supportingElements = [
+    { key: 'mining_process.supporting_elements.machinery' },
+    { key: 'mining_process.supporting_elements.warehousing' },
+    { key: 'mining_process.supporting_elements.security' },
+    { key: 'mining_process.supporting_elements.logistics' },
+    { key: 'mining_process.supporting_elements.peripherals' },
+    { key: 'mining_process.supporting_elements.networks' },
+    { key: 'mining_process.supporting_elements.others' }
   ];
 
   return (
@@ -521,78 +514,88 @@ export default function About() {
           </div>
         </motion.div>
 
-        {/* Mining Process Pipeline - Connected Flow */}
-        <motion.div 
-          className="mb-16"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          viewport={{ once: true }}
-        >
-          <div className="max-w-7xl mx-auto">
-            {/* Clean Header */}
-            <div className="text-center mb-12">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                viewport={{ once: true }}
-              >
-                <h2 className="text-3xl md:text-4xl font-bold text-ey-yellow mb-2">
-                  {t('mining_process.title')}
-                </h2>
-                <h3 className="text-xl md:text-2xl font-medium text-ey-white/90">
-                  {t('mining_process.subtitle')}
-                </h3>
-              </motion.div>
-            </div>
+        {/* Mining Process Section */}
+        <section id="mining-process" className="py-20 sm:py-28">
+          <div className="container mx-auto px-4">
+            
+            {/* Header */}
+            <motion.div 
+              className="text-center mb-16"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+            >
+              <h2 className="text-3xl md:text-4xl font-bold text-ey-yellow mb-2">
+                {t('mining_process.main_title')}
+              </h2>
+              <h3 className="text-xl md:text-2xl font-medium text-ey-white/90">
+                {t('mining_process.main_subtitle')}
+              </h3>
+            </motion.div>
 
-            {/* Simple Workflow */}
-            <div className="flex justify-between items-center max-w-6xl mx-auto gap-4">
+            {/* Main Process Grid (3x3) */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-10">
               {miningProcess.map((step, index) => (
-                <motion.div
-                  key={step.id}
-                  className="flex flex-col items-center text-center"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.4, delay: index * 0.1 }}
+                <motion.div 
+                  key={step.id} 
+                  className="bg-ey-dark/30 backdrop-blur-lg rounded-2xl p-6 border border-ey-light/10 transition-all duration-300 hover:border-ey-yellow/40 hover:bg-ey-dark/50 hover:-translate-y-2"
+                  initial={{ opacity: 0, scale: 0.9, y: 30 }}
+                  whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.05 }}
                   viewport={{ once: true }}
                 >
-                  {/* Step Box */}
-                  <div className="w-28 h-20 bg-gray-700 rounded-lg border border-gray-500 flex flex-col items-center justify-center">
-                    {/* Step Number */}
-                    <span className="text-yellow-400 font-bold text-lg mb-1">{index + 1}</span>
-                    
-                    {/* Step Title */}
-                    <h3 className="text-xs font-medium text-white leading-tight px-2">
-                      {step.title}
-                    </h3>
+                  <div className="flex justify-between items-start mb-4">
+                    <span className="text-ey-yellow font-bold text-3xl opacity-80">0{index + 1}</span>
+                    {step.icon}
                   </div>
+                  <h4 className="text-lg font-semibold text-ey-white h-12">
+                    {step.title}
+                  </h4>
                 </motion.div>
               ))}
             </div>
 
-            {/* Flow Summary */}
-            <motion.div 
-              className="mt-16 text-center"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.8 }}
+            <motion.p 
+              className="text-center text-ey-white/70 italic max-w-2xl mx-auto mb-20"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.5 }}
               viewport={{ once: true }}
             >
-              <div className="inline-flex items-center bg-gradient-to-r from-ey-dark/60 to-ey-medium/20 backdrop-blur-sm rounded-2xl px-8 py-4 border border-ey-yellow/20">
-                <motion.div 
-                  className="w-3 h-3 bg-ey-yellow rounded-full mr-4"
-                  animate={{ scale: [1, 1.2, 1] }}
-                  transition={{ duration: 2, repeat: Infinity }}
-                />
-                <span className="text-base text-ey-white/90 font-medium">
-                  Flujo continuo de tecnología inteligente optimizando cada etapa
-                </span>
-              </div>
+              {t('mining_process.footer')}
+            </motion.p>
+
+            {/* Supporting Elements Section */}
+            <motion.div 
+              className="text-center mb-10"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+            >
+              <h3 className="text-2xl font-semibold text-ey-white">
+                {t('mining_process.supporting_title')}
+              </h3>
             </motion.div>
+
+            <div className="flex flex-wrap justify-center gap-4">
+              {supportingElements.map((element, index) => (
+                <motion.div 
+                  key={element.key} 
+                  className="bg-ey-dark/20 backdrop-blur-md rounded-full py-3 px-6 border border-ey-light/10 transition-all duration-300 hover:border-ey-yellow/30 hover:bg-ey-dark/40"
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.4, delay: index * 0.05 }}
+                  viewport={{ once: true }}
+                  whileHover={{ y: -4 }}
+                >
+                  <span className="text-ey-white/90 text-sm font-medium">{t(element.key)}</span>
+                </motion.div>
+              ))}
+            </div>
           </div>
-        </motion.div>
+        </section>
 
         {/* Career Timeline - Full width section */}
         <motion.div 

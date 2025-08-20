@@ -720,6 +720,50 @@ const translations = {
     'pipeline_plus.executive_pipeline': 'Pipeline Ejecutivo',
     'pipeline_plus.progress': 'Progreso',
     'pipeline_plus.strategic_consortium': 'Consorcio Estratégico',
+
+    'value.description': 'Mi objetivo es entregar resultados tangibles y soluciones de alto impacto que impulsen el crecimiento y la eficiencia de mis clientes.',
+    'value.button': 'Contáctame',
+
+    'mining_process.main_title': 'Tecnología y Operación inteligente',
+    'mining_process.main_subtitle': 'durante todo el proceso esencial del mineral',
+    'mining_process.footer': 'Flujo continuo de tecnología inteligente optimizando cada etapa',
+    'mining_process.supporting_title': 'Como también todo lo que gira entorno al proceso esencial:',
+    'mining_process.supporting_elements.machinery': 'Maquinaria',
+    'mining_process.supporting_elements.warehousing': 'Bodegaje',
+    'mining_process.supporting_elements.security': 'Seguridad 360',
+    'mining_process.supporting_elements.logistics': 'Logística',
+    'mining_process.supporting_elements.peripherals': 'Periféricos',
+    'mining_process.supporting_elements.networks': 'Redes IT/OT',
+    'mining_process.supporting_elements.others': 'Otros',
+
+    'solutions.highly_demanded_title': 'Soluciones Altamente Demandadas por la Industria',
+
+    'statement.title': 'Statement',
+    'statement.subtitle': 'Declaración de propósito y compromiso estratégico',
+    'statement.vision.title': 'Visión y Foco',
+    'statement.vision.description': 'Detectar oportunidades de transformación que impacten directamente en el ROI y en métricas de negocio reales.',
+    'statement.design.title': 'Diseño Participativo',
+    'statement.design.description': 'Co-crear soluciones tangibles, visualizando tempranamente el impacto y fomentando la colaboración activa.',
+    'statement.iteration.title': 'Iteración y Optimización',
+    'statement.iteration.description': 'Mejora continua de la solución, adaptando estrategias para maximizar el rendimiento y la eficiencia.',
+    'statement.deployment.title': 'Despliegue y Sostenibilidad',
+    'statement.deployment.description': 'Asegurar una puesta en marcha efectiva y un afinamiento constante para garantizar resultados sostenibles a largo plazo.',
+    
+    // Personal Statement section
+    'personal_statement.title': 'Statement',
+    'personal_statement.have.title': 'Tengo',
+    'personal_statement.have.description': 'La capacidad de liderar equipos, visualizar talento tempranamente y potenciar el sentido de pertenencia y propósito, junto con hacer del trabajo un lugar cálido, desafiante y sumamente interesante, donde el espíritu de darlo todo es una constante, y los beneficios de hacerlo son la recompensa de esta colaboración juntos.',
+    'personal_statement.am.title': 'Soy',
+    'personal_statement.am.description': 'Un fiel embajador de los beneficios y oportunidades de trabajar en una empresa líder global, y una empresa como Rodrigo Palacios, que muchas veces quienes la viven "para siempre" no toman el valor, sino la red, documentación y cantidad de activos que están a su alcance y el nivel de aprendizaje y estímulos que llegan diariamente, solo son comparables a estar estudiando en un MBA constante, y de contenido de la más alta calidad.',
+    'personal_statement.want.title': 'Quiero',
+    'personal_statement.want.description': 'Conectar con un equipo con hambre y deseo de ser líderes, y a su vez referentes, pero que hablen de sus logros, contribuciones y calidad de entregables. Quiero ser "Pionero y no "Seguidor", y que la industria nos valide por nuestras acciones, y no los compromisos o promesas incumplidas, y finalmente, quiero contribuir a hacer de la firma la referencia cuando alguien piense en buscar, llamar o seleccionar un partner para acompañarlos en momentos complejos, decisivos, trascendentales y definitorios.',
+    'personal_statement.can.title': 'Puedo',
+    'personal_statement.can.description': 'Contribuir valor, frescura, una visión altamente enfocada en "negocio inteligente", así como una capacidad única de articulación, seguimiento y cierre, que debe sentar precedente en el mediano plazo, junto con la forma de abordar oportunidades, transformar problemas e identificar posibilidades no solo para la práctica, sino también para el resto de la empresa, junto con ser un agente de cambio y evangelista natural del trabajo en equipo, la colaboración como mantra y el respeto por lo que hacemos y cómo lo ofrecemos.',
+    'personal_statement.closing': 'Visión de negocio, crecimiento y excelencia, en una de las prácticas más relevantes para la firma durante los próximos 20 años',
+
+    'competitive.title': 'Ventajas Competitivas',
+    'competitive.title_highlight': 'que Marcan la Diferencia',
+    'competitive.cards.experience.title': 'Experiencia Comprobada',
   },
   en: {
     // Navigation
@@ -1376,6 +1420,50 @@ const translations = {
     'tracks.track4.governance.text': 'Agile PMO with financial/non-financial tracking; avoids orphaned projects.',
     'tracks.track4.culture.title': 'Safety culture',
     'tracks.track4.culture.text': 'Near-miss and anonymous feedback with visible action closures in the tower',
+
+    'value.description': 'My goal is to deliver tangible results and high-impact solutions that drive growth and efficiency for my clients.',
+    'value.button': 'Contact me',
+
+    'mining_process.main_title': 'Intelligent Technology and Operation',
+    'mining_process.main_subtitle': 'throughout the entire essential mineral process',
+    'mining_process.footer': 'Continuous flow of intelligent technology optimizing each stage',
+    'mining_process.supporting_title': 'As well as everything that revolves around the essential process:',
+    'mining_process.supporting_elements.machinery': 'Machinery',
+    'mining_process.supporting_elements.warehousing': 'Warehousing',
+    'mining_process.supporting_elements.security': '360 Security',
+    'mining_process.supporting_elements.logistics': 'Logistics',
+    'mining_process.supporting_elements.peripherals': 'Peripherals',
+    'mining_process.supporting_elements.networks': 'IT/OT Networks',
+    'mining_process.supporting_elements.others': 'Others',
+
+    'solutions.highly_demanded_title': 'Solutions Highly Demanded by the Industry',
+
+    'statement.title': 'Statement',
+    'statement.subtitle': 'Statement of purpose and strategic commitment',
+    'statement.vision.title': 'Vision and Focus',
+    'statement.vision.description': 'Detect transformation opportunities that directly impact ROI and real business metrics.',
+    'statement.design.title': 'Participatory Design',
+    'statement.design.description': 'Co-create tangible solutions, visualizing impact early and fostering active collaboration.',
+    'statement.iteration.title': 'Iteration and Optimization',
+    'statement.iteration.description': 'Continuous improvement of the solution, adapting strategies to maximize performance and efficiency.',
+    'statement.deployment.title': 'Deployment and Sustainability',
+    'statement.deployment.description': 'Ensure effective implementation and constant refinement to guarantee long-term sustainable results.',
+    
+    // Personal Statement section
+    'personal_statement.title': 'Statement',
+    'personal_statement.have.title': 'I Have',
+    'personal_statement.have.description': 'The ability to lead teams, visualize talent early and enhance the sense of belonging and purpose, along with making work a warm, challenging and extremely interesting place, where the spirit to give it is a constant, and the benefits of doing so are the reward of this collaboration together.',
+    'personal_statement.am.title': 'I Am',
+    'personal_statement.am.description': 'A faithful ambassador of the benefits and opportunities of working in a global leader company, and a company like Rodrigo Palacios, which often those who live it "forever" do not take the value, but the network, documentation and amount of assets that are at your fingertips and the level of learning and stimuli that come daily, are only comparable to being studying in constant MBA, and of the highest quality content.',
+    'personal_statement.want.title': 'I Want',
+    'personal_statement.want.description': 'To connect with a team with hunger and desire to be leaders, and in turn referents, but those who talk about their achievements, contributions and quality of deliverables. I want to be "Pioneer and not "Follower", and for the industry to validate us by our actions, and not the commitments or unfulfilled promises, and finally, I want to contribute to making the firm the reference when someone thinks of looking, calling or selecting a partner to accompany them in complex, decisive, transcendental and deciding moments.',
+    'personal_statement.can.title': 'I Can',
+    'personal_statement.can.description': 'Contribute value, freshness, a highly focused view on "intelligent business", as well as a unique capacity for articulation, follow-up and closure, which should set a precedent in the medium term, along with the way to approach opportunities, transform problems and identify possibilities not only for the practice, but also for the rest of the company, along with being an agent of change and natural evangelist of teamwork, collaboration as a mantra and respect for what we do and how we offer it.',
+    'personal_statement.closing': 'Business vision, growth and excellence, in one of the most relevant practices for the firm over the next 20 years',
+
+    'competitive.title': 'Competitive Advantages',
+    'competitive.title_highlight': 'that Make the Difference',
+    'competitive.cards.experience.title': 'Proven Experience',
   }
 };
 

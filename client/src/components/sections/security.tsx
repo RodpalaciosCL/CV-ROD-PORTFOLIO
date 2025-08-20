@@ -7,67 +7,67 @@ export default function Security() {
   
   const securityTechnologies = [
     {
-      title: "SafeApp",
-      subtitle: "Plataforma digital de seguridad minera",
+      titleKey: "security.safeapp.title",
+      subtitleKey: "security.safeapp.subtitle",
       icon: <Shield className="w-8 h-8" />,
       media: "https://res.cloudinary.com/dhobnlg73/image/upload/v1750620085/668c1c12e8a58030d5568f21_642d7a5f4d77d19c2f6fa8c2_xzGehktapAgabSW56yhCmigLzY3uCWACMrR6p4lkLfw_owddtl.jpg",
-      bullets: [
-        "Checklist digital", 
-        "Registro de incidentes", 
-        "Control automático de EPP",
-        "Dashboards de seguridad en tiempo real"
+      bulletKeys: [
+        "security.safeapp.bullet1",
+        "security.safeapp.bullet2",
+        "security.safeapp.bullet3",
+        "security.safeapp.bullet4"
       ],
       color: "from-blue-500 to-blue-700"
     },
     {
-      title: "Drones de Inspección",
-      subtitle: "Reconocimiento y mapeo avanzado en espacios confinados",
+      titleKey: "security.inspection_drones.title",
+      subtitleKey: "security.inspection_drones.subtitle",
       icon: <Eye className="w-8 h-8" />,
       media: "https://res.cloudinary.com/dhobnlg73/video/upload/v1754185606/ELIOS_3_SURVEYING_PAYLOAD_LOW_BITRATE_meuwtn.mp4",
-      bullets: [
-        "Inspección de túneles y espacios de alto riesgo",
-        "Mapeo 3D en tiempo real sin exposición humana",
-        "Detección temprana de fallas estructurales",
-        "Reducción de 90% en tiempo de evaluación"
+      bulletKeys: [
+        "security.inspection_drones.bullet1",
+        "security.inspection_drones.bullet2",
+        "security.inspection_drones.bullet3",
+        "security.inspection_drones.bullet4"
       ],
       color: "from-orange-500 to-orange-700"
     },
     {
-      title: "Drones de Corrección",
-      subtitle: "Intervención precisa y mantenimiento remoto",
+      titleKey: "security.correction_drones.title",
+      subtitleKey: "security.correction_drones.subtitle",
       icon: <Zap className="w-8 h-8" />,
       media: "https://res.cloudinary.com/dhobnlg73/video/upload/v1754185484/voliro_homepage_video_hpsjm3.mp4",
-      bullets: [
-        "Capacidad de maniobra omnidireccional",
-        "Corrección de fallas en tiempo real",
-        "Mantenimiento preventivo automatizado",
-        "Operación en condiciones extremas"
+      bulletKeys: [
+        "security.correction_drones.bullet1",
+        "security.correction_drones.bullet2",
+        "security.correction_drones.bullet3",
+        "security.correction_drones.bullet4"
       ],
       color: "from-red-500 to-red-700"
     },
     {
-      title: "RescueAI-Tag",
-      subtitle: "Localización y respuesta de emergencia inteligente",
+      titleKey: "security.rescue_tag.title",
+      subtitleKey: "security.rescue_tag.subtitle",
       icon: <MapPin className="w-8 h-8" />,
       media: "https://res.cloudinary.com/dhobnlg73/video/upload/v1754191470/Crew_Companion_1.3_ddgusl.mov",
-      bullets: [
-        "Localización en tiempo real del personal",
-        "Alertas automáticas en situaciones de riesgo",
-        "Comunicación bidireccional de emergencia",
-        "Integración con sistemas de evacuación"
+      bulletKeys: [
+        "security.rescue_tag.bullet1",
+        "security.rescue_tag.bullet2",
+        "security.rescue_tag.bullet3",
+        "security.rescue_tag.bullet4"
       ],
       color: "from-purple-500 to-purple-700"
     },
     {
-      title: "All Access",
-      subtitle: "Control inteligente de acceso seguro",
+      titleKey: "security.all_access.title",
+      subtitleKey: "security.all_access.subtitle",
       icon: <Shield className="w-8 h-8" />,
       media: "https://res.cloudinary.com/dhobnlg73/image/upload/v1750693911/Captura_de_pantalla_2025-06-23_a_la_s_11.51.34_c8xmcy.png",
-      bullets: [
-        "Control de visitas e internos",
-        "Prevención de acoso", 
-        "Acceso biométrico",
-        "Monitoreo en tiempo real"
+      bulletKeys: [
+        "security.all_access.bullet1",
+        "security.all_access.bullet2",
+        "security.all_access.bullet3",
+        "security.all_access.bullet4"
       ],
       color: "from-green-500 to-green-700"
     }
@@ -104,7 +104,7 @@ export default function Security() {
                   ) : (
                     <img
                       src={tech.media}
-                      alt={tech.title}
+                      alt={t(tech.titleKey)}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                   )}
@@ -119,18 +119,18 @@ export default function Security() {
                     </div>
                     <div>
                       <h3 className="text-lg font-bold text-ey-white group-hover:text-ey-yellow transition-colors">
-                        {tech.title}
+                        {t(tech.titleKey)}
                       </h3>
-                      <p className="text-xs text-gray-400">{tech.subtitle}</p>
+                      <p className="text-xs text-gray-400">{t(tech.subtitleKey)}</p>
                     </div>
                   </div>
 
                   {/* Bullets */}
                   <div className="space-y-2 mb-3 flex-grow">
-                    {tech.bullets.slice(0, 2).map((bullet, bulletIndex) => (
+                    {tech.bulletKeys.slice(0, 2).map((bulletKey, bulletIndex) => (
                       <div key={bulletIndex} className="flex items-start space-x-2">
                         <div className="w-1.5 h-1.5 bg-ey-yellow rounded-full mt-1.5 flex-shrink-0"></div>
-                        <p className="text-xs text-gray-300 leading-relaxed">{bullet}</p>
+                        <p className="text-xs text-gray-300 leading-relaxed">{t(bulletKey)}</p>
                       </div>
                     ))}
                   </div>
