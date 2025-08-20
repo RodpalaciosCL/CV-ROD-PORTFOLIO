@@ -96,7 +96,8 @@ const translations = {
     'about.bullets.total_commitment': 'Compromiso Total',
     
     // Mining Process Timeline
-    'mining_process.title': 'Tecnología y Operación inteligente durante todo el proceso esencial del mineral.',
+    'mining_process.title': 'Tecnología y Operación inteligente',
+    'mining_process.subtitle': 'durante todo el proceso esencial del mineral',
     'mining_process.exploration.title': 'Exploración',
     'mining_process.exploration.content': 'Prospección geológica (mapas, sondajes, geofísica, geoquímica). Perforaciones para estimar leyes de mineral y tonelaje. Definición de recursos y reservas.',
     'mining_process.extraction.title': 'Explotación / Extracción',

@@ -533,7 +533,7 @@ export default function About() {
             {/* Header with Flow Concept */}
             <div className="text-center mb-12">
               <motion.h2 
-                className="text-3xl md:text-4xl font-bold text-ey-white mb-4"
+                className="text-3xl md:text-4xl font-bold text-ey-white mb-2"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
@@ -541,73 +541,59 @@ export default function About() {
               >
                 <span className="text-ey-yellow">{t('mining_process.title')}</span>
               </motion.h2>
+              <motion.h3 
+                className="text-xl md:text-2xl font-semibold text-ey-white/80 mb-4"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.3 }}
+                viewport={{ once: true }}
+              >
+                {t('mining_process.subtitle')}
+              </motion.h3>
               <motion.p 
                 className="text-lg text-ey-white/70 max-w-3xl mx-auto"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.3 }}
+                transition={{ duration: 0.5, delay: 0.4 }}
                 viewport={{ once: true }}
               >
                 Flujo continuo de tecnología inteligente a través de todo el proceso
               </motion.p>
             </div>
 
-            {/* Connected Pipeline Flow */}
+            {/* Simple Progress Timeline */}
             <div className="relative">
-              {/* Animated Flow Line */}
-              <div className="absolute top-1/2 left-0 right-0 h-2 bg-gradient-to-r from-ey-yellow/10 via-ey-yellow/30 to-ey-yellow/10 transform -translate-y-1/2 rounded-full overflow-hidden">
+              {/* Progress Bar */}
+              <div className="w-full h-2 bg-ey-dark/40 rounded-full mb-8 relative overflow-hidden">
                 <motion.div 
-                  className="h-full bg-gradient-to-r from-transparent via-ey-yellow/50 to-transparent"
-                  animate={{ x: ["-100%", "100%"] }}
-                  transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
+                  className="h-full bg-gradient-to-r from-ey-yellow to-orange-500 rounded-full"
+                  initial={{ width: 0 }}
+                  whileInView={{ width: "100%" }}
+                  transition={{ duration: 2, delay: 0.5 }}
+                  viewport={{ once: true }}
                 />
               </div>
               
-              {/* Pipeline Stages */}
-              <div className="flex justify-between items-center relative px-4">
+              {/* Process Steps */}
+              <div className="flex justify-between items-start">
                 {miningProcess.map((step, index) => (
                   <motion.div
                     key={step.id}
-                    className="flex flex-col items-center group relative"
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                    className="flex flex-col items-center text-center max-w-24"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.4, delay: index * 0.1 }}
                     viewport={{ once: true }}
                   >
-                    {/* Connection Lines */}
-                    {index < miningProcess.length - 1 && (
-                      <div className="absolute top-6 left-1/2 w-full h-0.5 bg-ey-yellow/20 transform translate-x-1/2"></div>
-                    )}
-                    
-                    {/* Stage Node */}
-                    <div className="relative mb-6">
-                      {/* Outer Ring */}
-                      <div className="w-16 h-16 bg-ey-dark border-2 border-ey-yellow/30 rounded-full flex items-center justify-center relative group-hover:border-ey-yellow/60 transition-all duration-300">
-                        <span className="text-ey-yellow font-bold text-lg">{index + 1}</span>
-                      </div>
-                      {/* Inner Glow */}
-                      <div className="absolute inset-0 w-16 h-16 bg-ey-yellow/20 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                      {/* Pulse Effect */}
-                      <motion.div 
-                        className="absolute inset-0 w-16 h-16 border-2 border-ey-yellow/40 rounded-full"
-                        animate={{ scale: [1, 1.2, 1], opacity: [0.5, 0, 0.5] }}
-                        transition={{ duration: 2, repeat: Infinity, delay: index * 0.2 }}
-                      />
+                    {/* Step Number */}
+                    <div className="w-10 h-10 bg-ey-yellow rounded-full flex items-center justify-center mb-3 shadow-lg">
+                      <span className="text-ey-black font-bold text-sm">{index + 1}</span>
                     </div>
                     
-                    {/* Stage Title */}
-                    <div className="text-center max-w-28">
-                      <h3 className="text-sm font-medium text-ey-white group-hover:text-ey-yellow transition-colors duration-300 leading-tight">
-                        {step.title}
-                      </h3>
-                    </div>
-                    
-                    {/* Flow Indicator */}
-                    <motion.div 
-                      className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-1 h-4 bg-ey-yellow/30 rounded-full"
-                      animate={{ height: [16, 24, 16] }}
-                      transition={{ duration: 1.5, repeat: Infinity, delay: index * 0.3 }}
-                    />
+                    {/* Step Title */}
+                    <h3 className="text-xs font-medium text-ey-white leading-tight">
+                      {step.title}
+                    </h3>
                   </motion.div>
                 ))}
               </div>
