@@ -2,7 +2,7 @@ import React, { useState, useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { 
   Users, Target, Shield, ArrowRight, CheckCircle, Star, Rocket, 
-  Eye, Heart, Brain, Globe, Clock, BarChart3, ChevronRight, 
+  Eye, Heart, Brain, Globe, Clock, BarChart3, ChevronRight, ChevronLeft,
   Play, Pause, ArrowUpRight, Minus, Zap, TrendingUp, Lightbulb, 
   Briefcase, Award, MapPin, Calendar, Building2, Cpu, Database,
   Network, Lock, Settings, Wrench, Code, Terminal, RefreshCw,
@@ -521,82 +521,139 @@ export default function About() {
           </div>
         </motion.div>
 
-        {/* Mining Process Timeline - Interactive Horizontal Flow */}
+        {/* Mining Process Timeline - Professional Carousel Design */}
         <motion.div 
-          className="mb-24"
+          className="mb-24 relative"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.4 }}
           viewport={{ once: true }}
         >
-          <div className="text-center mb-12">
-            <motion.h2 
-              className="text-3xl lg:text-4xl font-black text-ey-white mb-6 leading-tight"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              viewport={{ once: true }}
-            >
-              <span className="text-ey-yellow">{t('mining_process.title')}</span>
-            </motion.h2>
-          </div>
+          {/* Background Effects */}
+          <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 via-transparent to-emerald-500/5 rounded-3xl"></div>
+          <div className="absolute top-0 left-1/4 w-32 h-32 bg-blue-500/10 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-0 right-1/4 w-40 h-40 bg-emerald-500/10 rounded-full blur-3xl"></div>
+          
+          <div className="relative">
+            {/* Professional Header */}
+            <div className="text-center mb-16">
+              <motion.div 
+                className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-ey-yellow to-orange-500 rounded-3xl mb-8 shadow-2xl"
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                viewport={{ once: true }}
+              >
+                <Factory className="w-10 h-10 text-white" />
+              </motion.div>
+              <motion.h2 
+                className="text-4xl md:text-5xl lg:text-6xl font-black text-ey-white mb-6"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.4 }}
+                viewport={{ once: true }}
+              >
+                <span className="bg-gradient-to-r from-ey-yellow via-orange-400 to-emerald-400 bg-clip-text text-transparent">
+                  {t('mining_process.title')}
+                </span>
+              </motion.h2>
+              <motion.p 
+                className="text-lg md:text-xl text-ey-white/70 max-w-4xl mx-auto leading-relaxed"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.6 }}
+                viewport={{ once: true }}
+              >
+                Proceso integral desde la exploración hasta el producto final
+              </motion.p>
+            </div>
 
-          {/* Horizontal Timeline */}
-          <div className="max-w-full overflow-x-auto">
-            <div className="relative min-w-max">
-              {/* Connecting line */}
-              <div className="absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 via-green-500 via-orange-500 via-purple-500 via-cyan-500 via-yellow-500 via-red-500 via-indigo-500 to-emerald-500 transform -translate-y-1/2 rounded-full opacity-30"></div>
+            {/* Professional Carousel Container */}
+            <div className="relative max-w-7xl mx-auto">
+              {/* Navigation Arrows */}
+              <motion.button 
+                className="absolute left-4 top-1/2 transform -translate-y-1/2 z-20 w-12 h-12 bg-ey-dark/80 backdrop-blur-xl rounded-full border border-ey-yellow/30 hover:border-ey-yellow/60 transition-all duration-300 flex items-center justify-center group"
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <ChevronLeft className="w-6 h-6 text-ey-yellow group-hover:text-white transition-colors" />
+              </motion.button>
               
-              <div className="flex gap-6 px-4">
-                {miningProcess.map((step, index) => (
-                  <motion.div
-                    key={step.id}
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.6, delay: index * 0.1 }}
-                    viewport={{ once: true }}
-                    className="relative group flex-shrink-0"
-                    style={{ minWidth: '280px' }}
-                  >
-                    {/* Step number */}
-                    <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 z-10">
-                      <div className={`w-8 h-8 bg-gradient-to-br ${step.color} rounded-full flex items-center justify-center shadow-lg border-2 border-ey-dark`}>
-                        <span className="text-white font-bold text-sm">{index + 1}</span>
-                      </div>
-                    </div>
-                    
-                    {/* Main content */}
-                    <div className="relative bg-ey-dark/80 backdrop-blur-xl rounded-2xl p-6 border border-ey-light/10 hover:border-ey-yellow/30 transition-all duration-300 text-center h-full flex flex-col">
-                      {/* Icon with animated background */}
-                      <div className="relative mb-4">
-                        <div className={`w-16 h-16 bg-gradient-to-br ${step.color} rounded-full flex items-center justify-center mx-auto shadow-lg group-hover:scale-105 transition-transform duration-300`}>
-                          <step.icon className="w-8 h-8 text-white" />
+              <motion.button 
+                className="absolute right-4 top-1/2 transform -translate-y-1/2 z-20 w-12 h-12 bg-ey-dark/80 backdrop-blur-xl rounded-full border border-ey-yellow/30 hover:border-ey-yellow/60 transition-all duration-300 flex items-center justify-center group"
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <ChevronRight className="w-6 h-6 text-ey-yellow group-hover:text-white transition-colors" />
+              </motion.button>
+
+              {/* Carousel Track */}
+              <div className="overflow-hidden">
+                <div className="flex gap-8 px-8 transition-transform duration-500 ease-out">
+                  {miningProcess.map((step, index) => (
+                    <motion.div
+                      key={step.id}
+                      className="flex-shrink-0 w-80 group"
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      transition={{ duration: 0.6, delay: index * 0.1 }}
+                      viewport={{ once: true }}
+                      whileHover={{ y: -10 }}
+                    >
+                      {/* Step Number Badge */}
+                      <div className="relative mb-6">
+                        <div className="absolute -top-2 -left-2 z-10">
+                          <div className={`w-10 h-10 bg-gradient-to-br ${step.color} rounded-full flex items-center justify-center shadow-xl border-2 border-ey-dark`}>
+                            <span className="text-white font-bold text-sm">{index + 1}</span>
+                          </div>
                         </div>
                       </div>
                       
-                      {/* Title */}
-                      <h3 className="text-lg font-bold text-ey-white mb-3 group-hover:text-ey-yellow transition-colors">
-                        {step.title}
-                      </h3>
-                      
-                      {/* Content */}
-                      <p className="text-ey-white/80 text-sm leading-relaxed flex-grow">
-                        {step.content}
-                      </p>
-                      
-                      {/* Progress indicator */}
-                      <div className="mt-4 flex justify-center">
-                        <div className={`w-8 h-0.5 bg-gradient-to-r ${step.color} rounded-full`}></div>
+                      {/* Main Card */}
+                      <div className="relative bg-gradient-to-br from-ey-dark/90 to-ey-medium/20 backdrop-blur-xl rounded-3xl p-8 border border-ey-light/10 hover:border-ey-yellow/40 transition-all duration-500 shadow-2xl hover:shadow-3xl">
+                        {/* Animated Background */}
+                        <div className="absolute inset-0 bg-gradient-to-br from-ey-yellow/5 via-transparent to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        
+                        {/* Icon Section */}
+                        <div className="relative mb-6">
+                          <div className={`w-20 h-20 bg-gradient-to-br ${step.color} rounded-2xl flex items-center justify-center shadow-2xl group-hover:scale-110 transition-transform duration-300 mx-auto`}>
+                            <step.icon className="w-10 h-10 text-white" />
+                          </div>
+                        </div>
+                        
+                        {/* Content */}
+                        <div className="relative">
+                          <h3 className="text-2xl font-bold text-ey-white mb-4 group-hover:text-ey-yellow transition-colors duration-300 text-center">
+                            {step.title}
+                          </h3>
+                          <p className="text-ey-white/80 leading-relaxed text-base text-center">
+                            {step.content}
+                          </p>
+                        </div>
+                        
+                        {/* Progress Bar */}
+                        <div className="mt-6 flex justify-center">
+                          <div className={`w-16 h-1 bg-gradient-to-r ${step.color} rounded-full group-hover:w-20 transition-all duration-300`}></div>
+                        </div>
+                        
+                        {/* Decorative Elements */}
+                        <div className="absolute top-4 right-4 w-3 h-3 bg-ey-yellow rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <div className="absolute bottom-4 left-4 w-2 h-2 bg-ey-yellow/60 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100"></div>
                       </div>
-                    </div>
-                    
-                    {/* Arrow connector (desktop only) */}
-                    {index < miningProcess.length - 1 && (
-                      <div className="hidden lg:block absolute top-1/2 -right-3 transform -translate-y-1/2 z-5">
-                        <div className={`w-4 h-4 bg-gradient-to-br ${step.color} rotate-45`}></div>
-                      </div>
-                    )}
-                  </motion.div>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Progress Dots */}
+              <div className="flex justify-center mt-8 space-x-3">
+                {miningProcess.map((_, index) => (
+                  <motion.div
+                    key={index}
+                    className="w-3 h-3 bg-ey-white/30 rounded-full cursor-pointer hover:bg-ey-yellow transition-colors duration-300"
+                    whileHover={{ scale: 1.2 }}
+                    whileTap={{ scale: 0.9 }}
+                  />
                 ))}
               </div>
             </div>
