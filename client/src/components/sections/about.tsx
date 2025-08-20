@@ -5,7 +5,8 @@ import {
   Eye, Heart, Brain, Globe, Clock, BarChart3, ChevronRight, 
   Play, Pause, ArrowUpRight, Minus, Zap, TrendingUp, Lightbulb, 
   Briefcase, Award, MapPin, Calendar, Building2, Cpu, Database,
-  Network, Lock, Settings, Wrench, Code, Terminal, RefreshCw
+  Network, Lock, Settings, Wrench, Code, Terminal, RefreshCw,
+  Search, Truck, Hammer, TestTube, Droplets, Factory, Package
 } from 'lucide-react';
 import { useLanguage } from "@/contexts/LanguageContext";
 
@@ -127,6 +128,72 @@ export default function About() {
       period: "2006-2016", 
       roleKey: "projects.multiple.role",
       descriptionKey: "projects.multiple.description"
+    }
+  ];
+
+  const miningProcess = [
+    {
+      id: 'exploration',
+      title: t('mining_process.exploration.title'),
+      content: t('mining_process.exploration.content'),
+      icon: Search,
+      color: 'from-blue-500 to-blue-700'
+    },
+    {
+      id: 'extraction',
+      title: t('mining_process.extraction.title'),
+      content: t('mining_process.extraction.content'),
+      icon: Truck,
+      color: 'from-green-500 to-green-700'
+    },
+    {
+      id: 'crushing',
+      title: t('mining_process.crushing.title'),
+      content: t('mining_process.crushing.content'),
+      icon: Hammer,
+      color: 'from-orange-500 to-orange-700'
+    },
+    {
+      id: 'concentration',
+      title: t('mining_process.concentration.title'),
+      content: t('mining_process.concentration.content'),
+      icon: TestTube,
+      color: 'from-purple-500 to-purple-700'
+    },
+    {
+      id: 'leaching',
+      title: t('mining_process.leaching.title'),
+      content: t('mining_process.leaching.content'),
+      icon: Droplets,
+      color: 'from-cyan-500 to-cyan-700'
+    },
+    {
+      id: 'solvent',
+      title: t('mining_process.solvent.title'),
+      content: t('mining_process.solvent.content'),
+      icon: Zap,
+      color: 'from-yellow-500 to-yellow-700'
+    },
+    {
+      id: 'electro',
+      title: t('mining_process.electro.title'),
+      content: t('mining_process.electro.content'),
+      icon: Settings,
+      color: 'from-red-500 to-red-700'
+    },
+    {
+      id: 'smelting',
+      title: t('mining_process.smelting.title'),
+      content: t('mining_process.smelting.content'),
+      icon: Factory,
+      color: 'from-indigo-500 to-indigo-700'
+    },
+    {
+      id: 'final',
+      title: t('mining_process.final.title'),
+      content: t('mining_process.final.content'),
+      icon: Package,
+      color: 'from-emerald-500 to-emerald-700'
     }
   ];
 
@@ -454,7 +521,87 @@ export default function About() {
           </div>
         </motion.div>
 
+        {/* Mining Process Timeline - Interactive Horizontal Flow */}
+        <motion.div 
+          className="mb-24"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 0.4 }}
+          viewport={{ once: true }}
+        >
+          <div className="text-center mb-12">
+            <motion.h2 
+              className="text-3xl lg:text-4xl font-black text-ey-white mb-6 leading-tight"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              viewport={{ once: true }}
+            >
+              <span className="text-ey-yellow">{t('mining_process.title')}</span>
+            </motion.h2>
+          </div>
 
+          {/* Horizontal Timeline */}
+          <div className="max-w-full overflow-x-auto">
+            <div className="relative min-w-max">
+              {/* Connecting line */}
+              <div className="absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 via-green-500 via-orange-500 via-purple-500 via-cyan-500 via-yellow-500 via-red-500 via-indigo-500 to-emerald-500 transform -translate-y-1/2 rounded-full opacity-30"></div>
+              
+              <div className="flex gap-6 px-4">
+                {miningProcess.map((step, index) => (
+                  <motion.div
+                    key={step.id}
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.6, delay: index * 0.1 }}
+                    viewport={{ once: true }}
+                    className="relative group flex-shrink-0"
+                    style={{ minWidth: '280px' }}
+                  >
+                    {/* Step number */}
+                    <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 z-10">
+                      <div className={`w-8 h-8 bg-gradient-to-br ${step.color} rounded-full flex items-center justify-center shadow-lg border-2 border-ey-dark`}>
+                        <span className="text-white font-bold text-sm">{index + 1}</span>
+                      </div>
+                    </div>
+                    
+                    {/* Main content */}
+                    <div className="relative bg-ey-dark/80 backdrop-blur-xl rounded-2xl p-6 border border-ey-light/10 hover:border-ey-yellow/30 transition-all duration-300 text-center h-full flex flex-col">
+                      {/* Icon with animated background */}
+                      <div className="relative mb-4">
+                        <div className={`w-16 h-16 bg-gradient-to-br ${step.color} rounded-full flex items-center justify-center mx-auto shadow-lg group-hover:scale-105 transition-transform duration-300`}>
+                          <step.icon className="w-8 h-8 text-white" />
+                        </div>
+                      </div>
+                      
+                      {/* Title */}
+                      <h3 className="text-lg font-bold text-ey-white mb-3 group-hover:text-ey-yellow transition-colors">
+                        {step.title}
+                      </h3>
+                      
+                      {/* Content */}
+                      <p className="text-ey-white/80 text-sm leading-relaxed flex-grow">
+                        {step.content}
+                      </p>
+                      
+                      {/* Progress indicator */}
+                      <div className="mt-4 flex justify-center">
+                        <div className={`w-8 h-0.5 bg-gradient-to-r ${step.color} rounded-full`}></div>
+                      </div>
+                    </div>
+                    
+                    {/* Arrow connector (desktop only) */}
+                    {index < miningProcess.length - 1 && (
+                      <div className="hidden lg:block absolute top-1/2 -right-3 transform -translate-y-1/2 z-5">
+                        <div className={`w-4 h-4 bg-gradient-to-br ${step.color} rotate-45`}></div>
+                      </div>
+                    )}
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </motion.div>
 
         {/* Career Timeline - Full width section */}
         <motion.div 
