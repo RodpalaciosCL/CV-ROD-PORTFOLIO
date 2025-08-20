@@ -547,127 +547,92 @@ export default function About() {
               </motion.div>
             </div>
 
-            {/* DNA Helix Process Flow */}
+            {/* Framed Process Timeline with Spheres */}
             <div className="relative">
-              {/* Central Flow Line */}
-              <div className="absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-ey-yellow/40 to-transparent transform -translate-y-1/2"></div>
-              
-              {/* DNA Helix Structure */}
-              <div className="relative">
-                {/* Left Helix */}
-                <div className="absolute top-0 left-1/4 w-0.5 h-full bg-gradient-to-b from-ey-yellow/20 via-ey-yellow/60 to-ey-yellow/20"></div>
-                {/* Right Helix */}
-                <div className="absolute top-0 right-1/4 w-0.5 h-full bg-gradient-to-b from-ey-yellow/20 via-ey-yellow/60 to-ey-yellow/20"></div>
+              {/* Main Frame */}
+              <div className="border-2 border-ey-yellow/30 rounded-2xl p-8 bg-gradient-to-br from-ey-dark/50 to-ey-medium/20 backdrop-blur-sm">
+                {/* Frame Header */}
+                <div className="text-center mb-8">
+                  <div className="inline-flex items-center gap-3 px-6 py-2 bg-ey-yellow/10 rounded-full border border-ey-yellow/20">
+                    <div className="w-2 h-2 bg-ey-yellow rounded-full animate-pulse"></div>
+                    <span className="text-ey-yellow text-sm font-medium">Proceso Tecnológico</span>
+                    <div className="w-2 h-2 bg-ey-yellow rounded-full animate-pulse"></div>
+                  </div>
+                </div>
                 
-                {/* Process Steps in Helix Pattern */}
-                <div className="grid grid-cols-9 gap-4 relative">
+                {/* Process Steps */}
+                <div className="flex justify-between items-start relative">
+                  {/* Connection Line */}
+                  <div className="absolute top-8 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-ey-yellow/40 to-transparent"></div>
+                  
                   {miningProcess.map((step, index) => (
                     <motion.div
                       key={step.id}
-                      className="flex flex-col items-center group"
-                      initial={{ opacity: 0, scale: 0.5, rotateY: -90 }}
-                      whileInView={{ opacity: 1, scale: 1, rotateY: 0 }}
-                      transition={{ duration: 0.8, delay: index * 0.15, type: "spring", stiffness: 100 }}
+                      className="flex flex-col items-center relative z-10"
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.5, delay: index * 0.1 }}
                       viewport={{ once: true }}
                       whileHover={{ 
-                        scale: 1.1, 
-                        rotateY: 5,
-                        transition: { duration: 0.3 }
+                        scale: 1.05,
+                        transition: { duration: 0.2 }
                       }}
                     >
-                      {/* 3D Step Node */}
-                      <div className="relative mb-4 perspective-1000">
-                        {/* Main Node */}
+                      {/* Number Sphere */}
+                      <div className="relative mb-4">
+                        {/* Outer Glow */}
+                        <div className="absolute inset-0 w-16 h-16 bg-ey-yellow/20 rounded-full blur-md animate-pulse"></div>
+                        
+                        {/* Main Sphere */}
                         <motion.div 
-                          className="w-12 h-12 bg-gradient-to-br from-ey-yellow to-orange-500 rounded-full flex items-center justify-center shadow-2xl relative z-10"
+                          className="w-16 h-16 bg-gradient-to-br from-ey-yellow to-orange-500 rounded-full flex items-center justify-center shadow-xl border-2 border-ey-yellow/30 relative"
                           whileHover={{ 
-                            rotateY: 180,
-                            transition: { duration: 0.6 }
+                            scale: 1.1,
+                            boxShadow: "0 0 30px rgba(255, 255, 0, 0.5)"
                           }}
                         >
-                          <span className="text-ey-black font-bold text-sm">{index + 1}</span>
+                          <span className="text-white font-bold text-lg drop-shadow-lg">{index + 1}</span>
                         </motion.div>
                         
-                        {/* 3D Glow Effect */}
-                        <div className="absolute inset-0 w-12 h-12 bg-ey-yellow/30 rounded-full blur-lg animate-pulse"></div>
-                        
-                        {/* Floating Particles */}
-                        <motion.div
-                          className="absolute -top-2 -right-2 w-3 h-3 bg-ey-yellow/60 rounded-full"
-                          animate={{ 
-                            y: [0, -10, 0],
-                            opacity: [0.6, 1, 0.6]
-                          }}
-                          transition={{ 
-                            duration: 2, 
-                            repeat: Infinity, 
-                            delay: index * 0.2 
-                          }}
-                        />
-                        <motion.div
-                          className="absolute -bottom-2 -left-2 w-2 h-2 bg-orange-400/60 rounded-full"
-                          animate={{ 
-                            y: [0, 8, 0],
-                            opacity: [0.6, 1, 0.6]
-                          }}
-                          transition={{ 
-                            duration: 1.5, 
-                            repeat: Infinity, 
-                            delay: index * 0.3 
-                          }}
-                        />
+                        {/* Inner Highlight */}
+                        <div className="absolute top-2 left-2 w-4 h-4 bg-white/30 rounded-full blur-sm"></div>
                       </div>
                       
-                      {/* Step Title with 3D Effect */}
-                      <div className="text-center max-w-28">
+                      {/* Step Title */}
+                      <div className="text-center max-w-24">
                         <motion.h3 
-                          className="text-xs font-semibold text-ey-white group-hover:text-ey-yellow transition-colors duration-300 leading-tight"
+                          className="text-xs font-semibold text-ey-white leading-tight px-2"
                           whileHover={{ 
-                            scale: 1.05,
-                            textShadow: "0 0 8px rgba(255, 255, 0, 0.5)"
+                            color: "#fbbf24",
+                            textShadow: "0 0 8px rgba(251, 191, 36, 0.5)"
                           }}
                         >
                           {step.title}
                         </motion.h3>
                       </div>
                       
-                      {/* Connection Lines */}
+                      {/* Connection Arrow */}
                       {index < miningProcess.length - 1 && (
                         <motion.div 
-                          className="absolute top-6 left-full w-full h-0.5 bg-gradient-to-r from-ey-yellow/40 to-transparent"
+                          className="absolute top-8 left-full w-full h-0.5 bg-gradient-to-r from-ey-yellow/60 to-transparent"
                           initial={{ scaleX: 0 }}
                           whileInView={{ scaleX: 1 }}
-                          transition={{ duration: 0.6, delay: index * 0.2 }}
+                          transition={{ duration: 0.4, delay: index * 0.1 }}
                           viewport={{ once: true }}
                         />
                       )}
                     </motion.div>
                   ))}
                 </div>
-              </div>
-              
-              {/* Floating Tech Particles */}
-              <div className="absolute inset-0 pointer-events-none">
-                {[...Array(20)].map((_, i) => (
-                  <motion.div
-                    key={i}
-                    className="absolute w-1 h-1 bg-ey-yellow/40 rounded-full"
-                    style={{
-                      left: `${Math.random() * 100}%`,
-                      top: `${Math.random() * 100}%`
-                    }}
-                    animate={{
-                      y: [0, -20, 0],
-                      opacity: [0, 1, 0],
-                      scale: [0, 1, 0]
-                    }}
-                    transition={{
-                      duration: 3,
-                      repeat: Infinity,
-                      delay: Math.random() * 2
-                    }}
-                  />
-                ))}
+                
+                {/* Frame Footer */}
+                <div className="text-center mt-8">
+                  <div className="inline-flex items-center gap-2 text-ey-white/60 text-xs">
+                    <div className="w-1 h-1 bg-ey-yellow/60 rounded-full"></div>
+                    <span>Flujo continuo de tecnología inteligente</span>
+                    <div className="w-1 h-1 bg-ey-yellow/60 rounded-full"></div>
+                  </div>
+                </div>
               </div>
             </div>
 
