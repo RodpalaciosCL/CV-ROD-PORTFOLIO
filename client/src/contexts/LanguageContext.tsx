@@ -41,6 +41,7 @@ const translations = {
     // Solutions Section
     'solutions.title': 'Soluciones',
     'solutions.title_highlight': 'Altamente Demandadas por la Industria',
+    'solutions.subtitle': 'Tecnologías innovadoras que transforman operaciones mineras',
     'solutions.description': 'En las cuales he estado trabajando con',
     'solutions.description_highlight': 'líderes de la minería global',
     'solutions.tab_operation': 'Operación',
@@ -826,6 +827,7 @@ const translations = {
     // Solutions Section
     'solutions.title': 'Solutions',
     'solutions.title_highlight': 'Highly Demanded by the Industry',
+    'solutions.subtitle': 'Innovative technologies that transform mining operations',
     'solutions.description': 'Most of which I have the',
     'solutions.description_highlight': 'ability to sell and implement in record time',
     'solutions.tab_operation': 'Operation',
