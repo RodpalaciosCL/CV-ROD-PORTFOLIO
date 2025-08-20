@@ -547,80 +547,31 @@ export default function About() {
               </motion.div>
             </div>
 
-            {/* Process with Animated Arrows */}
-            <div className="flex justify-between items-center max-w-6xl mx-auto px-4">
+            {/* Clean Process Flow */}
+            <div className="flex justify-between items-center max-w-5xl mx-auto">
               {miningProcess.map((step, index) => (
                 <motion.div
                   key={step.id}
-                  className="flex flex-col items-center text-center relative"
+                  className="flex flex-col items-center text-center"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.3, delay: index * 0.1 }}
+                  transition={{ duration: 0.4, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  whileHover={{ 
-                    scale: 1.05,
-                    transition: { duration: 0.2 }
-                  }}
                 >
                   {/* Step Number */}
-                  <div className="w-12 h-12 bg-gradient-to-br from-ey-yellow to-orange-500 rounded-full flex items-center justify-center mb-3 shadow-lg relative">
-                    <span className="text-white font-bold text-sm">{index + 1}</span>
-                    {/* Glow Effect */}
-                    <div className="absolute inset-0 w-12 h-12 bg-ey-yellow/30 rounded-full blur-md animate-pulse"></div>
+                  <div className="w-10 h-10 bg-ey-yellow rounded-full flex items-center justify-center mb-3">
+                    <span className="text-black font-bold text-sm">{index + 1}</span>
                   </div>
                   
                   {/* Step Title */}
-                  <h3 className="text-xs font-medium text-ey-white max-w-16 leading-tight">
+                  <h3 className="text-xs font-medium text-ey-white max-w-20 leading-tight">
                     {step.title}
                   </h3>
                   
-                  {/* Animated Arrow */}
+                  {/* Simple Arrow */}
                   {index < miningProcess.length - 1 && (
-                    <div className="absolute top-6 left-full w-full flex justify-center">
-                      <motion.div 
-                        className="flex items-center gap-1"
-                        initial={{ opacity: 0, x: -10 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.5, delay: index * 0.2 }}
-                        viewport={{ once: true }}
-                      >
-                        {/* Arrow Line */}
-                        <motion.div 
-                          className="h-0.5 bg-gradient-to-r from-ey-yellow to-transparent w-8"
-                          initial={{ scaleX: 0 }}
-                          whileInView={{ scaleX: 1 }}
-                          transition={{ duration: 0.6, delay: index * 0.3 }}
-                          viewport={{ once: true }}
-                        />
-                        
-                        {/* Arrow Head */}
-                        <motion.div 
-                          className="w-0 h-0 border-l-4 border-l-ey-yellow border-t-2 border-t-transparent border-b-2 border-b-transparent"
-                          animate={{ 
-                            x: [0, 3, 0],
-                            opacity: [0.7, 1, 0.7]
-                          }}
-                          transition={{ 
-                            duration: 2, 
-                            repeat: Infinity, 
-                            delay: index * 0.2 
-                          }}
-                        />
-                        
-                        {/* Moving Dot */}
-                        <motion.div
-                          className="w-1 h-1 bg-ey-yellow rounded-full"
-                          animate={{ 
-                            x: [-8, 0],
-                            opacity: [0, 1, 0]
-                          }}
-                          transition={{ 
-                            duration: 1.5, 
-                            repeat: Infinity, 
-                            delay: index * 0.4 
-                          }}
-                        />
-                      </motion.div>
+                    <div className="absolute top-5 left-full w-full flex justify-center">
+                      <div className="w-0 h-0 border-l-3 border-l-ey-yellow/60 border-t-2 border-t-transparent border-b-2 border-b-transparent"></div>
                     </div>
                   )}
                 </motion.div>
