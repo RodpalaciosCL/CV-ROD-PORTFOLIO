@@ -28,7 +28,7 @@ export default function WhatIveBeenDoing() {
   };
 
   return (
-    <section className="py-16 bg-gradient-to-br from-ey-medium via-ey-dark to-black relative overflow-hidden">
+    <section className="py-8 bg-gradient-to-br from-ey-medium via-ey-dark to-black relative overflow-hidden">
       {/* Animated background */}
       <div className="absolute inset-0">
         <motion.div 
@@ -66,7 +66,7 @@ export default function WhatIveBeenDoing() {
 
         {/* Video Section */}
         <motion.div 
-          className="relative group max-w-5xl mx-auto"
+          className="relative group max-w-3xl mx-auto"
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.6 }}
@@ -78,7 +78,7 @@ export default function WhatIveBeenDoing() {
           
           <div className="relative bg-gradient-to-br from-ey-dark via-ey-medium/50 to-ey-dark rounded-3xl p-6 border-2 border-ey-yellow/40 shadow-2xl backdrop-blur-sm">
             {/* Video Container */}
-            <div className="relative aspect-video rounded-2xl overflow-hidden bg-black shadow-2xl">
+            <div className="relative aspect-video rounded-xl overflow-hidden bg-black shadow-xl">
               <video
                 ref={videoRef}
                 className="w-full h-full object-cover"

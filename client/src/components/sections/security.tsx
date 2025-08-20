@@ -74,14 +74,14 @@ export default function Security() {
   ];
 
   return (
-    <div>
+    <div className="w-full">
 
         {/* Security Technologies Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-stretch">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-stretch justify-items-center">
           {securityTechnologies.map((tech, index) => (
                           <motion.div
                 key={index}
-                className="group relative h-full w-full md:w-[calc(50%-1.5rem)] max-w-md"
+                className="group relative h-full w-full max-w-md"
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.1 * index }}
@@ -105,7 +105,7 @@ export default function Security() {
                 </div>
 
                 {/* Media (Video or Image) */}
-                <div className="mb-6 aspect-video rounded-xl overflow-hidden bg-ey-medium border border-ey-yellow/20">
+                <div className="mb-4 aspect-[3/2] rounded-lg overflow-hidden bg-ey-medium border border-ey-yellow/20">
                   {tech.media.includes('.mp4') || tech.media.includes('.mov') ? (
                     <video 
                       className="w-full h-full object-cover"
@@ -168,7 +168,7 @@ export default function Security() {
               </div>
 
               {/* Image */}
-              <div className="mb-6 aspect-video rounded-xl overflow-hidden bg-ey-medium border border-ey-yellow/20">
+              <div className="mb-4 aspect-[3/2] rounded-lg overflow-hidden bg-ey-medium border border-ey-yellow/20">
                 <img
                   src="https://metalbit.io/_next/static/media/signalshield_prototype_screenshot.7422500f.png"
                   alt="SignalShield Prototype - Seguridad OT"

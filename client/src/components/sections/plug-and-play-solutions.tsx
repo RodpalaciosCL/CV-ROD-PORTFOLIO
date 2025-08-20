@@ -118,9 +118,9 @@ export default function Operation() {
   ];
 
   return (
-    <div>
+    <div className="w-full">
         <motion.div
-          className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 mb-16"
+          className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-stretch justify-items-center"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -129,7 +129,7 @@ export default function Operation() {
             {solutions.map((solution, index) => (
               <motion.div
                 key={solution.name}
-                className="group"
+                className="group relative h-full w-full max-w-md"
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{
@@ -139,31 +139,30 @@ export default function Operation() {
                 }}
                 viewport={{ once: true }}
               >
-                <div className="relative">
-                  <motion.div
-                    className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-t-2xl p-3 shadow-2xl"
-                    whileHover={{ y: -8 }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    <div className="flex items-center space-x-2 mb-3">
-                      <div className="w-3 h-3 bg-red-500 rounded-full"></div>
-                      <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
-                      <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-                      <div className="flex-1 bg-gray-700 rounded-full h-6 flex items-center px-4">
-                        <span className="text-gray-400 text-xs font-mono">
-                          {solution.name.toLowerCase().replace(/\s+/g, '')}.airontech.com
-                        </span>
-                      </div>
+                {/* Background glow */}
+                <div className="absolute inset-0 bg-gradient-to-r from-ey-yellow/10 to-ey-yellow/20 rounded-3xl blur-lg group-hover:blur-xl transition-all duration-300"></div>
+                
+                <div className="relative bg-ey-white/10 backdrop-blur-xl rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 border border-ey-yellow/20 hover:border-ey-yellow/40 transition-all duration-300 h-full flex flex-col">
+                  {/* Header */}
+                  <div className="flex items-center space-x-4 mb-6">
+                    <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-700 rounded-xl flex items-center justify-center shadow-lg text-white">
+                      <solution.icon className="w-8 h-8" />
                     </div>
+                    <div>
+                      <h3 className="text-2xl font-black text-ey-white group-hover:text-ey-yellow transition-colors">
+                        {solution.name}
+                      </h3>
+                      <p className="text-ey-yellow/80 font-medium">{solution.tagline}</p>
+                    </div>
+                  </div>
 
-                    <div
-                      className="bg-white rounded-lg aspect-video relative overflow-hidden"
-                    >
+                  {/* Media (Video or Image) */}
+                  <div className="mb-4 aspect-[3/2] rounded-lg overflow-hidden bg-ey-medium border border-ey-yellow/20">
                       {solution.type === "image" ? (
                         <img
                           src={solution.media}
                           alt={solution.name}
-                          className="w-full h-full object-cover rounded-lg"
+                          className="w-full h-full object-cover"
                         />
                       ) : solution.type === "video" ? (
                         <video
@@ -184,32 +183,23 @@ export default function Operation() {
                           allowFullScreen
                         ></iframe>
                       )}
-                    </div>
-                  </motion.div>
-                </div>
-
-                <motion.div
-                  className="mt-6 text-center"
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  transition={{ delay: 0.3 + index * 0.1, duration: 0.5 }}
-                  viewport={{ once: true }}
-                >
-                  <h3 className="text-xl font-bold text-[var(--text-primary)] mb-2 font-montserrat">
-                    {solution.name}
-                  </h3>
-                  <p className="text-[var(--accent-orange)] font-medium mb-3 text-base">
-                    {solution.tagline}
-                  </p>
-                  <p className="text-[var(--text-secondary)] leading-relaxed mb-4 max-w-sm mx-auto text-sm">
-                    {solution.description}
-                  </p>
-
-                  <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-ey-yellow/20 to-ey-yellow/10 border border-ey-yellow/30 rounded-full px-4 py-2 shadow-sm hover:shadow-md transition-all duration-300">
-                    <div className="w-2 h-2 bg-ey-yellow rounded-full animate-pulse"></div>
-                    <span className="text-ey-yellow font-bold text-sm">{t('solutions.ready_to_deploy')}</span>
                   </div>
-                </motion.div>
+
+                  {/* Description */}
+                  <div className="mt-4">
+                    <p className="text-ey-white/80 leading-relaxed text-sm">
+                      {solution.description}
+                    </p>
+                  </div>
+
+                  {/* Ready to deploy badge */}
+                  <div className="mt-auto pt-4">
+                    <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-ey-yellow/20 to-ey-yellow/10 border border-ey-yellow/30 rounded-full px-4 py-2 shadow-sm hover:shadow-md transition-all duration-300">
+                      <div className="w-2 h-2 bg-ey-yellow rounded-full animate-pulse"></div>
+                      <span className="text-ey-yellow font-bold text-sm">{t('solutions.ready_to_deploy')}</span>
+                    </div>
+                  </div>
+                </div>
               </motion.div>
             ))}
           </motion.div>

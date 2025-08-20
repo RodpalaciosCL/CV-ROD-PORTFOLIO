@@ -59,11 +59,11 @@ export default function TracksSection({ id, className = "", compact }: TracksSec
   };
 
   return (
-    <div id={id} className={`w-full ${compact ? "py-12" : "py-20"} ${className}`}>
+    <div id={id} className={`w-full ${compact ? "py-10" : "py-16"} ${className}`}>
       <div className="max-w-7xl mx-auto px-4">
         {/* Hero Title Section - Premium */}
         <motion.div 
-          className="text-center mb-16"
+          className="text-center mb-12"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -85,7 +85,7 @@ export default function TracksSection({ id, className = "", compact }: TracksSec
 
         {/* KPIs Premium Strip */}
         <motion.div 
-          className="mb-16"
+          className="mb-12"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
@@ -117,7 +117,7 @@ export default function TracksSection({ id, className = "", compact }: TracksSec
 
         {/* Client Strip */}
         <motion.div 
-          className="mb-20"
+          className="mb-16"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.1 }}
@@ -143,7 +143,7 @@ export default function TracksSection({ id, className = "", compact }: TracksSec
         </motion.div>
         
         {/* Tracks - Lista Premium Optimizada */}
-        <div className="space-y-8">
+        <div className="space-y-6">
           {data.tracks.map((track: any, index) => {
             const Icon = iconLib[track.icon] || BadgeCheck;
             const trackNumber = `track${index + 1}`;
@@ -167,7 +167,7 @@ export default function TracksSection({ id, className = "", compact }: TracksSec
               >
                 <div className="bg-gradient-to-r from-ey-medium/20 via-ey-dark/40 to-ey-medium/20 backdrop-blur-lg rounded-2xl border border-ey-yellow/20 hover:border-ey-yellow/40 transition-all duration-500 overflow-hidden group">
                   {/* Header Track */}
-                  <div className="flex items-center p-8 border-b border-ey-yellow/20">
+                  <div className="flex items-center p-6 border-b border-ey-yellow/20">
                     <div className="w-16 h-16 bg-gradient-to-br from-ey-yellow to-orange-500 rounded-xl flex items-center justify-center mr-6 group-hover:scale-110 transition-transform duration-300">
                       <Icon className="w-8 h-8 text-white" />
                     </div>
@@ -182,9 +182,9 @@ export default function TracksSection({ id, className = "", compact }: TracksSec
                   </div>
                   
                   {/* Content Track */}
-                  <div className="p-8">
+                  <div className="p-6">
                     {/* Benefits Grid */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mb-6">
                       {track.bullets.map((bullet: any, bIndex: number) => (
                         <motion.div 
                           key={bIndex}
@@ -244,7 +244,7 @@ export default function TracksSection({ id, className = "", compact }: TracksSec
         
         {/* Bottom Call to Action - Premium */}
         <motion.div 
-          className="mt-20 text-center"
+          className="mt-16 text-center"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5 }}

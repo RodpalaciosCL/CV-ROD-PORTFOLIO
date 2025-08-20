@@ -51,7 +51,7 @@ export default function Strategic() {
   ];
 
   return (
-    <section id="strategic" className="py-32 bg-ey-dark relative overflow-hidden">
+    <section id="strategic" className="py-16 bg-ey-dark relative overflow-hidden">
       {/* Animated background elements */}
       <div className="absolute inset-0">
         <motion.div 
@@ -69,7 +69,7 @@ export default function Strategic() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         {/* Header */}
         <motion.div 
-          className="text-center mb-20"
+          className="text-center mb-12"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
