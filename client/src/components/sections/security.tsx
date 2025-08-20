@@ -186,7 +186,7 @@ export default function Security() {
                   t('security.ot.bullet2'), 
                   t('security.ot.bullet3'),
                   t('security.ot.bullet4')
-                ].map((bullet, bulletIndex) => (
+                ].slice(0, 2).map((bullet, bulletIndex) => (
                   <motion.div
                     key={bulletIndex}
                     className="flex items-start space-x-3"
