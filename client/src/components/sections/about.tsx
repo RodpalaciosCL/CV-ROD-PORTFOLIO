@@ -521,19 +521,19 @@ export default function About() {
           </div>
         </motion.div>
 
-        {/* Mining Process Timeline - Clean Infographic */}
+        {/* Mining Process Timeline - Professional Roadmap */}
         <motion.div 
-          className="mb-12"
+          className="mb-16"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
           viewport={{ once: true }}
         >
-          <div className="max-w-6xl mx-auto">
-            {/* Simple Header */}
-            <div className="text-center mb-8">
+          <div className="max-w-7xl mx-auto">
+            {/* Professional Header */}
+            <div className="text-center mb-12">
               <motion.h2 
-                className="text-2xl md:text-3xl font-bold text-ey-white"
+                className="text-3xl md:text-4xl font-bold text-ey-white mb-4"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
@@ -541,39 +541,69 @@ export default function About() {
               >
                 <span className="text-ey-yellow">{t('mining_process.title')}</span>
               </motion.h2>
+              <motion.p 
+                className="text-lg text-ey-white/70 max-w-3xl mx-auto"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.3 }}
+                viewport={{ once: true }}
+              >
+                Tecnología inteligente aplicada transversalmente en cada etapa del proceso
+              </motion.p>
             </div>
 
-            {/* Horizontal Timeline */}
+            {/* Professional Roadmap */}
             <div className="relative">
-              {/* Connecting Line */}
-              <div className="absolute top-1/2 left-0 right-0 h-0.5 bg-ey-yellow/30 transform -translate-y-1/2"></div>
+              {/* Main Timeline Line */}
+              <div className="absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-ey-yellow/20 via-ey-yellow/40 to-ey-yellow/20 transform -translate-y-1/2 rounded-full"></div>
               
               {/* Timeline Items */}
-              <div className="flex justify-between items-center relative">
+              <div className="grid grid-cols-9 gap-4 relative">
                 {miningProcess.map((step, index) => (
                   <motion.div
                     key={step.id}
                     className="flex flex-col items-center group"
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.4, delay: index * 0.1 }}
                     viewport={{ once: true }}
                   >
-                    {/* Step Number */}
-                    <div className="w-8 h-8 bg-ey-yellow rounded-full flex items-center justify-center mb-3 shadow-lg z-10">
-                      <span className="text-ey-black font-bold text-xs">{index + 1}</span>
+                    {/* Step Number with Glow */}
+                    <div className="relative mb-4">
+                      <div className="w-12 h-12 bg-ey-yellow rounded-full flex items-center justify-center shadow-xl z-10 relative">
+                        <span className="text-ey-black font-bold text-sm">{index + 1}</span>
+                      </div>
+                      <div className="absolute inset-0 w-12 h-12 bg-ey-yellow/30 rounded-full blur-md animate-pulse"></div>
                     </div>
                     
-                    {/* Title */}
-                    <div className="text-center max-w-24">
-                      <h3 className="text-xs font-medium text-ey-white group-hover:text-ey-yellow transition-colors duration-300 leading-tight">
+                    {/* Title with Better Typography */}
+                    <div className="text-center px-2">
+                      <h3 className="text-sm font-semibold text-ey-white group-hover:text-ey-yellow transition-colors duration-300 leading-tight mb-2">
                         {step.title}
                       </h3>
+                      {/* Subtle Progress Indicator */}
+                      <div className="w-8 h-0.5 bg-ey-yellow/30 rounded-full mx-auto group-hover:bg-ey-yellow/60 transition-colors duration-300"></div>
                     </div>
                   </motion.div>
                 ))}
               </div>
             </div>
+
+            {/* Bottom Summary */}
+            <motion.div 
+              className="mt-12 text-center"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.8 }}
+              viewport={{ once: true }}
+            >
+              <div className="inline-flex items-center bg-ey-dark/40 backdrop-blur-sm rounded-full px-6 py-3 border border-ey-yellow/20">
+                <div className="w-2 h-2 bg-ey-yellow rounded-full mr-3 animate-pulse"></div>
+                <span className="text-sm text-ey-white/80 font-medium">
+                  Proceso integral optimizado con tecnología de vanguardia
+                </span>
+              </div>
+            </motion.div>
           </div>
         </motion.div>
 
