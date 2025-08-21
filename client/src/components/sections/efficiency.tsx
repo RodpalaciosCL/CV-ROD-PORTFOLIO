@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Shield, ArrowRight, CheckCircle, Timer, Activity, Droplets, TrendingUp, Briefcase, Sparkles, Cpu, Users, Star, Target, Heart, Zap, Rocket, Lightbulb } from "lucide-react";
+import { Shield, ArrowRight, CheckCircle, Timer, Activity, Droplets, TrendingUp, Briefcase, Sparkles, Cpu, Users, Star, Target, Heart, Zap, Rocket, Lightbulb, Clock, AlertTriangle, TrendingDown } from "lucide-react";
 import TracksSection from "./TracksSection";
 import { useLanguage } from "@/contexts/LanguageContext";
 
@@ -212,6 +212,159 @@ const EfficiencySection = () => {
                   <div className="bg-gradient-to-r from-ey-yellow/10 to-orange-500/10 rounded-xl p-6 border border-ey-yellow/20 max-w-4xl mx-auto">
                     <p className="text-lg text-ey-white/90 leading-relaxed font-medium">
                       {t('personal_statement.closing')}
+                    </p>
+                  </div>
+                </motion.div>
+              </div>
+            </motion.div>
+
+            {/* Market Reality Section */}
+            <motion.div 
+              className="mb-16"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 1.8 }}
+              viewport={{ once: true }}
+            >
+              <div className="max-w-6xl mx-auto">
+                {/* Header */}
+                <div className="text-center mb-12">
+                  <motion.div 
+                    className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-red-500 to-orange-500 rounded-2xl mb-6 shadow-xl"
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.6, delay: 0.2 }}
+                    viewport={{ once: true }}
+                  >
+                    <Clock className="w-8 h-8 text-white" />
+                  </motion.div>
+                  <motion.h2 
+                    className="text-4xl md:text-5xl lg:text-6xl font-black text-ey-white mb-4"
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, delay: 0.4 }}
+                    viewport={{ once: true }}
+                  >
+                    {t('market_reality.title')}
+                  </motion.h2>
+                  <motion.h3 
+                    className="text-2xl md:text-3xl font-bold text-ey-yellow mb-8"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, delay: 0.6 }}
+                    viewport={{ once: true }}
+                  >
+                    {t('market_reality.subtitle')}
+                  </motion.h3>
+                </div>
+
+                {/* Accenture Case */}
+                <motion.div 
+                  className="mb-12"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.8 }}
+                  viewport={{ once: true }}
+                >
+                  <div className="bg-gradient-to-r from-red-500/10 to-orange-500/10 rounded-xl p-8 border border-red-500/20 max-w-5xl mx-auto">
+                    <p className="text-lg md:text-xl text-ey-white/90 leading-relaxed">
+                      {t('market_reality.accenture_case')}
+                    </p>
+                  </div>
+                </motion.div>
+
+                {/* Accenture Image */}
+                <motion.div 
+                  className="mb-12"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 1.0 }}
+                  viewport={{ once: true }}
+                >
+                  <div className="flex justify-center">
+                    <img 
+                      src="https://res.cloudinary.com/dhobnlg73/image/upload/v1755782376/Captura_de_pantalla_2025-08-21_a_la_s_09.18.54_v4pfog.png"
+                      alt="Accenture Market Performance"
+                      className="rounded-xl shadow-2xl max-w-4xl w-full"
+                    />
+                  </div>
+                </motion.div>
+
+                {/* Then Question */}
+                <motion.div 
+                  className="text-center mb-12"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 1.2 }}
+                  viewport={{ once: true }}
+                >
+                  <h3 className="text-3xl md:text-4xl font-bold text-ey-yellow mb-8">
+                    {t('market_reality.then_question')}
+                  </h3>
+                </motion.div>
+
+                {/* Actions Grid */}
+                <motion.div 
+                  className="mb-12"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 1.4 }}
+                  viewport={{ once: true }}
+                >
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {[
+                      { text: t('market_reality.actions.title'), icon: <Users className="w-6 h-6 text-ey-yellow" /> },
+                      { text: t('market_reality.actions.juniors'), icon: <Sparkles className="w-6 h-6 text-ey-yellow" /> },
+                      { text: t('market_reality.actions.approach'), icon: <Target className="w-6 h-6 text-ey-yellow" /> },
+                      { text: t('market_reality.actions.speed'), icon: <Zap className="w-6 h-6 text-ey-yellow" /> },
+                      { text: t('market_reality.actions.model'), icon: <AlertTriangle className="w-6 h-6 text-ey-yellow" /> }
+                    ].map((item, index) => (
+                      <motion.div
+                        key={index}
+                        className="group relative bg-ey-dark/30 backdrop-blur-lg rounded-xl p-6 border border-ey-light/10 h-full flex items-center"
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.5, delay: 1.6 + index * 0.1 }}
+                        viewport={{ once: true }}
+                      >
+                        <div className="flex-shrink-0 mr-4">
+                          {item.icon}
+                        </div>
+                        <p className="text-sm text-ey-white/80 leading-relaxed">{item.text}</p>
+                      </motion.div>
+                    ))}
+                  </div>
+                </motion.div>
+
+                {/* But People Objection */}
+                <motion.div 
+                  className="mb-8"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 2.0 }}
+                  viewport={{ once: true }}
+                >
+                  <div className="bg-gradient-to-r from-red-500/20 to-orange-500/20 rounded-xl p-6 border border-red-500/30 max-w-4xl mx-auto text-center">
+                    <div className="flex items-center justify-center mb-4">
+                      <AlertTriangle className="w-8 h-8 text-red-400 mr-3" />
+                      <h4 className="text-xl font-bold text-red-400">
+                        {t('market_reality.but_people')}
+                      </h4>
+                    </div>
+                  </div>
+                </motion.div>
+
+                {/* Response */}
+                <motion.div 
+                  className="mb-8"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 2.2 }}
+                  viewport={{ once: true }}
+                >
+                  <div className="bg-gradient-to-r from-ey-yellow/10 to-green-500/10 rounded-xl p-8 border border-ey-yellow/20 max-w-5xl mx-auto">
+                    <p className="text-lg md:text-xl text-ey-white/90 leading-relaxed">
+                      {t('market_reality.response')}
                     </p>
                   </div>
                 </motion.div>

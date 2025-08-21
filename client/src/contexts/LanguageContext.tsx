@@ -760,6 +760,20 @@ const translations = {
     'personal_statement.can.title': 'Puedo',
     'personal_statement.can.description': 'Contribuir valor, frescura, una visión altamente enfocada en "negocio inteligente", así como una capacidad única de articulación, seguimiento y cierre, que debe sentar precedente en el mediano plazo, junto con la forma de abordar oportunidades, transformar problemas e identificar posibilidades no solo para la práctica, sino también para el resto de la empresa, junto con ser un agente de cambio y evangelista natural del trabajo en equipo, la colaboración como mantra y el respeto por lo que hacemos y cómo lo ofrecemos.',
     'personal_statement.closing': 'Visión de negocio, crecimiento y excelencia, en una de las prácticas más relevantes para la firma durante los próximos 20 años',
+    
+    // Market Reality Section
+    'market_reality.title': '¿Y cuándo?',
+    'market_reality.subtitle': '¡AHORA!',
+    'market_reality.accenture_case': 'Veamos el caso más reciente de Accenture, que durante los últimos 6 meses ha perdido valor histórico en más de un 33%, y no es por lo volatil del mercado, es porque el mismo mercado está cambiando la forma en cómo perciben a sus partners y qué es lo que realmente quieren, junto con darse cuenta, que queramos o no, la AI está permitiendo hacer cosas de manera interna, probando más rápido y concibiendo más fácil.',
+    'market_reality.then_question': '¿Entonces?',
+    'market_reality.actions.title': 'Debemos capacitar a nuestros equipos',
+    'market_reality.actions.juniors': 'Estrujar a los juniors y darles todas las herramientas posibles',
+    'market_reality.actions.approach': 'Cambiar el approach de cara a cliente',
+    'market_reality.actions.speed': 'Cambiar la velocidad en cómo se encaran los proyectos',
+    'market_reality.actions.model': 'Dejar de pensar en el modelo de las 30 personas en las dependencias de cliente',
+    'market_reality.but_people': '¡Pero sin personas el negocio muere!',
+    'market_reality.response': 'No, al contrario, el negocio se potencia, y ni siquiera hablo de sacarlas o no ofrecerlas. Hay que replantear la oferta y la forma en cómo hoy se hacen negocios, como se ofrecen y disponibilizan los servicios y cómo se entrega valor y aporte real, en la era más vertiginoza de la historia humana reciente.',
+    'market_reality.lets_start': '¡Sigamos!',
 
     'competitive.title': 'Ventajas Competitivas',
     'competitive.title_highlight': 'que Marcan la Diferencia',
@@ -1460,6 +1474,20 @@ const translations = {
     'personal_statement.can.title': 'I Can',
     'personal_statement.can.description': 'Contribute value, freshness, a highly focused view on "intelligent business", as well as a unique capacity for articulation, follow-up and closure, which should set a precedent in the medium term, along with the way to approach opportunities, transform problems and identify possibilities not only for the practice, but also for the rest of the company, along with being an agent of change and natural evangelist of teamwork, collaboration as a mantra and respect for what we do and how we offer it.',
     'personal_statement.closing': 'Business vision, growth and excellence, in one of the most relevant practices for the firm over the next 20 years',
+    
+    // Market Reality Section
+    'market_reality.title': 'And when?',
+    'market_reality.subtitle': 'NOW!',
+    'market_reality.accenture_case': 'Let\'s look at the most recent case of Accenture, which over the last 6 months has lost historical value by more than 33%, and it\'s not due to market volatility, it\'s because the market itself is changing how they perceive their partners and what they really want, along with realizing that, whether we like it or not, AI is allowing things to be done internally, testing faster and conceiving more easily.',
+    'market_reality.then_question': 'So then?',
+    'market_reality.actions.title': 'We must train our teams',
+    'market_reality.actions.juniors': 'Squeeze the juniors and give them all possible tools',
+    'market_reality.actions.approach': 'Change the approach towards the client',
+    'market_reality.actions.speed': 'Change the speed in how projects are approached',
+    'market_reality.actions.model': 'Stop thinking about the model of 30 people in client dependencies',
+    'market_reality.but_people': 'But without people the business dies!',
+    'market_reality.response': 'No, on the contrary, the business is empowered, and I\'m not even talking about removing them or not offering them. We need to rethink the offer and how business is done today, how services are offered and made available and how real value and contribution is delivered, in the most dizzying era of recent human history.',
+    'market_reality.lets_start': 'Let\'s continue!',
 
     'competitive.title': 'Competitive Advantages',
     'competitive.title_highlight': 'that Make the Difference',

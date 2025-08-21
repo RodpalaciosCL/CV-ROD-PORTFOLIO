@@ -7,7 +7,7 @@ import {
   Briefcase, Award, MapPin, Calendar, Building2, Cpu, Database,
   Network, Lock, Settings, Wrench, Code, Terminal, RefreshCw,
   Search, Truck, Hammer, TestTube, Droplets, Factory, Package,
-  FlaskConical
+  FlaskConical, Sparkles, AlertTriangle
 } from 'lucide-react';
 import { useLanguage } from "@/contexts/LanguageContext";
 
@@ -160,12 +160,12 @@ export default function About() {
     },
     {
       id: 6,
-      title: t('mining_process.solvent_extraction.title'),
+      title: t('mining_process.solvent.title'),
       icon: <TestTube className="w-8 h-8 text-ey-yellow" />,
     },
     {
       id: 7,
-      title: t('mining_process.electrowinning.title'),
+      title: t('mining_process.electro.title'),
       icon: <Zap className="w-8 h-8 text-ey-yellow" />,
     },
     {
@@ -175,7 +175,7 @@ export default function About() {
     },
     {
       id: 9,
-      title: t('mining_process.final_product.title'),
+      title: t('mining_process.final.title'),
       icon: <Package className="w-8 h-8 text-ey-yellow" />,
     },
   ];
@@ -762,6 +762,224 @@ export default function About() {
                 <Heart className="w-6 h-6 mr-3" />
                 <span>{t('about.bullets.total_commitment')}</span>
               </div>
+            </motion.div>
+          </div>
+        </motion.div>
+
+        {/* Market Reality Section - Minimalist Design */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          viewport={{ once: true }}
+          className="py-12"
+        >
+          <div className="max-w-4xl mx-auto px-4">
+            {/* Minimalist Header */}
+            <motion.div 
+              className="text-center mb-12"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              viewport={{ once: true }}
+            >
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-ey-yellow rounded-xl mb-6">
+                <Clock className="w-8 h-8 text-ey-black" />
+              </div>
+              <h2 className="text-4xl font-bold text-ey-white mb-3">
+                {t('market_reality.title')}
+              </h2>
+              <h3 className="text-2xl font-semibold text-ey-yellow">
+                {t('market_reality.subtitle')}
+              </h3>
+            </motion.div>
+
+            {/* Accenture Case - Visual Breakdown */}
+            <motion.div 
+              className="mb-10"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              viewport={{ once: true }}
+            >
+              <div className="bg-ey-dark/50 rounded-lg p-8 border border-ey-light/10">
+                <div className="mb-6">
+                  <p className="text-lg text-ey-white/90 leading-relaxed mb-6">
+                    <strong className="text-ey-yellow">Veamos el caso más reciente de Accenture:</strong>
+                  </p>
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div className="text-center p-4 bg-red-500/10 rounded-lg border border-red-500/20">
+                      <div className="text-3xl font-bold text-red-400 mb-2">33%</div>
+                      <div className="text-sm text-ey-white/80">Pérdida de valor</div>
+                    </div>
+                    <div className="text-center p-4 bg-orange-500/10 rounded-lg border border-orange-500/20">
+                      <div className="text-3xl font-bold text-orange-400 mb-2">6</div>
+                      <div className="text-sm text-ey-white/80">Meses</div>
+                    </div>
+                    <div className="text-center p-4 bg-yellow-500/10 rounded-lg border border-yellow-500/20">
+                      <div className="text-3xl font-bold text-yellow-400 mb-2">AI</div>
+                      <div className="text-sm text-ey-white/80">Factor clave</div>
+                    </div>
+                  </div>
+                </div>
+                <div className="space-y-4">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div className="p-4 bg-ey-dark/30 rounded-lg">
+                      <h4 className="text-sm font-semibold text-red-400 mb-2">El Problema</h4>
+                      <p className="text-sm text-ey-white/80">Durante los últimos 6 meses ha perdido valor histórico en más de un 33%</p>
+                    </div>
+                    <div className="p-4 bg-ey-dark/30 rounded-lg">
+                      <h4 className="text-sm font-semibold text-orange-400 mb-2">La Causa</h4>
+                      <p className="text-sm text-ey-white/80">No es por lo volátil del mercado, sino por el cambio en cómo perciben a sus partners</p>
+                    </div>
+                  </div>
+                  <div className="p-4 bg-blue-500/10 rounded-lg border border-blue-500/20">
+                    <h4 className="text-sm font-semibold text-blue-400 mb-2">La Realidad</h4>
+                    <p className="text-sm text-ey-white/80">La AI está permitiendo hacer cosas de manera interna, probando más rápido y concibiendo más fácil</p>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Accenture Image - Simple Display */}
+            <motion.div 
+              className="mb-10"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+              viewport={{ once: true }}
+            >
+              <div className="flex justify-center">
+                <img 
+                  src="https://res.cloudinary.com/dhobnlg73/image/upload/v1755782376/Captura_de_pantalla_2025-08-21_a_la_s_09.18.54_v4pfog.png"
+                  alt="Accenture Market Performance"
+                  className="rounded-lg shadow-lg max-w-full w-full"
+                />
+              </div>
+            </motion.div>
+
+            {/* Then Question - Simple */}
+            <motion.div 
+              className="text-center mb-10"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+              viewport={{ once: true }}
+            >
+              <h3 className="text-3xl font-bold text-ey-yellow">
+                {t('market_reality.then_question')}
+              </h3>
+            </motion.div>
+
+            {/* Actions List - Simple */}
+            <motion.div 
+              className="mb-10"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.7 }}
+              viewport={{ once: true }}
+            >
+              <div className="space-y-3">
+                {[
+                  { text: t('market_reality.actions.title'), icon: <Users className="w-4 h-4 text-ey-yellow" /> },
+                  { text: t('market_reality.actions.juniors'), icon: <Sparkles className="w-4 h-4 text-ey-yellow" /> },
+                  { text: t('market_reality.actions.approach'), icon: <Target className="w-4 h-4 text-ey-yellow" /> },
+                  { text: t('market_reality.actions.speed'), icon: <Zap className="w-4 h-4 text-ey-yellow" /> },
+                  { text: t('market_reality.actions.model'), icon: <AlertTriangle className="w-4 h-4 text-ey-yellow" /> }
+                ].map((item, index) => (
+                  <motion.div
+                    key={index}
+                    className="flex items-center space-x-3 p-3 bg-ey-dark/30 rounded-md border border-ey-light/5"
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.4, delay: 0.8 + index * 0.1 }}
+                    viewport={{ once: true }}
+                  >
+                    <div className="flex-shrink-0">
+                      {item.icon}
+                    </div>
+                    <p className="text-sm text-ey-white/80">{item.text}</p>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+
+                            {/* But People Objection - Subtle Alert */}
+                <motion.div
+                  className="mb-8"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 1.4 }}
+                  viewport={{ once: true }}
+                >
+                  <div className="bg-ey-dark/30 rounded-lg p-4 border border-ey-light/10">
+                    <div className="flex items-center justify-center space-x-3">
+                      <motion.div
+                        animate={{ 
+                          opacity: [1, 0.3, 1]
+                        }}
+                        transition={{ 
+                          duration: 2,
+                          repeat: Infinity,
+                          ease: "easeInOut"
+                        }}
+                      >
+                        <AlertTriangle className="w-4 h-4 text-ey-yellow/80" />
+                      </motion.div>
+                      <motion.h4 
+                        className="text-sm font-medium text-ey-white/80"
+                        animate={{ 
+                          opacity: [1, 0.5, 1]
+                        }}
+                        transition={{ 
+                          duration: 2,
+                          repeat: Infinity,
+                          ease: "easeInOut",
+                          delay: 0.5
+                        }}
+                      >
+                        {t('market_reality.but_people')}
+                      </motion.h4>
+                    </div>
+                  </div>
+                </motion.div>
+
+            {/* Response - Simple Conclusion */}
+            <motion.div 
+              className="mb-8"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 1.5 }}
+              viewport={{ once: true }}
+            >
+              <div className="bg-ey-dark/50 rounded-lg p-6 border border-ey-light/10">
+                <p className="text-base text-ey-white/90 leading-relaxed">
+                  {t('market_reality.response')}
+                </p>
+              </div>
+            </motion.div>
+
+            {/* Let's Continue - Call to Action */}
+            <motion.div 
+              className="text-center pb-8"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 1.7 }}
+              viewport={{ once: true }}
+            >
+              <motion.h3 
+                className="text-5xl font-bold text-ey-yellow relative top-20"
+                animate={{ 
+                  scale: [1, 1.05, 1]
+                }}
+                transition={{ 
+                  duration: 2,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+              >
+                {t('market_reality.lets_start')}
+              </motion.h3>
             </motion.div>
           </div>
         </motion.div>
