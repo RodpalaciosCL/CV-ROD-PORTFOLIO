@@ -802,43 +802,43 @@ export default function About() {
               transition={{ duration: 0.6, delay: 0.4 }}
               viewport={{ once: true }}
             >
-              <div className="bg-ey-dark/50 rounded-lg p-8 border border-ey-light/10">
-                <div className="mb-6">
-                  <p className="text-lg text-ey-white/90 leading-relaxed mb-6">
-                    <strong className="text-ey-yellow">Veamos el caso más reciente de Accenture:</strong>
-                  </p>
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <div className="text-center p-4 bg-red-500/10 rounded-lg border border-red-500/20">
-                      <div className="text-3xl font-bold text-red-400 mb-2">33%</div>
-                      <div className="text-sm text-ey-white/80">Pérdida de valor</div>
+                                <div className="bg-ey-dark/50 rounded-lg p-8 border border-ey-light/10">
+                    <div className="mb-6">
+                      <p className="text-lg text-ey-white/90 leading-relaxed mb-6">
+                        <strong className="text-ey-yellow">{t('market_reality.accenture_title')}</strong>
+                      </p>
+                      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div className="text-center p-4 bg-red-500/10 rounded-lg border border-red-500/20">
+                          <div className="text-3xl font-bold text-red-400 mb-2">33%</div>
+                          <div className="text-sm text-ey-white/80">{t('market_reality.metrics.value_loss')}</div>
+                        </div>
+                        <div className="text-center p-4 bg-orange-500/10 rounded-lg border border-orange-500/20">
+                          <div className="text-3xl font-bold text-orange-400 mb-2">6</div>
+                          <div className="text-sm text-ey-white/80">{t('market_reality.metrics.months')}</div>
+                        </div>
+                        <div className="text-center p-4 bg-yellow-500/10 rounded-lg border border-yellow-500/20">
+                          <div className="text-3xl font-bold text-yellow-400 mb-2">AI</div>
+                          <div className="text-sm text-ey-white/80">{t('market_reality.metrics.ai_factor')}</div>
+                        </div>
+                      </div>
                     </div>
-                    <div className="text-center p-4 bg-orange-500/10 rounded-lg border border-orange-500/20">
-                      <div className="text-3xl font-bold text-orange-400 mb-2">6</div>
-                      <div className="text-sm text-ey-white/80">Meses</div>
-                    </div>
-                    <div className="text-center p-4 bg-yellow-500/10 rounded-lg border border-yellow-500/20">
-                      <div className="text-3xl font-bold text-yellow-400 mb-2">AI</div>
-                      <div className="text-sm text-ey-white/80">Factor clave</div>
+                    <div className="space-y-4">
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div className="p-4 bg-ey-dark/30 rounded-lg">
+                          <h4 className="text-sm font-semibold text-red-400 mb-2">{t('market_reality.problem.title')}</h4>
+                          <p className="text-sm text-ey-white/80">{t('market_reality.problem.description')}</p>
+                        </div>
+                        <div className="p-4 bg-ey-dark/30 rounded-lg">
+                          <h4 className="text-sm font-semibold text-orange-400 mb-2">{t('market_reality.cause.title')}</h4>
+                          <p className="text-sm text-ey-white/80">{t('market_reality.cause.description')}</p>
+                        </div>
+                      </div>
+                      <div className="p-4 bg-blue-500/10 rounded-lg border border-blue-500/20">
+                        <h4 className="text-sm font-semibold text-blue-400 mb-2">{t('market_reality.reality.title')}</h4>
+                        <p className="text-sm text-ey-white/80">{t('market_reality.reality.description')}</p>
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div className="space-y-4">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div className="p-4 bg-ey-dark/30 rounded-lg">
-                      <h4 className="text-sm font-semibold text-red-400 mb-2">El Problema</h4>
-                      <p className="text-sm text-ey-white/80">Durante los últimos 6 meses ha perdido valor histórico en más de un 33%</p>
-                    </div>
-                    <div className="p-4 bg-ey-dark/30 rounded-lg">
-                      <h4 className="text-sm font-semibold text-orange-400 mb-2">La Causa</h4>
-                      <p className="text-sm text-ey-white/80">No es por lo volátil del mercado, sino por el cambio en cómo perciben a sus partners</p>
-                    </div>
-                  </div>
-                  <div className="p-4 bg-blue-500/10 rounded-lg border border-blue-500/20">
-                    <h4 className="text-sm font-semibold text-blue-400 mb-2">La Realidad</h4>
-                    <p className="text-sm text-ey-white/80">La AI está permitiendo hacer cosas de manera interna, probando más rápido y concibiendo más fácil</p>
-                  </div>
-                </div>
-              </div>
             </motion.div>
 
             {/* Accenture Image - Simple Display */}
