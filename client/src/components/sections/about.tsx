@@ -516,19 +516,36 @@ export default function About() {
 
         {/* Mining Process Section */}
         <section id="mining-process" className="py-20 sm:py-28 relative overflow-hidden">
-          {/* Video Background */}
-          <div className="absolute inset-0 z-0">
-            <video
-              autoPlay
-              muted
-              loop
-              playsInline
-              className="w-full h-full object-cover opacity-30 border border-ey-yellow/20 rounded-lg"
-            >
-              <source src="https://pub-637f27afba214b74882afcfc21a20a7e.r2.dev/vid-fondo.mov" type="video/mp4" />
-            </video>
+          {/* Video Background with Modern Frame */}
+          <div className="absolute inset-0 z-0 p-4 sm:p-6 md:p-8">
+            <div className="relative w-full h-full">
+              {/* Modern Frame Container */}
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 via-transparent to-purple-500/20 rounded-3xl backdrop-blur-sm border border-white/10 shadow-2xl">
+                <div className="absolute inset-1 bg-gradient-to-br from-blue-600/10 to-purple-600/10 rounded-2xl border border-white/5"></div>
+              </div>
+              
+              {/* Video with proper aspect ratio */}
+              <div className="absolute inset-2 rounded-2xl overflow-hidden">
+                <video
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  className="w-full h-full object-cover opacity-30"
+                >
+                  <source src="https://pub-637f27afba214b74882afcfc21a20a7e.r2.dev/vid-fondo.mov" type="video/mp4" />
+                </video>
+              </div>
+              
+              {/* Subtle corner accents */}
+              <div className="absolute top-0 left-0 w-4 h-4 sm:w-6 sm:h-6 md:w-8 md:h-8 border-l-2 border-t-2 border-blue-400/60 rounded-tl-3xl"></div>
+              <div className="absolute top-0 right-0 w-4 h-4 sm:w-6 sm:h-6 md:w-8 md:h-8 border-r-2 border-t-2 border-purple-400/60 rounded-tr-3xl"></div>
+              <div className="absolute bottom-0 left-0 w-4 h-4 sm:w-6 sm:h-6 md:w-8 md:h-8 border-l-2 border-b-2 border-purple-400/60 rounded-bl-3xl"></div>
+              <div className="absolute bottom-0 right-0 w-4 h-4 sm:w-6 sm:h-6 md:w-8 md:h-8 border-r-2 border-b-2 border-blue-400/60 rounded-br-3xl"></div>
+            </div>
+            
             {/* Overlay for better text readability */}
-            <div className="absolute inset-0 bg-black/40"></div>
+            <div className="absolute inset-0 bg-black/30 rounded-3xl"></div>
           </div>
           
           <div className="container mx-auto px-4 relative z-10">
@@ -564,7 +581,7 @@ export default function About() {
                     <span className="text-ey-yellow font-bold text-3xl opacity-80">0{index + 1}</span>
                     {step.icon}
                   </div>
-                  <h4 className="text-lg font-semibold text-ey-white h-12">
+                  <h4 className="text-lg font-semibold text-ey-white min-h-[3rem] flex items-center">
                     {step.title}
                   </h4>
                 </motion.div>
@@ -594,18 +611,18 @@ export default function About() {
               </h3>
             </motion.div>
 
-            <div className="flex flex-wrap justify-center gap-4">
+            <div className="flex flex-wrap justify-center gap-3 sm:gap-4 px-4">
               {supportingElements.map((element, index) => (
                 <motion.div 
                   key={element.key} 
-                  className="bg-ey-dark/20 backdrop-blur-md rounded-full py-3 px-6 border border-ey-light/10 transition-all duration-300 hover:border-ey-yellow/30 hover:bg-ey-dark/40"
+                  className="bg-ey-dark/20 backdrop-blur-md rounded-full py-2 px-4 sm:py-3 sm:px-6 border border-ey-light/10 transition-all duration-300 hover:border-ey-yellow/30 hover:bg-ey-dark/40"
                   initial={{ opacity: 0, scale: 0.8 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.4, delay: index * 0.05 }}
                   viewport={{ once: true }}
                   whileHover={{ y: -4 }}
                 >
-                  <span className="text-ey-white/90 text-sm font-medium">{t(element.key)}</span>
+                  <span className="text-ey-white/90 text-xs sm:text-sm font-medium">{t(element.key)}</span>
                 </motion.div>
               ))}
             </div>
@@ -801,10 +818,10 @@ export default function About() {
               <div className="inline-flex items-center justify-center w-16 h-16 bg-ey-yellow rounded-xl mb-6">
                 <Clock className="w-8 h-8 text-ey-black" />
               </div>
-              <h2 className="text-4xl font-bold text-ey-white mb-3">
+              <h2 className="text-3xl sm:text-4xl font-bold text-ey-white mb-3">
                 {t('market_reality.title')}
               </h2>
-              <h3 className="text-2xl font-semibold text-ey-yellow">
+              <h3 className="text-xl sm:text-2xl font-semibold text-ey-yellow">
                 {t('market_reality.subtitle')}
               </h3>
             </motion.div>
@@ -817,12 +834,12 @@ export default function About() {
               transition={{ duration: 0.6, delay: 0.4 }}
               viewport={{ once: true }}
             >
-                                <div className="bg-ey-dark/50 rounded-lg p-8 border border-ey-light/10">
+                                <div className="bg-ey-dark/50 rounded-lg p-4 sm:p-6 md:p-8 border border-ey-light/10">
                     <div className="mb-6">
                       <p className="text-lg text-ey-white/90 leading-relaxed mb-6">
                         <strong className="text-ey-yellow">{t('market_reality.accenture_title')}</strong>
                       </p>
-                      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
                         <div className="text-center p-4 bg-red-500/10 rounded-lg border border-red-500/20">
                           <div className="text-3xl font-bold text-red-400 mb-2">33%</div>
                           <div className="text-sm text-ey-white/80">{t('market_reality.metrics.value_loss')}</div>
@@ -838,7 +855,7 @@ export default function About() {
                       </div>
                     </div>
                     <div className="space-y-4">
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <div className="p-4 bg-ey-dark/30 rounded-lg">
                           <h4 className="text-sm font-semibold text-red-400 mb-2">{t('market_reality.problem.title')}</h4>
                           <p className="text-sm text-ey-white/80">{t('market_reality.problem.description')}</p>
@@ -983,7 +1000,7 @@ export default function About() {
               viewport={{ once: true }}
             >
               <motion.h3 
-                className="text-5xl font-bold text-ey-yellow relative top-20"
+                className="text-3xl sm:text-4xl md:text-5xl font-bold text-ey-yellow relative top-10 sm:top-20"
                 animate={{ 
                   scale: [1, 1.05, 1]
                 }}
