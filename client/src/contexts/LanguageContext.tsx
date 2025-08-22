@@ -549,6 +549,7 @@ const translations = {
     'contact.subtitle': 'Conversemos sobre cómo esta asociación estratégica puede desbloquear oportunidades de largo plazo, y establecernos como el partner tecnológico minero líder en Latinoamérica.',
     'contact.cta_button': 'Contactar',
     'contact.click_to_contact': 'Click para contactar',
+    'contact.phone': 'Teléfono',
 
     // Footer section (NEW)
     'footer.copyright': '© 2025 | Rodrigo Palacios Strategic Partnership | Propuesta confidencial.',
@@ -773,7 +774,7 @@ const translations = {
     'market_reality.actions.model': 'Dejar de pensar en el modelo de las 30 personas en las dependencias de cliente',
     'market_reality.but_people': '¡Pero sin personas el negocio muere!',
     'market_reality.response': 'No, al contrario, el negocio se potencia, y ni siquiera hablo de sacarlas o no ofrecerlas. Hay que replantear la oferta y la forma en cómo hoy se hacen negocios, como se ofrecen y disponibilizan los servicios y cómo se entrega valor y aporte real, en la era más vertiginoza de la historia humana reciente.',
-    'market_reality.lets_start': '¡Sigamos!',
+    'market_reality.lets_start': '¡Avancemos!',
     'market_reality.accenture_title': 'Veamos el caso más reciente de Accenture:',
     'market_reality.metrics.value_loss': 'Pérdida de valor',
     'market_reality.metrics.months': 'Meses',
@@ -1226,6 +1227,7 @@ const translations = {
     'contact.subtitle': 'Let\'s discuss how this strategic partnership can unlock long-term opportunities and establish Metso as the leading mining technology partner in Latin America.',
     'contact.cta_button': 'Contact',
     'contact.click_to_contact': 'Click to contact',
+    'contact.phone': 'Phone',
 
     // Footer section (NEW)
     'footer.copyright': '© 2025 | Rodrigo Palacios Strategic Partnership | Confidential proposal.',
@@ -1497,7 +1499,7 @@ const translations = {
     'market_reality.actions.model': 'Stop thinking about the model of 30 people in client dependencies',
     'market_reality.but_people': 'But without people the business dies!',
     'market_reality.response': 'No, on the contrary, the business is empowered, and I\'m not even talking about removing them or not offering them. We need to rethink the offer and how business is done today, how services are offered and made available and how real value and contribution is delivered, in the most dizzying era of recent human history.',
-    'market_reality.lets_start': 'Let\'s continue!',
+    'market_reality.lets_start': 'Let\'s move on!',
     'market_reality.accenture_title': 'Let\'s look at the most recent case of Accenture:',
     'market_reality.metrics.value_loss': 'Value Loss',
     'market_reality.metrics.months': 'Months',

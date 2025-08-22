@@ -56,7 +56,7 @@ export default function Contact() {
     },
     {
       icon: Phone,
-      title: "Teléfono",
+      title: t('contact.phone'),
       value: "+56971415496",
       description: "",
       gradient: "from-green-500 to-green-700",

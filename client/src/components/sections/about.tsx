@@ -515,8 +515,23 @@ export default function About() {
         </motion.div>
 
         {/* Mining Process Section */}
-        <section id="mining-process" className="py-20 sm:py-28">
-          <div className="container mx-auto px-4">
+        <section id="mining-process" className="py-20 sm:py-28 relative overflow-hidden">
+          {/* Video Background */}
+          <div className="absolute inset-0 z-0">
+            <video
+              autoPlay
+              muted
+              loop
+              playsInline
+              className="w-full h-full object-cover opacity-30 border border-ey-yellow/20 rounded-lg"
+            >
+              <source src="https://pub-637f27afba214b74882afcfc21a20a7e.r2.dev/vid-fondo.mov" type="video/mp4" />
+            </video>
+            {/* Overlay for better text readability */}
+            <div className="absolute inset-0 bg-black/40"></div>
+          </div>
+          
+          <div className="container mx-auto px-4 relative z-10">
             
             {/* Header */}
             <motion.div 
