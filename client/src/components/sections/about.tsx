@@ -356,14 +356,14 @@ export default function About() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.2 }}
           viewport={{ once: true }}
-          className="mb-24"
+          className="mb-16"
         >
           <div className="relative">
             {/* Background Elements */}
             <div className="absolute inset-0 bg-gradient-to-br from-ey-yellow/5 via-transparent to-ey-yellow/5 rounded-3xl blur-3xl"></div>
             
             {/* Main Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 relative z-10">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 relative z-10">
               {coreValues.map((value, index) => (
                 <motion.div
                   key={index}
@@ -375,17 +375,17 @@ export default function About() {
                   whileHover={{ y: -12, scale: 1.02 }}
                 >
                   {/* Card Container */}
-                  <div className="relative bg-gradient-to-br from-ey-medium/30 to-ey-dark/50 rounded-2xl p-8 border border-ey-light/20 backdrop-blur-sm overflow-hidden">
+                  <div className="relative bg-gradient-to-br from-ey-medium/30 to-ey-dark/50 rounded-2xl p-4 sm:p-6 border border-ey-light/20 backdrop-blur-sm overflow-hidden">
                     {/* Animated Border */}
                     <div className="absolute inset-0 bg-gradient-to-r from-ey-yellow/20 via-transparent to-ey-yellow/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
                     
                     {/* Icon Section */}
-                    <div className="flex items-start space-x-6 mb-6">
+                    <div className="flex items-start space-x-4 sm:space-x-6 mb-4 sm:mb-6">
                       {/* Icon Container with Glow */}
                       <div className="relative">
-                        <div className="w-16 h-16 bg-gradient-to-br from-ey-yellow to-ey-yellow/80 rounded-2xl flex items-center justify-center shadow-2xl group-hover:shadow-ey-yellow/25 transition-all duration-500 group-hover:scale-110">
-                          <div className="absolute inset-0 bg-ey-yellow rounded-2xl blur-lg opacity-50 group-hover:opacity-75 transition-opacity duration-500"></div>
-                          <value.icon className="w-8 h-8 text-ey-white relative z-10" />
+                        <div className="w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-ey-yellow to-ey-yellow/80 rounded-xl sm:rounded-2xl flex items-center justify-center shadow-2xl group-hover:shadow-ey-yellow/25 transition-all duration-500 group-hover:scale-110">
+                          <div className="absolute inset-0 bg-ey-yellow rounded-xl sm:rounded-2xl blur-lg opacity-50 group-hover:opacity-75 transition-opacity duration-500"></div>
+                          <value.icon className="w-6 h-6 sm:w-7 sm:h-7 text-ey-white relative z-10" />
                         </div>
                         {/* Floating Accent */}
                         <div className="absolute -top-2 -right-2 w-4 h-4 bg-ey-yellow rounded-full opacity-60 group-hover:opacity-100 transition-opacity duration-500"></div>
@@ -393,7 +393,7 @@ export default function About() {
                       
                       {/* Title */}
                       <div className="flex-1">
-                        <h3 className="text-2xl font-black text-ey-white mb-2 group-hover:text-ey-yellow transition-colors duration-500">
+                        <h3 className="text-lg sm:text-xl font-black text-ey-white mb-2 group-hover:text-ey-yellow transition-colors duration-500">
                           {value.title}
                         </h3>
                         {/* Underline Effect */}
@@ -403,7 +403,7 @@ export default function About() {
                     
                     {/* Content */}
                     <div className="relative z-10">
-                      <p className="text-ey-white/90 leading-relaxed text-base group-hover:text-ey-white transition-colors duration-500">
+                      <p className="text-ey-white/90 leading-relaxed text-sm sm:text-base group-hover:text-ey-white transition-colors duration-500">
                         {value.description}
                       </p>
                     </div>
@@ -515,9 +515,9 @@ export default function About() {
         </motion.div>
 
         {/* Mining Process Section */}
-        <section id="mining-process" className="py-20 sm:py-28 relative overflow-hidden">
+        <section id="mining-process" className="py-12 sm:py-16 relative overflow-hidden">
           {/* Video Background with Modern Frame */}
-          <div className="absolute inset-0 z-0 p-4 sm:p-6 md:p-8">
+          <div className="absolute inset-0 z-0 p-2 sm:p-4 md:p-6">
             <div className="relative w-full h-full">
               {/* Modern Frame Container */}
               <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 via-transparent to-purple-500/20 rounded-3xl backdrop-blur-sm border border-white/10 shadow-2xl">
@@ -525,7 +525,7 @@ export default function About() {
               </div>
               
               {/* Video with proper aspect ratio */}
-              <div className="absolute inset-2 rounded-2xl overflow-hidden">
+              <div className="absolute inset-3 rounded-xl overflow-hidden">
                 <video
                   autoPlay
                   muted
@@ -538,50 +538,52 @@ export default function About() {
               </div>
               
               {/* Subtle corner accents */}
-              <div className="absolute top-0 left-0 w-4 h-4 sm:w-6 sm:h-6 md:w-8 md:h-8 border-l-2 border-t-2 border-blue-400/60 rounded-tl-3xl"></div>
-              <div className="absolute top-0 right-0 w-4 h-4 sm:w-6 sm:h-6 md:w-8 md:h-8 border-r-2 border-t-2 border-purple-400/60 rounded-tr-3xl"></div>
-              <div className="absolute bottom-0 left-0 w-4 h-4 sm:w-6 sm:h-6 md:w-8 md:h-8 border-l-2 border-b-2 border-purple-400/60 rounded-bl-3xl"></div>
-              <div className="absolute bottom-0 right-0 w-4 h-4 sm:w-6 sm:h-6 md:w-8 md:h-8 border-r-2 border-b-2 border-blue-400/60 rounded-br-3xl"></div>
+              <div className="absolute top-0 left-0 w-3 h-3 sm:w-4 sm:h-4 md:w-6 md:h-6 border-l-2 border-t-2 border-blue-400/60 rounded-tl-2xl"></div>
+              <div className="absolute top-0 right-0 w-3 h-3 sm:w-4 sm:h-4 md:w-6 md:h-6 border-r-2 border-t-2 border-purple-400/60 rounded-tr-2xl"></div>
+              <div className="absolute bottom-0 left-0 w-3 h-3 sm:w-4 sm:h-4 md:w-6 md:h-6 border-l-2 border-b-2 border-purple-400/60 rounded-bl-2xl"></div>
+              <div className="absolute bottom-0 right-0 w-3 h-3 sm:w-4 sm:h-4 md:w-6 md:h-6 border-r-2 border-b-2 border-blue-400/60 rounded-br-2xl"></div>
             </div>
             
             {/* Overlay for better text readability */}
-            <div className="absolute inset-0 bg-black/30 rounded-3xl"></div>
+            <div className="absolute inset-0 bg-black/30 rounded-2xl"></div>
           </div>
           
-          <div className="container mx-auto px-4 relative z-10">
+          <div className="container mx-auto px-6 sm:px-8 relative z-10">
             
             {/* Header */}
             <motion.div 
-              className="text-center mb-16"
+              className="text-center mb-8"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-3xl md:text-4xl font-bold text-ey-yellow mb-2">
+              <h2 className="text-2xl md:text-3xl font-bold text-ey-yellow mb-2">
                 {t('mining_process.main_title')}
               </h2>
-              <h3 className="text-xl md:text-2xl font-medium text-ey-white/90">
+              <h3 className="text-lg md:text-xl font-medium text-ey-white/90">
                 {t('mining_process.main_subtitle')}
               </h3>
             </motion.div>
 
             {/* Main Process Grid (3x3) */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-10">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-3 lg:gap-4 mb-6">
               {miningProcess.map((step, index) => (
                 <motion.div 
                   key={step.id} 
-                  className="bg-ey-dark/30 backdrop-blur-lg rounded-2xl p-6 border border-ey-light/10 transition-all duration-300 hover:border-ey-yellow/40 hover:bg-ey-dark/50 hover:-translate-y-2"
+                  className="bg-ey-dark/30 backdrop-blur-lg rounded-lg p-2 sm:p-3 border border-ey-light/10 transition-all duration-300 hover:border-ey-yellow/40 hover:bg-ey-dark/50 hover:-translate-y-1"
                   initial={{ opacity: 0, scale: 0.9, y: 30 }}
                   whileInView={{ opacity: 1, scale: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.05 }}
                   viewport={{ once: true }}
                 >
-                  <div className="flex justify-between items-start mb-4">
-                    <span className="text-ey-yellow font-bold text-3xl opacity-80">0{index + 1}</span>
-                    {step.icon}
+                  <div className="flex justify-between items-start mb-2">
+                    <span className="text-ey-yellow font-bold text-2xl opacity-80">0{index + 1}</span>
+                    <div className="w-6 h-6 sm:w-7 sm:h-7">
+                      {step.icon}
+                    </div>
                   </div>
-                  <h4 className="text-lg font-semibold text-ey-white min-h-[3rem] flex items-center">
+                  <h4 className="text-sm sm:text-base font-semibold text-ey-white min-h-[2.5rem] flex items-center">
                     {step.title}
                   </h4>
                 </motion.div>
@@ -589,7 +591,7 @@ export default function About() {
             </div>
 
             <motion.p 
-              className="text-center text-ey-white/70 italic max-w-2xl mx-auto mb-20"
+              className="text-center text-ey-white/70 italic max-w-2xl mx-auto mb-8"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.5 }}
@@ -600,13 +602,13 @@ export default function About() {
 
             {/* Supporting Elements Section */}
             <motion.div 
-              className="text-center mb-10"
+              className="text-center mb-6"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <h3 className="text-2xl font-semibold text-ey-white">
+              <h3 className="text-lg sm:text-xl font-semibold text-ey-white">
                 {t('mining_process.supporting_title')}
               </h3>
             </motion.div>
@@ -887,6 +889,36 @@ export default function About() {
                   alt="Accenture Market Performance"
                   className="rounded-lg shadow-lg max-w-full w-full"
                 />
+              </div>
+            </motion.div>
+
+            {/* OpenAI - MIT Case Study */}
+            <motion.div 
+              className="mb-10"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.55 }}
+              viewport={{ once: true }}
+            >
+              <div className="bg-ey-dark/50 rounded-lg p-4 sm:p-6 md:p-8 border border-ey-light/10">
+                <div className="mb-6">
+                  <h3 className="text-lg sm:text-xl font-bold text-ey-yellow mb-4">
+                    {t('market_reality.openai.title')}
+                  </h3>
+                  <p className="text-sm sm:text-base text-ey-white/90 leading-relaxed mb-6">
+                    {t('market_reality.openai.paragraph1')}
+                  </p>
+                  <p className="text-sm sm:text-base text-ey-white/90 leading-relaxed mb-6">
+                    {t('market_reality.openai.paragraph2')}
+                  </p>
+                </div>
+                <div className="flex justify-center">
+                  <img 
+                    src="https://media.licdn.com/dms/image/v2/D4D22AQHUDujdCcZn9Q/feedshare-shrink_800/B4DZjB_c75HsAg-/0/1755601295237?e=1758758400&v=beta&t=I2s8D57jgYzzHyagyTye8J-_dxgRpRDth3dzlVtghIs"
+                    alt="OpenAI MIT Case Study"
+                    className="rounded-lg shadow-lg max-w-full w-full"
+                  />
+                </div>
               </div>
             </motion.div>
 

@@ -785,6 +785,9 @@ const translations = {
     'market_reality.cause.description': 'No es por lo volátil del mercado, sino por el cambio en cómo perciben a sus partners',
     'market_reality.reality.title': 'La Realidad',
     'market_reality.reality.description': 'La AI está permitiendo hacer cosas de manera interna, probando más rápido y concibiendo más fácil',
+    'market_reality.openai.title': 'Caso OpenAI - MIT',
+    'market_reality.openai.paragraph1': 'MIT nos dice que más del 95% de las empresas que hoy utilizan GENAI para desarrollar "soluciones" terminan quedando en nada, porque necesitan si o si del acompañamiento ejecutivo de expertos (humanos).',
+    'market_reality.openai.paragraph2': 'Por eso mismo es que OpenAI hoy trabaja contra reloj para disponibilizar su nuevo brazo de consultoría a nivel global, para competir con los grandes de la industria, introducir sus modelos y no salir más de la arquitectura y stack tecnólogico de las empresas.',
 
     'competitive.title': 'Ventajas Competitivas',
     'competitive.title_highlight': 'que Marcan la Diferencia',
@@ -1510,6 +1513,9 @@ const translations = {
     'market_reality.cause.description': 'It\'s not due to market volatility, but due to the change in how they perceive their partners',
     'market_reality.reality.title': 'The Reality',
     'market_reality.reality.description': 'AI is allowing things to be done internally, testing faster and conceiving more easily',
+    'market_reality.openai.title': 'OpenAI - MIT Case',
+    'market_reality.openai.paragraph1': 'MIT tells us that more than 95% of companies that today use GENAI to develop "solutions" end up amounting to nothing, because they absolutely need the executive accompaniment of experts (humans).',
+    'market_reality.openai.paragraph2': 'That is why OpenAI is now working against the clock to make its new consulting arm available globally, to compete with the industry giants, introduce its models and no longer leave the architecture and technological stack of companies.',
 
     'competitive.title': 'Competitive Advantages',
     'competitive.title_highlight': 'that Make the Difference',
