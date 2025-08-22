@@ -24,7 +24,7 @@ export default function Operation() {
       name: t('solutions.waihouse.name'),
       tagline: t('solutions.waihouse.tagline'),
       description: t('solutions.waihouse.description'),
-      media: "https://res.cloudinary.com/dhobnlg73/image/upload/v1750620085/668c1c12e8a58030d5568f21_642d7a5f4d77d19c2f6fa8c2_xzGehktapAgabSW56yhCmigLzY3uCWACMrR6p4lkLfw_owddtl.jpg",
+      media: "https://imagedelivery.net/ggT8OoJUg8TvMm3OHVNsdQ/cc409417-d9c0-4096-ed91-a1cb0ba47000/public",
       type: "image"
     },
     {
@@ -32,7 +32,7 @@ export default function Operation() {
       name: t('solutions.mining360.name'),
       tagline: t('solutions.mining360.tagline'),
       description: t('solutions.mining360.description'),
-      media: "https://res.cloudinary.com/dhobnlg73/image/upload/v1750620085/Underground_Tracking_pg6jlu.webp",
+      media: "https://imagedelivery.net/ggT8OoJUg8TvMm3OHVNsdQ/2f5b8ea4-aa1a-4cd1-583f-f6e1945d0f00/public",
       type: "image"
     },
     {
@@ -40,7 +40,7 @@ export default function Operation() {
       name: t('solutions.water_control.name'),
       tagline: t('solutions.water_control.tagline'),
       description: t('solutions.water_control.description'),
-      media: "https://res.cloudinary.com/dhobnlg73/image/upload/v1750693432/Captura_de_pantalla_2025-06-23_a_la_s_11.42.11_rw4lpf.png",
+      media: "https://imagedelivery.net/ggT8OoJUg8TvMm3OHVNsdQ/fedc9753-9384-4d21-1922-4044d8609b00/public",
       type: "image"
     },
     {
@@ -48,7 +48,7 @@ export default function Operation() {
       name: t('solutions.mining_lights.name'),
       tagline: t('solutions.mining_lights.tagline'),
       description: t('solutions.mining_lights.description'),
-      media: "https://res.cloudinary.com/dhobnlg73/image/upload/v1750694512/Captura_de_pantalla_2025-06-23_a_la_s_12.01.42_dof0qh.png",
+      media: "https://imagedelivery.net/ggT8OoJUg8TvMm3OHVNsdQ/8abfb47d-3d54-4abb-9e4c-275517221a00/public",
       type: "image"
     },
     {
@@ -56,7 +56,7 @@ export default function Operation() {
       name: t('solutions.mineral_law.name'),
       tagline: t('solutions.mineral_law.tagline'),
       description: t('solutions.mineral_law.description'),
-      media: "https://res.cloudinary.com/dhobnlg73/image/upload/v1750690573/ChatGPT_Image_22_jun_2025_15_40_22_lsewla.png",
+      media: "https://imagedelivery.net/ggT8OoJUg8TvMm3OHVNsdQ/058bb20d-5261-4519-e262-16134f7f6500/public",
       type: "image"
     },
     {
@@ -64,7 +64,7 @@ export default function Operation() {
       name: t('solutions.rpa_intelligence.name'),
       tagline: t('solutions.rpa_intelligence.tagline'),
       description: t('solutions.rpa_intelligence.description'),
-      media: "https://res.cloudinary.com/dhobnlg73/video/upload/v1750691060/1_gxiukm.mov",
+      media: "https://public.invenor.group/1_gxiukm.mov",
       type: "video"
     },
     {
@@ -72,7 +72,7 @@ export default function Operation() {
       name: t('solutions.hotel_commander.name'),
       tagline: t('solutions.hotel_commander.tagline'),
       description: t('solutions.hotel_commander.description'),
-      media: "https://res.cloudinary.com/dhobnlg73/image/upload/v1750620086/reservations_calendar_highquality_mdxwqp.webp",
+      media: "https://imagedelivery.net/ggT8OoJUg8TvMm3OHVNsdQ/07aee863-48a8-401c-2245-0491d561d300/public",
       type: "image"
     },
     {
@@ -88,7 +88,7 @@ export default function Operation() {
       name: t('solutions.digital_twins.name'),
       tagline: t('solutions.digital_twins.tagline'),
       description: t('solutions.digital_twins.description'),
-      media: "https://res.cloudinary.com/dhobnlg73/video/upload/v1754189788/prevu3d_ezb9kn.mov",
+      media: "https://public.invenor.group/prevu3d_ezb9kn.mov",
       type: "video"
     },
     {
@@ -96,7 +96,7 @@ export default function Operation() {
       name: t('solutions.operational_control.name'),
       tagline: t('solutions.operational_control.tagline'),
       description: t('solutions.operational_control.description'),
-      media: "https://res.cloudinary.com/dhobnlg73/image/upload/v1754425940/Captura_de_pantalla_2025-08-05_a_la_s_16.28.43_jfvimn.png",
+      media: "https://imagedelivery.net/ggT8OoJUg8TvMm3OHVNsdQ/d057d2bb-b757-415f-a4b2-f3e1f0ee6700/public",
       type: "image"
     },
     {
@@ -104,7 +104,7 @@ export default function Operation() {
       name: t('solutions.cio_cfo_service.name'),
       tagline: t('solutions.cio_cfo_service.tagline'),
       description: t('solutions.cio_cfo_service.description'),
-      media: "https://res.cloudinary.com/dhobnlg73/image/upload/v1754425961/Captura_de_pantalla_2025-08-05_a_la_s_16.29.07_jxnnu8.png",
+      media: "https://imagedelivery.net/ggT8OoJUg8TvMm3OHVNsdQ/d51727a3-2f87-41be-d626-429641996500/public",
       type: "image"
     },
     {
@@ -112,7 +112,7 @@ export default function Operation() {
       name: t('solutions.agents.name'),
       tagline: t('solutions.agents.tagline'),
       description: t('solutions.agents.description'),
-      media: "https://res.cloudinary.com/dhobnlg73/image/upload/v1754425987/Captura_de_pantalla_2025-08-05_a_la_s_16.29.14_rhugni.png",
+      media: "https://imagedelivery.net/ggT8OoJUg8TvMm3OHVNsdQ/a472a0ff-108c-4bce-db64-87a250b10800/public",
       type: "image"
     }
   ];

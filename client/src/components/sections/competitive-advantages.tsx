@@ -46,7 +46,7 @@ export default function CompetitiveAdvantages() {
               <div className="absolute inset-0 bg-gradient-to-br from-ey-yellow/20 to-transparent rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
               <div className="relative overflow-hidden rounded-2xl border border-ey-yellow/30 shadow-xl">
                 <img 
-                  src="https://res.cloudinary.com/dhobnlg73/image/upload/v1753742038/IMG_0183_iddtfw.jpg" 
+                  src="https://imagedelivery.net/ggT8OoJUg8TvMm3OHVNsdQ/b99e23a8-539a-41f1-e9d7-764237b3db00/public" 
                   alt="Rodrigo en faena minera" 
                   className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
                 />

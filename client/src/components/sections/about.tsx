@@ -238,7 +238,7 @@ export default function About() {
               <div className="relative bg-ey-dark rounded-3xl p-3 border border-ey-yellow/40">
                 <div className="relative bg-ey-dark rounded-2xl p-2 border border-ey-yellow/20">
                   <img 
-                    src="https://res.cloudinary.com/dhobnlg73/image/upload/v1753563332/_CVA4769_Original_y7efhh.jpg" 
+                    src="https://imagedelivery.net/ggT8OoJUg8TvMm3OHVNsdQ/5b2c95a1-b670-48fa-d774-b16fe7081000/public" 
                     alt="Rodrigo Palacios - Professional Profile" 
                     className="w-full h-[500px] object-cover rounded-xl"
                   />
@@ -851,7 +851,7 @@ export default function About() {
             >
               <div className="flex justify-center">
                 <img 
-                  src="https://res.cloudinary.com/dhobnlg73/image/upload/v1755782376/Captura_de_pantalla_2025-08-21_a_la_s_09.18.54_v4pfog.png"
+                  src="https://imagedelivery.net/ggT8OoJUg8TvMm3OHVNsdQ/5063f732-e277-4205-6c2d-546a8880d300/public"
                   alt="Accenture Market Performance"
                   className="rounded-lg shadow-lg max-w-full w-full"
                 />

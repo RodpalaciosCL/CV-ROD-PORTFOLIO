@@ -149,7 +149,7 @@ export default function Strategic() {
             <button 
               onClick={() => {
                 const link = document.createElement('a');
-                link.href = 'https://res.cloudinary.com/dhobnlg73/raw/upload/v1753809938/KSO_2024_V1_rcymfs.xlsx';
+                link.href = 'https://307db0fe02dea6e144176d9a7150c4a9.r2.cloudflarestorage.com/rodcv/KSO_2024_V1_rcymfs.xlsx.undefined';
                 link.download = 'KSO_2024_V1.xlsx';
                 document.body.appendChild(link);
                 link.click();

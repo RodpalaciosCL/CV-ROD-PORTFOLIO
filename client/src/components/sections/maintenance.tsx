@@ -10,7 +10,7 @@ export default function Maintenance() {
       title: t('maintenance.predictive.title'),
       subtitle: t('maintenance.predictive.subtitle'),
       icon: <Activity className="w-8 h-8" />,
-      media: "https://res.cloudinary.com/dhobnlg73/video/upload/v1750691069/3_msvtot.mov",
+      media: "https://public.invenor.group/3_msvtot.mov",
       bullets: [
         t('maintenance.predictive.bullet1'),
         t('maintenance.predictive.bullet2'),

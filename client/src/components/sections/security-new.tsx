@@ -10,7 +10,7 @@ export default function Security() {
       titleKey: "security.safeapp.title",
       subtitleKey: "security.safeapp.subtitle",
       icon: <Shield className="w-8 h-8" />,
-      media: "https://res.cloudinary.com/dhobnlg73/image/upload/v1750620085/banner-blog-10-1024x576_g3buzv.jpg",
+      media: "https://imagedelivery.net/ggT8OoJUg8TvMm3OHVNsdQ/bc12cc11-2c0b-4f02-6ca3-c8ae57ae8600/public",
       bulletKeys: [
         "security.safeapp.bullet1",
         "security.safeapp.bullet2", 
@@ -23,7 +23,7 @@ export default function Security() {
       titleKey: "security.inspection_drones.title",
       subtitleKey: "security.inspection_drones.subtitle",
       icon: <Eye className="w-8 h-8" />,
-      media: "https://res.cloudinary.com/dhobnlg73/video/upload/v1754185606/ELIOS_3_SURVEYING_PAYLOAD_LOW_BITRATE_meuwtn.mp4",
+      media: "https://public.invenor.group/ELIOS_3_SURVEYING_PAYLOAD_LOW_BITRATE_meuwtn.mp4",
       bulletKeys: [
         "security.inspection_drones.bullet1",
         "security.inspection_drones.bullet2",
@@ -36,7 +36,7 @@ export default function Security() {
       titleKey: "security.correction_drones.title",
       subtitleKey: "security.correction_drones.subtitle",
       icon: <Zap className="w-8 h-8" />,
-      media: "https://res.cloudinary.com/dhobnlg73/video/upload/v1754185484/voliro_homepage_video_hpsjm3.mp4",
+      media: "https://public.invenor.group/voliro_homepage_video_hpsjm3.mp4",
       bulletKeys: [
         "security.correction_drones.bullet1",
         "security.correction_drones.bullet2",
@@ -49,7 +49,7 @@ export default function Security() {
       titleKey: "security.rescue_tag.title",
       subtitleKey: "security.rescue_tag.subtitle",
       icon: <MapPin className="w-8 h-8" />,
-      media: "https://res.cloudinary.com/dhobnlg73/video/upload/v1754191470/Crew_Companion_1.3_ddgusl.mov",
+      media: "https://public.invenor.group/Crew_Companion_1.3_ddgusl.mov",
       bulletKeys: [
         "security.rescue_tag.bullet1",
         "security.rescue_tag.bullet2",
@@ -62,7 +62,7 @@ export default function Security() {
       titleKey: "security.all_access.title",
       subtitleKey: "security.all_access.subtitle",
       icon: <Shield className="w-8 h-8" />,
-      media: "https://res.cloudinary.com/dhobnlg73/image/upload/v1750693911/Captura_de_pantalla_2025-06-23_a_la_s_11.51.34_c8xmcy.png",
+      media: "https://imagedelivery.net/ggT8OoJUg8TvMm3OHVNsdQ/8493c109-20fa-4d0c-02b3-9e24b47ab200/public",
       bulletKeys: [
         "security.all_access.bullet1",
         "security.all_access.bullet2",

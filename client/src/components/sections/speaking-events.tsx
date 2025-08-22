@@ -10,71 +10,71 @@ export default function SpeakingEvents() {
   
   const events = [
     {
-      image: "https://res.cloudinary.com/dhobnlg73/image/upload/v1753810173/_CVA4755_Original_qa2wwr.jpg"
+      image: "https://imagedelivery.net/ggT8OoJUg8TvMm3OHVNsdQ/e8e9e65c-659a-4841-c606-736402f6a600/public"
     },
     {
-      image: "https://res.cloudinary.com/dhobnlg73/image/upload/v1753810158/IMG_1162_ofludo.jpg"
+      image: "https://imagedelivery.net/ggT8OoJUg8TvMm3OHVNsdQ/e5ad2ff8-e3af-487b-dcfc-6fa6a9689d00/public"
     },
     {
-      image: "https://res.cloudinary.com/dhobnlg73/image/upload/v1753810221/IMG_1555_kkzmpi.jpg"
+      image: "https://imagedelivery.net/ggT8OoJUg8TvMm3OHVNsdQ/25f1f307-7eed-481b-6970-4a0cd5f24e00/public"
     },
     {
-      image: "https://res.cloudinary.com/dhobnlg73/image/upload/v1753563333/IMG_2573_cewyx0.jpg"
+      image: "https://imagedelivery.net/ggT8OoJUg8TvMm3OHVNsdQ/c672167c-b65b-46af-57a8-d4569ec77200/public"
     },
     {
-      image: "https://res.cloudinary.com/dhobnlg73/image/upload/v1753563330/a61a42b3-9eb2-4e08-afc5-fbbac2239ed4_rwzo9s.jpg"
+      image: "https://imagedelivery.net/ggT8OoJUg8TvMm3OHVNsdQ/ab30abf4-8fae-45c9-c21e-488d1b542c00/public"
     },
     {
-      image: "https://res.cloudinary.com/dhobnlg73/image/upload/v1753563329/IMG_4685_p4j3sv.jpg"
+      image: "https://imagedelivery.net/ggT8OoJUg8TvMm3OHVNsdQ/61f831a0-9d66-495a-ac89-d0fbf468f900/public"
     },
     {
-      image: "https://res.cloudinary.com/dhobnlg73/image/upload/v1753563327/c8acddc3-a17d-46f5-8fdc-a2904564214c_nujgt8.jpg"
+      image: "https://imagedelivery.net/ggT8OoJUg8TvMm3OHVNsdQ/00e140fc-8ae8-438d-6fc8-450228caf700/public"
     },
     {
-      image: "https://res.cloudinary.com/dhobnlg73/image/upload/v1753563327/IMG_1700_lxv0om.jpg"
+      image: "https://imagedelivery.net/ggT8OoJUg8TvMm3OHVNsdQ/fdc402c8-56ee-4969-fc2a-49dd14f40500/public"
     },
     {
-      image: "https://res.cloudinary.com/dhobnlg73/image/upload/v1753563327/06887361-3b5b-4e12-a9a0-d6b17c4f72a2_ljprgl.jpg"
+      image: "https://imagedelivery.net/ggT8OoJUg8TvMm3OHVNsdQ/539da491-1836-4f6e-4a82-7ed114fc3e00/public"
     },
     {
-      image: "https://res.cloudinary.com/dhobnlg73/image/upload/v1753563328/84bf4e38-e947-460d-a30e-22ba336c208e_t2meib.jpg"
+      image: "https://imagedelivery.net/ggT8OoJUg8TvMm3OHVNsdQ/b23e9b2c-5ea8-4847-7f1d-8301e4c08800/public"
     },
     {
-      image: "https://res.cloudinary.com/dhobnlg73/image/upload/v1753563329/7357fed7-e020-4627-806a-fbb75bf31a8b_gu8p59.jpg"
+      image: "https://imagedelivery.net/ggT8OoJUg8TvMm3OHVNsdQ/280d30cb-4f3a-4c5c-e073-9b9a18e01500/public"
     },
     {
-      image: "https://res.cloudinary.com/dhobnlg73/image/upload/v1753563330/IMG_4649_sggxae.jpg"
+      image: "https://imagedelivery.net/ggT8OoJUg8TvMm3OHVNsdQ/08fdbdc1-fc4a-4458-96f3-c700e5acb300/public"
     },
     {
-      image: "https://res.cloudinary.com/dhobnlg73/image/upload/v1753563330/IMG_2001_qlbtqx.jpg"
+      image: "https://imagedelivery.net/ggT8OoJUg8TvMm3OHVNsdQ/06c125f7-9ae6-456f-fb78-4bb5ae7a5100/public"
     },
     {
-      image: "https://res.cloudinary.com/dhobnlg73/image/upload/v1753563331/16eca60a-fe76-48b3-a74b-8029c2cfc872_ri8vt7.jpg"
+      image: "https://imagedelivery.net/ggT8OoJUg8TvMm3OHVNsdQ/d58fd43e-a259-4b03-70ec-165973df6300/public"
     },
     {
-      image: "https://res.cloudinary.com/dhobnlg73/image/upload/v1753563332/401cce6c-8556-468d-b70d-f533a08b9573_iqjify.jpg"
+      image: "https://imagedelivery.net/ggT8OoJUg8TvMm3OHVNsdQ/789484cb-51de-4389-ea76-01ec89d67f00/public"
     },
     {
-      image: "https://res.cloudinary.com/dhobnlg73/image/upload/v1753563332/IMG_1366_s3qs9a.jpg"
+      image: "https://imagedelivery.net/ggT8OoJUg8TvMm3OHVNsdQ/4451e068-d8a4-44fc-fd1e-265d57a62900/public"
     },
     {
-      image: "https://res.cloudinary.com/dhobnlg73/image/upload/v1753563334/e1ee1518-5172-4c7c-af63-dd68d4361974_ziqlbg.jpg"
+      image: "https://imagedelivery.net/ggT8OoJUg8TvMm3OHVNsdQ/3bc811b0-4210-430e-62be-234439922900/public"
     },
     {
-      image: "https://res.cloudinary.com/dhobnlg73/image/upload/v1753563331/IMG_3811_uwzew7.png"
+      image: "https://imagedelivery.net/ggT8OoJUg8TvMm3OHVNsdQ/44258baa-8675-4fb8-465d-d7f948e4b900/public"
     },
   ];
 
   const newImages = [
-    "https://res.cloudinary.com/dhobnlg73/image/upload/v1754192222/97687553_1364588770397246_1578362694157729792_n_jev48f.jpg",
-    "https://res.cloudinary.com/dhobnlg73/image/upload/v1754192222/IMG_0069_jvvcoq.jpg",
-    "https://res.cloudinary.com/dhobnlg73/image/upload/v1754192222/0c08dac3-592e-4138-b852-0d1dfc07d9db_ysqh4t.jpg",
-    "https://res.cloudinary.com/dhobnlg73/image/upload/v1753810153/c82c4a60-4199-4a61-99c0-bd908f87a420_tchhwy.jpg",
-    "https://res.cloudinary.com/dhobnlg73/image/upload/v1753563331/16eca60a-fe76-48b3-a74b-8029c2cfc872_ri8vt7.jpg",
-    "https://res.cloudinary.com/dhobnlg73/image/upload/v1754192512/39cc8b3c-4a2e-4946-8e23-3408f9f708e9_cxlggn.jpg",
-    "https://res.cloudinary.com/dhobnlg73/image/upload/v1754194054/526656827_10163875433374225_7163308756814852465_n_fbpbfc.jpg",
-    "https://res.cloudinary.com/dhobnlg73/image/upload/v1754194054/IMG_2014_vv2xsv.jpg",
-    "https://res.cloudinary.com/dhobnlg73/image/upload/v1754194055/Captura_de_pantalla_2025-08-03_a_la_s_00.06.48_trgpdp.png",
+    "https://imagedelivery.net/ggT8OoJUg8TvMm3OHVNsdQ/7bc7878f-1560-49f9-eb2d-daf298c4c200/public",
+    "https://imagedelivery.net/ggT8OoJUg8TvMm3OHVNsdQ/ab5adceb-ba3e-4bbc-801d-4b5254735c00/public",
+    "https://imagedelivery.net/ggT8OoJUg8TvMm3OHVNsdQ/ce9eda3d-355e-422b-58b1-060c60585a00/public",
+    "https://imagedelivery.net/ggT8OoJUg8TvMm3OHVNsdQ/3987d2a7-179b-46ed-7666-39f094c53200/public",
+    "https://imagedelivery.net/ggT8OoJUg8TvMm3OHVNsdQ/d58fd43e-a259-4b03-70ec-165973df6300/public",
+    "https://imagedelivery.net/ggT8OoJUg8TvMm3OHVNsdQ/940c499d-33b9-45ca-5f6e-01b818f1fd00/public",
+    "https://imagedelivery.net/ggT8OoJUg8TvMm3OHVNsdQ/3b99424f-df08-447c-119b-8296faf6cb00/public",
+    "https://imagedelivery.net/ggT8OoJUg8TvMm3OHVNsdQ/2535d8ba-1c34-4b7b-38ba-d250622a9d00/public",
+    "https://imagedelivery.net/ggT8OoJUg8TvMm3OHVNsdQ/68001664-6a9e-4018-46d7-97cda13fdc00/public",
   ];
 
   const combinedEvents = [

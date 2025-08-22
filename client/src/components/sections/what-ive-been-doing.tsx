@@ -88,7 +88,7 @@ export default function WhatIveBeenDoing() {
                 poster="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAwIiBoZWlnaHQ9IjQ1MCIgdmlld0JveD0iMCAwIDgwMCA0NTAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI4MDAiIGhlaWdodD0iNDUwIiBmaWxsPSIjMDAwMDAwIi8+Cjwvc3ZnPgo="
               >
                 <source 
-                  src="https://res.cloudinary.com/dhobnlg73/video/upload/v1753753423/warehouse_sgukjf_lfssd2.mp4" 
+                  src="https://public.invenor.group/warehouse_sgukjf_lfssd2.mp4" 
                   type="video/mp4" 
                 />
                 Tu navegador no soporta la reproducción de videos.

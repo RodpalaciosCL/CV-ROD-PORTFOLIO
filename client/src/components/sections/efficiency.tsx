@@ -283,7 +283,7 @@ const EfficiencySection = () => {
                 >
                   <div className="flex justify-center">
                     <img 
-                      src="https://res.cloudinary.com/dhobnlg73/image/upload/v1755782376/Captura_de_pantalla_2025-08-21_a_la_s_09.18.54_v4pfog.png"
+                      src="https://imagedelivery.net/ggT8OoJUg8TvMm3OHVNsdQ/5063f732-e277-4205-6c2d-546a8880d300/public"
                       alt="Accenture Market Performance"
                       className="rounded-xl shadow-2xl max-w-4xl w-full"
                     />
