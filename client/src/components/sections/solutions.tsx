@@ -7,7 +7,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function Solutions() {
   const { t } = useLanguage();
-  const [activeTab, setActiveTab] = useState('operation');
+  const [activeTab, setActiveTab] = useState('security');
   
   const tabs = [
     { id: 'operation', labelKey: 'solutions.tab_operation', component: <Operation /> },

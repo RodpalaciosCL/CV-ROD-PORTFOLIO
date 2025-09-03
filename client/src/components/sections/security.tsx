@@ -161,7 +161,7 @@ export default function Security() {
             {/* Media - Top */}
             <div className="aspect-[4/3] overflow-hidden">
               <img
-                src="https://metalbit.io/_next/static/media/signalshield_prototype_screenshot.7422500f.png"
+                src="https://assets.invenor.group/web-app-library-categories-providers-screenshots-001-723-221-pub-dynatrace-screenshot-1710431540%20(2).webp"
                 alt="SignalShield Prototype - Seguridad OT"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               />

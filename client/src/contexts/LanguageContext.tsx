@@ -1528,20 +1528,15 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
   const clientConfig = getClientConfig();
 
   useEffect(() => {
-    // Cargar idioma desde localStorage, pero siempre comenzar en inglés por defecto
-    const savedLanguage = localStorage.getItem('language') as Language;
-    if (savedLanguage && (savedLanguage === 'es' || savedLanguage === 'en')) {
-      setLanguage(savedLanguage);
-    } else {
-      // Si no hay idioma guardado, establecer inglés por defecto
-      setLanguage('en');
-      localStorage.setItem('language', 'en');
-    }
+    // SIEMPRE usar inglés por defecto, ignorar localStorage
+    setLanguage('en');
+    localStorage.setItem('language', 'en');
   }, []);
 
   const changeLanguage = (lang: Language) => {
-    setLanguage(lang);
-    localStorage.setItem('language', lang);
+    // Forzar siempre inglés, ignorar cualquier intento de cambio
+    setLanguage('en');
+    localStorage.setItem('language', 'en');
   };
 
   const t = (key: string): string => {

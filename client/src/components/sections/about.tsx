@@ -548,7 +548,7 @@ export default function About() {
             <div className="absolute inset-0 bg-black/30 rounded-2xl"></div>
           </div>
           
-          <div className="container mx-auto px-6 sm:px-8 relative z-10">
+          <div className="container mx-auto px-8 sm:px-12 lg:px-16 relative z-10">
             
             {/* Header */}
             <motion.div 
@@ -567,23 +567,23 @@ export default function About() {
             </motion.div>
 
             {/* Main Process Grid (3x3) */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-3 lg:gap-4 mb-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 mb-8 px-4 sm:px-6 lg:px-8">
               {miningProcess.map((step, index) => (
                 <motion.div 
                   key={step.id} 
-                  className="bg-ey-dark/30 backdrop-blur-lg rounded-lg p-2 sm:p-3 border border-ey-light/10 transition-all duration-300 hover:border-ey-yellow/40 hover:bg-ey-dark/50 hover:-translate-y-1"
+                  className="bg-ey-dark/30 backdrop-blur-lg rounded-xl p-4 sm:p-6 border border-ey-light/10 transition-all duration-300 hover:border-ey-yellow/40 hover:bg-ey-dark/50 hover:-translate-y-1"
                   initial={{ opacity: 0, scale: 0.9, y: 30 }}
                   whileInView={{ opacity: 1, scale: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.05 }}
                   viewport={{ once: true }}
                 >
-                  <div className="flex justify-between items-start mb-2">
-                    <span className="text-ey-yellow font-bold text-2xl opacity-80">0{index + 1}</span>
-                    <div className="w-6 h-6 sm:w-7 sm:h-7">
+                  <div className="flex justify-between items-start mb-3">
+                    <span className="text-ey-yellow font-bold text-2xl sm:text-3xl opacity-80">0{index + 1}</span>
+                    <div className="w-6 h-6 sm:w-8 sm:h-8">
                       {step.icon}
                     </div>
                   </div>
-                  <h4 className="text-sm sm:text-base font-semibold text-ey-white min-h-[2.5rem] flex items-center">
+                  <h4 className="text-sm sm:text-base font-semibold text-ey-white min-h-[2.5rem] flex items-center leading-tight">
                     {step.title}
                   </h4>
                 </motion.div>
